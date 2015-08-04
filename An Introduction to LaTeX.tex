@@ -1,0 +1,434 @@
+\documentclass[11pt]{article}
+\usepackage[left=25mm,right=25mm,top=30mm,bottom=30mm]{geometry}
+\usepackage{amsmath} % math
+\usepackage{amssymb} % math
+\usepackage{graphicx} % to use \includegraphics{}
+\usepackage{amsthm}
+\usepackage{diagbox}
+\usepackage{kotex} % to use korean(hangul)
+\usepackage{caption}
+\usepackage[group-separator={,}]{siunitx} %si unit
+% \usepackage[hangul]{kotex} 이걸로하면 Abstract, Contents 등이 전부 요약, 내용 등으로 바뀜.
+
+\pagenumbering{roman} % \pagenumbering{다른거}나올때까지 roman으로 pagenumbering.
+
+\renewcommand\thesection{\Roman{section}.} % \section : In roman(I,II,III,...)
+\renewcommand\thesubsection{\arabic{subsection}.} % \subsection : In arabic(1,2,3,...)
+
+\newtheorem{definition}{정의}
+\newtheorem{collorary}{보조정리}
+\newtheorem{praise}{찬양}
+
+\begin{document}
+
+\begin{center}
+	\Large An Introduction to \LaTeX 
+\end{center}
+
+\begin{abstract}
+	\LaTeX practice during August 2nd $\sim$ 4th. Special thanks to HLETRD.
+	
+	HLETRD's GitHub : github.com/hletrd
+	
+	드디어 gshs-hutech.cls 탈출!!! 휴우 ㅠㅠㅠ
+	\begin{praise}
+		HLETRD는 31기 선배들 중 \LaTeX 의 최고수이시다.
+	\end{praise}
+	
+\end{abstract}
+
+\clearpage
+\tableofcontents
+
+\clearpage
+\listoftables
+
+\clearpage
+\listoffigures
+
+\clearpage
+\newcommand{\ding}{\textit{Taxicab Hyperbolloid}}
+\newcommand{\longline}{=================================}
+
+%roman numbering for sections
+%\renewcommand\thesection{\Roman{section}.}
+%\renewcommand\thesubsection{\arabic{subsection}.
+\pagenumbering{arabic}
+
+\section{What is \LaTeX ? How to install?}
+우리는 보통 논문이나 R\&E보고서를 작성할 때 아래아한글이나 MS워드를 사용하곤 한다. 하지만 논문의 가독성 향상, 그림/표 넘버링과 간편한 리스트 작성을 위해 보통 대학원 이상에서는 \LaTeX 를 사용하곤 한다. 
+
+더욱 자세한 내용을 알고 싶다면 namu.wiki/w/LaTeX 을 읽어보길 추천한다.
+
+TeX을 사용하기 위해서는 Editor가 필요하다.
+Windows의 경우 (무료) TeXworks, TeXstudio, TeXnicCenter 등이 있다. 개인적으로는 처음 배울때 TeXworks를 사용했었으나 뒤늦게 TeXstudio의 편리함을 깨우쳤다. TeXworks는 비추.
+
+또한, 논문에 한글을 조금이라도 넣기 위해서는 kotexlive가 필요하다. www.ktug.org/xe/install 에서 다운받을 수 있다. 다만 용량이 1GB 정도이니 데이터 주의.
+
+참고로 kotexlive를 최초로 만드신 분이 경기과학고 출신이시다.ㅎㅎ 
+
+\section{making tables}
+\subsection{easy table : using \textbackslash hline}
+
+\verb+\+begin\{table\}[h]
+
+\verb+\+begin\{center\}
+
+\verb+\+begin\{tabular\}\{|c|c|c|\}
+
+\verb+\+hline
+
+\verb+\+end\{tabular\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{table\}
+
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+이것은 표 삽입의 간단한 예제입니다.
+
+표는 다음과 같이 삽입할 수 있다.
+
+\verb+\+begin\{table\}[h]
+
+\verb+\+begin\{center\}
+
+\verb+\+begin\{tabular\}\{|c|c|c|\}
+
+\verb+\+hline
+
+학번\&이름\&특징\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+hline
+
+14012\&홍길동\&호부호형X\verb+\+\verb+\+
+
+\verb+\+hline
+
+12320\&전우치\&도술에 재능이 있음\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+end\{tabular\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{table\}
+
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			학번&이름&특징\\
+			\hline
+			\hline
+			14012&홍길동&호부호형X\\
+			\hline
+			12320&전우치&도술에 재능이 있음\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\longline
+
+\verb+\+begin\{table\}[h]
+
+\verb+\+begin\{center\}
+
+\verb+\+begin\{tabular\}\{c|c|c\}
+
+\verb+\+hline
+
+학번\&이름\&특징\verb+\+\verb+\+
+
+\verb+\+hline
+
+14012\&홍길동\&ㅁㄴㅇㄹ\verb+\+\verb+\+
+
+12320\&전우치\&도술\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+end\{tabular\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{table\}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{c|c|c}
+			\hline
+			학번&이름&특징\\
+			\hline
+			14012&홍길동&ㅁㄴㅇㄹ\\
+			12320&전우치&도술\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{using \textbackslash multirow}
+
+\verb+\+begin\{table\}[h]
+
+\verb+\+begin\{center\}
+
+\verb+\+begin\{tabular\}\{c|c|c\}
+
+\verb+\+hline
+
+\verb+\+diagbox\{학년\}\{반\}\&1\&2\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+hline
+
+14012\&홍길동\&ㅁㄴㅇㄹ\verb+\+\verb+\+
+
+12320\&전우치\&도술\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+end\{tabular\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{table\}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{c|c|c}
+			\hline
+			\diagbox{학년}{반}&1&2\\
+			\hline
+			\hline
+			14012&홍길동&ㅁㄴㅇㄹ\\
+			12320&전우치&도술\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\longline
+
+\verb+\+begin\{table\}[h]
+
+\verb+\+begin\{center\}
+
+\verb+\+begin\{tabular\}\{c|c|c\}
+
+\verb+\+hline
+
+\verb+\+multicolumn\{3\}\{c\}\{반장이름\}\verb+\+\verb+\+
+
+\verb+\+diagbox\{학년\}\{반\}\&1\&2\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+hline
+
+14012\&홍길동\&ㅁㄴㅇㄹ\verb+\+\verb+\+
+
+12320\&전우치\&도술\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+end\{tabular\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{table\}
+
+\begin{table}[h]
+	\begin{center}
+	\begin{tabular}{c|c|c}
+		\hline
+		\multicolumn{3}{c}{반장이름}\\
+		\diagbox{학년}{반}&1&2\\
+		\hline
+		\hline
+		14012&홍길동&ㅁㄴㅇㄹ\\
+		12320&전우치&도술\\
+		\hline
+		
+	\end{tabular}
+	\end{center}
+\end{table}
+
+\longline
+
+\verb+\+begin\{table\}[h]
+
+\verb+\+begin\{center\}
+
+\verb+\+begin\{tabular\}\{|c|c|c|\}
+
+\verb+\+hline
+
+\&\verb+\+multicolumn\{2\}\{|c|\}\{반장이름\}\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+diagbox\{학년\}\{반\}\&1\&2\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+hline
+
+14012\&홍길동\&ㅁㄴㅇㄹ\verb+\+\verb+\+
+
+\verb+\+hline
+
+12320\&전우치\&도술\verb+\+\verb+\+
+
+\verb+\+hline
+
+\verb+\+end\{tabular\}
+
+\verb+\+caption\{1,2학년 반장\}\verb+\+label\{tab1\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{table\}
+
+\begin{table}[h]
+	\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		&\multicolumn{2}{|c|}{반장이름}\\
+		\hline
+		\diagbox{학년}{반}&1&2\\
+		\hline
+		\hline
+		14012&홍길동&ㅁㄴㅇㄹ\\
+		\hline
+		12320&전우치&도술\\
+		\hline
+	\end{tabular}
+	\caption{1,2학년 반장}\label{tab1}
+	\end{center}
+\end{table}
+
+\section{Including images}
+\subsection{first}
+
+\verb+\+begin\{figure\}
+
+\verb+\+begin\{center\}
+
+\verb+\+includegraphics[scale=0.4]\{1.png\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{figure\}
+
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.4]{1.png}
+	\end{center}
+\end{figure}
+
+\longline
+
+\subsection{using caption, label}
+우선 문서의 앞부분에서 \textbackslash usepackage\{caption\}을 해준 다음,
+
+다음과 같이 작성하면 그림 \verb+\+ref\{ding\_2\}과 같이 caption이 달린다.
+\verb+\+begin\{figure\}
+
+\verb+\+begin\{center\}
+
+\verb+\+includegraphics[scale=0.4]\{2.png\}
+
+\verb+\+captionsetup\{width=0.6\verb+\+textwidth\}
+
+\verb+\+caption\{\verb+\+ding\}
+
+\verb+\+label\{ding\_2\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{figure\}
+
+다음과 같이 작성하면 Figure \ref{ding_2}과 같이 caption이 달린다.
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.4]{2.png}
+		\captionsetup{width=0.6\textwidth}
+		\caption{\ding}
+		\label{ding_2}
+	\end{center}
+\end{figure}
+
+\begin{praise}
+	참고로 TeXstudio에서는 \textbackslash includegraphics에서 그림 파일명에 마우스를 갖다대면 그림 미리보기가 나온다.
+\end{praise}
+\longline
+
+\section{Troubleshooter}
+\subsection{Compile Error}
+tex 문서가 컴파일되지 않는 경우에는 다음이 가능하다.
+\subsubsection{Grammar error}
+grammar error를 고쳐준다.
+특히, 수학 전용 수식 명령어가 포함되어 있는데 수식 시작부분과 끝부분에 \$를 넣지 않았다면 넣어주도록 한다. 
+\subsubsection{Can't write on file}
+Windows의 경우 OS 특성상 파일이 한 곳에서 이미 열려있을 경우 다른 곳에서 수정이 불가능하다.
+pdf파일을 닫고 다시 컴파일을 시도하도록 한다.
+
+
+\subsection{Broken text}
+\subsubsection{Ref[?]}
+reference 기능을 사용할 때 컴파일 후 pdf 파일을 확인하면 대괄호 안에 ?가 되어있을수 있다. 이는 수정된 문서를 최초로 컴파일했을때의 문제로, 컴파일을 한번 더 해주면 해결된다.
+\subsubsection{글자가 없는 경우}
+$\sim$ 와 같은 문자는 아무 생각 없이 그대로 넣어버리곤 한다. 그러면 글자가 나오지 않는다. 
+\$\verb+\+sim\$ 와 같이 넣어주도록 하자.
+
+\section{Other useful tips}
+\subsection{Using \textbackslash newcommand}
+지난 2014 기초 R\&E논문작성 때 Taxicab Hyperbolloid를 여러번 쓰느라고 고생했었다.
+하지만 \textbackslash ding 을 써주기만 하면 다음과 같이 나온다. 
+문서의 앞부분에 \verb+\+newcommand\{\verb+\+ding\}\{\verb+\+textit\{Taxicab Hyperbolloid\}\} 와 같이 써주어야 한다. 
+\ding
+
+\subsection{TeXstudio - 'Convert to LaTeX'}
+TeX에 \textgreater 와 같은 문자를 쓸 때 그냥 쓰면 깨지거나 에러가 난다. 따라서 일일이 \textbackslash textgreater와 같이 변환해 주어야 된다. (심지어 방금 본 \textbackslash 도 \textbackslash textbackslash 와 같이 써야 된다! 부들부들)
+
+특히 정보 R\&E의 경우 코드를 논문에 넣어야 하는 경우가 많은데, 각종 특수문자들을 일일이 LaTeX의 양식에 맞게 고치는 것이 매우 귀찮다!
+
+\begin{praise}
+	Dev-C++에서는 'Import'-'to TeX' 기능이 있다. 기능을 실행하면 cpp파일과 동일한 폴더에 tex파일이 하나 생겨 있을 것이며, 그를 compile하면 Dev-C++ IDE에서 보았던 그대로 코드가 나온다.
+\end{praise} \label{Dev-C++}
+
+하지만 찬양 \ref{Dev-C++}와 같은 방법을 추천하지는 않는다. 코드 중 한 줄이 길어지게 될 경우 논문에서 잘리며(...), 필요 없이 코드에 색다른 폰트와 색을 넣어 놓는다. (코드의 가독성을 위해 색이 있어야 하는 것 아니냐고 할 수도 있지만, 코드가 쉬워 보이게 된다는 단점이 있...다고 하는 분들도 계시다.ㅁㄴㅇㄹ) 그러기 위해 수없이 많은 package들을 include해야 되게 되므로 compile시간이 길어진다. 찬양 \ref{Dev-C++}와 같은 방법을 사용하게 될 경우 코드는 가장 마지막에 넣도록 하자.
+
+\begin{praise}
+	TeXstudio의 또하나 편한 기능이 일일이 textbackslash할필요 없이 Idefix-Convert to LaTeX 기능을 쓰면 이것처럼 바로 변환해줌.
+\end{praise}
+...더이상 말이 필요한가요. texWorksEditor 말고 TeXstudio를 사용합시다 여러분
+
+
+
+%\subsection{pointer}
+
+%\subsubsection{pointer}
+%asdf(1)
+%\subsubsection*{what is this?}
+%asdf(2)
+%\subsubsection{Without numbering...}
+%asdf(3)
+% 안타깝게도 TeX에서는 다른 언어와 같이 /* ... */를 통해 일괄적으로 주석처리 되는 기능이 없다.
+\end{document}
