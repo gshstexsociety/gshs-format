@@ -4,7 +4,7 @@
 \usepackage{amssymb} % math
 \usepackage{graphicx} % to use \includegraphics{}
 \usepackage{amsthm}
-\usepackage{diagbox}
+\usepackage{diagbox} % to make tables
 \usepackage{kotex} % to use korean(hangul)
 \usepackage{caption}
 \usepackage[group-separator={,}]{siunitx} %si unit
@@ -23,18 +23,41 @@
 
 \begin{center}
 	\Large An Introduction to \LaTeX 
+	\small especially for gshs students
 \end{center}
 
 \begin{abstract}
 	\LaTeX practice during August 2nd $\sim$ 4th. Special thanks to HLETRD.
 	
-	HLETRD's GitHub : github.com/hletrd
+	\begin{large}
+	An-Introduction-to-LaTeX
+	논문작성을 위한 LaTeX 입문서를 LaTeX로 제작한 것입니다.
 	
-	드디어 gshs-hutech.cls 탈출!!! 휴우 ㅠㅠㅠ
+	LaTeX Editor로는 TeXstudio를 추천합니다. 개인적으로 쓰고 있는 것이기도 해서...
+	
+	http://www.texstudio.org/
+	
+	TeXworks쓰다가 TeXstudio쓰면 정말 내가 왜 이걸 모르고 있었지 싶음...
+	
+	TeX에서 한글을 사용하기 위해서는 koTeXlive를 별도로 설치해야 합니다.
+	
+	www.ktug.org/xe/index.php?mid=install
+	
+	용량이 1GB정도 되니 주의 바람\\
+	\end{large}
+	
+	% \\는 줄을 강제로 바꾸기 위한 것임
+	
 	\begin{praise}
 		HLETRD는 31기 선배들 중 \LaTeX 의 최고수이시다.
+		저희 32기에게 처음 \LaTeX 를 가르쳐 주시고 class 파일도 만들어주신 정민석 선생님께 감사드립니다.\\
 	\end{praise}
 	
+	
+	\textbf{우리의 기초 R\&E는 수학 R\&E가 아닌 LaTeX R\&E이었습니다.}\\
+	\begin{flushright}
+		-익명
+	\end{flushright}
 \end{abstract}
 
 \clearpage
@@ -379,6 +402,59 @@ Windows의 경우 (무료) TeXworks, TeXstudio, TeXnicCenter 등이 있다. 개�
 \end{praise}
 \longline
 
+\section{Other math functions}
+\subsection{Matrix}
+
+\$A = \verb+\+left[ \verb+\+begin\{array\}\{ccc\}
+
+1 \& 2 \& 3\verb+\+\verb+\+
+
+4 \& 5 \& 6\verb+\+\verb+\+
+
+7 \& 8 \& 9\verb+\+\verb+\+
+
+10 \& 11 \& 12
+
+\verb+\+end\{array\}
+
+\verb+\+right]\$
+
+$A = \left[ \begin{array}{ccc}
+1 & 2 & 3\\
+4 & 5 & 6\\
+7 & 8 & 9\\
+10 & 11 & 12
+\end{array}
+\right]$
+
+\longline
+\subsection{Pile}
+\$\$
+
+f(x) = \verb+\+left\verb+\+\{
+
+\verb+\+begin\{array\}\{ll\}
+
+1,\&x=3\verb+\+\verb+\+
+
+2,\&x\verb+\+ne3
+
+\verb+\+end\{array\}
+
+\verb+\+right.
+
+\$\$
+
+$$
+f(x) = \left\{
+\begin{array}{ll}
+1,&x=3\\
+2,&x\ne3
+\end{array}
+\right.
+$$
+
+\longline
 \section{Troubleshooter}
 \subsection{Compile Error}
 tex 문서가 컴파일되지 않는 경우에는 다음이 가능하다.
@@ -397,6 +473,22 @@ reference 기능을 사용할 때 컴파일 후 pdf 파일을 확인하면 대�
 $\sim$ 와 같은 문자는 아무 생각 없이 그대로 넣어버리곤 한다. 그러면 글자가 나오지 않는다. 
 \$\verb+\+sim\$ 와 같이 넣어주도록 하자.
 
+
+\subsection{Label}
+\verb+\+begin\{figure\}[h]
+
+\verb+\+begin\{center\}
+
+\verb+\+includegraphics[scale=0.5]\{Taxicab Hyperbola.png\} 
+
+\verb+\+caption\{2차원 택시 쌍곡선\}\verb+\+label\{fig2\}
+
+\verb+\+end\{center\}
+
+\verb+\+end\{figure\}
+
+와 같이 사진 이름에 공백이 있으면 사진 이름이 같이 나오는 버그 발생.
+
 \section{Other useful tips}
 \subsection{Using \textbackslash newcommand}
 지난 2014 기초 R\&E논문작성 때 Taxicab Hyperbolloid를 여러번 쓰느라고 고생했었다.
@@ -404,7 +496,7 @@ $\sim$ 와 같은 문자는 아무 생각 없이 그대로 넣어버리곤 한�
 문서의 앞부분에 \verb+\+newcommand\{\verb+\+ding\}\{\verb+\+textit\{Taxicab Hyperbolloid\}\} 와 같이 써주어야 한다. 
 \ding
 
-\subsection{TeXstudio - 'Convert to LaTeX'}
+\subsection{TeXstudio - \textquoteleft Convert to LaTeX\textquoteright}
 TeX에 \textgreater 와 같은 문자를 쓸 때 그냥 쓰면 깨지거나 에러가 난다. 따라서 일일이 \textbackslash textgreater와 같이 변환해 주어야 된다. (심지어 방금 본 \textbackslash 도 \textbackslash textbackslash 와 같이 써야 된다! 부들부들)
 
 특히 정보 R\&E의 경우 코드를 논문에 넣어야 하는 경우가 많은데, 각종 특수문자들을 일일이 LaTeX의 양식에 맞게 고치는 것이 매우 귀찮다!
