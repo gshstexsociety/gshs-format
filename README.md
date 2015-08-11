@@ -1,5 +1,6 @@
-# An-Introduction-to-LaTeX
+﻿# An-Introduction-to-LaTeX
 논문작성을 위한 LaTeX 입문서를 LaTeX로 제작한 것입니다.
+"Download ZIP"를 클릭하여 전체 파일을 다운받고 pdf 파일을 보세요.
 
 ## LaTeX Editor 설치
 

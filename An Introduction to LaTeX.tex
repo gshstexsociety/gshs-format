@@ -78,7 +78,7 @@
 %\renewcommand\thesubsection{\arabic{subsection}.
 \pagenumbering{arabic}
 
-\section{What is \LaTeX ? How to install?}
+\section{What is \LaTeX ? How to install?}\label{intro}
 우리는 보통 논문이나 R\&E보고서를 작성할 때 아래아한글이나 MS워드를 사용하곤 한다. 하지만 논문의 가독성 향상, 그림/표 넘버링과 간편한 리스트 작성을 위해 보통 대학원 이상에서는 \LaTeX 를 사용하곤 한다. 
 
 더욱 자세한 내용을 알고 싶다면 namu.wiki/w/LaTeX 을 읽어보길 추천한다.
@@ -89,6 +89,18 @@ Windows의 경우 (무료) TeXworks, TeXstudio, TeXnicCenter 등이 있다. 개�
 또한, 논문에 한글을 조금이라도 넣기 위해서는 kotexlive가 필요하다. www.ktug.org/xe/install 에서 다운받을 수 있다. 다만 용량이 1GB 정도이니 데이터 주의.
 
 참고로 kotexlive를 최초로 만드신 분이 경기과학고 출신이시다.ㅎㅎ 
+
+\section{Basic functions of \LaTeX}
+\subsection{header}
+\LaTeX 문서도 C언어 프로그래밍과 같이 헤더를 필요로 한다. 사용할 라이브러리를 import해줘야 되고, 필요한 command들을 지정할 때 주로 문서의 맨 앞부분에 쓰고는 한다. 어디까지가 헤더라고 명확히 말할 수는 없지만, 이 문서의 헤더를 쓰면 다음과 같다.
+
+\subsection{High 가독성}
+\LaTeX 를 이용하여 문서를 작성하게 될 경우 작성 중 그리고 읽을 때 모두 가독성이 높다.
+작성 중에는 엔터를 두번 쳐야 실제로 줄이 넘어간다. 강제로 줄을 바꾸고 싶을 경우에는 \textbackslash \textbackslash 를 사용하면 된다.
+
+\subsection{\textbackslash ref}
+
+이것이 \ref{intro} 절에서 말하였던 기능이다.
 
 \section{making tables}
 \subsection{easy table : using \textbackslash hline}
