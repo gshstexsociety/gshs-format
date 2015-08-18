@@ -1,6 +1,11 @@
-﻿# An-Introduction-to-LaTeX
+﻿# GSHS LaTeX Introduction
+﻿# 경곽 LaTeX 입문서
 논문작성을 위한 LaTeX 입문서를 LaTeX로 제작한 것입니다.
-"Download ZIP"를 클릭하여 전체 파일을 다운받고 pdf 파일을 보세요.
+"Download ZIP"를 클릭하여 전체 파일을 다운받고 pdf 파일을 보시고
+tex파일을 보며(에디터를 설치해야 됩니다.) LaTeX를 보다 수월하게 공부하실 수 있게 하였습니다.
+ⓒ2015 seungwonpark, evenharder 
+
+※ An-Introduction-to-LaTeX 로부터 옮겨왔습니다.
 
 ## LaTeX Editor 설치
 
