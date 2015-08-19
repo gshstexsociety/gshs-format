@@ -4,7 +4,7 @@
 "Download ZIP"를 클릭하여 전체 파일을 다운받고 pdf 파일을 보시고
 tex파일을 보며(에디터를 설치해야 됩니다.) LaTeX를 보다 수월하게 공부하실 수 있게 하였습니다.
 
-ⓒ2015 seungwonpark, evenharder 
+ⓒ2015 seungwonpark(14041), evenharder(14080)
 
 ※ An-Introduction-to-LaTeX 로부터 옮겨왔습니다.
 
@@ -20,3 +20,5 @@ www.ktug.org/xe/index.php?mid=install
 용량이 1GB정도 되니 주의 바람
 
 gshslatexintro.github.io/gshslatexintro/
+
+어느 정도의 Qualification이 이루어진다면 누구든지 gshslatexintro에 참여하실 수 있습니다.ㅎ
