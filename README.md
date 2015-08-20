@@ -19,6 +19,6 @@ TeX에서 한글을 사용하기 위해서는 koTeXlive를 별도로 설치해�
 www.ktug.org/xe/index.php?mid=install
 용량이 1GB정도 되니 주의 바람
 
-gshslatexintro.github.io/gshslatexintro/
+http://gshslatexintro.github.io/gshslatexintro/
 
 어느 정도의 Qualification이 이루어진다면 누구든지 gshslatexintro에 참여하실 수 있습니다.ㅎ
