@@ -510,7 +510,7 @@ $\sim$ 와 같은 문자는 아무 생각 없이 그대로 넣어버리곤 한�
 \subsection{Using \textbackslash newcommand}
 지난 2014 기초 R\&E논문작성 때 Taxicab Hyperbolloid를 여러번 쓰느라고 고생했었다.
 하지만 \textbackslash ding 을 써주기만 하면 다음과 같이 나온다. 
-문서의 앞부분에 \verb+\+newcommand\{\verb+\+ding\}\{\verb+\+textit\{Taxicab Hyperbolloid\}\} 와 같이 써주어야 한다. 
+문서의 앞부분에 \verb+\+newcommand\{\verb+\+ding\}\{\verb+\+textit\{Taxicab Hyperboloid\}\} 와 같이 써주어야 한다. 
 \ding
 
 \subsection{TeXstudio - \textquoteleft Convert to LaTeX\textquoteright}
@@ -519,10 +519,14 @@ TeX에 \textgreater 와 같은 문자를 쓸 때 그냥 쓰면 깨지거나 에�
 특히 정보 R\&E의 경우 코드를 논문에 넣어야 하는 경우가 많은데, 각종 특수문자들을 일일이 LaTeX의 양식에 맞게 고치는 것이 매우 귀찮다!
 
 \begin{praise}
-	Dev-C++에서는 'Import'-'to TeX' 기능이 있다. 기능을 실행하면 cpp파일과 동일한 폴더에 tex파일이 하나 생겨 있을 것이며, 그를 compile하면 Dev-C++ IDE에서 보았던 그대로 코드가 나온다.
-\end{praise} \label{Dev-C++}
+	Dev-C++에서는 'Export'-'to TeX' 기능이 있다. 기능을 실행하면 cpp파일과 동일한 폴더에 tex파일이 하나 생겨 있을 것이며, 그를 compile하면 Dev-C++ IDE에서 보았던 그대로 코드가 나온다.\label{Dev-C++}
+\end{praise} 
 
 하지만 찬양 \ref{Dev-C++}와 같은 방법을 추천하지는 않는다. 코드 중 한 줄이 길어지게 될 경우 논문에서 잘리며(...), 필요 없이 코드에 색다른 폰트와 색을 넣어 놓는다. (코드의 가독성을 위해 색이 있어야 하는 것 아니냐고 할 수도 있지만, 코드가 쉬워 보이게 된다는 단점이 있...다고 하는 분들도 계시다.ㅁㄴㅇㄹ) 그러기 위해 수없이 많은 package들을 include해야 되게 되므로 compile시간이 길어진다. 찬양 \ref{Dev-C++}와 같은 방법을 사용하게 될 경우 코드는 가장 마지막에 넣도록 하자.
+
+koTeX의 경우 \textbackslash usepackage[hangul]\{kotex\}과 Dev-C++에서 자동변환할 때 사용하는 package중 하나인 \textbackslash usepackage[ansinew]\{inputenc\}와 상충한다. 이는 ansinew가 kotex과 충돌해서 그런데, 정확한 메커니즘은 모르겠으나 대충 유니코드 충돌 문제가 아닌가 추측된다. 해결 방법은 해당 package를 포함시키지 않거나 ansinew를 utf8로 바꾸면 정상적으로 컴파일된다. 다만 이에 대한 부작용은 아직 겪어보지 않아서 모른다. 유의하자.
+
+또, 개인적인 의견이지만 TeXstudio에서 ttfamily(코드를 처리하는 float environment 부분)를 접어놓아도 그 앞에서 \$를 추가할 때 자꾸 ttfamily 안의 \$와 반응하여 접어놓은게 풀린다. 이걸 어떻게 직접적으로 막을 수 있는지는 모르겠지만 Windows 운영체제에서의 TeXstudio 기준으로 Ctrl+Shift+M은 \$ \$를 추가해주므로 해당 문제를 우회할 수 있다. 꼭 이쪽이 아니더라도 유용한 단축키이다.
 
 \begin{praise}
 	TeXstudio의 또하나 편한 기능이 일일이 textbackslash할필요 없이 Idefix-Convert to LaTeX 기능을 쓰면 이것처럼 바로 변환해줌.
