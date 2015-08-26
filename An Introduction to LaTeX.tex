@@ -75,7 +75,7 @@
 \listoffigures
 
 \clearpage
-\newcommand{\ding}{\textit{Taxicab Hyperbolloid}}
+\newcommand{\ding}{\textit{Sample figure}}
 \newcommand{\longline}{=================================}
 
 %roman numbering for sections
@@ -358,7 +358,7 @@ Windows의 경우 (무료) TeXworks, TeXstudio, TeXnicCenter 등이 있다. 개�
 		12320&전우치&도술\\
 		\hline
 	\end{tabular}
-	\caption{1,2학년 반장}\label{tab1}
+	\caption{sample table}\label{tab1}
 	\end{center}
 \end{table}
 
@@ -544,4 +544,51 @@ koTeX의 경우 \textbackslash usepackage[hangul]\{kotex\}과 Dev-C++에서 자�
 %\subsubsection{Without numbering...}
 %asdf(3)
 % 안타깝게도 TeX에서는 다른 언어와 같이 /* ... */를 통해 일괄적으로 주석처리 되는 기능이 없다.
+
+\section{Appendix}
+\subsection{Fonts}
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{cccc}
+			\hline
+			\textbackslash textrm\{...\}&textrm{roman}&\textbackslash textsf\{...\}&textsf{Sans serif}\\
+			
+			\textbackslash texttt\{...\}&texttt{typewriter}&&\\
+			
+			\textbackslash textmd\{...\}&textmd{medium}&\textbackslash textbd\{...\}&textbd{bold face}\\
+			
+			\textbackslash textup\{...\}&textup{upright}&\textbackslash textit\{...\}&textit{italic}\\
+			
+			\textbackslash textsl\{...\}&textsl{slanted}&\textbackslash textsc\{...\}&textsc{SMALL CAPS}\\
+			
+			\textbackslash emph\{...\}&emph{emphasized}&\textbackslash textnormal\{...\}&textnormal{document font}\\
+			
+			
+			\hline
+		\end{tabular}
+		\label{Fonts}
+	\end{center}
+\end{table}
+
+\subsection{Absolute Font Size in Standard Classes}
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{cccc}
+			\hline
+			size&10pt\{default\}&11pt option&12pt option\\
+			\textbackslash tiny&5pt&6pt&6pt\\
+			\textbackslash scriptsize&7pt&8pt&8pt\\
+			\textbackslash footnotesize&8pt&9pt&10pt\\
+			\textbackslash small&9pt&10pt&11pt\\
+			\textbackslash normalsize&10pt&11pt&12pt\\
+			\textbackslash large&12pt&12pt&14pt\\
+			\textbackslash Large&14pt&14pt&17pt\\
+			\textbackslash LARGE&17pt&17pt&20pt\\
+			\textbackslash huge&20pt&20pt&25pt\\
+			\textbackslash Huge&25pt&25pt&25pt\\
+			\hline	
+		\end{tabular}
+		\label{Fonts and its Sizes}
+	\end{center}
+\end{table}
 \end{document}
