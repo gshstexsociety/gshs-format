@@ -2,7 +2,7 @@
 % by GSHS LaTeX Intro.
 % Website : http://gshslatexintro.github.io/gshslatexintro
 
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[left=25mm,right=25mm,top=30mm,bottom=30mm]{geometry}
 \usepackage{indentfirst}
 \setlength\parindent{2.0em}
@@ -15,6 +15,12 @@
 \usepackage{color}
 \usepackage[hidelinks]{hyperref}
 
+\renewcommand\thesection{\Roman{section}} % \section : In roman(I, II, III, ...)
+\renewcommand\thesubsection{\arabic{subsection}} % \subsection : In arabic(1, 2, 3, ...)
+% section : I
+% subsection : 1
+% subsubsection : 1.1
+% 학교에서 제공되는 양식에 의하면 이와 같이 작성되어야 함
 
 \linespread{1.6}
 \newcommand{\makecover}{
@@ -24,7 +30,8 @@
 	{\sf 경기과학고등학교 심화R\&E 결과보고서}\\
 	\vskip 3cm
 	\begin{center}
-		\fontsize{21pt}{21pt}\selectfont 보고서 제목 \\[21pt]
+		\fontsize{18pt}{18pt}\selectfont 보고서 제목 \\[18pt]
+		\fontsize{14pt}{14pt}\selectfont Topic Name : 영문 제목 \\[14pt]
 	\end{center}
 	\vskip 3cm
 	\begin{center}
@@ -41,7 +48,8 @@
 	\end{center}
 	\vskip 5pc
 	\begin{center}
-		\large 과학영재학교 \Large 경기과학고등학교
+		\fontsize{18}{0}\selectfont{과학영재학교}
+		\fontsize{24}{0}\selectfont{경기과학고등학교}\\
 	\end{center}
 	\newpage
 	\pagenumbering{roman} %% 표지가 끝난 이후로 번호 매기기.
@@ -96,7 +104,7 @@
 
 \pagenumbering{arabic}
 \begin{center}
-	\Large 관측계획서 : 시간에 따른 별의 섬동(\scin) 경향성
+	\LARGE 관측계획서 : 시간에 따른 별의 섬동(\scin) 경향성
 	
 	\Large Obsevation Plan : Graphing the Amount of \scin about time
 	\normalsize
