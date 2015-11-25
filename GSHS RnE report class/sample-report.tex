@@ -1,11 +1,11 @@
 % Initiated by 정민석(2014년도 경기과학고 수학과전문교원)
-% Copyright ⓒ 2015 목진욱(2015학년도 경기과학고 물리과전문교원), 박승원(32nd 학생, 14041), Gyeonggi Science HighSchool for the Gifted. All rights reserved. 
+% Copyright ⓒ 2015 목진욱(2015학년도 경기과학고 물리과전문교원), 박승원(32nd 학생, 14041), 이상헌(32nd 학생, 14080), Gyeonggi Science HighSchool for the Gifted. All rights reserved. 
 % Website : http://gshslatexintro.github.io  본 문서가 컴파일된 pdf를 이곳에서 미리 보실 수 있습니다.
-\documentclass{gshs-report-v0.11}
+\documentclass{gshs-report-v0.12}
 % 추가로 필요한 패키지가 있다면 주석을 풀고 적어넣으십시오,
 %\usepackage{...}
 
-\researchtype{기초}
+\researchtype{심화}
 %\title{보고서 제목}
 \title{보고서 제목}
 % @note 표지에 출력되는 제목을 강제로 줄바꿈하려면 \linebreak 을 삽입.
@@ -23,9 +23,13 @@
 % \advisor 지도교사 이름
 \advisor{홍판서}
 
+% \professor 지도교수 이름
+%researchtype이 '심화' 일 때만 표지에 생성됨
+\professor{아무개}
+
 %\summitdate{년}{월}{일}
 % @param   year,month,day 연,월,일 순으로 입력
-\summitdate{2015}{11}{22}
+\summitdate{2015}{11}{25}
 
 % 그림과 표의 번호가 chapter를 넘어가도 초기화되지 않도록 설정. cls 파일에 이미 \usepackage{chngcntr}가 되어있음
 \counterwithout{figure}{chapter}
@@ -46,12 +50,12 @@
 
 %초록(영문)
 \begin{abstract}
-Once upon a time, \gshs said : 
+Once upon a time, \gshs said : `The first, and the best.'
 
 \noindent{
 	초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
 }
-propert
+\LaTeX
 \end{abstract}
 
 %한글초록을 추가하기 위해서는
@@ -269,7 +273,7 @@ Table \ref{table01}과 같은 표를 얻게 된다.
 \section{이 문서에서의 \textbackslash section command}
 \subsection{이 문서에서의 \textbackslash subsection command}
 \subsubsection{이 문서에서의 \textbackslash subsubsection command}
-이 gshs-report.cls 파일 혹은 gshs-report-v0.11.cls 파일은 보통의 문서 작성법과는 달리 chapter, section, subsection, subsubsection 이 표 \ref{correlation}와 같이 대응된다. 이유는 알수 없으나 설정이 이렇게 되어 있어서 섣불리 바꾸지를 못하고 있다.
+이 gshs-report.cls 파일 혹은 gshs-report-v0.12.cls 파일은 보통의 문서 작성법과는 달리 chapter, section, subsection, subsubsection 이 표 \ref{correlation}와 같이 대응된다. 이유는 알수 없으나 설정이 이렇게 되어 있어서 섣불리 바꾸지를 못하고 있다.
 
 2015년 11월 현재 gshs-report.cls 에서는 이러한 체계를 사용하고 있으나 휴먼테크 논문대회용 클래스들인 fullpaper\_hutech.cls 와 abstract\_hutech.cls 파일들은 보통 문서의 체계를 사용하고 있으니, 문서를 옮길 때 일괄적으로 바꿔줘야 한다. 메모장에 tex 문서 전체를 붙여넣은 다음 Ctrl+H를 사용하면 편리하다.
 
