@@ -1,6 +1,7 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % % % LaTeX document class for the letter-formatted Human Tech paper % % %
-% % % Last edition 2015.10.30 by Chinook Mok % % % % % % % % % % % % % % %
+% % % First edition 2015.10.30 by Chinook Mok % % % % % % % % % % % % % % %
+% % % Modified edition 2015.11.28 by Seungwon Park % % % % % % % % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \ProvidesClass{fullpaper_hutech_v1.02}
 \LoadClass[pdftex, a4size, twoside, 10pt, twocolumn]{article}
