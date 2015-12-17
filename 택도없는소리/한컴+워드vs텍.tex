@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[left=25mm,right=25mm,top=30mm,bottom=30mm]{geometry}
+\usepackage{amsmath} % math
+\usepackage{amssymb} % math
+\usepackage{graphicx} % to use \includegraphics{}
+\usepackage{diagbox} % to make tables
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{kotex}
+\usepackage{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage[per-mode=symbol]{siunitx}
+\sisetup{inter-unit-product =$\cdot$} % http://tex.stackexchange.com/questions/59032/how-to-format-si-units
+%\graphicspath{{images/}}
+\begin{document}
+	\begin{center}
+		\Large 일반 워드프로세서\footnote{WYSIWYG(What You See Is What You Get)}와 \LaTeX correlation chart - 표, 그림 제외
+	\end{center}
+	\begin{flushright}
+		by 14041 박승원 \\
+		\today
+	\end{flushright}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|l|}
+		\hline
+		영어 & 영어 \\
+		\hline
+		한글 & \verb+\+usepackage[hangul]\{kotex\} \\
+		\hline
+		숫자 & 숫자 \\
+		\hline
+		italic & \verb+\+textit\{...\} 또는 \{\verb+\+it ... \} \\
+		\hline
+		bold & \verb+\+textbf\{...\} 또는 \{\verb+\+bf ...\} \\
+		\hline
+		취소선 & \verb+\+sout\{...\} \\
+		\hline
+		밑줄 & \verb+\+underline\{...\} \\
+		\hline
+		엔터 & 두번엔터 혹은 \verb+\+\verb+\+ 혹은 \verb+\+newline \\
+		\hline
+		따옴표 & `(키보드에서 Esc 밑에 있음), ' \\
+		\hline
+		\%, \&, \_, \{, \} & 각각 \verb+\+\%, \verb+\+\&, \verb+\+\_, \verb+\+\{, \verb+\+\} \\
+		\hline
+		\~{} & 쓰지 말자. \\
+		\hline
+		좌측/우측정렬 & \verb+\+begin\{flushleft\} ... \verb+\+end\{flushleft\} 또는 \{\verb+\+flushleft ...\}. 우측의 경우 flushright \\
+		\hline
+		중앙정렬 & \verb+\+begin\{center\} ... \verb+\+end\{center\} \\
+		\hline
+		폰트크기 &  \\
+		\hline
+		폰트 & (고급) \\
+		\hline
+		폰트 색 & \verb+\+usepackage\{color\} \\
+		\hline
+		각주 & \verb+\+footnote\{...\} \\
+		\hline
+		용지크기 & a4paper 등등 \\
+		\hline
+		편집용지 & (고급) \\
+		\hline
+		머리말/꼬리말 & \verb+\+usepackage\{fancyhdr\} \\
+		\hline
+		페이지나눔 & ... \\
+		\hline
+		줄간격조정 & ... \\
+		\hline
+		들여쓰기 조정 & \verb+\+usepackage\{indentfirst\} 등 \\
+		\hline
+	\end{tabular}
+	\caption{asdf}
+	\label{asdf}
+\end{table}
+{\tiny \verb+\+tiny} {\scriptsize \verb+\+scriptsize} {\footnotesize \verb+\+footnotesize} {\small \verb+\+small} {\normalsize \verb+\+normalsize} {\large \verb+\+large} {\Large \verb+\+Large} {\LARGE \verb+\+LARGE} {\huge \verb+\+huge} {\Huge \verb+\+Huge}
+\end{document}
