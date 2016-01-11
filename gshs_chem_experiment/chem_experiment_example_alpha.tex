@@ -1,21 +1,44 @@
-%%아직 개발중인 버전입니다.
+%%아직 개발중인 판본이나 제목 부분을 제외하면 거의 마무리 단계이므로,
+%%현 판본으로 보고서를 작성하셔도 좋습니다.
 
 % !TeX spellcheck = en_GB
 \documentclass[a4paper,10pt]{article}
+%화실 보고서는 비교적 짧은 분량이므로 article을 사용.
+%한규일 선생님 기준으로, 선생님은 A4에 2면을 인쇄하시므로 a4 단면 옵션으로 지정.
 
 \usepackage[left=25mm,right=25mm,top=30mm,bottom=30mm]{geometry}
+%margin은 수정 가능.
+
 \usepackage{chemstyle}
 \usepackage[version=4]{mhchem}
 \usepackage{tikz}
 \mhchemoptions{arrows=pgf}
+%화실 보고서이므로, 화학식 관련 기능을 쓰기 위한 패키지입니다.
+%mhcemoptions는 화살표 모양 때문에. 지워도 상관 없습니다.
+
 \usepackage[justification=centering]{caption}
+%캡션을 두 줄 이상 쓸 때도 가운데로 위치하도록.
+%화실 보고서에서 그림이나 표에 캡션 달 때 말이 길어지는 경우가 많습니다.
 
-%% 한글 사용
-\RequirePackage[nonfrench]{kotex}
+\RequirePackage[nonfrench,hangul]{kotex}
+\usepackage[ensec]{dhucs-sectsty}
+%nonfrench 옵션은 빼도 좋습니다.(문장 끝 여백을 늘려주는 옵션)
+%화실 보고서를 영어로 쓰려는 사람은 없겠지. 한글 사용 옵션입니다.
+%hangul 옵션을 쓰면 제 #절이 달리기 때문에 ensec 옵션 사용.
 
-%% 수학 패키지
 \RequirePackage{amsmath}
 \RequirePackage{graphicx,xcolor}
+\makeatletter
+\g@addto@macro\normalsize{%
+	\setlength\abovedisplayskip{0.25em}
+	\setlength\belowdisplayskip{0.25em}
+	\setlength\abovedisplayshortskip{0em}
+	\setlength\belowdisplayshortskip{0em}
+}
+\makeatother
+%수식을 사용하기 위한 옵션입니다.
+%display형 수식의 위아래 옵션이 분수식이 아닐 때는 너무 커,
+%위·아래 여백을 조정했습니다.
 
 %% 편집 용지 설정
 
@@ -24,83 +47,91 @@
 \usepackage{ulem}
 
 \usepackage{dcolumn}
+%소숫점 정렬을 위한 패키지입니다.
 
 \usepackage{siunitx}
 \sisetup{inter-unit-product = \ensuremath{ { } \cdot { } } }
 \DeclareSIUnit\atmosphere{atm}
+\DeclareSIUnit\Molar{\textsc{m}}
+\DeclareSIUnit\molar{\mole\per\litre}
+%단위 표시를 위한 패키지입니다.
+%단위와 단위 사이에 가운뎃점이 들어가도록 하였습니다.
+%atm, 몰 농도 등의 단위를 정의하였습니다.
 
-\usepackage[shortlabels]{enumitem}
-\setlist[enumerate, 1]{1)}
+%\usepackage[shortlabels]{enumitem}
+%\setlist[enumerate, 1]{1)}
+\usepackage{dhucs-enumitem}
+\setenumerate[1]{label={\onum*},noitemsep}
+\setenumerate[2]{label={\pnum*},nolistsep}
+%원 문자로 numerate를 표시하기 위한 옵션입니다.
+%원 문자는 15 개를 넘는 item을 표시하지 못합니다.
+%부득이하게 item의 개수가 15개가 넘어간다면
+%원 문자를 쓰지 말고 아래 세 줄을 비활성화시킨 뒤
+%위 두 줄을 활성화시켜 괄호 문자로 대체하여 쓰시기 바랍니다.
 
 \usepackage{hhline}
+%표에서 이중 선을 그을 때 쓰입니다.
+%본 양식에서는 사용하지 않았습니다.
 
-\renewcommand\figurename{그림}
-\renewcommand\tablename{표}
 \usepackage[labelsep=period]{caption}
+%캡션 숫자 뒤의 점을 온점으로 찍기 위한 옵션입니다. 지우시면 쌍점이 됩니다.
 
-%\def\@maketitle{%
-%	%\newpage
-%	%\null
-%	%\vskip 2em%
-%	\begin{center}%
-%		\let \footnote \thanks
-%		{\LARGE \@title \par}%
-%%		{\large
-%			\lineskip .5em%
-%			\begin{tabular}[t]{c}%
-%				\@author
-%			\end{tabular}\par}%
-%		\vskip 1em%
-%		%{\large \@date}%
-%	\end{center}%
-%	\par
-%	\vskip 1.5em}
-
+\usepackage{titling}
+\setlength{\droptitle}{-4em}
+%title 앞의 여백을 줄이기 위한 옵션입니다.
 
 \renewcommand\thesection{\Roman{section}.}
 \renewcommand\thesubsection{\arabic{section}.\arabic{subsection}.}
 \usepackage{chngcntr}
-\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
-
-\setlength{\abovedisplayskip}{5pt}
-\setlength{\belowdisplayskip}{50pt}
-\setlength{\abovedisplayshortskip}{2pt}
-\setlength{\belowdisplayshortskip}{2pt}
+\renewcommand\thesubsubsection{
+	\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.
+}
+%한규일 선생님 양식은 최상위 번호가 로마 숫자로 쓰여 있습니다.
+%하지만 아래 번호까지 로마 숫자로 부여할 필요가 없으므로,
+%section만 로마 숫자로, 나머지는 아라비아 숫자로 표기하기 위한 옵션입니다.
 
 \usepackage{etoolbox}
 \patchcmd{\thebibliography}{\section*}{\section}{}{}
-
-\renewcommand{\refname}{참고 문헌}
-
-
+%참고 문헌을 하나의 section으로 편입시키기 위한 옵션입니다.
 
 \makeatletter
-
-%\newcommand{\makemytitle}{
-%	\begin{center}
-%		{\LARGE \@title \par} \\
-%		제 \space\space 출 \space자 : \@author \\
-%		공동실험자 : \@coauthor
-%		
-%	\end{center}
-%}
+\renewcommand{\maketitle}{
+	\newpage
+	\begin{center}%
+		{\LARGE \@title \par}%
+		\vskip 1em%
+		{\large
+			실험 일자 : \@date
+			\vskip 0em%
+			\@author
+		}
+	\end{center}
+	}
 \makeatother
 
 
 \begin{document}
+	
 	\title{물의 증기압과 증발 엔탈피}	
-	\author{제출자 : 나\\공동실험자 : 너}
-	\date{\today}
+	\date{2016년 1월 11일}
+	\author{
+		제 출 자 : 14088 이주찬 \\
+		공동실험자 : 14088 이주찬, 14088 이주찬
+	}
+	
 	\maketitle
+	
 	\section{실험 개요}
 	
 	\subsection{실험 목적}
+	
 	\begin{itemize}
 		\item 온도에 따른 물의 증기압을 실험으로 측정한다.
 		\item 측정 결과를 이용하여 물의 증발 엔탈피를 구한다.
 	\end{itemize}
 	
 	\subsection{이론적 배경}
+	
 	\begin{itemize}
 		\item {\bf 증기압} \\*
 		증기가 고체 또는 액체와 동적 평형 상태에 있을 때 증기의 압력을 의미한다. 포화증기압, 증기 장력이라고도 한다. 증기압은 어떠한 액체의 증발속도와 관련이 있기 때문에, 실온 상태에서 증기압이 매우 높은 액체상태의 물질은 휘발성을 갖는 물질이라고 표현되기도 한다. 증기압은 같은 물질이라도 온도가 높아짐에 따라 더욱 커진다.
@@ -121,6 +152,7 @@
 				\ln \frac{P}{p^{\circ}} = -(\Delta H^{\circ}/RT) + \Delta S^{\circ}/R \ce{->} \ln \frac{P_{\mathrm{vap}}}{p^{\circ}} = -\frac{\Delta H_{\mathrm{vap}}}{RT} + C
 			\end{gather*}
 		\end{itemize}
+		
 		\item {\bf 유체 정지 압력} \\*
 		자유 수면 아래에 정지해 있는 작은 정육면체 모양의 물을 생각해 보면, 정육면체 위의 물의 무게는 정육면체의 압력에 의해 평형을 이루어야 한다. 무한히 작은 정육면체를 생각하면, 이 무게, 즉 유체 정지압력은 다음과 같이 표현될 수 있다.
 		\begin{gather*}
@@ -128,6 +160,7 @@
 		\end{gather*}
 		($P$ : 유체 정지 압력, $\rho$ : 물의 밀도, $g$ : 중력 가속도, $h$ : 정육면체에서 자유 수면까지의 높이) \\
 		일반적으로 유체의 밀도는 온도의 함수이고, 압축성 유체의 경우에는 압력의 함수가 된다.
+		
 	\end{itemize}
 	
 	\subsection{유의 사항}
@@ -171,13 +204,13 @@
 		\item 실험 데이터로 실험 보고서에 절대 온도에 따른 수면 눈금을 표로 작성한다.
 		\item \SI{5}{\degreeCelsius} 의 증기압은 무시하고, 측정한 실린더의 부피는 모두 공기로만 채워져 있다고 가정하여 각 온도에서의 공기압 $P_{\mathrm{air}}$를 구한다.
 		\begin{gather*}
-			P_{\mathrm{air}} = \frac{P_{\mathrm{air, \SI{5}{\degreeCelsius}}} \cdot V_{\mathrm{air, \SI{5}{\degreeCelsius}}}}{V_{\mathrm{air}}(T) \times \SI{278.15}{\kelvin}} \times T
+			P_{\mathrm{air}} = \frac{P_{\mathrm{air,~\SI{5}{\degreeCelsius}}} \cdot V_{\mathrm{air,~\SI{5}{\degreeCelsius}}}}{V_{\mathrm{air}}(T) \times \SI{278.15}{\kelvin}} \times T
 		\end{gather*}
 		\item 각 온도에서 얻어진 $P_{\mathrm{air}}$를 이용하여 분압 법칙으로부터 $P_{\mathrm{vap}}$를 구한다.
 		\begin{gather*}
 			P_{\mathrm{vap}} = P_{\mathrm{tot}} - P_{\mathrm{air}}
-			(P_{\mathrm{tot}} : \text{측정한 대기압})
 		\end{gather*}
+		($P_{\mathrm{tot}}$ : 측정한 대기압)
 		\item 각 온도에서의 $\ln P_{\mathrm{vap}}$를 구하고 $\ln P_{\mathrm{vap}}$ 대 $\frac{1}{T}$ 그래프를 그린다.
 	\end{enumerate}
 	\begin{figure}[ht]
@@ -194,7 +227,7 @@
 	\begin{itemize}
 		\item 대기압(\si{\kilo\pascal}) : 101.757
 	\end{itemize}
-	측정한 온도에 따른 눈금 실린더의 눈금, 그리고 실험 과정의 방법을 이용하여 계산한 증기압을 \cite{table_vap}에 나타내었다.
+	측정한 온도에 따른 눈금 실린더의 눈금, 그리고 실험 과정의 방법을 이용하여 계산한 증기압을 \ref{table_vap}에 나타내었다.
 	
 	\begin{table}[ht]
 		\centering
@@ -204,24 +237,24 @@
 			\multicolumn{1}{c}{눈금(\si{\milli\metre})} & %
 			\multicolumn{1}{c}{증기압(\si{\atmosphere})} \\
 			\hline \hline
-			80.0 & 10.00 & 0.4954 \\
-			75.0 & 8.22 & 0.394 \\
-			70.0 & 7.15 & 0.313 \\
-			65.0 & 6.41 & 0.244 \\
-			60.0 & 6.00 & 0.204 \\
-			55.0 & 5.61 & 0.161 \\
-			50.0 & 5.31 & 0.127 \\
-			20.0 & 4.31 & 0.0243 \\
-			15.0 & 4.21 & 0.0181 \\
-			10.0 & 4.12 & 0.0140 \\
-			5.0 & 3.99 & \approx 0 \\
+			80.0	& 10.00	& 0.4954	\\
+			75.0	& 8.22	& 0.394		\\
+			70.0	& 7.15	& 0.313		\\
+			65.0	& 6.41	& 0.244		\\
+			60.0	& 6.00	& 0.204		\\
+			55.0	& 5.61	& 0.161		\\
+			50.0	& 5.31	& 0.127		\\
+			20.0	& 4.31	& 0.0243	\\
+			15.0	& 4.21	& 0.0181	\\
+			10.0	& 4.12	& 0.0140	\\
+			5.0		& 3.99	& \approx 0	\\
 			\hline
 		\end{tabular}
 		\caption{온도에 따른 눈금 실린더의 눈금과 그를 통해 계산한 증기압 표}
 		\label{table_vap}
 	\end{table}
 	
-	절대 온도의 역수와 증기압의 자연로그 값을 이용하여 그린 그래프는  \ref{exp_graph}와 같다.
+	절대 온도의 역수와 증기압의 자연로그 값을 이용하여 그린 그래프는  \ref{exp_graph}\와 같다.
 	
 	\begin{figure}[ht]
 		\centering
@@ -242,24 +275,24 @@
 			\multicolumn{1}{c}{눈금(\si{\milli\metre})} & %
 			\multicolumn{1}{c}{증기압(\si{\atmosphere})} \\
 			\hline \hline
-			80.0 & 10.50 & 0.4878 \\ 
-			75.0 & 9.20 & 0.387 \\ 
-			70.0 & 8.05 & 0.307 \\ 
-			65.0 & 7.54 & 0.238 \\ 
-			60.0 & 7.09 & 0.199 \\ 
-			55.0 & 6.89 & 0.156 \\ 
-			50.0 & 6.94 & 0.121 \\ 
-			20.0 & 5.43 & 0.0193 \\ 
-			15.0 & 5.39 & 0.0131 \\ 
-			10.0 & 5.31 & 0.00914 \\ 
-			5.0 & 5.20 & \approx 0 \\ 
+			80.0	& 10.50	& 0.4878	\\ 
+			75.0	& 9.20	& 0.387		\\ 
+			70.0	& 8.05	& 0.307		\\ 
+			65.0	& 7.54	& 0.238		\\ 
+			60.0	& 7.09	& 0.199		\\ 
+			55.0	& 6.89	& 0.156		\\ 
+			50.0	& 6.94	& 0.121		\\ 
+			20.0	& 5.43	& 0.0193	\\ 
+			15.0	& 5.39	& 0.0131	\\ 
+			10.0	& 5.31	& 0.00914	\\ 
+			5.0		& 5.20	& \approx 0	\\ 
 			\hline
 		\end{tabular}
 		\caption{온도에 따른 수면과의 높이 차와 이로 보정한 증기압 표}
 		\label{table_vap_2}
 	\end{table}
 	
-	절대 온도의 역수와 보정한 증기압의 자연로그 값을 이용하여 그린 그래프는 \ref{exp_graph_2}과 같다.
+	절대 온도의 역수와 보정한 증기압의 자연로그 값을 이용하여 그린 그래프는 \ref{exp_graph_2}\과 같다.
 	
 	\begin{figure}[ht]
 		\centering
@@ -285,7 +318,7 @@
 		\item 공기는 이상 기체와 유사한 성질을 지닌다(이상 기체처럼 행동한다).
 		기본적인 이상 기체 상태 방정식 $PV=nRT$를 쓰기 위해서라도 이러한 가정을 하여야 하며, 이는 타당한 가정이라고 보아도 무방하다.
 		\item 증발 엔탈피와 증발 엔트로피는 온도에 따라서 변하지 않는다. \\
-		실제 물의 증발 엔탈피는 끓는점인 \SI{100}{\degreeCelsius}에서는 약 \SI{41}{\kilo\joule\per\mole}이지만 \SI{0}{\degreeCelsius}에서는 약 \SI{45}{\kilo\joule\per\mole}이다. \cite{vapor_1} 따라서 낮은 온도에서의 실험 자료는 그만큼 계산한 증발 엔탈피 값을 크게 할 것이다.
+		실제 물의 증발 엔탈피는 끓는점인 \SI{100}{\degreeCelsius}에서는 약 \SI{41}{\kilo\joule\per\mole}이지만 \SI{0}{\degreeCelsius}에서는 약 \SI{45}{\kilo\joule\per\mole}이다.\cite{vapor_1} 따라서 낮은 온도에서의 실험 자료는 그만큼 계산한 증발 엔탈피 값을 크게 할 것이다.
 		
 	\end{itemize}
 	
@@ -297,7 +330,7 @@
 	\end{itemize}
 	
 	\subsubsection{저온에서의 측정값}
-	실험을 진행할 때, 낮은 온도에서는 부피의 변화량도 적고, 이에 따라 측정도 그만큼 어려워지게 된다. \SI{0.1}{\milli\litre} 남짓 변하는 변화를 정확하게 관찰하지 못한다면 그만큼 실험 결과에는 큰 오차를 불러일으킬 것이다. 예를 들어, 이번 실험 데이터에서 \SI{10}{\degreeCelsius}의 부피를 \SI{4.12}{\milli\litre}가 아닌 \SI{4.13}{\milli\litre}로 측정했다면 추세선 그래프의 계수는 각각 -5086.9, -5668.3에서 -4984.2, -5504.0으로 변한다. 따라서 저온에서의 값을 신뢰하기에는 무리가 따르고, \SI{10}{\degreeCelsius}에서 \SI{20}{\degreeCelsius}까지의 값을 무시한 채로 온도의 역수와 보정한 증기압의 자연로그 값의 그래프를 다시 그린 그래프는 \ref{exp_graph_3}와 같다.
+	실험을 진행할 때, 낮은 온도에서는 부피의 변화량도 적고, 이에 따라 측정도 그만큼 어려워지게 된다. \SI{0.1}{\milli\litre} 남짓 변하는 변화를 정확하게 관찰하지 못한다면 그만큼 실험 결과에는 큰 오차를 불러일으킬 것이다. 예를 들어, 이번 실험 데이터에서 \SI{10}{\degreeCelsius}의 부피를 \SI{4.12}{\milli\litre}가 아닌 \SI{4.13}{\milli\litre}로 측정했다면 추세선 그래프의 계수는 각각 -5086.9, -5668.3에서 -4984.2, -5504.0으로 변한다. 따라서 저온에서의 값을 신뢰하기에는 무리가 따르고, \SI{10}{\degreeCelsius}에서 \SI{20}{\degreeCelsius}까지의 값을 무시한 채로 온도의 역수와 보정한 증기압의 자연로그 값의 그래프를 다시 그린 그래프는 \ref{exp_graph_3}\와 같다.
 	
 	\begin{figure}[ht]
 		\centering
