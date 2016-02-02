@@ -1,6 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%  LaTeX document class of the thesis of the Gyeonggi Science High School   %%%
 %%%  Last edition 2015.11.13 by Chinook Mok                                   %%%
+%%%  Continously begin modified by gshslatexintro after 2016.02.02.           %%%
+%%%  Check webpage http://gshslatexintro.github.io                            %%%
+%%%  Also refer to https://www.facebook.com/gshstexsociety                    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ProvidesClass{gshs_thesis}
@@ -10,6 +13,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[margin=10pt,font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
 \usepackage{fancyhdr}
 \usepackage[nottoc]{tocbibind}
 \usepackage{titlesec}
@@ -276,10 +280,8 @@
 %%% caption format %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\figurename}{Fig.}
-\captionsetup[figure]{labelsep=period, singlelinecheck=off, 
-aboveskip=0pt, belowskip=-10pt, margin=0pt}
+\captionsetup[figure]{labelsep=period, singlelinecheck=off, aboveskip=0pt, belowskip=-10pt, margin=0pt,subrefformat=parens}
 \captionsetup[table]{labelsep=period, singlelinecheck=off, aboveskip=-6pt, margin=0pt}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%  Summary format %%%
