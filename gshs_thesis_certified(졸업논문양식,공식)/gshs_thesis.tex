@@ -289,6 +289,48 @@ includegraphics다음의 [ ] 안에는 크기를 지정할 수 있는 옵션을 
 
 실험 결과를 충분한 텍스트 없이 그림만 나열하는 경우도 있다. 이 때는 그림들이 반드시 모두 들어가야 하는지 생각해본다. 각각의 그림들에 대해서 그림이 차지하는 공간 이상으로 글로 설명해야 할 내용이 있는지 생각해본다. 만약 여러 그림 중 하나만 대표가 선정되어 설명하게 된다면 나머지 그림들은 논문에서 불필요한 그림들이다. 그러나 모든 그림들을 종합하여 볼 필요가 있으며, 종합된 내용을 글로 설명해야 한다면 그림의 표현 방식이 잘못된 것이다. 이 때는 독자들에게 내용 전달에 있어서 효과적인 그림의 표현 방식이 어떤 것일지 고민을 해야 한다.
 
+추가 : subfigure를 쓰는 방법에 대해 알아보자.
+
+% example-image-a, example-image-b는 따로 이미지 파일이 존재하지 않아도 된다.
+% http://tex.stackexchange.com/questions/130505/referencing-to-subfigures-in-main-caption 여기에 나와있는 큰 "A", "B" 그림이다. 혹시 에러로 인해 보이지 않는다면 참고. 
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[t]{0.5\linewidth}
+		\centering\includegraphics[width=100pt]{example-image-a}
+		\caption{\label{subfig:fig1}}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\linewidth}
+		\centering\includegraphics[width=100pt]{example-image-b}
+		\caption{\label{subfig:fig2}}
+	\end{subfigure}
+	\caption{\subref{subfig:fig1} shows A and~\subref{subfig:fig2} shows B.}
+	\label{subfigure_example}
+\end{figure}
+
+동일한 맥락 상에서 그림이 여러 개일 경우 subfigure를 쓰게 된다. 위의 그림의 경우 `A' 라는 label 이 subfig:fig1, `B'라는 그림은 subfig:fig2, 전체 그림은 subfigure\_example 이다. 여기에서 \ref{subfig:fig1}, \subref{subfig:fig2}, \ref{subfigure_example} 등 여러 종류의 referencing을 하고 싶은데, 이는 Table \ref{table_subfigure_ref} 에 나타나 있다. 
+\begin{table}[h]
+	\caption{Subfigure에서 사용할 수 있는 여러 종류의 referencing.}
+	\label{table_subfigure_ref}
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			명령어 & 결과 \\
+			\hline
+			\textbackslash\{ref\}\{subfig:fig1\} & \ref{subfig:fig1} \\
+			\hline
+			\textbackslash\{subref\}\{subfig:fig1\} & \subref{subfig:fig1} \\
+			\hline
+			\textbackslash\{ref\}\{subfigure\_example\} & \ref{subfigure_example} \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+한 가지 주의해야 할 점은, \textbackslash\{\}subref\{\} 명령어는 여기에서는 (a) 와 같이 나타나지만, 기본 설정으로는 a 와 같이 나타난다는 점이다. gshs\_thesis.cls 를 사용하지 않는 다른 tex 문서에서 (a) 와 같이 나타내고 싶다면 다음과 같은 설정을 추가하면 된다.
+\begin{quote}
+	\textbackslash\{captionsetup\}\{subrefformat=parens\}
+\end{quote}
+
 \subsection{Tables}
 
 \LaTeX에서 표를 넣는 방법은 i)엑셀 등 외부 프로그램에서 작성된 표를 pdf 그림파일로 변환하여 그림처럼 includegraphics 명령어로 넣는 방법 (물론 이 경우 {\textbackslash}begin\{figure\} 대신 {\textbackslash}begin\{table\}를 사용해야 함), ii)\LaTeX에서 표를 직접 제작하는 방법의 두 가지가 있다. \LaTeX에서는 명령어에 의해 표의 구획과 정렬, 선의 종류를 표현하므로 초보자에게는 다소 어려운 작업이 될 수 있다. 아마도 \LaTeX를 사용함에 있어서 가장 불편한 점은 표 제작 작업일 것이다. 다행히 인터넷에 `latex', `table' 등의 조합으로 검색하면 마우스로 제작한 표를 \LaTeX로 변환해주는 웹사이트들을 찾을 수 있다.
@@ -311,7 +353,7 @@ Gravitational constant \& \$G\$ \& \$6.67{\textbackslash}times 10$\hat{\ }$\{-11
 {\textbackslash}end\{table\}
 \end{quote}
 Table \ref{table01}과 같은 표를 얻게 된다.
-\begin{table}[t]
+\begin{table}[h]
 \caption{Physical parameters.} \label{table01}
 \begin{center}
 \begin{tabular}{c|c|c}
