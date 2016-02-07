@@ -1,7 +1,7 @@
 % -*- TeX:UTF-8 -*-
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gshs-report-v0.13}%
+\ProvidesClass{gshs-report-v1.1}%
 %[2014/09/02 v0.1 Standard GSHS report document class, ko.TeX version] % initiated by 정민석(2014년도 경기과학고 수학과 전문교원)
 % [2015/11/22 v0.11 Standard GSHS report document class, ko.TeX version] % modified by 박승원(32nd, 14041, seungwonpark) 
 % 변경사항 : Figure를 Fig. 로 변경, References 를 '참고문헌'으로 변경, figure/table numbering 의 chapter 넘어갈때마다 문제생기는점 해결, SI 단위계 사용 가능하게 함
