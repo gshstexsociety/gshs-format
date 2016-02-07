@@ -15,6 +15,10 @@
 %% 그림과 표의 번호가 chapter를 넘어가도 초기화되지 않도록 설정. sample report 파일에 \counterwithout{figure}{chapter}가 포함됨
 %\usepackage{chngcntr} % figure numbering across chapters continously
 
+% 영어 Font : Times New Roman
+\usepackage[T1]{fontenc}   % To use Times New Roman
+\usepackage[utf8]{inputenc}% To use Times New Roman
+\usepackage{mathptmx}      % To use Times New Roman
 
 
 %% SI Unit 을 사용하기 위한 설정. \SI{1}{\meter\per\sec}는 m/s 와 같이 나옴.
