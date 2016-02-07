@@ -22,7 +22,7 @@
 	
 	\subsubsection{유리 기구의 눈금 읽는 방법}
 	유리 기구의 눈금이 새겨진 부분이 수직이 되도록 세운 뒤
-	눈금을 읽어야 하고,	액체를 넣은 뒤 $1\,\mbox{분}$ 이상 기다려서
+	눈금을 읽어야 하고, 액체를 넣은 뒤 \unit{1}{분} 이상 기다려서
 	유리 벽에 묻은 액체가 모두 흘러내린 뒤 눈금을 읽어야 한다.
 	눈금을 읽을 때는 눈높이를 액체의 메니스커스에 맞추고,
 	메니스커스의 밑바닥 부분에 해당하는 위치를 읽는다.
@@ -102,7 +102,8 @@
 	변하지 않을 때까지 기다린 후 계기판에 표시되는 모든 숫자를
 	유효숫자로 하여 기록하며 눈금이 있는 측정기구의 경우
 	가장 낮은 단위의 눈금을 10 등분하여 값을 읽고 기록한다.
-	\ref{fig:gradation}의 경우 21.7mL와 21.8mL 눈금 사이를
+	\ref{fig:gradation}의 경우 \SI{21.7}{\milli\litre}와
+	\SI{21.8}{\milli\litre} 눈금 사이를
 	10 등분 하여 \SI{0.01}{\milli\litre}까지 추정하여 기록한다.
 	\SI{0.001}{\milli\litre}까지 기록하려 하는 것은
 	잘못된 방법이다.
@@ -122,7 +123,7 @@
 		\item 0이 아닌 숫자는 모두 유효숫자이다.
 		\item 0이 아닌 숫자의 중간에 있는 0은 유효숫자이다.
 		\item 첫 번째 0이 아닌 숫자 앞의 0은 유효숫자가 아니다.\\
-		0은 유효숫자가 없다. 0.000이라도 유효숫자는 $0\,\mbox{개}$이다.
+		0은 유효숫자가 없다. 0.000이라도 유효숫자는 \unit{0}{개}이다.
 		\item 소숫점 아래 마지막 0이 아닌 숫자 뒤의 0은 유효숫자이다.
 		\item 자연수에서 마지막 0이 아닌 숫자 뒤의 0은 유효숫자인지
 		알 수 없다. 반올림한 경우 앞에서부터 반올림받은 자리까지가
@@ -190,13 +191,15 @@
 	
 	\subsubsection{표준 불확도(standard uncertainty)}
 	모든 기여 불확도는 표준 불확도로의 변환을 통해 같은 수준의 신뢰 수준으로
-	표현되어야 한다. 표준 불확도는 그 크기가 $\pm\sigma$($\sigma$ : 불확도)로
+	표현되어야 한다. 표준 불확도는 그 크기가 $\pm\sigma$($\sigma$ : 
+	불확도)로
 	생각될 수 있는 범위이다. 표준 불확도는 평균의 불확도를 말해 준다.
 	표준 불확도는 대개 $u$ 또는 $u(y)$($y$에 의한 표준 불확도)로 나타낸다.
 	
 	표준 불확도를 구하는 방법으로 Type A와 Type B가 있다.
 	Type A는 통계학을 이용하여 구하는 것이고,
-	Type B는 과거 측정값이나 알려진 정보 등 다른 정보를 이용하여 구하는 것이다.
+	Type B는 과거 측정값이나 알려진 정보 등 다른 정보를 이용하여 구하는 
+	것이다.
 	\cite{Stephanie_Bell}
 			
 	\paragraph{Type A 방법을 사용한 표준 불확도 계산}
@@ -216,7 +219,7 @@
 	
 	\paragraph{Type B 방법을 사용한 표준 불확도 계산}
 	정보가 더 부족한 경우, 불확정도의 상·하한값만을 알 수 있는 경우가 있다.
-	이 경우 자료가 균등 분포를 따른다고 가정하고,
+	자료가 균등 분포를 따른다고 가정할 수 있는 경우, 불확도는
 	식 \ref{eq:un2}에 의해 얻어진다.
 	\begin{gather}
 	\frac{a}{\sqrt{3}} \label{eq:un2}
@@ -258,9 +261,9 @@
 	이때 단위를 각각 붙이지 않고 묶어서 한 번에 표시한다.
 	
 	대푯값의 마지막 자리는 불확도의 자리에 맞추어 표현해야 한다.
-	예를 들어 대푯값이 81.3이고 불확정도가 3일 경우 표기는 $81.3\pm 3$이 아닌
-	$81\pm3$으로 표기하여야 하고, 불확정도가 0.03일 경우 $81.30\pm 0.03$으로
-	표기하여야 한다.
+	예를 들어 대푯값이 81.3이고 불확정도가 3일 경우 표기는 $81.3\pm 3$이 
+	아닌 $81\pm3$으로 표기하여야 하고, 불확정도가 0.03일 경우 $81.30\pm 
+	0.03$으로 표기하여야 한다.
 	\cite{Taylor_John2}
 	
 	\subsubsection{불확도의 연산}
@@ -273,38 +276,40 @@
 	\cite{Penn}
 	
 	\subsubsection{밀도}
-		서로 물체들의 질량과 부피 사이의 차이점을 비교하는 데
-		밀도(density, $D$)라는 단위를 사용한다.
-		즉 어떤 물체의 질량을 $M$, 부피를 $V$라고 하면 밀도 $D=M/V$가 된다.
-		거의 모든 물체는 가열하면 일반적으로 팽창하므로
-		밀도는 온도에 따라서 변하게 된다.
-		따라서 어떤 특정 온도에서 측정된 밀도는
-		그보다 높은 온도에서는 감소하게 되는데
-		그 이유는 질량에는 변화가 없지만 부피가 증가하기 때문이다.
-		그러므로 밀도에 대한 정확한 표시를 하기 위해서는
-		밀도 측정 시의 온도를 표시해 주어야 한다.
+	서로 물체들의 질량과 부피 사이의 차이점을 비교하는 데
+	밀도(density, $D$)라는 단위를 사용한다.
+	즉 어떤 물체의 질량을 $M$, 부피를 $V$라고 하면 밀도 $D=M/V$가 된다.
+	거의 모든 물체는 가열하면 일반적으로 팽창하므로
+	밀도는 온도에 따라서 변하게 된다.
+	따라서 어떤 특정 온도에서 측정된 밀도는
+	그보다 높은 온도에서는 감소하게 되는데
+	그 이유는 질량에는 변화가 없지만 부피가 증가하기 때문이다.
+	그러므로 밀도에 대한 정확한 표시를 하기 위해서는
+	밀도 측정 시의 온도를 표시해 주어야 한다.
 		
 	\subsubsection{무게와 질량}
-		\begin{itemize}
-			\item 무게 : 중력의 크기로 용수철 저울이나 앉은뱅이 저울로 측정
-			(단위 : \si{\newton}, \si{\kilo\gramforce})
-			\item 질량 : 물체의 고유한 양으로, 양팔 저울이나 윗 접시 저울로
-			측정 (단위 : \si{\gram}, \si{\kilo\gram})\\
-			질량의 기준은 킬로그램 원기이다.
-			\item 질량과 무게의 차이점 : 질량은 변하지 않지만
-			무게는 장소에 따라 달라진다.
-			같은 장소에서 무게는 질량에 비례한다. 
-		\end{itemize}
+	\begin{itemize}
+		\item 무게 : 중력의 크기로 용수철 저울이나 앉은뱅이 저울로 측정
+		(단위 : \si{\newton}, \si{\kilo\gramforce})
+		\item 질량 : 물체의 고유한 양으로, 양팔 저울이나
+		윗 접시 저울로 측정 (단위 : \si{\gram}, \si{\kilo\gram})\\
+		질량의 기준은 킬로그램 원기이다.
+		\item 질량과 무게의 차이점 : 질량은 변하지 않지만
+		무게는 장소에 따라 달라진다.
+		같은 장소에서 무게는 질량에 비례한다. 
+	\end{itemize}
 	
 	\subsection{유의 사항}
 	\begin{itemize}
 		\item 피펫에 용액을 채울 때는 공기가 빨려 들어가지 않도록
 		피펫 끝이 항상 액체 속에 잠겨 있도록 해야 하며,
 		필터 속으로 액체가 들어가는 일이 없도록 유의한다.
-		\item 피펫에 남은 액체가 없도록 마지막 남은 방울을 빼내어 오차를 줄인다.
+		\item 피펫에 남은 액체가 없도록 마지막 남은 방울을 빼내어 
+		오차를 줄인다.
 		\item 뷰렛의 끝에 공기 방울이 남아있으면
 		콕을 빨리 열어 공기를 빼낸 후 사용한다.
-		\item 뷰렛을 읽을 때는 첫 눈금과 나중 눈금의 차이를 통해 읽도록 한다.
+		\item 뷰렛을 읽을 때는 첫 눈금과 나중 눈금의 차이를 통해
+		읽도록 한다.
 		\item 모든 눈금을 읽을 때는 눈높이로 맞추어 읽도록 한다.
 	\end{itemize}
 	
@@ -334,8 +339,8 @@
 	
 	\subsection{피펫을 이용한 액체의 이동} \label{subsec:second}
 	\begin{enumerate}
-		\item \SI{10}{\milli\litre} 눈금 피펫과 \SI{10}{\milli\litre} 홀 피펫에
-		기재되어 있는 사항을 모두 기록한다.
+		\item \SI{10}{\milli\litre} 눈금 피펫과 \SI{10}{\milli\litre} 
+		홀 피펫에 기재되어 있는 사항을 모두 기록한다.
 		\item 두 종류의 피펫 필러(고무 필러 및 다이얼식 필러)의 사용법을
 		숙지한 뒤 증류수를 피펫에 반 정도 채운 다음,
 		피펫을 옆으로 기울여서 돌려가면서 피펫의 안쪽 면을 헹구어 준 뒤
@@ -355,11 +360,12 @@
 	\subsection{눈금 실린더를 이용한 액체의 이동}
 	\begin{enumerate}
 		\item \SI{10}{\milli\litre} 눈금 실린더에 기재된 모든 사항을
-		자세히 기록한 뒤 눈금 실린더를 안쪽 벽면에 물방울이 생기지 않도록
-		깨끗이 씻고 증류수로 헹군다.
+		자세히 기록한 뒤 눈금 실린더를 안쪽 벽면에 물방울이 생기지 
+		않도록 깨끗이 씻고 증류수로 헹군다.
 		\item \SI{2.00}{\milli\litre}의 증류수를 채운 다음
 		이미 무게를 측정한 비커에 옮겨 무게를 기록한다.(5회 반복)
-		\item \ref{subsec:second}\과 같은 방법으로 옮긴 증류수 부피의 평균과 표준편차를 구한다.
+		\item \ref{subsec:second}\과 같은 방법으로 옮긴 증류수 부피의 
+		평균과 표준편차를 구한다.
 	\end{enumerate}
 	
 	\subsection{뷰렛을 이용한 액체의 이동}
@@ -369,15 +375,16 @@
 		깨끗하게 씻어서 헹군 뷰렛에 증류수를 채운다.
 		\item \SI{2.00}{\milli\litre}의 증류수를 빼내어
 		이미 무게를 측정한 비커에 옮겨 무게를 기록한다.(5회 반복)
-		\item \ref{subsec:second}\과 같은 방법으로 옮긴 증류수 부피의 평균과 표준편차를 구한다.
+		\item \ref{subsec:second}\과 같은 방법으로 옮긴 증류수 부피의 
+		평균과 표준편차를 구한다.
 	\end{enumerate}
 	
 	\subsection{동전의 밀도 구하기}
 	\begin{enumerate}
-		\item 눈금 실린더에 물을 넣고, 동전 $15\,\mbox{개}$를 넣어
+		\item 눈금 실린더에 물을 넣고, 동전 \unit{15}{개}를 넣어
 		증가한 물의 부피를 측정한다.
-		\item 동전 $15\,\mbox{개}$의 무게를 재서 15로 나누어
-		동전 $1\,\mbox{개}$의 무게를 측정한다.
+		\item 동전 \unit{15}{개}의 무게를 재서 15로 나누어
+		동전 \unit{1}{개}의 무게를 측정한다.
 		\item 두 값을 통해 밀도를 계산한다.
 	\end{enumerate}
 	
@@ -387,9 +394,9 @@
 		\item 물을 꽉 채운 상태에서 마이크로피펫을 이용해
 		\SI{1}{\milli\litre}만큼의 물을 밖으로 세 번 따라낸 뒤
 		뚜껑을 완전히 닫고 무게를 측정한다.
-		\item 두 무게 차이를 구한 뒤 \SI{3}{\milli\litre}만큼의 물의 무게에서
-		뺀 값을 \SI{3}{\milli\litre}만큼을 공기의 무게로 계산하여
-		공기의 밀도를 구한다.
+		\item 두 무게 차이를 구한 뒤 \SI{3}{\milli\litre}만큼의 물의 
+		무게에서 뺀 값을 \SI{3}{\milli\litre}만큼을 공기의 무게로 
+		계산하여 공기의 밀도를 구한다.
 	\end{enumerate}
 	
 	\section{실험 결과}
@@ -407,7 +414,8 @@
 	\begin{itemize}
 		\item 비커 무게 : \SI{38.749}{\gram}
 		\item 물의 온도 : \SI{15.9}{\degreeCelsius}
-		\item 물의 밀도 : \SI{0.998959}{\gram\per\milli\litre} \cite{Santa_Cruz}
+		\item 물의 밀도 : \SI{0.998959}{\gram\per\milli\litre} 
+		\cite{Santa_Cruz}
 	\end{itemize}
 
 	
@@ -439,13 +447,17 @@
 			평균 & \makecell{평균의\\표준편차} \\
 			\hline
 			눈금 피펫(\SI{10}{\milli\litre}) &
-			48.728 & 48.662 & 48.723 & 48.685 & 48.734 & 48.706 & 0.014 \\
+			48.728 & 48.662 & 48.723 & 48.685 &
+			48.734 & 48.706 & 0.014 \\
 			홀 피펫(\SI{10}{\milli\litre})&
-			48.640 & 48.626 & 48.662 & 48.665 & 48.646 & 48.648 & 0.007 \\
+			48.640 & 48.626 & 48.662 & 48.665 &
+			48.646 & 48.648 & 0.007 \\
 			눈금 피펫(\SI{2}{\milli\litre}) &
-			40.724 & 40.723 & 40.711 & 40.703 & 40.695 & 40.711 & 0.006 \\
+			40.724 & 40.723 & 40.711 & 40.703 &
+			40.695 & 40.711 & 0.006 \\
 			마이크로 피펫(\SI{2}{\milli\litre}) &
-			40.750 & 40.743 & 40.745 & 40.764 & 40.754 & 40.751 & 0.004 \\
+			40.750 & 40.743 & 40.745 & 40.764 &
+			40.754 & 40.751 & 0.004 \\
 			\thickhline
 		\end{tabular}
 		\caption{피펫을 이용해 물을 옮긴 뒤 측정한
@@ -467,7 +479,8 @@
 	상대 불확도는 $u(m) / m$이다.
 	
 	옮긴 물의 부피 $V = m / d$($d$ : 밀도)이다.
-	물의 밀도의 불확도는 매우 작아 무시할 수 있는 수준이므로 고려하지 않는다.
+	물의 밀도의 불확도는 매우 작아 무시할 수 있는 수준이므로
+	고려하지 않는다.
 	옮긴 물 부피의 상대 불확도는 옮긴 물 무게의 상대 불확도와 같다.
 	피펫의 종류에 따른 옮긴 물 부피의 오차의 절댓값과 상대 오차,
 	표준 절대 불확도, 상대 불확도는 표 \ref{tab:calc1}\과 같다.
@@ -508,7 +521,8 @@
 			평균 & \makecell{평균의\\표준편차} \\
 			\hline
 			눈금 실린더(\SI{2}{\milli\litre}) &
-			40.602 & 40.612 & 40.631 & 40.654 & 40.674 & 40.635 & 0.013 \\
+			40.602 & 40.612 & 40.631 & 40.654 &
+			40.674 & 40.635 & 0.013 \\
 			\thickhline
 		\end{tabular}
 		\caption{눈금 실린더를 이용해 물을 옮긴 뒤 측정한
@@ -557,7 +571,8 @@
 			평균 & \makecell{평균의\\표준편차} \\
 			\hline
 			뷰렛(\SI{2}{\milli\litre}) &
-			40.792 & 40.784 & 40.725 & 40.654 & 40.750 & 40.74 & 0.02 \\
+			40.792 & 40.784 & 40.725 & 40.654 &
+			40.750 & 40.74 & 0.02 \\
 			\thickhline
 		\end{tabular}
 		\caption{뷰렛을 이용해 물을 옮긴 뒤 측정한
@@ -601,7 +616,8 @@
 	바이알의 무게, 그리고 그를 이용하여 계산한 공기의 밀도는 다음과 같다.
 	\begin{itemize}
 		\item 물을 꽉 채운 바이알의 무게 : \SI{21.661}{\gram}
-		\item 물 \SI{3}{\milli\litre}를 뺀 바이알의 무게 :  \SI{18.626}{\gram}
+		\item 물 \SI{3}{\milli\litre}를 뺀 바이알의 무게 :
+		\SI{18.626}{\gram}
 		\item 공기의 밀도 : \SI{0.011}{\femto\gram\per\milli\litre}
 	\end{itemize}
 	
@@ -612,7 +628,8 @@
 	\begin{itemize}
 		\item 눈금 : 측정할 수 있는 무게의 정밀도이다.
 		이 실험에 사용한 저울은 \SI{0.001}{\gram}까지 측정이 가능하다.
-		\item 사용 범위 : 잴 수 있는 무게의 최소치와 최대치를 표시한 것이다.
+		\item 사용 범위 : 잴 수 있는 무게의 최소치와 최대치를
+		표시한 것이다.
 		이 실험에 사용한 저울은 \SIrange{0.04}{210}{\gram} 범위에서
 		무게 측정이 가능하였다.
 	\end{itemize}
@@ -627,7 +644,8 @@
 		빠져나온 용액의 부피를 말하기 때문에
 		자연 방출 시간만 지켜서 용액을 방출시키면 그 부피만큼 옮겨진다.
 		자연 방출 시간 후 피펫 끝 속에 남아있는 마지막 한 방울을
-		입으로 불어내지 않아도 된다. TC는 그 반대의 의미로 불어내야 한다.
+		입으로 불어내지 않아도 된다. TC는 그 반대의 의미로
+		불어내야 한다.
 		\item In \SI{20}{\degreeCelsius}, \SI{+-0.080}{\milli\litre} :
 		\SI{20}{\degreeCelsius}에서 가장 정밀하며,
 		그 때의 오차가 \SI{+-0.080}{\milli\litre}이라는 의미이다.
@@ -672,13 +690,13 @@
 	\subsection{동전의 밀도}
 	실험에 사용한 동전의 주 원료는 구리와 니켈이다.
 	동전의 정확한 밀도를 알 수 없어 구리와 니켈의 밀도
-	약 \SI{8.9}{\gram\per\centi\metre\cubic}를 실제 동전의 밀도로 가정한다.
+	약 \SI{8.9}{\gram\per\cubic\centi\metre}를 실제 동전의 밀도로 가정한다.
 	
 	실험에서 구한 밀도는 실제 동전의 밀도와 상당히 비슷하였다.
 	
 	\subsection{공기의 밀도}
 	ISA에 따르면 수면에서 \SI{15}{\degreeCelsius} 공기의 밀도는
-	약 \SI{1.225}{\milli\gram\per\centi\metre\cubic}이다.
+	약 \SI{1.225}{\milli\gram\per\cubic\centi\metre}이다.
 	실험을 통해 구한 값은 이보다 상당히 작다.
 	이는 실험 설계가 잘못되었음을 보여 주며,
 	실험을 통해 나온 양수 값은 실험 오차로 인해 나온 값일 것이다.
@@ -689,13 +707,13 @@
 		실험을 할 때에는 상황에 맞는 올바른 기구를 사용하도록 하고,
 		가급적 한 번에 많이 측정하여 측정 횟수를 줄이는 것이
 		오차와 불확도를 줄일 수 있을 것이다.
-		\item 실험에서 전자 저울의 최소 눈금에 따른 불확도는 최종 불확도에
-		영향을 미치지 않을 만큼 작았다. 추후 불확정도를 계산할 때에도
-		편차가 크지 않다면 고려하지 않아도 될 것 같다.
+		\item 실험에서 전자 저울의 최소 눈금에 따른 불확도는 최종 
+		불확도에 영향을 미치지 않을 만큼 작았다. 추후 불확정도를 계산할 
+		때에도 편차가 크지 않다면 고려하지 않아도 될 것 같다.
 		\item 대기압 하에서 공기는 공기만큼의 부력을 받기 때문에
 		대기압과 같은 압력의 공기를 저울로 측정하면 무게는 0이 된다.
-		따라서 속이 빈 고무공과 같은 물건에 주사기를 이용하여 대기압과 같은
-		공 내부에 일정 부피의 공기를 집어넣어 측정하는 방법이
+		따라서 속이 빈 고무공과 같은 물건에 주사기를 이용하여 대기압과 
+		같은 공 내부에 일정 부피의 공기를 집어넣어 측정하는 방법이
 		적절하다고 생각된다. \cite{kimandjang}
 	\end{itemize}
 	
@@ -704,7 +722,8 @@
 		``Stats Tutorial - Instrumental Analysis and Calibration'',
 		경기과학고등학교에서 2016년 1월 18일 검색,
 		웹 주소 :
-		http://www.chem.utoronto.ca/\allowbreak coursenotes/analsci/stats/DegFree.html
+		http://www.chem.utoronto.ca/\allowbreak
+		coursenotes/analsci/stats/DegFree.html
 		\bibitem{Stephanie_Bell} Stephanie Bell (1999),
 		``Measurement Good Practice Guide No. 11 (Issue 2)'',
 		경기과학고등학교에서 2016년 1월 18일 검색,
@@ -714,15 +733,17 @@
 		\bibitem{Taylor_John2} John R. Taylor,
 		An introduction to error analysis (2nd ed.), 1997, pp.14-16
 		\bibitem{Penn} Department of Physics \& Astronomy of
-		University of Pennsylvania, ``Averaging, Errors and Uncertainty'',
-		경기과학고등학교에서 2016년 1월 18일 검색,
-		웹 주소 :
-		http://virgo-physics.sas.upenn.edu/\allowbreak uglabs/lab\_manual/Error\_Analysis.pdf
-		\bibitem{Santa_Cruz} Department of Chemistry at the University of
-		California, Santa Cruz, ``Lab 1 - Density Determinations and Various Methods to Measure Volume'',
-		경기과학고등학교에서 2016년 1월 18일 검색,
-		웹 주소 :
-		http://www.webassign.net/labsgraceperiod/ucscgencheml1/lab\_1/images/figure6.png
+		University of Pennsylvania, ``Averaging, Errors and
+		Uncertainty'', 경기과학고등학교에서 2016년 1월 18일 검색,
+		웹 주소 : http://\allowbreak virgo-physics.sas.upenn.edu/\allowbreak
+		uglabs/\allowbreak lab\_manual/\allowbreak Error\_Analysis.pdf
+		\bibitem{Santa_Cruz} Department of Chemistry at the University 
+		of California, Santa Cruz, ``Lab 1 - Density Determinations and 
+		Various Methods to Measure Volume'', 경기과학고등학교에서 
+		2016년 1월 18일 검색, 웹 주소 :
+		http://\allowbreak www.webassign.net/\allowbreak
+		labsgraceperiod/\allowbreak ucscgencheml1/\allowbreak
+		lab\_1/\allowbreak images/\allowbreak figure6.png
 		\bibitem{kimandjang} 김재경, 장용성,
 		"공기질량 측정실험의 개선에 관한 연구",
 		과학수학교육연구, 제14권, pp.5-11, 1990
