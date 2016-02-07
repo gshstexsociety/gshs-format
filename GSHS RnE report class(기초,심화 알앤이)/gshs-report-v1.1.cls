@@ -1,17 +1,21 @@
 % -*- TeX:UTF-8 -*-
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gshs-report-v0.12}%
+\ProvidesClass{gshs-report-v0.13}%
 %[2014/09/02 v0.1 Standard GSHS report document class, ko.TeX version] % initiated by 정민석(2014년도 경기과학고 수학과 전문교원)
 % [2015/11/22 v0.11 Standard GSHS report document class, ko.TeX version] % modified by 박승원(32nd, 14041, seungwonpark) 
 % 변경사항 : Figure를 Fig. 로 변경, References 를 '참고문헌'으로 변경, figure/table numbering 의 chapter 넘어갈때마다 문제생기는점 해결, SI 단위계 사용 가능하게 함
-[2015/11/25 v0.12 Standard GSHS report document class, ko.TeX version] % modified by 이상헌(32nd, 14080, evenharder) 
+%[2015/11/25 v0.12 Standard GSHS report document class, ko.TeX version] % modified by 이상헌(32nd, 14080, evenharder) 
 % 변경사항 : 심화 R&E 보고서에 지도교수의 이름을 표지에 추가해주는 \professor 구문 추가 및 fifthe 관련 오타 수정
+%[2016/02/07 v0.13 Standard GSHS report document class, ko.TeX version] % modified by 박승원(32nd, 14041, seungwonpark)
+% 변경사항 : 
 
 % 인코딩 관련 주의사항 : 이 클래스에서 기본적으로 kotex을 포함하고 있기에 따로 포함할 필요는 없으나, inputenc 등의 추가적인 class 사용이나 TeXstudio의 'Insert encoding as TeX comment'는 삼가시기 바랍니다.
 
 %% 그림과 표의 번호가 chapter를 넘어가도 초기화되지 않도록 설정. sample report 파일에 \counterwithout{figure}{chapter}가 포함됨
-\usepackage{chngcntr} % figure numbering across chapters continously
+%\usepackage{chngcntr} % figure numbering across chapters continously
+
+
 
 %% SI Unit 을 사용하기 위한 설정. \SI{1}{\meter\per\sec}는 m/s 와 같이 나옴.
 \usepackage[per-mode=symbol]{siunitx}
@@ -31,15 +35,15 @@
 %\DeclareOption{intensice}  {\@isFinalfalse}
 
 %% leqno,fleqn,openbib 옵션은 그대로 report 클래스에 전달
-\DeclareOption{leqno}  {\PassOptionsToClass{leqno}  {report}}
-\DeclareOption{fleqn}  {\PassOptionsToClass{fleqn}  {report}}
-\DeclareOption{openbib}{\PassOptionsToClass{openbib}{report}}
+\DeclareOption{leqno}  {\PassOptionsToClass{leqno}  {article}}
+\DeclareOption{fleqn}  {\PassOptionsToClass{fleqn}  {article}}
+\DeclareOption{openbib}{\PassOptionsToClass{openbib}{article}}
 
 \ExecuteOptions{english,final}         % doctor,korean,final이 기본값
 \ProcessOptions
 
 %% 12pt,a4paper,onecolumn,oneside 옵션으로 report 클래스 불러오기
-\LoadClass[12pt, a4paper, onecolumn, oneside]{report}
+\LoadClass[12pt, a4paper, onecolumn, oneside,titlepage]{article}
 
 
 %%들여쓰기
@@ -56,6 +60,8 @@
 %수학 패키지
 \RequirePackage{amsmath}
 \RequirePackage{graphicx,xcolor}
+\usepackage{amssymb}
+\usepackage{amsthm}
 
 %% for compatability to HLaTeX
 \let\gt\sffamily
@@ -101,21 +107,6 @@
 %% 문서 정보 변수 정의
 %%
 
-%% @command title 논문 제목
-%% @options [default: (none)]
-%% - korean: 한글제목 | english: 영문제목
-%\renewcommand{\title}[2][korean] {%
-%    \ifthenelse{\equal{#1}{korean}}%
-%        {\newcommand{\@titleKor}{#2}}{}%
-%    \ifthenelse{\equal{#1}{english}}%
-%        {\newcommand{\@titleEng}{#2}}{}%
-%}
-%\@onlypreamble{\title}
-
-% @command author 저자 이름
-% @param family_name, given_name 성, 이름을 구분해서 입력
-% @options [default: (none)]
-% - korean: 한글이름 | chinese: 한문이름 | english: 영문이름
 \newcommand{\@firstAuthor} {}
 \newcommand{\@secondAuthor} {}
 \newcommand{\@thirdAuthor} {}
@@ -154,6 +145,8 @@
 	\newcommand{\@advisor}{#1}
 }
 \@onlypreamble{\advisor}
+
+% @command professor 지도교수 이름
 
 \newcommand{\professor}[1]{
 	\newcommand{\@professor}{#1}
@@ -220,14 +213,13 @@
 	\newpage
 }
 
-
 %한글초록
 \newenvironment{abstractkor}{%
-	%    \pagenumbering{roman}                        % 로마자 페이지 시작
+	\pagenumbering{roman}                        % 로마자 페이지 시작
 	\thispagestyle{plain}%
-	\vspace*{2cm}
-	\begin{center} \Large \textbf{초~~~~~록} \end{center}      % 초록명 -> Abstract
-	\vspace*{4mm}
+	\vspace*{3cm}
+	\begin{center} \Large \textbf{초~~~~~록} \end{center}  % 초록명 -> Abstract
+	
 	\hspace*{5mm}
 	\if@PDFdoc\phantomsection\fi\addcontentsline{toc}{content}{초록}% 초록을 목차(TOC)에 삽입
 }
@@ -242,84 +234,13 @@
 \renewcommand{\listtablename}{%
 	%\if@isKorean 표 목 차    \else List of Tables  \fi}
 	\if@isKorean 표 목 차    \else 표 목 차  \fi}
-\renewcommand{\bibname}{%
+%\renewcommand{\bibname}{%
 	%\if@isKorean 참 고 문 헌 \else References      \fi}
-	\if@isKorean 참 고 문 헌 \else 참 고 문 헌      \fi}
+%	\if@isKorean 참 고 문 헌 \else 참 고 문 헌      \fi}
 
-%%
-%% \part 재정의 - 아예 쓰지 못하게 막아버림. 이 명령을 호출하면 에러 발생.
-%%
-\renewcommand\part{%
-	\secdef\@part\@spart}
-\def\@part[#1]#2{%
-	\ClassError{gshs}{The use of \protect\part\space is prohibited.
-		\MessageBreak Consider the use of \protect\chapter\space instead}{}
-}
-\def\@spart#1{%
-	\ClassError{gshs}{The use of \protect\part\space is prohibited.
-		\MessageBreak Consider the use of \protect\chapter\space instead}{}
-}
 
-%%
-%% \chapter 재정의 - report 클래스로부터 복사하여 일부 수정
-%%
-\renewcommand\chapter{%
-	\renewcommand{\thechapter}{\Roman{chapter}}%
-	\if@openright\cleardoublepage\else\clearpage\fi
-	%   \thispagestyle{plain}%
-	\global\@topnum\z@
-	\@afterindentfalse
-	%   \if@isKorean \parindent\z@ \else \fi % <-- 추가할지 여부 고민중
-	\secdef\@chapter\@schapter}
-\def\@chapter[#1]#2{%
-	\ifnum \c@secnumdepth >\m@ne
-	\refstepcounter{chapter}%
-	\typeout{\@chapapp\space\thechapter.}%
-	\addcontentsline{toc}{chapter}{%
-		\protect\numberline{\thechapter.}#1
-	}% <-- 목차에 나타나는 형식 - 변경사항
-	\else
-	\addcontentsline{toc}{chapter}{#1}%
-	\fi
-	\chaptermark{#1}%
-	%    \addtocontents{lof}{\protect\addvspace{10\p@}}%
-	%    \addtocontents{lot}{\protect\addvspace{10\p@}}%
-	\if@twocolumn
-	\@topnewpage[\@makechapterhead{#2}]%
-	\else
-	\@makechapterhead{#2}%
-	\@afterheading%
-	\fi
-}
-\def\@makechapterhead#1{% <-- 전체 변경
-	\vspace*{10\p@}
-	{\parindent\z@ \LARGE\bfseries
-		{\thechapter.\hspace{1.4ex}}
-		#1\par}
-	\vspace*{20\p@}
-}
-\def\@schapter#1{%
-	\if@twocolumn
-	\@topnewpage[\@makeschapterhead{#1}]%
-	\else
-	\@makeschapterhead{#1}%
-	\@afterheading
-	\fi}
-\def\@makeschapterhead#1{% <-- 전체 변경
-	\vspace*{10\p@}
-	{\centering \parindent\z@ \LARGE\bfseries #1\par}
-	\vspace*{20\p@}
-}
 
-%%
-%%
-%%
 
-\renewcommand \thesection {\@arabic{\c@chapter}.\@arabic\c@section}
-\renewcommand \thesubsection   {\thesection.\@arabic\c@subsection}
-\renewcommand \thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
-\renewcommand \theparagraph    {\thesubsubsection.\@arabic\c@paragraph}
-\renewcommand \thesubparagraph {\theparagraph.\@arabic\c@subparagraph}
 \renewcommand \thefigure {\@arabic\c@figure}
 \renewcommand \thetable {\@arabic\c@table}
 %\def\fnum@table{\thetable}
@@ -330,95 +251,17 @@
 %\def\fnum@figure{\figurename\nobreakspace\thefigure}
 %\def\fnum@table{\tablename\nobreakspace\thetable}
 
-%%
-%% \tableofcontents 재정의 - report 클래스로부터 복사하여 일부 수정
-%%
-\renewcommand\tableofcontents{%
-	\thispagestyle{plain}
-	\if@twocolumn
-	\@restonecoltrue\onecolumn
-	\else
-	\@restonecolfalse
-	\fi
-	\chapter*{\contentsname
-		\@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
-	\pagenumbering{roman}                         % roman 페이지번호로 복원
-	\setcounter{page}{\value{pagemarker}}         % pagemarker에 저장된 값으로
-	\if@PDFdoc\phantomsection\fi\addcontentsline{toc}{content}{\contentsname} % 목차(TOC)에 추가
-	\@starttoc{toc}%
-	\if@restonecol\twocolumn\fi
-	\newpage \setcounter{pagemarker}{\value{page}}% pagemarker에 다시 저장
-	\pagenumbering{arabic}                        % arabic 페이지번호로 재시작
-}
+%% section 명령어 수정 - section 넘어갈 때마다 clearpage.. 드디어 해결..!
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
 
-%%
-%% \listoftables 재정의 - report 클래스로부터 복사하여 일부 수정
-%%
-\renewcommand\listoftables{%
-	\thispagestyle{plain}
-	\if@twocolumn
-	\@restonecoltrue\onecolumn
-	\else
-	\@restonecolfalse
-	\fi
-	\chapter*{\listtablename}%
-	\@mkboth{\MakeUppercase\listtablename}{\MakeUppercase\listtablename}%
-	\pagenumbering{roman}                         % roman 페이지번호로 복원
-	\setcounter{page}{\value{pagemarker}}         % pagemarker에 저장된 값으로
-	\if@PDFdoc\phantomsection\fi\addcontentsline{toc}{content}{\listtablename}% 목차(TOC)에 추가
-	\@starttoc{lot}%
-	\if@restonecol\twocolumn\fi
-	\newpage \setcounter{pagemarker}{\value{page}}% pagemarker에 다시 저장
-	\pagenumbering{arabic}                        % arabic 페이지번호로 재시작
-}
 
-%%
-%% \listoffigures 재정의 - report 클래스로부터 복사하여 일부 수정
-%%
-\renewcommand\listoffigures{%
-	\thispagestyle{plain}
-	\if@twocolumn
-	\@restonecoltrue\onecolumn
-	\else
-	\@restonecolfalse
-	\fi
-	\chapter*{\listfigurename}%
-	\phantomsection 
-	\pagenumbering{roman}                         % roman 페이지번호로 복원
-	\setcounter{page}{\value{pagemarker}}         % pagemarker에 저장된 값으로
-	\addcontentsline{toc}{content}{\listfigurename}% 목차(TOC)에 추가
-	\@starttoc{lof}%
-	\if@restonecol\twocolumn\fi
-	
-	\newpage \setcounter{pagemarker}{\value{page}}% pagemarker에 다시 저장
-	\pagenumbering{arabic}                        % arabic 페이지번호로 재시작
-}
 
 %%
 %% 목차에 나오는 형식 - report 클래스로부터 복사하여 일부 수정
 %%
 
 \newcommand{\l@content}{\large\bf\@dottedtocline{1}{0em}{0em}}
-
-\renewcommand*\l@chapter[2]{%
-	\ifnum \c@tocdepth >\m@ne
-	\addpenalty{-\@highpenalty}%
-	\vskip 1.0em \@plus\p@
-	\if@isKorean                     % <-- 변경 부분
-	\setlength\@tempdima{5.0em} % korean  옵션일 때는 5.0em
-	\else
-	\setlength\@tempdima{1.5em} % english 옵션일 때는 1.5em
-	\fi
-	\begingroup
-	\parindent \z@ \rightskip \@pnumwidth
-	\parfillskip -\@pnumwidth
-	\leavevmode \large \sffamily \bfseries
-	\advance\leftskip\@tempdima
-	\hskip -\leftskip
-	#1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
-	\penalty\@highpenalty
-	\endgroup
-	\fi}
 
 
 \if@isKorean % 한글이면 각종 치수를 변경
@@ -429,52 +272,6 @@
 \renewcommand*\l@subparagraph{\@dottedtocline{5}{13.2em}{6em}}
 \else \fi     % 영문이면 가만히 내버려둠
 
-%%
-%% thebibliography 환경 재정의 - report 클래스로부터 복사하여 일부 수정
-%%
-\renewenvironment{thebibliography}[1]{%
-	\chapter{\bibname}%
-	\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
-	%    \if@PDFdoc\phantomsection\fi\addcontentsline{toc}{chapter}{\bibname}%
-	\list{\@biblabel{\@arabic\c@enumiv}}%
-	{\settowidth\labelwidth{\@biblabel{#1}}%
-		\leftmargin\labelwidth
-		\advance\leftmargin\labelsep
-		\@openbib@code
-		\usecounter{enumiv}%
-		\let\p@enumiv\@empty
-		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
-	\sloppy
-	\clubpenalty4000
-	\@clubpenalty \clubpenalty
-	\widowpenalty4000%
-	\sfcode`\.\@m%
-}{  \label{paperlastpagelabel}     % <-- 추가 부분: 마지막 페이지 위치 지정
-\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
-\endlist
-}
-
-\newenvironment{thebibliographykor}[1]{%
-	\chapter{참고문헌}%
-	\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
-	%    \if@PDFdoc\phantomsection\fi\addcontentsline{toc}{chapter}{\bibname}%
-	\list{\@biblabel{\@arabic\c@enumiv}}%
-	{\settowidth\labelwidth{\@biblabel{#1}}%
-		\leftmargin\labelwidth
-		\advance\leftmargin\labelsep
-		\@openbib@code
-		\usecounter{enumiv}%
-		\let\p@enumiv\@empty
-		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
-	\sloppy
-	\clubpenalty4000
-	\@clubpenalty \clubpenalty
-	\widowpenalty4000%
-	\sfcode`\.\@m%
-}{  \label{paperlastpagelabel}     % <-- 추가 부분: 마지막 페이지 위치 지정
-\def\@noitemerr{\@latex@warning{Empty `thebibliographykor' environment}}%
-\endlist
-}
 
 %%
 %% 한국식 날짜 표기 -> 영문식 날짜 표기

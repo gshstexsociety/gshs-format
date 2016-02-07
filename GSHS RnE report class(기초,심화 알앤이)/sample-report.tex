@@ -1,12 +1,12 @@
 % Initiated by 정민석(2014년도 경기과학고 수학과전문교원)
 % Copyright ⓒ 2015 목진욱(2015학년도 경기과학고 물리과전문교원), 박승원(32nd 학생, 14041), 이상헌(32nd 학생, 14080), Gyeonggi Science HighSchool for the Gifted. All rights reserved. 
 % Website : http://gshslatexintro.github.io  본 문서가 컴파일된 pdf를 이곳에서 미리 보실 수 있습니다.
-\documentclass{gshs-report-v0.12}
+\documentclass{gshs-report-v1.1}
 % 추가로 필요한 패키지가 있다면 주석을 풀고 적어넣으십시오,
 %\usepackage{...}
 
-\researchtype{심화}
-%\title{보고서 제목}
+%\researchtype{기초} 
+\researchtype{심화} % 심화 R&E의 경우 지도교사 외에도 지도교수를 같이 써야 하는데, 여기에서 `심화'로 지정하면 \professor 함수를 사용할 수 있습니다.
 \title{보고서 제목}
 % @note 표지에 출력되는 제목을 강제로 줄바꿈하려면 \linebreak 을 삽입.
 %       \\ 나 \newline 등을 사용하면 안됩니다.
@@ -29,14 +29,17 @@
 
 %\summitdate{년}{월}{일}
 % @param   year,month,day 연,월,일 순으로 입력
-\summitdate{2015}{11}{25}
+\summitdate{2016}{02}{07}
 
-% 그림과 표의 번호가 chapter를 넘어가도 초기화되지 않도록 설정. cls 파일에 이미 \usepackage{chngcntr}가 되어있음
-\counterwithout{figure}{chapter}
+\newtheorem{definition}{정의}
+
 
 % 아래의 함수를 사용하면 이미지 파일들을 같은 디렉토리 내에 images 라는 이름을 가진 폴더를 생성한 후, 그 폴더 안에 넣어 사용할 수 있습니다.
 % 사용하고자 한다면 주석을 푸십시오.
 %\graphicspath{{images/}}
+
+% 버전관리를 할 경우 images 폴더 내의 파일까지도 전부 복사해야 하는 불편함이 있습니다. 이 경우, v1.1, v1.2, v1.3, ... 폴더가 있는 디렉토리에 images 폴더를 만들고,(v1.1, v1.2 내부가 아닌) 다음 함수를 사용하면 됩니다.
+%\graphicspath{{../images/}}
 
 % 아래와 같은 command를 만들면 길이가 긴 용어를 간편하게 사용할 수 있습니다. 단, 이미 지정된 함수명들은 새로운 함수명으로 사용할 수 없습니다.
 \newcommand{\gshs}{Gyeonggi Science High School }
@@ -49,14 +52,14 @@
 \makecover
 
 %초록(영문)
-\begin{abstract}
-Once upon a time, \gshs said : `The first, and the best.'
+% 'abstract' 가 아닌 '초   록'을 사용해야 할 경우 abstract 가 아닌 abstractkor 환경을 사용하면 됩니다. (cls 파일에 정의되어 있음)
+\begin{abstractkor}
 
 \noindent{
-	초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
+	Once upon a time, \gshs said : `The first, and the best.' 초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
 }
 \LaTeX
-\end{abstract}
+\end{abstractkor}
 
 %한글초록을 추가하기 위해서는
 %위의 영문 초록을 comment-out 시키고
@@ -66,7 +69,7 @@ Once upon a time, \gshs said : `The first, and the best.'
 %이 부분은 한글 초록을 추가하는 부분입니다.
 %\end{abstractkor}
 
-\chapter{Introduction}
+\section{Introduction}
 
 서론은 연구를 진행하게 된 배경을 기술하는 곳으로 보통 다음과 같은 순서로 쓰는 편이다.
 \begin{itemize}
@@ -107,10 +110,10 @@ Once upon a time, \gshs said : `The first, and the best.'
 %-----------------------------------------------------
 % Next Section (e.g. Experiment, Linear theory, etc...) 
 %-----------------------------------------------------
-\chapter{Equations, Figures, and Tables}
+\section{Equations, Figures, and Tables}
 연구 본문은 하위 절(subsection, subsubsection, ...)등이 등장하는 경우가 있다. 이 때는 {\textbackslash}subsection\{section name\}, {\textbackslash}subsubsection\{subsubsection name\}을 사용하여 하위 절을 구성하면 된다. 여기서는 수식 작성법, 그림 넣는 법, 표 만드는 법에 대해 살펴본다.
 
-\section{Equations}
+\subsection{Equations}
 
 먼저 문장 속에서 수식을 사용하는 경우에는 \$ (수식) \$과 같이 처리하면 된다. 다음과 같이 작성한 후 컴파일을 하면
 \begin{quote}
@@ -187,7 +190,7 @@ align 명령어는 각 줄마다 수식 번호가 작성 가능하다. 그래서
 \TeX 에서 입력되는 수식은 기호와 명령어의 명칭 및 사용법을 알아야 작성할 수 있다. 사용법이 잘 정리된 문서들을 인터넷에서 쉽게 구할 수 있으므로 스스로 해결할 수 있을 것으로 생각된다.
 
 
-\section{Figures}
+\subsection{Figures}
 논문에 들어가는 그림은 크게 사진과 그래프로 나눌 수 있다. 먼저 사진파일(확장자 jpg, png)을 넣는 방법은 다음과 같다.
 \begin{quote}
 	{\textbackslash}begin\{figure\}[t]\\
@@ -225,7 +228,7 @@ includegraphics다음의 [ ] 안에는 크기를 지정할 수 있는 옵션을 
 
 실험 결과를 충분한 텍스트 없이 그림만 나열하는 경우도 있다. 이 때는 그림들이 반드시 모두 들어가야 하는지 생각해본다. 각각의 그림들에 대해서 그림이 차지하는 공간 이상으로 글로 설명해야 할 내용이 있는지 생각해본다. 만약 여러 그림 중 하나만 대표가 선정되어 설명하게 된다면 나머지 그림들은 논문에서 불필요한 그림들이다. 그러나 모든 그림들을 종합하여 볼 필요가 있으며, 종합된 내용을 글로 설명해야 한다면 그림의 표현 방식이 잘못된 것이다. 이 때는 독자들에게 내용 전달에 있어서 효과적인 그림의 표현 방식이 어떤 것일지 고민을 해야 한다.
 
-\section{Tables}
+\subsection{Tables}
 
 \LaTeX 에서 표를 넣는 방법은 i)엑셀 등 외부 프로그램에서 작성된 표를 pdf 그림파일로 변환하여 그림처럼 includegraphics 명령어로 넣는 방법 (물론 이 경우 {\textbackslash}begin\{figure\} 대신 {\textbackslash}begin\{table\}를 사용해야 함), ii)\LaTeX 에서 표를 직접 제작하는 방법의 두 가지가 있다. \LaTeX 에서는 명령어에 의해 표의 구획과 정렬, 선의 종류를 표현하므로 초보자에게는 다소 어려운 작업이 될 수 있다. 아마도 \LaTeX 를 사용함에 있어서 가장 불편한 점은 표 제작 작업일 것이다. 다행히 인터넷에 `latex', `table' 등의 조합으로 검색하면 마우스로 제작한 표를 \LaTeX 로 변환해주는 웹사이트들을 찾을 수 있다.
 
@@ -265,19 +268,20 @@ Table \ref{table01}과 같은 표를 얻게 된다.
 % Conclusion
 %-----------------------------------------------------
 
-\chapter{결론}
+\section{결론}
 글이라는 것은 개인의 개성이 담겨 있기 때문에 모든 사람들이 동일한 방식으로 표현하는 것은 아니다. 그러나 고대로부터 개인의 연구 내용을 글로써 타인에게 전달할 때, 효율적인 방법이라고 공감대를 형성하며 다듬어져 온 것이 지금의 논문 형태이다. 그러므로 처음 논문을 작성하는 학생들은 이 문서에서 지시하는 논문 작성 방식을 따르는 것을 권한다. 하지만 여기서는 다양한 논문들에 대해 일일이 사례를 들어 올바른 논문 작성법을 설명하기에는 한계가 있기에 간략하게만 소개를 했다. 여기서 설명되지 않은 부분들은 다른 사람들의 논문을 참고하자. 이미 서론을 작성하면서 많은 선행 연구 논문들을 읽어 봤을 것이다. 그 논문들에서는 데이터를 어떤 방식으로 표현하는지, 서론은 어떤 흐름으로 구성하는지 등을 살펴보자. 논문을 잘 쓰는 비결의 첫 번째는 논문을 많이 읽어 보는 것이다.
 
 
-\chapter{이 문서에서의 \textbackslash chapter command}
-\section{이 문서에서의 \textbackslash section command}
-\subsection{이 문서에서의 \textbackslash subsection command}
-\subsubsection{이 문서에서의 \textbackslash subsubsection command}
-이 gshs-report.cls 파일 혹은 gshs-report-v0.12.cls 파일은 보통의 문서 작성법과는 달리 chapter, section, subsection, subsubsection 이 표 \ref{correlation}와 같이 대응된다. 이유는 알수 없으나 설정이 이렇게 되어 있어서 섣불리 바꾸지를 못하고 있다.
 
-2015년 11월 현재 gshs-report.cls 에서는 이러한 체계를 사용하고 있으나 휴먼테크 논문대회용 클래스들인 fullpaper\_hutech.cls 와 abstract\_hutech.cls 파일들은 보통 문서의 체계를 사용하고 있으니, 문서를 옮길 때 일괄적으로 바꿔줘야 한다. 메모장에 tex 문서 전체를 붙여넣은 다음 Ctrl+H를 사용하면 편리하다.
+
+\section{여담}
+(당신이 v1.1 이상의 gshs-report.cls 를 사용하고 있다면 이 글을 읽을 필요는 없다.)
+
+보통 우리가 tex으로 보고서를 사용할 때에는 (경기과학고 텍사용자 협회 내에서는) section-subsection-subsubsection 체제를 사용하며, 책(book 클래스 사용)을 집필하는 것이 아니라면 chapter 를 쓸 일이 없다. 이것은 보통 우리가 report 클래스를 사용하기 때문일 것이다. 그에 반해, v0.12 이전의 gshs-report.cls 에서는 표 \ref{correlation}와 같이 한 칸씩 앞당겨 사용하도록 설정되어 있어 여러 문제점들을 불러왔다.
 
 \begin{table}[h]
+	\caption{보통의 tex 문서 명령어와 gshs-report.cls을 사용하는 문서의 명령어 대응관계.}
+	\label{correlation}
 	\begin{center}
 		\begin{tabular}{|c|c|}
 			\hline
@@ -295,25 +299,59 @@ Table \ref{table01}과 같은 표를 얻게 된다.
 			\hline
 		\end{tabular}
 	\end{center}
-	\caption{보통의 tex 문서 명령어와 gshs-report.cls을 사용하는 문서의 명령어 대응관계.}
-	\label{correlation}
 \end{table}
+
+\subsection{이러한 설정이 갖는 문제점들}
+이로부터 발생하는 문제점들은 다음과 같다.
+\begin{itemize}
+\item 처음 \LaTeX 을 사용하는 사람의 경우 혼동을 유발함
+\item chapter가 새로 넘어갈 때마다 그림/표의 numbering이 초기화됨 \\
+이것은 \verb+\+usepackage\{chngcntr\}, \verb+\+counterwithout\{figure\}\{chapter\} 을 통해 임시로 해결되었었다.
+\item Theorem numbering이 이상하게 됨.(1.0.1,  1.0.2, ...) https://github.com/gshslatexintro/gshslatexintro/issues/7 참조.
+\item 보고서 tex 파일을 다른 곳에 사용해야 할 경우 호환성이 떨어진다. (ex. 휴먼테크논문대회 양식, 우수R\&E 공동발표회 양식) 즉, chapter를 section으로, section을 subsection으로, subsection을 subsubsection으로 각각 바꾸어 주어야 한다. 물론 이는 Ctrl+H를 통해 쉽게 할 수 있지만... 번거로우니까.
+\end{itemize}
+
+\subsection{왜 이런 설정을 하셨을까?}
+가능한 이유들은 다음과 같다.
+\begin{itemize}
+	\item 아마도 만드신 선생님께서 새로운 장(보통의 section)을 시작할 때마다 페이지 넘김을 하기 위해서 자동으로 페이지 넘김이 되는 chapter를 section에 대응시키고, 순차적으로 한칸씩 앞당겨 대응시킨 것 같다. 
+	\item 기존의 report 클래스가 chapter-section-subsection-subsubsection 체제를 사용하기 때문
+\end{itemize}
+
+\subsection{v1.1 이후로는 제대로 된다.}
+Theorem labeling이 이상하게 되던 문제:
+\begin{definition}
+	Lorem Ipsum
+\end{definition}
+해결된듯? Theorem 안써본지가 오래되어서... eveneharder님 한번 확인해주세요
+
+
+
 
 %%
 %% 영어 보고서 참고문헌 시작
 %% Refences
 %%
-\begin{thebibliography}{00}
+\begin{thebibliography}{99}
 
-\bibitem{Iijima91} 김익수, 원색 한국 어류도감, 아카데미, 1993, pp.33-65
-
-\bibitem{Dresselhaus96} IAL L. Pepper, Pollution Science, Academic Press, 1996, pp.145-188
-
-\bibitem{Saito98}이은웅, 김일중,``2상 8극형 HB형 리니어 펄스모터의 자속 분포와 정특성 해석'', 대한전기학회 논문지, 제42권 9호, pp.9-18, 1993.
-
-\bibitem{Makarova01} G. Taylor et al., ``Adaptive regulation of nonlinear systems with unmodeled dynamics'', IEEE Trans. Automat. Contr., Vol. 34, pp. 997-998, 1994.
-
-\bibitem{Palacio01} asdf
+\bibitem{Mok10}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Obliquely propagating electromagnetic drift ion cyclotron instability'', J. Geophys. Res., {\bf 115}, A04218 (2010).
+\bibitem{Schindler74} K. Schindler, ``A theory of the substorm mechanism'', J. Geophys. Res., {\bf 79}, 2803 (1974).
+\bibitem{Sitnov97} M. I. Stinov, H. V. Malova, and A. T. Y. Lui, ``Quasi-neutral sheet tearing instability induced by electron preferential acceleration from stochasticity'', J. Geophys. Res., {\bf 102}, 163 (1997).
+\bibitem{Zelenyi08} L. Zelenyi, A. Artemiev, H. Malova, and V. Popov, ``Marginal stability of thin current sheets in the Earth's magnetotail'', J. Atmos. Sol. Terr. Phys., {\bf 70}, 325 (2008).
+\bibitem{Cheng98} C. Z. Cheng and A. T. Y. Lui, ``Kinetic ballooning instability for substorm onset and current disruption observed by AMPTE/CCE'', Geophys. Res. Lett., {\bf 25}, 4091 (1998).
+\bibitem{Bhattacharjee98} A. Bhattacharjee, Z. W. Ma, and X. Wang, ``Dynamics of thin current sheets and their disruption by ballooning instabilities: A mechanism for magnetospheric substorms'', Phys. Plasmas, {\bf 5}, 2001 (1998).
+\bibitem{Dobias04} P. Dobias, I. O. Voronkov, and J. C. Samson, ``On linear plasma instabilities during the substorm expansive phase onset'', Phys. Plasmas, {\bf 11}, 2046 (2004).
+\bibitem{Zhu03} P. Zhu, A. Bhattacharjee, and Z. W. Ma, ``Hall magnetohydrodynamic ballooning instability in the magnetotail'', Phys. Plasmas, {\bf 10}, 249 (2003).
+\bibitem{Saito08} M. H. Saito, {\it et. al.}, ``Ballooning mode waves prior to substorm-associated dipolarizations: Geotail observations'', Geophys. Res. Lett., {\bf 35}, L07103 (2008).
+\bibitem{Friedrich01} E. Friedrich, J. C. Samson, and I. Voronkov, ``Ground-based observations and plasma instabilities in auroral substroms'', Phys. Plasmas, {\bf 8}, 1104 (2001).
+\bibitem{Shinohara98} I. Shinohara, {\it et. al.}, ``Low-frequency electromagnetic turbulence observed near the substorm onset site'', J. Geophys. Res., {\bf 103}, 20,365 (1998).
+\bibitem{Yoon02} P. H. Yoon, A. T. Y. Lui, and M. I. Sitnov, ``Generalized lower-hybrid drift instabilities in current-sheet equilibrium'', Phys. Plasmas, {\bf 9}, 1526 (2002).
+\bibitem{Mok06}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Global two-fluid stability of bifurcated current sheets'', J. Geophys. Res., {\bf 111}, A03203 (2006).
+\bibitem{Rostoker84} G. Rostoker and J. C. Samson, ``Can substorm expansive phase effects and low frequency Pc magnetic pulsations be attributed to the same source mechanism?'', Geophys. Res. Lett., {\bf 11}, 271 (1984).
+\bibitem{Dovias06} P. Dovias, J. A. Wanliss, and J. C. Samson, ``Nonlinear stability of the near-Earth plasma sheet during substorms: 9 February 1995 event'', Can. J. Phys., {\bf 84}, 1029 (2006).
+\bibitem{Yoon93} P. H. Yoon and A. T. Y. Lui, ``Nonlinear analysis of generalized cross-field current instability'', Phys. Fluids B, {\bf 5}, 836 (1993).
+\bibitem{Sadovskii01} A. M. Sadovskii and A. A. Galeev, ``Quasilinear theory of the ion Weibel instability in the Earth's magnetospheric tail'', Plasma Phys. Rep., {\bf 27}, 490 (2001).
+\bibitem{Yoon06} P. H. Yoon and A. T. Y. Lui, ``Quasi-linear theory of anomalous resistivity'', J. Geophys. Res., {\bf 111}, A02203 (2006).
 
 \bibitem{SW} asdf(2)
 \end{thebibliography}
@@ -322,7 +360,7 @@ Table \ref{table01}과 같은 표를 얻게 된다.
 %% 한글참고문헌 시작
 %% Refences
 %%
-%\begin{thebibliographykor}{00}
+%\begin{thebibliographykor}{99}
 %
 %\bibitem{Iijima91} 김익수, 원색 한국 어류도감, 아카데미, 1993, pp.33-65
 %
