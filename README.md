@@ -11,4 +11,6 @@ https://www.facebook.com/gshstexsociety/
 ## 저는 GitHub, FaceBook 모두 사용하지 않습니다.
 알림 받으러 매일 확인하러 여기 들어와야 하나요...
 
-gshstexsociety@gmail.com
+### gshstexsociety-bot
+gshstexsociety@gmail.com 으로 만들어진 이메일 알림용 계정입니다.
+중요한 commit을 한 경우 @gshstexsociety-bot 와 같이 mention 해주세요.
