@@ -9,5 +9,6 @@ http://gshslatexintro.github.io/ 를 참고바랍니다.
 ## Contact us on FaceBook!
 https://www.facebook.com/gshstexsociety/
 ## 저는 GitHub, FaceBook 모두 사용하지 않습니다.
-- 알림 받으러 매일 확인하러 여기 들어와야 하나요...
-음... 푸시 알리미를 만들든지 해야 할 것 같네요.
+알림 받으러 매일 확인하러 여기 들어와야 하나요...
+
+gshstexsociety@gmail.com
