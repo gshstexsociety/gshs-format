@@ -29,6 +29,10 @@
 \usepackage{array}
 \usepackage{setspace}
 
+\usepackage{enumitem} % itemize, enumerate 환경 여백 조절
+\setitemize{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
+\setenumerate{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
+
 \usepackage{etoolbox}
 \apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}}{}{}
 %\setstretch{1.5}
