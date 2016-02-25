@@ -6,6 +6,9 @@
 %%%  Also refer to https://www.facebook.com/gshstexsociety                    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% 2016.02.25 변경사항(by 14088 이주찬)
+%% 한글, 영어 날짜 양식을 하나로 통합
+
 \ProvidesClass{gshs_thesis}
 \LoadClass[pdftex, a4paper]{article}
 
@@ -52,8 +55,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\thepage}{\roman{page}}
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
-\def\degreedate#1{\gdef\@degreedate{#1}}
-\def\degreedatekor#1{\gdef\@degreedatekor{#1}}
+\def\degreedate#1#2#3{\gdef\@degreedate{#1. #2. #3}\gdef\@degreedatekor{#1년 #2월 #3일}}
 \def\studid#1{\gdef\@studid{#1}}
 \def\engname#1{\gdef\@engname{#1}}
 \def\korname#1{\gdef\@korname{#1}}
