@@ -268,7 +268,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Table of Contents layout %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\contentsname}{\begin{center}CONTENTS\end{center}}
+\renewcommand{\contentsname}{\begin{center}Contents\end{center}}
+%\renewcommand{\listfigurename}{\begin{center}List of Figures\end{center}}
+%\renewcommand{\listtablename}{\begin{center}List of Tables\end{center}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
