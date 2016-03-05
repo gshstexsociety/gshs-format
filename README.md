@@ -8,3 +8,5 @@ or Watch on GitHub
 or subscribe gshstexsociety@gmail.com
 
 **중요한 commit을 한 경우 `@gshstexsociety-bot` 와 같이 mention 해주세요.**
+
+Join Slack : https://gshstexsociety.slack.com
