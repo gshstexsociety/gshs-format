@@ -12,6 +12,7 @@
 thebibliography 모드 대신 이것을 사용하면 인용순 정렬, 스타일링 등이 자동으로 됩니다.
 
 아래와 같이 사용하고, bibfile.bib 에 bibtex 코드를 쌓아놓기만 하면 됩니다.
+
 `
 \bibliographystyle{ieeetr}
 \bibliography{bibfile}

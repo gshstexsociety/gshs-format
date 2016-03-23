@@ -1,4 +1,3 @@
-*.pdf
 *.aux
 *.lot
 *.lof
@@ -6,3 +5,4 @@
 *.txt
 *.bbl
 *.blg
+gshs_thesis_14XXX_main.pdf
