@@ -4,3 +4,5 @@
 *.lof
 *.toc
 *.txt
+*.bbl
+*.blg

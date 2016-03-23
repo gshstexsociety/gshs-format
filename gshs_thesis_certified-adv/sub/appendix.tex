@@ -1,0 +1,16 @@
+%\clearpage  %%% Appendix를 새 페이지에서 시작
+\appendix
+\renewcommand{\thesection}{\Alph{section}} %%% TOC에 appendix numbering 재설정
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\titleformat{\section}[hang] {\normalfont\LARGE\bfseries}{\Alph{section}.}{1em}{} %%% Appendix section title의 재설정
+\titleformat{\subsection}[hang] {\normalfont\Large\bfseries}{\Alph{section}.\arabic{subsection}.}{1em}{}
+\titleformat{\subsubsection}[hang] {\normalfont\bfseries}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}.}{1em}{}
+\renewcommand{\theequation}{\thesection.\arabic{equation}} %%% Appendix equation numbering 의 재설정
+\renewcommand{\thefigure}{\thesection-\arabic{figure}} %%% Appendix figure numbering 의 재설정
+\renewcommand{\thetable}{\thesection-\arabic{table}} %%% Appendix table numbering 의 재설정
+\setcounter{equation}{0} %%% Appendix equation starting number의 초기화
+\setcounter{figure}{0} %%% Appendix figure starting number의 초기화
+\setcounter{table}{0} %%% Appendix table starting number의 초기화
+\section{Appendix title}
+논문의 구조 상 본문에 넣지는 못했지만 논문에 수록하고 싶은 부록(appendix)이 있다면 여기에 작성한다. Appendix는 반드시 있어야 하는 건 아니다. 만약 본문에서 연구 내용을 충분히 작성했다면 이 Appendix 파트 전체를 제거한다. 

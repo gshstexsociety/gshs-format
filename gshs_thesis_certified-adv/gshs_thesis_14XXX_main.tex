@@ -1,0 +1,34 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%  LaTeX format of the thesis of the Gyeonggi Science High School   %%%
+%%%  Last edition 2015.11.13 by Chinook Mok                           %%%
+%%%  Continously being modified by gshslatexintro after 2016.02.02.   %%%
+%%%  Check webpage http://gshslatexintro.github.io                    %%%
+%%%  Also refer to https://www.facebook.com/gshstexsociety            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{sub/preamble} % usepackage 등의 명령어는 여기에.
+\begin{document}
+\include{sub/abstract} % Abstract
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{sub/introduction} % Introduction
+
+\include{sub/body1} % Next Section (e.g. Experiment, Linear theory, etc...) 
+% 이외에도 추가로 section마다 파일을 sub 폴더 안에 넣고 여기에서 include 해주면 됩니다.
+% 예시 : methodology.tex을 sub 폴더안에 저장, 이 자리에 \include{sub/methodology} 와 같이 작성
+%%%% 주의 %%%% 파일이 나뉠 때마다 자동으로 페이지넘김(\clearpage)가 됩니다. 
+%%%% 따라서 subsection을 나누는 용도로는 사용하지 마십시오.
+%\include{sub/experiment} 와 같이...
+
+
+\include{sub/conclusion} % Conclusion
+
+\include{sub/appendix} % Appendix가 없는 경우 주석처리하십시오
+
+\include{sub/bibliography} % 참고문헌
+
+\include{sub/summary} % Summary (영어로 작성한 학생은 이 부분을 주석 처리하십시오.)
+\include{sub/footer} % 감사의 글 & 연구활동
+\end{document} 
