@@ -1,1 +1,6 @@
-.pdf
+GSHS_chem_exp_example_note.pdf
+GSHS_chem_exp_example_beta.pdf
+*.aux
+*.txt
+*.gz
+*.toc
