@@ -10,7 +10,7 @@
 %% 한글, 영어 날짜 양식을 하나로 통합
 
 \ProvidesClass{gshs_thesis}
-\LoadClass[a4paper,11pt]{article}
+\LoadClass[11pt]{article}
 
 \usepackage{amssymb}
 \usepackage{amsmath}
