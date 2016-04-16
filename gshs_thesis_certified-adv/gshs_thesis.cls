@@ -12,6 +12,7 @@
 \ProvidesClass{gshs_thesis}
 \LoadClass[11pt]{article}
 
+\usepackage{geometry}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -41,8 +42,8 @@
 \setlength{\voffset}{0pt}
 \setlength{\paperwidth}{195mm}
 \setlength{\paperheight}{255mm}
-\setlength{\oddsidemargin}{10mm}
-\setlength{\evensidemargin}{10mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
 \setlength{\topmargin}{0pt}
 \setlength{\headheight}{0pt}
 \setlength{\headsep}{0pt}
