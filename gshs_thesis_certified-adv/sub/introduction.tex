@@ -9,7 +9,7 @@
 \item{한계를 극복하기 위한 본 연구의 목적을 밝힘.}
 \item{논문의 구성을 서술 (optional).}
 \end{itemize}
-서론은 과거부터 현재까지 해당 분야의 연구 진행을 기술하기 때문에 선행 연구 논문들을 레퍼런스로 도입하는 경우가 빈번하게 나타난다. \LaTeX에서 참고문헌을 표기하는 방법을 알아보자. 먼저 이 문서의 후반부에 위치한 레퍼런스 부분을 찾아간다. 이 문서를 컴파일했을 때 생성된 PDF 파일에는 {\bf References}라고 나와 있지만 여기서는 {\textbackslash}begin\{thebibliography\}\{99\}로 시작에서 {\textbackslash}end\{thebibliography\}로 종료되는 그 사이에 참고문헌을 작성하면 된다. 여기서 숫자 99는 참고문헌이 100개 넘는 논문을 작성하는 것이 아니라면 그대로 놔둔다. 참고문헌 작성 예시는 다음과 같다.
+서론은 과거부터 현재까지 해당 분야의 연구 진행을 기술하기 때문에 선행 연구 논문들을 레퍼런스로 도입하는 경우가 빈번하게 나타난다. \LaTeX 에서 참고문헌을 표기하는 방법을 알아보자. 먼저 이 문서의 후반부에 위치한 레퍼런스 부분을 찾아간다. 이 문서를 컴파일했을 때 생성된 PDF 파일에는 {\bf References}라고 나와 있지만 여기서는 {\textbackslash}begin\{thebibliography\}\{99\}로 시작에서 {\textbackslash}end\{thebibliography\}로 종료되는 그 사이에 참고문헌을 작성하면 된다. 여기서 숫자 99는 참고문헌이 100개 넘는 논문을 작성하는 것이 아니라면 그대로 놔둔다. 참고문헌 작성 예시는 다음과 같다.
 \begin{lstlisting}
 \bibitem{Mok06}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Global twofluid stability of bifurcated current sheets'', J. Goephys. Res., {\bf 111}, A03203
 (2006).
@@ -35,3 +35,39 @@ Various plasma instabilities have been proposed as playing important roles durin
 \end{itemize}
 전문 논문 저널에 수록된 논문들은 위 조건들을 만족하므로 되도록 논문을 참고문헌으로 삼도록 한다. 웹사이트는 위 조건들을 만족하지 못하므로 참고문헌으로 부적절하다. 또한 누구라도 책을 출판할 수 있으므로 전문 서적을 참고문헌으로 사용하는 경우에는 널리 받아들여지고 인정받는 서적만 사용해야 한다. 사실 전공 서적의 저자는 여러 연구 논문들을 참고로 하여 책을 집필하기 때문에 전공서적에도 참고 문헌(논문)이 명시되어 있다. 이 경우 전공 서적 대신에 책에서 지시하는 논문을 참고문헌으로 삼도록 한다.
 
+\paragraph{BibTeX 사용 방법}
+BibTeX 은 \TeX 에서 참고문헌을 쉽게 관리하기 위한 도구이다. 보통의 경우 thebibliography 환경을 사용하여 참고문헌을 넣는데, BibTeX을 사용할 경우 단순히 다음과 같은 두 줄의 코드로 사용할 수 있다. 
+\begin{lstlisting}
+\bibliographystyle{ieetr}
+\bibliography{bibfile}
+\end{lstlisting}
+위에서 `bibfile'은 단순히 참고문헌 데이터베이스가 기록되어 있는 BibTeX 파일의 이름이다. 또한, `ieetr'은 마치 MLA, APA style 처럼 BibTeX 에서 사용 가능한 bibliography 스타일 중 하나로, 가장 많이 쓰이는 스타일 중 하나이다. 인터넷 검색을 통해 TeXLive에서 기본적으로 제공되는 BibTeX style의 종류에 관해 알아볼 수 있다. 하지만 경기과학고 \TeX 사용자협회에서는 ieetr 스타일 대신 APA 스타일을 선호하였으나, APA 스타일을 완벽히 구현하는 알려진 스타일 파일이 없어서 직접 `mynewapa.bst' 파일을 제작하였다. 만약 당신도 이렇게 BibTeX 스타일을 직접 제작하고 싶다면 command line interface에서 `latex makebst' 를 치면 된다.
+
+BibTeX이 단순한 thebibliography 환경에 비해 갖는 장점들은 다음과 같다.
+\begin{itemize}
+	\item 참고문헌들이 본문 내의 인용 순으로 {\bf 자동 정렬}된다.
+	\item JabRef 와 같은 BibTeX 관리 프로그램을 이용하여 참고문헌들을 효율적으로 관리할 수 있다.
+\end{itemize}
+
+BibTeX 을 사용하기 위해서는 `bibfile.bib' 파일에 각각의 논문의 코드를 쌓아놓기만 하면 된다. 인용 방식은 평소와 같이 \textbackslash cite\{Mok10\} 과 같이 하면 되며, BibTeX 코드는 직접 작성할 수도 있으나 쉽게 얻는 방법은 다음과 같다.
+\begin{enumerate}
+	\item Google Scholar 에서 검색한 결과에서 `인용'을 클릭한다.
+	\item APA, MLA style 등이 나온다. 보통 여기에서 텍스트를 얻어오곤 했을 것이다.
+	\item 여기에서 BibTeX 코드를 얻고자 한다면, 하단의 `BibTeX' 을 클릭.
+	\item 코드가 나온다. Ctrl+A, Ctrl+C로 복사, bibfile에 붙여넣기.
+\end{enumerate}
+Google Scholar 외에도 doi2bib 와 같이 DOI 만 갖고 있으면 bibtex 파일을 제공하는 사이트도 있으나, Google Scholar 에 비해서는 적은 양의 정보를 제공하는 것으로 보인다. 다음은 동일한 논문에 대한 thebibliography에서 사용할 코드와 BibTeX 코드이다. 어떤 차이점을 갖는지 비교해 보라.
+\begin{quote}
+	\verb+\+bibitem\{Mok10\}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Obliquely propagating electromagnetic drift ion cyclotron instability'', J. Geophys. Res., \{\verb+\+bf 115\}, A04218 (2010).
+\end{quote}
+\begin{lstlisting}
+@article{Mok10,
+title={Obliquely propagating electromagnetic drift ion cyclotron instability},
+author={Mok, Chinook and Ryu, Chang-Mo and Yoon, PH and Lui, ATY},
+journal={Journal of Geophysical Research: Space Physics},
+volume={115},
+number={A4},
+year={2010},
+publisher={Wiley Online Library}
+}
+\end{lstlisting}
