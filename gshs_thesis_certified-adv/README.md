@@ -10,7 +10,6 @@ xelatex을 사용하여 글꼴을 바꾸었습니다.
 ## images 폴더 사용
 편리해진 이미지 관리
 `\graphicspath{{images/}}`
-(이미 preamble.tex 에 포함되어 있습니다.)
 
 ## bibtex 이용
 thebibliography 모드 대신 이것을 사용하면 인용순 정렬, 스타일링 등이 자동으로 됩니다.
