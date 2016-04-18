@@ -34,6 +34,10 @@
 \setitemize{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
 \setenumerate{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
 
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{0em}
+\bibliographystyle{mynewapa}
+
 \usepackage{etoolbox}
 \apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}}{}{}
 %\setstretch{1.5}
