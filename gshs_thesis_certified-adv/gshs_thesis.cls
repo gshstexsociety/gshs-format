@@ -10,8 +10,9 @@
 %% 한글, 영어 날짜 양식을 하나로 통합
 
 \ProvidesClass{gshs_thesis}
-\LoadClass[pdftex, a4paper]{article}
+\LoadClass[11pt]{article}
 
+\usepackage{geometry}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -33,23 +34,27 @@
 \setitemize{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
 \setenumerate{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
 
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{0em}
+\bibliographystyle{mynewapa}
+
 \usepackage{etoolbox}
 \apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}}{}{}
 %\setstretch{1.5}
 
 \setlength{\hoffset}{0pt}
 \setlength{\voffset}{0pt}
-\setlength{\paperwidth}{597pt}
-\setlength{\paperheight}{845pt}
-\setlength{\oddsidemargin}{42pt}
-\setlength{\evensidemargin}{42pt}
+\setlength{\paperwidth}{195mm}
+\setlength{\paperheight}{255mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
 \setlength{\topmargin}{0pt}
 \setlength{\headheight}{0pt}
-\setlength{\headsep}{25pt}
-\setlength{\textheight}{569pt}
-\setlength{\textwidth}{384pt}
-\setlength{\marginparsep}{10pt}
-\setlength{\marginparwidth}{35pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{200mm}
+\setlength{\textwidth}{145mm}
+\setlength{\marginparsep}{0mm}
+\setlength{\marginparwidth}{0mm}
 \setlength{\footskip}{56pt}
 
 
@@ -288,8 +293,14 @@
 %%% caption format %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\figurename}{Fig.}
-\captionsetup[figure]{labelsep=period, singlelinecheck=off, aboveskip=0pt, belowskip=-10pt, margin=0pt,subrefformat=parens}
-\captionsetup[table]{labelsep=period, singlelinecheck=off, aboveskip=-6pt, margin=0pt}
+\captionsetup[figure]{%
+	font=small,labelsep=period,singlelinecheck=off,aboveskip=0pt,% 
+	belowskip=0pt, margin=0pt,subrefformat=parens%
+}
+\captionsetup[table]{%
+	font=small,labelsep=period,singlelinecheck=off,aboveskip=0pt,% 
+	margin=0pt%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%  Summary format %%%
