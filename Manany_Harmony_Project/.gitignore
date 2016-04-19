@@ -1,7 +1,7 @@
 /*
 # exclude everything except the followings
 !/LICENSE.TXT
-!/README.TXT
+!/README.md
 !/UPDATE.TXT
 !/Manany_Harmony.tex
 !/res
