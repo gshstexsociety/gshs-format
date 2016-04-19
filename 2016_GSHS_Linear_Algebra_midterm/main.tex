@@ -1,0 +1,126 @@
+\documentclass[11pt]{report}
+\usepackage[left=25mm,right=25mm,top=30mm,bottom=30mm]{geometry}
+\usepackage{amsmath} % math
+\usepackage{amssymb} % math
+\usepackage{graphicx} % to use \includegraphics{}
+\usepackage{diagbox} % to make tables
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{kotex}
+\usepackage{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage[per-mode=symbol]{siunitx}
+\sisetup{inter-unit-product =$\cdot$}
+\usepackage{titlesec}
+\usepackage{amsthm}
+\usepackage{datetime}
+\usepackage{lipsum}
+\usepackage{thmtools}
+\title{Linear Algebra Thm Archive - for Mid-Term Exam}
+\author{by Gyeonggi Science High School for the Gifted `Linear Algebra' Participants \\
+    Main Author : 14129 황동욱 \\
+    Revised by : 14121 하석민 \\
+    \LaTeX ~ Technician : 14041 박승원
+} % 저자 추가하세요.
+\date{Last Compilation Time : \today ~ \currenttime}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% 수정하지 마시오. %%%%%
+% Theorem formatting
+\makeatletter
+\newtheoremstyle{GSHScustom} % name
+{\topsep}% Space above
+{\topsep}% Space below
+{}% Body font
+{}% Indent amount
+{\bfseries}% Theorem head font
+{}% Punctuation after theorem head
+{\newline} % Space after theorem head
+{\thmname{#1}\thmnumber{\@ifnotempty{#1}{ }\@upn{#2}}%
+	\thmnote{ {\bfseries {: #3}}}}% Theorem head spec
+\makeatother
+
+\makeatletter
+\newtheoremstyle{GSHSnonumber} % name
+{\topsep}% Space above
+{\topsep}% Space below
+{}% Body font
+{}% Indent amount
+{\bfseries}% Theorem head font
+{}% Punctuation after theorem head
+{\newline} % Space after theorem head
+{\thmname{#1}\thmnote{ {\bfseries {: #3}}}}% Theorem head spec
+\makeatother
+
+
+\theoremstyle{GSHScustom}
+\newtheorem{theorem}{Theorem}[chapter]
+
+\theoremstyle{GSHSnonumber}
+\newtheorem{plaintheorem}{Extra Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+
+%% for reducing space above title of chapter
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}
+{0pt}{-20pt}{40pt}
+%%%%%%%%% 여기까지 %%%%%%%%
+
+
+\renewcommand{\labelenumi}{\alph{enumi}.}
+
+\newcommand{\Rn}{$\mathbb{R}^{n}$} % 매번 치기 귀찮아서 아예 명령어를 만들어버림
+\newcommand{\Rm}{$\mathbb{R}^{m}$}
+\newcommand{\vn}{$ \textbf{v}_1, \textbf{v}_2, \cdots, \textbf{v}_n  $}
+\newcommand{\vm}{$ \textbf{v}_1, \textbf{v}_2, \cdots, \textbf{v}_m  $}
+\newcommand{\vk}{$ \textbf{v}_1, \textbf{v}_2, \cdots, \textbf{v}_k  $}
+\newcommand\inv[1]{#1\raisebox{1.15ex}{$\scriptscriptstyle-\!1$}}
+
+% augmented matrix 만드는 명령어 %
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+%\renewcommand{\listtheoremname}{List of Theorems}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+%목차는 딱히 필요없어 보임
+
+% 해당 단원의 tex 파일로 이동하여 편집하세요.
+% 참고 : chapter 뿐 아니라 section 마다 이렇게 문서를 나누어 편집하고 싶다는 욕심이 들지도 모르겠지만, 문서가 나뉠 때마다 clearpage 가 되기 때문에 비추천...
+
+\include{Preface}
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+\addcontentsline{toc}{chapter}{List of Theorems}
+
+%\begingroup
+%\let\clearpage\relax
+\listoftheorems[ignoreall,show={theorem}]
+\vspace{2cm}
+%\endgroup
+
+\addcontentsline{toc}{chapter}{List of Extra Theorems}
+\renewcommand{\listtheoremname}{List of Extra Theorems}
+
+\begingroup
+\let\clearpage\relax
+\listoftheorems[ignoreall,show={plaintheorem,lemma}]
+\endgroup
+
+
+\include{Ch1_vectors}
+\include{Ch2_systems_of_linear_equations}
+\include{Ch3_Matrices}
+%\include{Ch4_eigenvalues_and_eigenvectors}
+\appendix
+\include{Appendix}
+
+\end{document}

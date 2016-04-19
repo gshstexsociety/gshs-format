@@ -1,0 +1,27 @@
+\chapter{Cautions on Exam}
+\section{Notations}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Wrong & Right & Explanation \\
+		\hline
+		$ 2 \cdot 3 = 6 $ & $ 2 \times 3 = 6 $ & \multirow{2}{*}{$ \cdot $ for dot product is only valid for vectors.} \\
+		\cline{1-2}
+		$ 2 \cdot \textbf{v}$ & $2\textbf{v} $ & \\
+		\hline
+		$\begin{bmatrix} 1 & 3 & 4 \end{bmatrix}$ & $\begin{bmatrix} 1, & 3, & 4 \end{bmatrix}$ & When writing row vectors, commas are necessary. \\
+		\hline
+		
+	\end{tabular}
+\end{table}
+\section{Description}
+\begin{itemize}
+\item Free variables like $s$, $t$ and $u$ must be indicated that they are arbitrary real number. \textit{e.g.} $ s,t \in \mathbb{R} $
+%\item Whenever you use FTIM, always start by writing `according to fundamental theorem of invertible matrices' or `가역행렬의 기본정리에 의해'.
+\item When proving $ \text{span}\left(\textbf{v}_1,\textbf{v}_2,\textbf{v}_3\right) = \mathbb{R}^{3} $, you must prove each side, not only one.
+\item $ A=B $ means not only same entries, but also same size.
+%\item Do not write reduced row echelon form as `ref'. This abbreviation is not defined in our book.
+\item Write as `적어도 하나는 0이 아닌' instead of `모두 0은 아닌' or else.
+\item Abbreviation : only 4 things are allowed : `REF', `RREF', 'EMO', 'F.T.I.M.'. Each of them stands for (Reduced) Row Echelon Form, Elementary Matrix Operation, Fundamental Theorems of Invertible Matrices.
+\end{itemize}
