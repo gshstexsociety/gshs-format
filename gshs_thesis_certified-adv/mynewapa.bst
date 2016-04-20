@@ -346,25 +346,31 @@ FUNCTION {format.names}
     { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=
 
       nameptr #1 >
-        { namesleft #1 >
-              { ", " * t * }
-               { numnames #2 >
-                    { "," * }
-                    'skip$
-                  if$
-                  t "others" =
-                        { " et~al." * }
-%                       { " and " * t * }
-%                       { ", \& " * t * }
-                        { " \& " * t * }
-                      if$
-                }
-               if$
-             }
-            't
+      { namesleft #1 >
+        { nameptr #7 <
+          { ", " * t * }
+          { "" * }
+          if$
+        }
+        { numnames #2 >
+          { "," * }
+          'skip$
+          if$
+          numnames #7 >
+          { " . . ." *}
+          'skip$
+          if$
+          t "others" =
+          { " et~al." * }
+          { " \& " * t * }
+          if$           
+        }
         if$
-        nameptr #1 + 'nameptr :=          % nameptr += 1;
-        namesleft #1 - 'namesleft :=      % namesleft =- 1;
+      }
+      't
+      if$
+      nameptr #1 + 'nameptr :=          % nameptr += 1;
+      namesleft #1 - 'namesleft :=      % namesleft =- 1;
     }
   while$
 }
@@ -1354,6 +1360,8 @@ FUNCTION {author.editor.sort}
   if$
 }
 
+%여기서부터 치환
+
 INTEGERS { seq.num }
 
 FUNCTION {init.seq}
@@ -1377,6 +1385,8 @@ FUNCTION {presort}
   #1 entry.max$ substring$
   'sort.key$ :=
 }
+
+%여기까지 치환.
 
 ITERATE {presort}
 
