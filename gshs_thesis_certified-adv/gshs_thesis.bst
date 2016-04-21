@@ -1,51 +1,12 @@
-%$$$ newapa.bst $$$
-% BibTeX `newapa' style file for BibTeX version 0.99c, LaTeX version 2.09
-% Place it in a file called newapa.bst in the BibTeX search path.  
-%(Placing it in the same directory as the LaTeX document should also work.)
-% Support for named citations is provided by named.sty
-
-% This version was made by modifying the master file made by
-% Oren Patashnik (PATASHNIK@SCORE.STANFORD.EDU), and the 'named' BibTeX
-% style of Peter F. Patel-Schneider.
-
+% BibTeX bibliography style `gshs_thesis'
+% version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
 % Copyright (C) 1985, all rights reserved.
 % Copying of this file is authorized only if either
 % (1) you make absolutely no changes to your copy, including name, or
 % (2) if you do make changes, you name it something other than 'newapa.bst'.
-% There are undoubtably bugs in this style.  If you make bug fixes,
-% improvements, etc.  please let me know.  My e-mail address is:
-%    spencer@cgrg.ohio.state.edu or 71160.3141@compuserve.com
-%
-% This style was made from 'plain.bst', 'named.bst', and 'apalike.bst', 
-% with lots of tweaking to make it look like APA style, along with tips 
-% from Young Ryu and Brian Reiser's modifications of 'apalike.bst'.
-%
-%   Citation format: (author-last-name, year)
-%             (author-last-name and author-last-name, year)
-%             (author-last-name {\em et al.}, year)
-%             (author-last-name)
-%             (author-last-name and author-last-name)
-%             (author-last-name {\em et al.})
-%             (year)
-%
-%   Reference list ordering: alphabetical by author or whatever passes
-%    for author in the absence of one.
-%
-% This BibTeX style has support for abbreviated author lists and for
-%    year-only citations.  This is done by having the citations
-%    actually look like
-%
-%    \citeauthoryear{full-author-info}{abbrev-author-info}{year}
-%
-% The LaTeX style has to have the following (or similar)
-%
-%     \let\@internalcite\cite
-%     \def\fullcite{\def\citeauthoryear##1##2##3{##1, ##3}\@internalcite}
-%     \def\fullciteA{\def\citeauthoryear##1##2##3{##1}\@internalcite}
-%     \def\shortcite{\def\citeauthoryear##1##2##3{##2, ##3}\@internalcite}
-%     \def\shortciteA{\def\citeauthoryear##1##2##3{##2}\@internalcite}
-%     \def\citeyear{\def\citeauthoryear##1##2##3{##3}\@internalcite}
-%
+
+% This style was made from 'newapa.bst' with tweaking to make it be conformed 
+% to GSHS thesis style by 14088 Lee, Juchan.
 
 ENTRY
   { address
@@ -87,149 +48,149 @@ STRINGS { s t u }
 
 FUNCTION {output.nonnull}
 { 's :=
-  output.state mid.sentence =
-    { ", " * write$ }
-    { output.state after.block =
-    { add.period$ write$
-      newline$
-      "\newblock " write$
-    }
-    { output.state before.all =
-        'write$
-        { add.period$ " " * write$ }
-      if$
-    }
-      if$
-      mid.sentence 'output.state :=
-    }
-  if$
-  s
+output.state mid.sentence =
+{ ", " * write$ }
+{ output.state after.block =
+{ add.period$ write$
+newline$
+"\newblock " write$
+}
+{ output.state before.all =
+'write$
+{ add.period$ " " * write$ }
+if$
+}
+if$
+mid.sentence 'output.state :=
+}
+if$
+s
 }
 
 FUNCTION {special.output.nonnull}
 { 's :=
-  output.state mid.sentence =
-    { "  " * write$ }
-    { output.state after.block =
-        { ": " write$
-          newline$
-          "\newblock " write$
-        }
-        { output.state before.all =
-            'write$
-            { ": " * write$
-		    }
-          if$
-        }
-      if$
-      mid.sentence 'output.state :=
-    }
-  if$
-  s
+output.state mid.sentence =
+{ "  " * write$ }
+{ output.state after.block =
+{ ": " write$
+newline$
+"\newblock " write$
+}
+{ output.state before.all =
+'write$
+{ ": " * write$
+}
+if$
+}
+if$
+mid.sentence 'output.state :=
+}
+if$
+s
 }
 
 FUNCTION {output.nonnull.colon}
 { 's :=
-  output.state mid.sentence =
-    { ": " * write$ }
-    { output.state after.block =
-    { add.period$ write$
-      newline$
-      "\newblock " write$
-    }
-    { output.state before.all =
-        'write$
-        { add.period$ " " * write$ }
-      if$
-    }
-      if$
-      mid.sentence 'output.state :=
-    }
-  if$
-  s
+output.state mid.sentence =
+{ ": " * write$ }
+{ output.state after.block =
+{ add.period$ write$
+newline$
+"\newblock " write$
+}
+{ output.state before.all =
+'write$
+{ add.period$ " " * write$ }
+if$
+}
+if$
+mid.sentence 'output.state :=
+}
+if$
+s
 }
 
 FUNCTION {output.nonnull.space}
 { 's :=
-  output.state mid.sentence =
-    { "\ " * write$ }
-    { output.state after.block =
-    { add.period$ write$
-      newline$
-      "\newblock " write$
-    }
-    { output.state before.all =
-        'write$
-        { add.period$ " " * write$ }
-      if$
-    }
-      if$
-      mid.sentence 'output.state :=
-    }
-  if$
-  s
+output.state mid.sentence =
+{ "\ " * write$ }
+{ output.state after.block =
+{ add.period$ write$
+newline$
+"\newblock " write$
+}
+{ output.state before.all =
+'write$
+{ add.period$ " " * write$ }
+if$
+}
+if$
+mid.sentence 'output.state :=
+}
+if$
+s
 }
 
 FUNCTION {special.output}
 { duplicate$ empty$
-    'pop$
-    'special.output.nonnull
-  if$
+'pop$
+'special.output.nonnull
+if$
 }
 
 FUNCTION {output}
 { duplicate$ empty$
-    'pop$
-    'output.nonnull
-  if$
+'pop$
+'output.nonnull
+if$
 }
 
 FUNCTION {output.check}
 { 't :=
-  duplicate$ empty$
-    { pop$ "empty " t * " in " * cite$ * warning$ }
-    'output.nonnull
-  if$
+duplicate$ empty$
+{ pop$ "empty " t * " in " * cite$ * warning$ }
+'output.nonnull
+if$
 }
 
 FUNCTION {output.check.colon}
 { 't :=
-  duplicate$ empty$
-    { pop$ "empty " t * " in " * cite$ * warning$ }
-    'output.nonnull.colon
-  if$
+duplicate$ empty$
+{ pop$ "empty " t * " in " * cite$ * warning$ }
+'output.nonnull.colon
+if$
 }
 
 FUNCTION {output.check.space}
 { 't :=
-  duplicate$ empty$
-    { pop$ "empty " t * " in " * cite$ * warning$ }
-    'output.nonnull.space
-  if$
+duplicate$ empty$
+{ pop$ "empty " t * " in " * cite$ * warning$ }
+'output.nonnull.space
+if$
 }
 
 FUNCTION {output.year.check}
 { year empty$
-     { "empty year in " cite$ * warning$ }
-     { write$
-        " (" year * extra.label * ")" *
-        mid.sentence 'output.state :=
-     }
-  if$
+{ "empty year in " cite$ * warning$ }
+{ write$
+" (" year * extra.label * ")" *
+mid.sentence 'output.state :=
+}
+if$
 }
 
 FUNCTION {output.bibitem}
 { newline$
 
-  "\bibitem[" write$
-  label write$
-  "]{" write$
+"\bibitem[" write$
+label write$
+"]{" write$
 
-  cite$ write$
-  "}" write$
-  newline$
-  ""
-  before.all 'output.state :=
+cite$ write$
+"}" write$
+newline$
+""
+before.all 'output.state :=
 }
 
 FUNCTION {fin.entry}
@@ -249,8 +210,8 @@ FUNCTION {new.sentence}
 { output.state after.block =
     'skip$
     { output.state before.all =
-    'skip$
-    { after.sentence 'output.state := }
+	'skip$
+	{ after.sentence 'output.state := }
       if$
     }
   if$
@@ -315,23 +276,23 @@ FUNCTION {field.or.null}
 
 FUNCTION {underline}
 { duplicate$ empty$
-  { pop$ "" }
-  { "\underline{" swap$ * "}" * }
-  if$
+{ pop$ "" }
+{ "\underline{" swap$ * "}" * }
+if$
 }
 
 FUNCTION {emphasize}
 { duplicate$ empty$
-    { pop$ "" }
-    { "{\em " swap$ * "}" * }
-  if$
+{ pop$ "" }
+{ "{\em " swap$ * "}" * }
+if$
 }
 
 FUNCTION {emphasize.space}
 { duplicate$ empty$
-    { pop$ "" }
-    { "{\em " swap$ * "\/}" * }
-  if$
+{ pop$ "" }
+{ "{\em " swap$ * "\/}" * }
+if$
 }
 
 INTEGERS { nameptr namesleft numnames }
@@ -352,12 +313,12 @@ FUNCTION {format.names}
           { "" * }
           if$
         }
-        { numnames #2 >
+        { numnames #1 >		%%원래 2인데 APA style은 2명에도 쉼표.
           { "," * }
           'skip$
           if$
           numnames #7 >
-          { " . . ." *}
+          { " .~.~." *}
           'skip$
           if$
           t "others" =
@@ -387,7 +348,7 @@ FUNCTION {format.names.fml}
       nameptr #1 >
         { namesleft #1 >
               { ", " * t * }
-               { numnames #2 >
+               { numnames #1 >	%%format.names와 마찬가지.
                     { "," * }
                     'skip$
                   if$
@@ -463,18 +424,6 @@ FUNCTION {format.title}
     { title "t" change.case$ }
   if$
 }
-
-% Note that the APA style requres case changes
-% in article titles. The following does not
-% change cases. If you perfer it, uncomment the
-% following and comment out the above.
-
-%FUNCTION {format.title}
-%{ title empty$
-%    { "" }
-%    { title }
-%  if$
-%}
 
 FUNCTION {n.dashify}
 { 't :=
@@ -1002,6 +951,7 @@ FUNCTION {misc}
   fin.entry
 }
 
+
 FUNCTION {phdthesis}
 { output.bibitem
   format.authors 
@@ -1104,8 +1054,6 @@ MACRO {dec} {"December"}
 MACRO {acmcs} {"ACM Computing Surveys"}
 
 MACRO {acta} {"Acta Informatica"}
-
-MACRO {ai} {"Artificial Intelligence"}
 
 MACRO {cacm} {"Communications of the ACM"}
 
@@ -1360,7 +1308,39 @@ FUNCTION {author.editor.sort}
   if$
 }
 
-%여기서부터 치환
+FUNCTION {author.organization.sort}
+{ author empty$
+    { organization empty$
+	{ key empty$
+	    { "to sort, need author, organization, or key in " cite$ * warning$
+	      ""
+	    }
+	    { key sortify }
+	  if$
+	}
+	{ "The " #4 organization chop.word sortify }
+      if$
+    }
+    { author sort.format.names }
+  if$
+}
+
+FUNCTION {editor.organization.sort}
+{ editor empty$
+    { organization empty$
+	{ key empty$
+	    { "to sort, need editor, organization, or key in " cite$ * warning$
+	      ""
+	    }
+	    { key sortify }
+	  if$
+	}
+	{ "The " #4 organization chop.word sortify }
+      if$
+    }
+    { editor sort.format.names }
+  if$
+}
 
 INTEGERS { seq.num }
 
@@ -1386,77 +1366,42 @@ FUNCTION {presort}
   'sort.key$ :=
 }
 
-%여기까지 치환.
-
 ITERATE {presort}
 
-SORT             % by label, sort.label, title --- for final label calculation
+%SORT		%sort 함수를 바꾸어도 이상해서, 그냥 sort 안 하면 될 것 같음.
 
-STRINGS { last.label next.extra }
+STRINGS { longest.label }
 
-INTEGERS { last.extra.num }
+INTEGERS { number.label longest.label.width }
 
-FUNCTION {initialize.extra.label.stuff}
-{ #0 int.to.chr$ 'last.label :=
-  "" 'next.extra :=
-  #0 'last.extra.num :=
+FUNCTION {initialize.longest.label}
+{ "" 'longest.label :=
+  #1 'number.label :=
+  #0 'longest.label.width :=
 }
 
-FUNCTION {forward.pass}
-{ last.label label =
-     { last.extra.num #1 + 'last.extra.num :=
-       last.extra.num int.to.chr$ 'extra.label :=
-     }
-     { "a" chr.to.int$ 'last.extra.num :=
-       "" 'extra.label :=
-       label 'last.label :=
+FUNCTION {longest.label.pass}
+{ number.label int.to.str$ 'label :=
+  number.label #1 + 'number.label :=
+  label width$ longest.label.width >
+    { label 'longest.label :=
+      label width$ 'longest.label.width :=
     }
+    'skip$
   if$
 }
 
-FUNCTION {reverse.pass}
-{ next.extra "b" =
-    { "a" 'extra.label := }
-     'skip$
-  if$
-  label extra.label * "}" * 'label :=   
-  extra.label 'next.extra :=
-}
+EXECUTE {initialize.longest.label}
 
-EXECUTE {initialize.extra.label.stuff}
-
-ITERATE {forward.pass}
-
-REVERSE {reverse.pass}
-
-FUNCTION {bib.sort.order}
-{ sort.label
-  "    "
-  *
-  year field.or.null sortify
-  *
-  "    "
-  *
-  title field.or.null
-  sort.format.title
-  *
-  #1 entry.max$ substring$
-  'sort.key$ :=
-}
-
-ITERATE {bib.sort.order}
-
-SORT             % by sort.label, year, title --- giving final bib. order.
+ITERATE {longest.label.pass}
 
 FUNCTION {begin.bib}
-
 { preamble$ empty$
     'skip$
     { preamble$ write$ newline$ }
   if$
-  "\begin{thebibliography}{}" write$ newline$
+  "\begin{thebibliography}{"  longest.label  * "}" * write$ newline$
 }
-
 
 EXECUTE {begin.bib}
 
@@ -1470,6 +1415,4 @@ FUNCTION {end.bib}
 }
 
 EXECUTE {end.bib}
-
-
 

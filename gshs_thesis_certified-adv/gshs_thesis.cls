@@ -34,9 +34,10 @@
 \setitemize{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
 \setenumerate{noitemsep} % 여백이 너무 넓어서 기본 여백으로 만듦
 
-\usepackage[numbers,sort&compress]{natbib}
-\setlength{\bibsep}{0em}
-\bibliographystyle{mynewapa}
+\bibliographystyle{gshs_thesis}
+%\usepackage[numbers,sort&compress]{natbib}
+%\setlength{\bibsep}{0em}
+%\bibliographystyle{gshs_thesisnat}
 
 \usepackage{etoolbox}
 \apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}}{}{}
@@ -342,3 +343,12 @@
 \vspace{0.5cm}
 }
 {\end{alwayssingle}}
+
+
+%한글 사용 옵션
+\RequirePackage{xetexko}
+\setmainfont{Times New Roman}
+\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
+	ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
+\disablecjksymbolspacing
+\nonfrenchspacing

@@ -162,19 +162,19 @@ includegraphics다음의 [ ] 안에는 크기를 지정할 수 있는 옵션을 
 \begin{table}[h]
 	\caption{Subfigure에서 사용할 수 있는 여러 종류의 referencing.}
 	\label{table_subfigure_ref}
-	\begin{center}
+	\centering
 		\begin{tabular}{|c|c|}
-			\hline
-			명령어 & 결과 \\
-			\hline
-			\textbackslash ref\{subfig:fig1\} & \ref{subfig:fig1} \\
-			\hline
-			\textbackslash subref\{subfig:fig1\} & \subref{subfig:fig1} \\
-			\hline
-			\textbackslash ref\{subfigure\_example\} & \ref{subfigure_example} \\
-			\hline
-		\end{tabular}
-	\end{center}
+		\hline
+		명령어 & 결과 \\
+		\hline
+		\textbackslash ref\{subfig:fig1\} & \ref{subfig:fig1} \\
+		\hline
+		\textbackslash subref\{subfig:fig1\} & \subref{subfig:fig1} \\
+		\hline
+		\textbackslash ref\{subfigure\_example\} & 
+		\ref{subfigure_example} \\
+		\hline
+	\end{tabular}
 \end{table}
 
 한 가지 주의해야 할 점은, \textbackslash subref\{\} 명령어는 여기에서는 (a) 와 같이 나타나지만, 기본 설정으로는 a 와 같이 나타난다는 점이다. gshs\_thesis.cls 를 사용하지 않는 다른 tex 문서에서 (a) 와 같이 나타내고 싶다면 다음과 같은 설정을 추가하면 된다.
@@ -208,19 +208,24 @@ includegraphics다음의 [ ] 안에는 크기를 지정할 수 있는 옵션을 
 \end{lstlisting}
 Table \ref{table01}과 같은 표를 얻게 된다.
 \begin{table}[h]
-\caption{Physical parameters.} \label{table01}
-\begin{center}
-\begin{tabular}{c|c|c}
-\hline
- & symbol & value \\ \hline
-Earth's mass & $M_E$ & $6.0\times 10^{24} {\rm kg}$ \\
-Earth's radius & $R_E$ & $6.4\times 10^6 {\rm m}$ \\
-Gravitational constant & $G$ & $6.67\times 10^{-11} {\rm N m^2 /kg^2}$ \\ \hline
-\end{tabular}
-\end{center}
+	\caption{Physical parameters.}
+	\label{table01}
+	\centering
+	\begin{tabular}{c|c|c}
+	\hline
+	 & symbol & value \\ \hline
+	Earth's mass & $M_E$ & $6.0\times 10^{24} {\rm kg}$ \\
+	Earth's radius & $R_E$ & $6.4\times 10^6 {\rm m}$ \\
+	Gravitational constant & $G$ & $6.67\times 10^{-11} {\rm N m^2 /kg^2}$ 
+	\\ \hline
+	\end{tabular}
 \end{table}
 
-주의사항 : 본 gshs\_thesis.tex 양식을 이용하여 표를 작성할 때는, 반드시 table - center - tabular 환경을 사용해야 한다. 개인적인 성향에 따라 table 안에 \textbackslash centering 을 쓰고 tabular 환경을 사용할 수도 있지만, 이럴 경우 caption 이 표와 겹치는 결과를 불러일으킨다. 원인은 아직 밝혀지지 않았다.
+%주의사항 : 본 gshs\_thesis.tex 양식을 이용하여 표를 작성할 때는, 반드시 table 
+%- center - tabular 환경을 사용해야 한다. 개인적인 성향에 따라 table 안에 
+%\textbackslash centering 을 쓰고 tabular 환경을 사용할 수도 있지만, 이럴 경우 
+%caption 이 표와 겹치는 결과를 불러일으킨다. 원인은 아직 밝혀지지 않았다.
+%captionsetup의 skip 값이 음수였기 때문에 일어나는 문제였습니다. 수정되었습니다.
 
 또한, figure의 경우 보통 그림 아래에 caption 이 붙지만, table의 경우 caption을 내용 위쪽에 붙여야 한다. 
 
