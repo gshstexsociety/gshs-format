@@ -1,9 +1,0 @@
-/*
-# exclude everything except the followings
-!/LICENSE.TXT
-!/README.md
-!/UPDATE.TXT
-!/Manany_Harmony.tex
-!/res
-# not sure if .gitignore itself should be an exception
-!/.gitignore

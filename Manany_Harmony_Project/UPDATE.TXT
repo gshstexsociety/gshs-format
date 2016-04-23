@@ -1,6 +1,0 @@
-UPDATE.TXT
-
-Any fixed typos or enhancements will be listed here.
-
-Package Revision : 1
-Latest Compile Date - KST(GMT +9) 2016.01.21.23:59:33
