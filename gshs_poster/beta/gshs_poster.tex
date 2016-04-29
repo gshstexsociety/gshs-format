@@ -1,0 +1,129 @@
+\documentclass[draft,b0]{sciposter}
+%	draft 	% 문서 편집 중, 빠른 조판을 위한 기능.(그림을 제외하고 조판한다.) 
+%% 최종본은 draft 대신 final 을 사용하면 된다.
+%	b0		% 포스터 크기 : a0 - a3, b0 - b3, ansiE, ansiD, ansiC, tabloid, ra0 - ra2 가능
+\usepackage{amsmath,amssymb,multicol,amsrefs}
+\usepackage{lipsum}
+
+% TODO : Make poster size customizable via custom.cfg
+%% Custom, % 사용자 정의 포스터 크기. 크기를 변경하고 싶다면 custom.cfg 에서 값들을 수정.
+
+\usepackage{kotex}
+\usepackage{amssymb,amsmath}
+\usepackage{caption,graphicx}
+%\usepackage{subcaption} % sciposter class 에서 사용불가
+
+\title{Title}
+\author{14000 아무개, 15000 박대감}
+\email{gshstexsociety@gmail.com}
+
+\conference{제 62회 과학전람회}
+\institute{과학영재학교 경기과학고등학교 \\ Gyeonggi Science High School for the Gifted}
+\leftlogo[1.5]{gshslogo.png}
+
+\newcommand{\imsize}{0.45\columnwidth}
+% Color box 지정
+
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{pgfplots}
+
+\usetikzlibrary{shadows,calc}
+\tcbuselibrary{skins,theorems,breakable}
+\newtcolorbox{block}[2][\linewidth]{mybox,width=#1,title=#2}
+\pgfplotsset{compat=1.4}
+\definecolor{myblue}{RGB}{40,96,139}
+\tcbset{ % to define box style
+	mybox/.style={
+		breakable,
+		freelance,
+		boxrule=0.4pt,
+		width=\linewidth,
+		frame code={%
+			\path[draw=black,rounded corners,fill=white,drop shadow]
+			(frame.south west) rectangle (frame.north east);
+		},
+		title code={
+			\path[top color=myblue!30,bottom color=myblue!0.5,rounded corners,draw=none]
+			([xshift=\pgflinewidth,yshift=-\pgflinewidth]frame.north west) rectangle ([xshift=-\pgflinewidth]frame.south east|-title.south east);
+			\path[fill=myblue]
+			([xshift=5pt,yshift=-\pgflinewidth]frame.north west) to[out=0,in=180] ([xshift=50pt,yshift=-5pt]title.south west) -- ([xshift=-50pt,yshift=-5pt]title.south east) to[out=0,in=180] ([xshift=-5pt,yshift=-\pgflinewidth]frame.north east) -- cycle;
+		},
+		fonttitle=\Large\bfseries\sffamily,
+		fontupper=\sffamily,
+		fontlower=\sffamily,
+		before=\par\medskip,
+		after=\par\medskip,
+		center title,
+		toptitle=3pt,
+		top=11pt,
+		colback=white
+	}
+}
+
+% TODO : move it to cls file
+
+\begin{document}
+	\pagecolor{blue!5!white} % 경기과학고 교색 : 하늘색
+	\maketitle
+	\begin{abstract}
+		\lipsum[1]
+	\end{abstract}
+	\begin{multicols}{2}
+		\begin{block}{Introduction}
+			\PARstart{경}{기과학}고등학교는 최근 중요성이 부각되고 있다. \cite{ashley,fab_coil} 정말 중요하다.\cite{mirvakili}
+			\lipsum[1]
+			
+			\begin{figure}
+				\begin{center}
+					\begin{tabular}{c c} % subfigure environment is not recommended. subref doens't work since we can't use `subcaption' package...
+						{\resizebox{\imsize}{!}{\includegraphics{example-image-a}}} &
+						{\resizebox{\imsize}{!}{\includegraphics{example-image-b}}}\\
+						(a) & (b) \\
+						{\resizebox{\imsize}{!}{\includegraphics{example-image-c}}} &
+						{\resizebox{\imsize}{!}{\includegraphics{example-image-a}}}\\
+						(c) & (d) \\
+					\end{tabular}
+				\end{center}
+				\caption{ Parts (a) through (c) show three images consisting of squares of
+					different sizes; (d) shows the pattern spectra, denoting the number of foreground pixels removed by openings by reconstruction by $\lambda \times \lambda$ squares. No granulometry is capable of separating the patterns, because the only 	differences between the images lie in the distributions of the connected components. }\label{fig:blocks}
+			\end{figure}
+		\end{block}
+		
+		\begin{block}{Title of a block}
+			\lipsum[3]
+		\end{block}
+		\begin{block}{Title of a block}
+			\textbf{\scshape Needed Improvements}:
+			\begin{itemize}
+				\item higher intensity within
+				\item small specimen area
+				\item[$\Rightarrow$] focussed beams $\to$ STEM?!
+			\end{itemize}
+		\end{block}
+		
+		\begin{block}{Title of a block}
+			\lipsum[4]
+		\end{block}
+		\begin{block}{Title of a block}
+			\lipsum[2]
+		\end{block}
+		
+		\begin{block}{Title of a block}
+			\lipsum[3]
+		\end{block}
+		\begin{block}{Title of a block}
+			\lipsum[4]
+		\end{block}
+		
+		\begin{block}{Conclusion}
+			\lipsum[1]
+		\end{block}
+		
+	\end{multicols}
+	
+	% using bibtex
+	\bibliographystyle{ieeetr}
+	\bibliography{bibfile}
+
+\end{document}
