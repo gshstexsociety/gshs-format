@@ -9,9 +9,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \include{sub/preamble} % usepackage 등의 명령어는 여기에.
+
+
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforesubsubsecskip}{0pt}
+
 \begin{document}
 %	\renewcommand\baselinestretch{1.2} % line spacing in the paragraph
-	\baselineskip=22pt plus1pt         % line spacing in the paragraph
+	\baselineskip=2.2em         % line spacing in the paragraph
 	
 	\include{sub/abstract} % Abstract
 
@@ -40,8 +47,7 @@
 	\bibliography{bibfile} % 참고문헌
 	% BibTeX 코드 쉽게 얻어오는 방법 %
 	% Google Scholar 에서 검색한 결과에서 `인용'을 클릭한다.
-	% APA, MLA style 등이 나온다. 보통 여기에서 텍스트를 얻어온다.
-	% 하지만 BibTeX 코드를 얻고자 한다면, 하단의 `BibTeX' 을 클릭.
+	% BibTeX 코드를 얻고자 한다면, 하단의 `BibTeX' 을 클릭.
 	% 코드가 나온다. Ctrl+A, Ctrl+C로 복사, bibfile에 붙여넣기.
 	
 	\include{sub/summary} % Summary
