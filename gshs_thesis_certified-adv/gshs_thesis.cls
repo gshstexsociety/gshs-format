@@ -383,10 +383,9 @@
 
 %한글 사용 옵션
 \RequirePackage{xetexko}
-\setmainfont{Times New Roman}
+\setmainfont[Ligatures=TeX]{Times New Roman}
 \setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
 	ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
-\defaultfontfeatures{Ligatures=TeX}
 \disablecjksymbolspacing
 \nonfrenchspacing
 
