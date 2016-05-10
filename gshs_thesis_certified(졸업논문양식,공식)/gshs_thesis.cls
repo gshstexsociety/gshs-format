@@ -37,6 +37,9 @@
 \apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}}{}{}
 %\setstretch{1.5}
 
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} 
+% 주석 번호와 참고문헌 번호의 혼동을 막기 위해 arabic 대신 fnsymbol 사용(asterisk, dagger, double dagger, ...)
+
 \setlength{\hoffset}{0pt}
 \setlength{\voffset}{0pt}
 \setlength{\paperwidth}{597pt}
@@ -187,7 +190,7 @@
     {\Large\bf Gyeonggi Science High School for the gifted}
   \end{center}
   \par\vspace{12mm}
-  {\Large {A thesis submitted to the Gyeonggi Science Highschool in partial
+  {\Large {A thesis submitted to the Gyeonggi Science High School in partial
    fulfillment of the requirements for the graduation. The study was conducted
    in accordance with Code of Research Ethics.\footnote{Declaration of Ethical
    Conduct in Research: I, as a graduate student of GSHS, hereby declare that
@@ -276,12 +279,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Chapter/section title format %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titleformat{\section}[hang]
-{\normalfont\LARGE\bfseries}{\Roman{section}.}{1em}{}
-\titleformat{\subsection}[hang]
-{\normalfont\Large\bfseries}{\arabic{section}.\arabic{subsection}}{1em}{}
+
+%\titleformat{\section}[hang]
+%{\normalfont\LARGE\bfseries}{\Roman{section}.}{1em}{}
+%\titleformat{\subsection}[hang]
+%{\normalfont\Large\bfseries}{\arabic{section}.\arabic{subsection}}{1em}{}
 %\titleformat{\subsubsection}[hang]
 %{\normalfont\large}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}{1em}{}
+
+% ``각 절 제목의 글자는 section (21pt, bold face), subsection (16pt, bold face), subsubsection (14pt, normal style), paragraph (12pt, Italic)로 설정한다.''
+% ``각 절의 첫 문단은 들여쓰기를 하지 않지만, 두 번째 문단 이후부터는 들여쓰기 (16pt)를 한다. 각 절의 제목에는 글씨 크기에 비례하는 상하 여백을 준다.''
+% 졸업논문 hwp 양식에서 따옴
+\titleformat{\section}[hang]
+{\normalfont\fontsize{21}{21}\selectfont\bfseries}{\Roman{section}.}{1em}{}
+\titleformat{\subsection}[hang]
+{\normalfont\fontsize{16}{16}\selectfont\bfseries}{\arabic{section}.\arabic{subsection}}{1em}{}
+\titleformat{\subsubsection}[hang]
+{\normalfont\fontsize{14}{14}\selectfont}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}
+\titleformat{\paragraph}[hang]
+{\normalfont\fontsize{12}{12}\selectfont\it}{}{1em}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
