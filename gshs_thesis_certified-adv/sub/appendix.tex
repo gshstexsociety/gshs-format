@@ -3,9 +3,10 @@
 \renewcommand{\thesection}{\Alph{section}} %%% TOC에 appendix numbering 재설정
 \renewcommand{\thesubsection}{\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\arabic{subsubsection}}
-\titleformat{\section}[hang] {\normalfont\LARGE\bfseries}{\Alph{section}.}{1em}{} %%% Appendix section title의 재설정
-\titleformat{\subsection}[hang] {\normalfont\Large\bfseries}{\Alph{section}.\arabic{subsection}.}{1em}{}
-\titleformat{\subsubsection}[hang] {\normalfont\bfseries}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}.}{1em}{}
+\titleformat{\section}[hang] {\normalfont\fontsize{21}{21}\selectfont\bfseries}{\Alph{section}.}{1em}{} %%% Appendix section title의 재설정
+\titleformat{\subsection}[hang] {\normalfont\fontsize{16}{16}\selectfont\bfseries}{\Alph{section}.\arabic{subsection}.}{1em}{}
+\titleformat{\subsubsection}[hang] {\normalfont\fontsize{14}{14}\selectfont}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}.}{1em}{}
+\titleformat{\paragraph}[hang] {\normalfont\fontsize{12}{12}\selectfont\it}{}{1em}{}
 \renewcommand{\theequation}{\thesection.\arabic{equation}} %%% Appendix equation numbering 의 재설정
 \renewcommand{\thefigure}{\thesection-\arabic{figure}} %%% Appendix figure numbering 의 재설정
 \renewcommand{\thetable}{\thesection-\arabic{table}} %%% Appendix table numbering 의 재설정
