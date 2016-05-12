@@ -194,7 +194,7 @@
    fulfillment of the requirements for the graduation. The study was conducted
    in accordance with Code of Research Ethics.\footnote{Declaration of Ethical
    Conduct in Research: I, as a graduate student of GSHS, hereby declare that
-   I have not committed any acts that may damage the credibility of my reasearch.
+   I have not committed any acts that may damage the credibility of my research.
    These include, but are not limited to: falsification, thesis written by
    someone else, distortion of research findings or plagiarism. I affirm that
    my thesis contains honest conclusions based on my own careful research under
