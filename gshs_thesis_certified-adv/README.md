@@ -12,8 +12,6 @@ xelatex을 사용하여 글꼴을 바꾸었습니다.
 `\graphicspath{{images/}}`
 
 ## bibtex 이용
-thebibliography 모드 대신 이것을 사용하면 인용순 정렬, 스타일링 등이 자동으로 됩니다.
-`\usepackage[numbers,sort&compress]{natbib}`
-`\setlength{\bibsep}{0em}`
-`\bibliographystyle{mynewapa}`
-APA style에 최대한 가깝게 구현하였습니다. (mynewapa.bst)
+bibtex을 사용하면 정렬, 스타일링 등이 자동으로 됩니다.
+`\bibliographystyle{gshs_thesis}`
+APA style에 최대한 가깝게 구현하였습니다. (gshs_thesis.bst)
