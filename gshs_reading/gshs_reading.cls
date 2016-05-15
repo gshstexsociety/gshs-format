@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gshs_reading}[2016/05/12 v.1.01]
+\ProvidesClass{gshs_reading}[2016/05/15 v.1.02]
 \LoadClass[a4paper,10pt]{article}
 
 \usepackage{indentfirst}
@@ -22,7 +22,7 @@
 %한글 사용, 줄 간격 1.2*1.33333 = 1.6
 %표의 줄 간격 1.2*1.08333 = 1.3
 
-\setmainfont[BoldFont=*,BoldFeatures=FakeBold]{Batang}
+\setmainfont[Ligatures=TeX,BoldFont=*,BoldFeatures=FakeBold]{Batang}
 \setsansfont{Gulim}
 \xetexkofontregime{hangul}
 %한글 사용 옵션. 줄 간격
