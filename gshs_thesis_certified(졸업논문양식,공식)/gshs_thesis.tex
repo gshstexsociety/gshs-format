@@ -84,10 +84,14 @@
 \checklistmarkVI{$\square$}
 %\checklistmarkVI{$\text{\rlap{$\checkmark$}}\square$}
 
-
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforesubsubsecskip}{0pt}
 \begin{document}
-\renewcommand\baselinestretch{1.2} % line spacing in the paragraph
-\baselineskip=22pt plus1pt         % line spacing in the paragraph
+%\renewcommand\baselinestretch{1.2} % line spacing in the paragraph
+%\baselineskip=22pt plus1pt         % line spacing in the paragraph
+\baselineskip=2.2em         % line spacing in the paragraph
 
 \maketitle  % command to print the title page with above variables
 \setcounter{page}{1}
@@ -95,26 +99,31 @@
 %                  영문 초록을 입력하시오
 %---------------------------------------------------------------------
 \begin{abstracts}     %this creates the heading for the abstract page
-\noindent{
-Put your abstract here. It is completely consistent with 한글초록.
-}
+	\addcontentsline{toc}{section}{Abstract}  %%% TOC에 표시
+	\noindent{
+		Put your abstract here. It is completely consistent with 한글초록.
+	}
 \end{abstracts}
 
 %---------------------------------------------------------------------
 %                  국문 초록을 입력하시오
 %---------------------------------------------------------------------
 \begin{abstractskor}        %this creates the heading for the abstract page
-\noindent{
-초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
-}
+	\addcontentsline{toc}{section}{초록}  %%% TOC에 표시
+	\noindent{
+		초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
+	}
 \end{abstractskor}
 
 
 %----------------------------------------------
 %   Table of Contents (자동 작성됨)
 %----------------------------------------------
+\cleardoublepage
+\addcontentsline{toc}{section}{Contents}
 \setcounter{secnumdepth}{3} % organisational level that receives a numbers
 \setcounter{tocdepth}{3}    % print table of contents for level 3
+\baselineskip=2.2em
 \tableofcontents
 
 
