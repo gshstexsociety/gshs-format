@@ -1,45 +1,25 @@
 % Initiated by 정민석(2014년도 경기과학고 수학과전문교원)
-% Copyright ⓒ 2015 목진욱(2015학년도 경기과학고 물리과전문교원), 박승원(32nd 학생, 14041), 이상헌(32nd 학생, 14080), Gyeonggi Science HighSchool for the Gifted. All rights reserved. 
-% Website : http://gshslatexintro.github.io  본 문서가 컴파일된 pdf를 이곳에서 미리 보실 수 있습니다.
+% Continously being modified by 경기과학고 TeX 사용자협회
+% Website : http://gshslatexintro.github.io 
 \documentclass{gshs-report-v1.1}
 % 추가로 필요한 패키지가 있다면 주석을 풀고 적어넣으십시오,
 %\usepackage{...}
 
-%\researchtype{기초} 
-\researchtype{심화} % 심화 R&E의 경우 지도교사 외에도 지도교수를 같이 써야 하는데, 여기에서 `심화'로 지정하면 \professor 함수를 사용할 수 있습니다.
-\title{보고서 제목}
-% @note 표지에 출력되는 제목을 강제로 줄바꿈하려면 \linebreak 을 삽입.
-%       \\ 나 \newline 등을 사용하면 안됩니다.
-%
-
-%\author[저자순서]{저자이름}
-%저자순서 : 1, 2, ...
-%1 : 제 1 저자, 2: 제 2 저자, ...
-\author[1] {홍길동}
-\email[1]{hong@e-mail.adress}
-\author[2]{전우치}
-\email[2]{cheon@e-mail.adress}
-
-% \advisor 지도교사 이름
-\advisor{홍판서}
-
-% \professor 지도교수 이름
-%researchtype이 '심화' 일 때만 표지에 생성됨
-\professor{아무개}
-
-%\summitdate{년}{월}{일}
-% @param   year,month,day 연,월,일 순으로 입력
-\summitdate{2016}{02}{07}
-
+\researchtype{기초} % 기초 / 심화
+\title{보고서 제목} % 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+\author[1] {홍길동} % 제 1 저자명
+\email[1]{hong@e-mail.adress} % 제 1 저자 이메일
+\author[2] {전우치} % 제 2 저자명
+\email[2]{cheon@e-mail.adress} % 제 2 저자 이메일
+\advisor{홍판서} % 지도교사명
+\professor{아무개} % 지도교수명. researchtype이 '심화' 일 때만 표지에 생성됨
+\summitdate{2016}{02}{07} % 제출일 (연, 월, 일)
 \newtheorem{definition}{정의}
 
 
 % 아래의 함수를 사용하면 이미지 파일들을 같은 디렉토리 내에 images 라는 이름을 가진 폴더를 생성한 후, 그 폴더 안에 넣어 사용할 수 있습니다.
 % 사용하고자 한다면 주석을 푸십시오.
 %\graphicspath{{images/}}
-
-% 버전관리를 할 경우 images 폴더 내의 파일까지도 전부 복사해야 하는 불편함이 있습니다. 이 경우, v1.1, v1.2, v1.3, ... 폴더가 있는 디렉토리에 images 폴더를 만들고,(v1.1, v1.2 내부가 아닌) 다음 함수를 사용하면 됩니다.
-%\graphicspath{{../images/}}
 
 % 아래와 같은 command를 만들면 길이가 긴 용어를 간편하게 사용할 수 있습니다. 단, 이미 지정된 함수명들은 새로운 함수명으로 사용할 수 없습니다.
 \newcommand{\gshs}{Gyeonggi Science High School }
@@ -48,26 +28,24 @@
 \begin{document}
 
 %표지만들기
-%makecover 함수와 관련하여 "Underfull \hbox (badness 10000) in paragraph 오류는 무시하십시오. (TeXstudio ver 2.9.4 오류 기준)
+%makecover 함수와 관련하여 "Underfull \hbox (badness 10000) in paragraph" 오류는 무시하십시오. (TeXstudio ver 2.9.4 오류 기준)
 \makecover
 
 %초록(영문)
-% 'abstract' 가 아닌 '초   록'을 사용해야 할 경우 abstract 가 아닌 abstractkor 환경을 사용하면 됩니다. (cls 파일에 정의되어 있음)
-\begin{abstractkor}
 
+%\begin{abstract}
+%\noindent{
+%	Put your abstract here. Once upon a time, \gshs said : `The first, and the best.'
+%}
+%\end{abstract}
+
+%초록(한글)
+\begin{abstractkor}
 \noindent{
-	Once upon a time, \gshs said : `The first, and the best.' 초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
+	 초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
 }
-\LaTeX
 \end{abstractkor}
 
-%한글초록을 추가하기 위해서는
-%위의 영문 초록을 comment-out 시키고
-%아래의 한글초록 부분을 활성화하여 컴파일할 것.
-%
-%\begin{abstractkor}
-%이 부분은 한글 초록을 추가하는 부분입니다.
-%\end{abstractkor}
 
 \section{Introduction}
 
@@ -307,7 +285,8 @@ Table \ref{table01}과 같은 표를 얻게 된다.
 \item 처음 \LaTeX 을 사용하는 사람의 경우 혼동을 유발함
 \item chapter가 새로 넘어갈 때마다 그림/표의 numbering이 초기화됨 \\
 이것은 \verb+\+usepackage\{chngcntr\}, \verb+\+counterwithout\{figure\}\{chapter\} 을 통해 임시로 해결되었었다.
-\item Theorem numbering이 이상하게 됨.(1.0.1,  1.0.2, ...) https://github.com/gshslatexintro/gshslatexintro/issues/7 참조.
+\item Theorem numbering이 이상하게 됨.(1.0.1,  1.0.2, ...) \\
+https://github.com/gshslatexintro/gshslatexintro/issues/7 참조.
 \item 보고서 tex 파일을 다른 곳에 사용해야 할 경우 호환성이 떨어진다. (ex. 휴먼테크논문대회 양식, 우수R\&E 공동발표회 양식) 즉, chapter를 section으로, section을 subsection으로, subsection을 subsubsection으로 각각 바꾸어 주어야 한다. 물론 이는 Ctrl+H를 통해 쉽게 할 수 있지만... 번거로우니까.
 \end{itemize}
 

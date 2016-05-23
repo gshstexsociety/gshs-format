@@ -221,7 +221,7 @@
 \newenvironment{abstractkor}{%
 	\pagenumbering{roman}                        % 로마자 페이지 시작
 	\thispagestyle{plain}%
-	\vspace*{3cm}
+	\vspace*{5cm}
 	\begin{center} \Large \textbf{초~~~~~록} \end{center}  % 초록명 -> Abstract
 	
 	\hspace*{5mm}
