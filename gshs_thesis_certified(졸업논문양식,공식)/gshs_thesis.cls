@@ -62,7 +62,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\thepage}{\roman{page}}
 \def\degreeyear#1{\gdef\@degreeyear{#1}}
-\def\degreedate#1#2#3{\gdef\@degreedate{#1. #2. #3}\gdef\@degreedatekor{#1년 #2월 #3일}}
+%\def\degreedate#1#2#3{\gdef\@degreedate{#1. #2. #3}\gdef\@degreedatekor{#1년 #2월 #3일}}
+\def\degreedate#1{\gdef\@degreedate{#1}}
+\def\degreedatekor#1{\gdef\@degreedatekor{#1}}
 \def\studid#1{\gdef\@studid{#1}}
 \def\engname#1{\gdef\@engname{#1}}
 \def\korname#1{\gdef\@korname{#1}}
@@ -271,10 +273,47 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Table of Contents layout %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\contentsname}{\begin{center}Contents\end{center}}
+%\renewcommand{\contentsname}{\begin{center}Contents\end{center}}
 %\renewcommand{\listfigurename}{\begin{center}List of Figures\end{center}}
 %\renewcommand{\listtablename}{\begin{center}List of Tables\end{center}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\huge\bfseries}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\huge\bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\huge\bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% List of Figures/Table layout %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\mylenfig}
+\newlength{\mylentab}
+
+\renewcommand{\cftfigpresnum}{\textbf{\figurename}\enspace}
+\renewcommand{\cfttabpresnum}{\textbf{\tablename}\enspace}
+\renewcommand{\cftfigfont}{\bfseries}
+\renewcommand{\cfttabfont}{\bfseries}
+\renewcommand{\cftfigaftersnum}{.}
+\renewcommand{\cfttabaftersnum}{.}
+\renewcommand{\cftfigaftersnumb}{\normalfont}
+\renewcommand{\cfttabaftersnumb}{\normalfont}
+\settowidth{\mylenfig}{\cftfigpresnum}
+\settowidth{\mylentab}{\cfttabpresnum}
+\addtolength{\cftfignumwidth}{\mylenfig}
+\addtolength{\cfttabnumwidth}{\mylentab}
+\setlength{\cftfigindent}{0pt}  % remove indentation from figures in lof
+\setlength{\cfttabindent}{0pt}  % remove indentation from tables in lot
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% toc, lot, lof layout %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\huge\bfseries}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\huge\bfseries}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\huge\bfseries}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Chapter/section title format %%%%%%
@@ -304,8 +343,14 @@
 %%% caption format %%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\renewcommand{\figurename}{Fig.}
-\captionsetup[figure]{labelsep=period, singlelinecheck=off, aboveskip=0pt, belowskip=-10pt, margin=0pt,subrefformat=parens}
-\captionsetup[table]{labelsep=period, singlelinecheck=off, aboveskip=-6pt, margin=0pt}
+\captionsetup[figure]{%
+	font=small,labelsep=period,singlelinecheck=off,aboveskip=0pt,% 
+	belowskip=0pt, margin=0pt,subrefformat=parens%
+}
+\captionsetup[table]{%
+	font=small,labelsep=period,singlelinecheck=off,aboveskip=0pt,% 
+	margin=0pt%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%  Summary format %%%
