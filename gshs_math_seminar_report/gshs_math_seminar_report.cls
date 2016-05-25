@@ -19,7 +19,7 @@ ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
 \disablecjksymbolspacing
 \nonfrenchspacing
 
-
+\fancyhf{}
 \lhead{2016수학세미나I 보고서}
 \pagestyle{fancy}
 \renewcommand\headrule{}
@@ -42,7 +42,7 @@ ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
 }
 
 \newcommand{\makereporttitle}{%
-		\fancypage{\setlength{\fboxsep}{0pt}\fbox}{}
+		\fancypage{\setlength{\fboxsep}{10pt}\fbox}{}
 		
 		\begin{minipage}[t][][b]{\textwidth}
 			\begin{flushright}
