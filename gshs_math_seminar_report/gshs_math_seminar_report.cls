@@ -2,7 +2,7 @@
 \ProvidesClass{gshs_math_seminar_report}[2016/05/23 v.1.0]
 \LoadClass[a4paper,10pt]{article}
 
-\usepackage[a4paper,vmargin={5mm,5mm},hmargin={10mm,10mm}, includehead,%
+\usepackage[a4paper,vmargin={5mm,5mm},hmargin={10mm,18mm}, includehead,%
 includefoot]{geometry}
 \usepackage{fancybox}
 \usepackage{fancyhdr}
