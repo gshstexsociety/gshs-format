@@ -1,7 +1,7 @@
 % Initiated by 정민석(2014년도 경기과학고 수학과전문교원)
 % Continously being modified by 경기과학고 TeX 사용자협회
 % Website : http://gshslatexintro.github.io 
-\documentclass{gshs-report-v1.2}
+\documentclass{gshs-report-v1.21}
 % 추가로 필요한 패키지가 있다면 주석을 풀고 적어넣으십시오,
 %\usepackage{...}
 
@@ -84,7 +84,14 @@
 
 이제 서론에서 해당 논문을 인용할 준비 작업은 끝났다. 서론에서 필요한 부분에 이 논문을 인용 표기할 경우 {\textbackslash}cite 라고 입력한 후 \{ \} 안에 해당 논문을 표시하면 된다. 표시하는 방법은 바로 레퍼런스에서 {\textbackslash}bibitem 이후 \{ \} 안에 적었던 것을 넣어주면 된다. 논문 인용 표시가 문장 마지막에 등장할 때는 마침표의 위치는 인용 표시 다음이다. 아래 문장은 논문 인용 표시의 예로 C. Mok의 2010년 논문에서 인용하였다 \cite{Mok10}.
 \begin{quote}
-	Various plasma instabilities have been proposed as playing important roles during the substorm onset process. These include the tearing {\textbackslash}cite\{Schindler74, Sitnov97, Zelenyi08\}, ballooning {\textbackslash}cite\{Cheng98, Bhattacharjee98, Dobias04, Zhu03, Saito08, Friedrich01\}, lower hybrid drift {\textbackslash}cite\{Shinohara98, Yoon02, Mok06\}, Kelvin--Helmholtz {\textbackslash}cite\{Rostoker84, Dobias06\}, and the ion Weibel {\textbackslash}cite\{Yoon93, Sadovskii01\} instabilities.
+	Various plasma instabilities have been proposed as playing important 
+	roles during the substorm onset process. These include the tearing 
+	{\textbackslash}cite\{Schindler74, Sitnov97, Zelenyi08\}, ballooning 
+	{\textbackslash}cite\{Cheng98, Bhattacharjee98, Dobias04, Zhu03, 
+	Saito08, Friedrich01\}, lower hybrid drift 
+	{\textbackslash}cite\{Shinohara98, Yoon02, Mok06\}, \linebreak
+	Kelvin--Helmholtz {\textbackslash}cite\{Rostoker84, Dobias06\}, and the 
+	ion Weibel {\textbackslash}cite\{Yoon93, Sadovskii01\} instabilities.
 \end{quote}
 위와 같이 입력한 후 컴파일하면 pdf 파일에는 다음과 같이 나타날 것이다.
 \begin{quote}
@@ -124,7 +131,11 @@ pdf 파일에는 다음과 같이 나타난다.
 다음은 수식이 문장 밖으로 나와 한 줄을 통째로 차지하는 경우이다. 수식을 작성하는 명령어는 다양하지만, 여기서는 equation, align에 대해서만 다룬다. 먼저 equation의 사용법을 예를 통해 확인해보자. 만약 다음과 같이 입력을 하고
 \begin{quote}
 	{\textbackslash}begin\{equation\}\\
-	{\textbackslash}int\_V {\textbackslash}nabla{\textbackslash}cdot\{{\textbackslash}rm{\textbackslash}bf F\}dV={\textbackslash}oint\_S \{{\textbackslash}rm{\textbackslash}bf F\}{\textbackslash}cdot d\{{\textbackslash}rm{\textbackslash}bf A\}. {\textbackslash}label\{eq001\} \\
+	{\textbackslash}int\_V 
+	{\textbackslash}nabla{\textbackslash}cdot\{{\textbackslash}rm{\textbackslash}bf
+	 F\}dV={\textbackslash}oint\_S \{{\textbackslash}rm{\textbackslash}bf 
+	F\}{\textbackslash}cdot d\{{\textbackslash}rm{\textbackslash}bf A\}. 
+	\newline{\textbackslash}label\{eq001\} \\
 	{\textbackslash}end\{equation\}
 \end{quote}
 컴파일을 하면 다음과 같은 식이 pdf파일에 나타나는 것을 확인할 수 있다.
@@ -150,8 +161,20 @@ pdf 파일에는 다음과 같이 나타난다.
 지금까지 equation 명령어에 대해 살펴보았는데, equation은 한 줄로 표현 가능한 수식에 사용된다. 그런데 수식 중에는 한 줄로 표현하기 너무 길어서 줄바꿈을 해야 할 필요가 있는 경우, 또는 여러 줄에 걸쳐서 계산 과정을 보여줄 필요가 있는 경우가 있다. 이 때 사용되는 대표적인 명령어가 align이다.
 \begin{quote}
 	{\textbackslash}begin\{align\} \\
-	{\textbackslash}frac\{dE\}\{dt\} \&={\textbackslash}frac\{{\textbackslash}partial E\}\{{\textbackslash}partial t\} +{\textbackslash}sum\_i {\textbackslash}dot\{q\}\_i {\textbackslash}frac\{{\textbackslash}partial E\}\{{\textbackslash}partial q\_i\}+{\textbackslash}sum\_i{\textbackslash}ddot\{q\}\_i {\textbackslash}frac\{{\textbackslash}partial E\}\{{\textbackslash}partial {\textbackslash}dot\{q\}\_i\} {\textbackslash}notag {\textbackslash}{\textbackslash} \\
-	\&={\textbackslash}sum\_j {\textbackslash}dot\{q\}\_j {\textbackslash}sum\_k {\textbackslash}left( A\_\{jk\} q\_k +M\_\{jk\} {\textbackslash}ddot\{q\}\_k {\textbackslash}right) . {\textbackslash}label\{eq002\}\\
+	{\textbackslash}frac\{dE\}\{dt\} 
+	\&={\textbackslash}frac\{{\textbackslash}partial 
+	E\}\{{\textbackslash}partial t\} +{\textbackslash}sum\_i 
+	{\textbackslash}dot\{q\}\_i 
+	{\textbackslash}frac\{{\textbackslash}partial 
+	E\}\linebreak\{{\textbackslash}partial 
+	q\_i\}+{\textbackslash}sum\_i{\textbackslash}ddot\{q\}\_i 
+	{\textbackslash}frac\{{\textbackslash}partial 
+	E\}\{{\textbackslash}partial {\textbackslash}dot\{q\}\_i\} 
+	{\textbackslash}notag {\textbackslash}{\textbackslash} \\
+	\&={\textbackslash}sum\_j {\textbackslash}dot\{q\}\_j 
+	{\textbackslash}sum\_k {\textbackslash}left( A\_\{jk\} q\_k +M\_\{jk\} 
+	{\textbackslash}ddot\{q\}\_k {\textbackslash}right) . 
+	{\textbackslash}label\{eq002\}\\
 	{\textbackslash}end\{align\}
 \end{quote}
 \TeX\ 파일에 위와 같이 입력하고 컴파일을 해보면 다음과 같은 식을 얻는다.
@@ -162,16 +185,31 @@ pdf 파일에는 다음과 같이 나타난다.
 \TeX\ 파일에 입력된 등호 앞의 \& 기호는 줄 맞춤 표시이다. 즉, 첫 번째 줄의 \&와 두 번째 줄의 \&가 같은 수직선상에 위치한다는 의미이다. 첫 번째 줄에서는 수식 번호를 넣고 싶지 않아서 {\textbackslash}notag라는 명령어를 사용하였다. equation 명령어에서 사용된 {\textbackslash}nonumber와 같은 기능을 한다. 줄을 넘길 때는 {\textbackslash}{\textbackslash}를 사용한다. 이번에는 줄이 너무 길어서 여러 줄에 나누어 표현하는 식의 예를 살펴보자. (P. H. Yoon의 2006 논문에서 참고하였음 \cite{Yoon06})
 \begin{quote}
 	{\textbackslash}begin\{align\}\\
-	{\textbackslash}delta P\_\{ij\}$\hat{\ }$a =\&{\textbackslash}frac\{i\}\{B\_0\} {\textbackslash}frac\{{\textbackslash}Omega\_a\}\{{\textbackslash}omega-\{ {\textbackslash}rm{\textbackslash}bf k\}{\textbackslash}cdot\{ {\textbackslash}rm{\textbackslash}bf v\}\_a \} {\textbackslash}left( m\_a n {\textbackslash}epsilon\_\{ikl\} v\_k$\hat{\ }$a B\_l {\textbackslash}delta v\_j$\hat{\ }$a +m\_a n {\textbackslash}epsilon\_\{jkl\} v\_k$\hat{\ }$a B\_l {\textbackslash}delta\_i$\hat{\ }$a {\textbackslash}right. {\textbackslash}notag {\textbackslash}{\textbackslash} \\
+	{\textbackslash}delta P\_\{ij\}$\hat{\ }$a 
+	=\&{\textbackslash}frac\{i\}\{B\_0\} 
+	{\textbackslash}frac\{{\textbackslash}Omega\_a\}\{{\textbackslash}omega-\{
+	 {\textbackslash}rm{\textbackslash}bf k\}{\textbackslash}cdot\{ 
+	{\textbackslash}rm\linebreak{\textbackslash}bf v\}\_a \} 
+	{\textbackslash}left( m\_a n {\textbackslash}epsilon\_\{ikl\} 
+	v\_k$\hat{\ }$a B\_l {\textbackslash}delta v\_j$\hat{\ }$a +m\_a n 
+	{\textbackslash}epsilon\_\{jkl\} v\_k$\hat{\ }$a B\_l 
+	{\textbackslash}delta\_i$\hat{\ }$a {\textbackslash}right. 
+	{\textbackslash}nonumber {\textbackslash}{\textbackslash} \\
 	\& {\textbackslash}left. + {\textbackslash}epsilon\_\{ikl\} {\textbackslash}delta B\_l P\_\{jk\}$\hat{\ }$a + {\textbackslash}epsilon\_\{jkl\} {\textbackslash}delta B\_l P\_\{ik\}$\hat{\ }$a + {\textbackslash}epsilon\_\{ikl\} B\_l {\textbackslash}delta P\_\{jk\}$\hat{\ }$a + {\textbackslash}epsilon\_\{jkl\} B\_l {\textbackslash}delta P\_\{ik\}$\hat{\ }$a {\textbackslash}right) . {\textbackslash}label\{eq003\} \\
 	{\textbackslash}end\{align\}
 \end{quote}
 위와 같이 작성한 후 컴파일하면 pdf 파일에 다음과 같은 식이 등장한다.
-\begin{align}
-\delta P_{ij}^a =&\frac{i}{B_0} \frac{\Omega_a}{\omega-{\rm\bf k}\cdot{\rm\bf v}_a} \left( m_a n \epsilon_{ikl} v_k^a B_l \delta v_j^a +m_a n \epsilon_{jkl} v_k^a B_l \delta v_i^a \right. \notag\\
-&\left. +\epsilon_{ikl} \delta B_l P_{jk}^a +\epsilon_{jkl} \delta B_l P_{ik}^a +\epsilon_{ikl} B_l \delta P_{jk}^a +\epsilon_{jkl} B_l \delta P_{ik}^a \right) . \label{eq003}
-\end{align}
+
 보는 바와 같이 괄호 내부가 너무 길어서 줄바꿈을 했더니 첫 줄에서 괄호가 열리고 다음 줄에서 괄호가 닫힌다. \TeX 에서는 괄호를 연 뒤, 닫지 않고 줄바꿈을 하면 에러가 발생한다. 따라서 첫 줄에서 `{\textbackslash}left('로 괄호를 연 뒤, `{\textbackslash}right.'으로 괄호를 닫았다. 이 표시는 실제로 pdf 파일에는 등장하지 않지만 에러 방지를 위해 넣어준 것이다. 두 번째 줄에서도 마찬가지로 `{\textbackslash}left.'으로 (pdf 파일에는 보이지 않는) 괄호를 연 뒤 `{\textbackslash}right)'으로 괄호를 닫아주었다.
+
+\begin{align}
+	\delta P_{ij}^a =&\frac{i}{B_0} \frac{\Omega_a}{\omega-{\rm\bf 
+	k}\cdot{\rm\bf v}_a} \left( m_a n \epsilon_{ikl} v_k^a B_l \delta v_j^a 
+	+m_a n \epsilon_{jkl} v_k^a B_l \delta v_i^a \right. \nonumber\\
+	&\left. +\epsilon_{ikl} \delta B_l P_{jk}^a +\epsilon_{jkl} \delta B_l 
+	P_{ik}^a +\epsilon_{ikl} B_l \delta P_{jk}^a +\epsilon_{jkl} B_l \delta 
+	P_{ik}^a \right) . \label{eq003}
+\end{align}
 
 align 명령어는 각 줄마다 수식 번호가 작성 가능하다. 그래서 식 (\ref{eq003})과 같이 하나의 식을 두 줄에 나누어 표현할 때 (첫 번째 줄에는 notag 명령어를 넣어 수식 번호를 제거하고) 두 번째 줄에 수식 번호가 등장하도록 하였다. 그런데 이처럼 하나의 식을 여러 줄에 걸쳐 표현할 때는 수식 번호의 상하 위치가 수식 전체의 중앙에 등장하는 편이 더 보기 좋다. 이 경우에는 equation 명령어 내부에 다시 split 명령어를 사용하면 된다. 다음 식 (\ref{eq004})는 이 방법을 사용한 것으로서, 자세한 사용법을 알고 싶으면 \TeX\ 파일에 어떤 식으로 작성되었는지 살펴보기 바란다.
 
