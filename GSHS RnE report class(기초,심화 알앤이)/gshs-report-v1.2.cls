@@ -1,7 +1,7 @@
 % -*- TeX:UTF-8 -*-
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gshs-report-v1.2}%
+\ProvidesClass{gshs-report-v1.2}[2016/06/10 v.1.21]%
 %[2014/09/02 v0.1 Standard GSHS report document class, ko.TeX version] % initiated by 정민석(2014년도 경기과학고 수학과 전문교원)
 % [2015/11/22 v0.11 Standard GSHS report document class, ko.TeX version] % modified by 박승원(32nd, 14041, seungwonpark) 
 % 변경사항 : Figure를 Fig. 로 변경, References 를 '참고문헌'으로 변경, figure/table numbering 의 chapter 넘어갈때마다 문제생기는점 해결, SI 단위계 사용 가능하게 함
@@ -28,7 +28,8 @@
 
 %% SI Unit 을 사용하기 위한 설정. \SI{1}{\meter\per\sec}는 m/s 와 같이 나옴.
 \usepackage[per-mode=symbol]{siunitx}
-\sisetup{inter-unit-product =$\cdot$} % http://tex.stackexchange.com/questions/59032/how-to-format-si-units
+\sisetup{inter-unit-product = \cdot}
+%http://tex.stackexchange.com/questions/59032/how-to-format-si-units
 
 %% 옵션 설정을 위한 boolean 변수선언
 \newif\if@isDoctor
@@ -202,31 +203,35 @@
 \newcommand{\makecover}{%
 	\renewcommand{\baselinestretch}{1.3}%
 	\thispagestyle{empty} \noindent%
-	\@summitYear 학년도\\
-	{\sf \textbf{경기과학고등학교 \@type R\&E \@reporttype 보고서}}\\
+	\@summitYear 학년도\newline
+	{\sf \textbf{경기과학고등학교 \@type R\&E \@reporttype 보고서}}
 	\vskip 3cm
 	\noindent\begin{minipage}[t]{\textwidth}
 		\begin{center}
 			\fontsize{21pt}{21pt}\selectfont  \@title \\[21pt]
 		\end{center}
-	\end{minipage}\\
-	\vskip 3cm
+	\end{minipage}
+	\vskip 3.6604cm %3cm + 12pt*1.3*1.2
 	\noindent\begin{minipage}[c]{\textwidth}
 		\begin{center}
 			\@summitYear. \@summitMonth. \@summitDate
 		\end{center}
-	\end{minipage}\\
-	\vskip 3cm
+	\end{minipage}
+	\vskip 3.6604cm %3cm + 12pt*1.3*1.2
 	\noindent\begin{minipage}[c]{\textwidth}
 		\begin{center}
 			\large 연구참여자 : \@firstAuthor(\@firstAuthorEmail)\\ 
-			\ifthenelse{\equal{\@secondAuthor}{}}{} {\hskip 7pc \@secondAuthor(\@secondAuthorEmail)\\ }%
-			\ifthenelse{\equal{\@thirdAuthor}{}}{}{\hskip 7pc \@thirdAuthor(\@thirdAuthorEmail)\\ }%
-			\ifthenelse{\equal{\@forthAuthor}{}}{}{\hskip 7pc \@forthAuthor(\@forthAuthorEmail)\\ }%
-			\ifthenelse{\equal{\@fifthAuthor}{}}{}{\hskip 7pc \@fifthAuthor(\@fifthAuthorEmail)\\ }%
+			\ifthenelse{\equal{\@secondAuthor}{}}{} {\hskip 7pc 
+				\@secondAuthor(\@secondAuthorEmail)\\ }%
+			\ifthenelse{\equal{\@thirdAuthor}{}}{}{\hskip 7pc 
+				\@thirdAuthor(\@thirdAuthorEmail)\\ }%
+			\ifthenelse{\equal{\@forthAuthor}{}}{}{\hskip 7pc 
+				\@forthAuthor(\@forthAuthorEmail)\\ }%
+			\ifthenelse{\equal{\@fifthAuthor}{}}{}{\hskip 7pc 
+				\@fifthAuthor(\@fifthAuthorEmail)\\ }%
 		\end{center}
-	\end{minipage}\\
-	\vskip 3pc
+	\end{minipage}
+	\vskip 4.56pc %3pc + 12pt*1.3*1.2
 	\noindent\begin{minipage}[c]{\textwidth}
 		\begin{center}
 			\large 지도교사: \@advisor(\@advisorEmail)
@@ -235,15 +240,18 @@
 	\vskip 2pc
 	\noindent\begin{minipage}[c]{\textwidth}
 		\begin{center}
-			\large \ifthenelse{\equal{\@type}{심화}}{지도교수: \@professor(\@professorEmail)}{}
+			\large \ifthenelse{\equal{\@type}{심화}}{지도교수: 
+			\@professor(\@professorEmail)}{}
 		\end{center}
 	\end{minipage}
 	\vskip 5pc
 	\noindent \begin{minipage}[c]{\textwidth}
 		\begin{center}
-			{\normalfont\fontsize{18}{18}\selectfont\bfseries 과학영재학교}
+			{\normalfont\fontsize{18}{18}\selectfont\bfseries 
+			과학영재학교}
 			~
-			{\normalfont\fontsize{24}{24}\selectfont\bfseries 경기과학고등학교}
+			{\normalfont\fontsize{24}{24}\selectfont\bfseries 
+			경기과학고등학교}
 		\end{center}
 	\end{minipage}
 	\newpage
