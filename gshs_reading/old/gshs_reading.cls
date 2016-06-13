@@ -36,7 +36,6 @@
 \newcommand{\@studentnumber}{학번}
 \newcommand{\@studentname}{이름}
 \newcommand{\@reporttitle}{감상문 제목(13p)}
-\newcommand{\@isfinalreport}{최종}
 
 \newcommand{\booktitle}[1]{%
 	\renewcommand{\@booktitle}{#1}%	
@@ -57,31 +56,15 @@
 	\renewcommand{\@reporttitle}{#1}%
 }
 
-\newcommand{\isfinalreport}[1]{%
-	\newcommand{\@type}{#1}%
-}
-
-%\newcommand{\researchtype}[1]{
-%	\newcommand{\@type}{#1}}
-%\@onlypreamble{\researchtype}
-
 \usepackage{scrextend} %changefontsizes 사용 패키지
-
-%\usepackage{ifthen}
-\RequirePackage{ifthen}
-
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
-\rfoot{\small\sf\@studentnumber, \@studentname}
-\ifthenelse{\equal{\@type}{Final}}{}{%
-	\lhead{\small\sf%
-		\@bookauthor, <{}<\@booktitle>{}>, \@bookpublisher%
-	}
+\lhead{\small\sf%
+	\@bookauthor, <{}<\@booktitle>{}>, \@bookpublisher%
 }
-%\ifthenelse{\equal{\@type}{심화}}{지도교수: \@professor(\@professorEmail)}{}
+\rfoot{\small\sf\@studentnumber, \@studentname}
 %머리말, 꼬리말 설정.
-
 
 \newcommand{\makebooktitle}{%
 	\vspace*{-15.5pt}%
