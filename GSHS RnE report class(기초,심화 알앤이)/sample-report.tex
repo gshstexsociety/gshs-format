@@ -1,18 +1,30 @@
 % Initiated by 정민석(2014년도 경기과학고 수학과전문교원)
 % Continously being modified by 경기과학고 TeX 사용자협회
 % Website : http://gshslatexintro.github.io 
-\documentclass{gshs-report-v1.1}
+\documentclass{gshs-report-v1.2}
 % 추가로 필요한 패키지가 있다면 주석을 풀고 적어넣으십시오,
 %\usepackage{...}
 
 \researchtype{기초} % 기초 / 심화
+\reporttype{중간} % 중간 / 결과
+
 \title{보고서 제목} % 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+\englishtitle{English title}% 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+
 \author[1] {홍길동} % 제 1 저자명
-\email[1]{hong@e-mail.adress} % 제 1 저자 이메일
+\email[1]{hong@e-mail.address} % 제 1 저자 이메일
 \author[2] {전우치} % 제 2 저자명
-\email[2]{cheon@e-mail.adress} % 제 2 저자 이메일
+\email[2]{cheon@e-mail.address} % 제 2 저자 이메일
+\author[3] {아이유} % 제 3 저자명
+\email[3]{iu@bogo.sipda} % 제 3 저자 이메일
 \advisor{홍판서} % 지도교사명
-\professor{아무개} % 지도교수명. researchtype이 '심화' 일 때만 표지에 생성됨
+\advisorEmail{teacher@e-mail.address} % 지도교사 이메일
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% researchtype이 '심화'일 경우에만 나타남 %%%%
+\professor{교수님} % 지도교수명
+\professorEmail{professor@e-mail.address} % 지도교수 이메일
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \summitdate{2016}{02}{07} % 제출일 (연, 월, 일)
 \newtheorem{definition}{정의}
 
@@ -49,6 +61,12 @@
 
 \section{Introduction}
 
+아래의 글은 경기과학고 물리 전문교원이신 목진욱 박사님께서 작성하신 글이다. 
+원래는 졸업논문 작성 가이드이기 때문에 R\&E 보고서 가이드처럼 사용하기에는 벅찰 수 있지만 첨부한다.
+이 글과 더불어 경기과학고 \TeX 사용자협회\footnote{구글 검색 : `경기과학고 TeX 사용자협회'. 전체 파일 목록 - An-Introduction-to-LaTeX - An Introduction to LaTeX-ver2.0\_beamer - Day1,2 와 같이 2개가 있다.} 의 입문서 ver2.0(beamer)를 함께 읽어보면 좋을 것이다.
+
+\vskip 3pc
+
 서론은 연구를 진행하게 된 배경을 기술하는 곳으로 보통 다음과 같은 순서로 쓰는 편이다.
 \begin{itemize}
 	\item{연구 주제의 전반적 관심을 조명.}
@@ -66,7 +84,14 @@
 
 이제 서론에서 해당 논문을 인용할 준비 작업은 끝났다. 서론에서 필요한 부분에 이 논문을 인용 표기할 경우 {\textbackslash}cite 라고 입력한 후 \{ \} 안에 해당 논문을 표시하면 된다. 표시하는 방법은 바로 레퍼런스에서 {\textbackslash}bibitem 이후 \{ \} 안에 적었던 것을 넣어주면 된다. 논문 인용 표시가 문장 마지막에 등장할 때는 마침표의 위치는 인용 표시 다음이다. 아래 문장은 논문 인용 표시의 예로 C. Mok의 2010년 논문에서 인용하였다 \cite{Mok10}.
 \begin{quote}
-	Various plasma instabilities have been proposed as playing important roles during the substorm onset process. These include the tearing {\textbackslash}cite\{Schindler74, Sitnov97, Zelenyi08\}, ballooning {\textbackslash}cite\{Cheng98, Bhattacharjee98, Dobias04, Zhu03, Saito08, Friedrich01\}, lower hybrid drift {\textbackslash}cite\{Shinohara98, Yoon02, Mok06\}, Kelvin--Helmholtz {\textbackslash}cite\{Rostoker84, Dobias06\}, and the ion Weibel {\textbackslash}cite\{Yoon93, Sadovskii01\} instabilities.
+	Various plasma instabilities have been proposed as playing important 
+	roles during the substorm onset process. These include the tearing 
+	{\textbackslash}cite\{Schindler74, Sitnov97, Zelenyi08\}, ballooning 
+	{\textbackslash}cite\{Cheng98, Bhattacharjee98, Dobias04, Zhu03, 
+	Saito08, Friedrich01\}, lower hybrid drift 
+	{\textbackslash}cite\{Shinohara98, Yoon02, Mok06\}, \linebreak
+	Kelvin--Helmholtz {\textbackslash}cite\{Rostoker84, Dobias06\}, and the 
+	ion Weibel {\textbackslash}cite\{Yoon93, Sadovskii01\} instabilities.
 \end{quote}
 위와 같이 입력한 후 컴파일하면 pdf 파일에는 다음과 같이 나타날 것이다.
 \begin{quote}
@@ -106,7 +131,11 @@ pdf 파일에는 다음과 같이 나타난다.
 다음은 수식이 문장 밖으로 나와 한 줄을 통째로 차지하는 경우이다. 수식을 작성하는 명령어는 다양하지만, 여기서는 equation, align에 대해서만 다룬다. 먼저 equation의 사용법을 예를 통해 확인해보자. 만약 다음과 같이 입력을 하고
 \begin{quote}
 	{\textbackslash}begin\{equation\}\\
-	{\textbackslash}int\_V {\textbackslash}nabla{\textbackslash}cdot\{{\textbackslash}rm{\textbackslash}bf F\}dV={\textbackslash}oint\_S \{{\textbackslash}rm{\textbackslash}bf F\}{\textbackslash}cdot d\{{\textbackslash}rm{\textbackslash}bf A\}. {\textbackslash}label\{eq001\} \\
+	{\textbackslash}int\_V 
+	{\textbackslash}nabla{\textbackslash}cdot\{{\textbackslash}rm{\textbackslash}bf
+	 F\}dV={\textbackslash}oint\_S \{{\textbackslash}rm{\textbackslash}bf 
+	F\}{\textbackslash}cdot d\{{\textbackslash}rm{\textbackslash}bf A\}. 
+	\newline{\textbackslash}label\{eq001\} \\
 	{\textbackslash}end\{equation\}
 \end{quote}
 컴파일을 하면 다음과 같은 식이 pdf파일에 나타나는 것을 확인할 수 있다.
@@ -132,8 +161,20 @@ pdf 파일에는 다음과 같이 나타난다.
 지금까지 equation 명령어에 대해 살펴보았는데, equation은 한 줄로 표현 가능한 수식에 사용된다. 그런데 수식 중에는 한 줄로 표현하기 너무 길어서 줄바꿈을 해야 할 필요가 있는 경우, 또는 여러 줄에 걸쳐서 계산 과정을 보여줄 필요가 있는 경우가 있다. 이 때 사용되는 대표적인 명령어가 align이다.
 \begin{quote}
 	{\textbackslash}begin\{align\} \\
-	{\textbackslash}frac\{dE\}\{dt\} \&={\textbackslash}frac\{{\textbackslash}partial E\}\{{\textbackslash}partial t\} +{\textbackslash}sum\_i {\textbackslash}dot\{q\}\_i {\textbackslash}frac\{{\textbackslash}partial E\}\{{\textbackslash}partial q\_i\}+{\textbackslash}sum\_i{\textbackslash}ddot\{q\}\_i {\textbackslash}frac\{{\textbackslash}partial E\}\{{\textbackslash}partial {\textbackslash}dot\{q\}\_i\} {\textbackslash}notag {\textbackslash}{\textbackslash} \\
-	\&={\textbackslash}sum\_j {\textbackslash}dot\{q\}\_j {\textbackslash}sum\_k {\textbackslash}left( A\_\{jk\} q\_k +M\_\{jk\} {\textbackslash}ddot\{q\}\_k {\textbackslash}right) . {\textbackslash}label\{eq002\}\\
+	{\textbackslash}frac\{dE\}\{dt\} 
+	\&={\textbackslash}frac\{{\textbackslash}partial 
+	E\}\{{\textbackslash}partial t\} +{\textbackslash}sum\_i 
+	{\textbackslash}dot\{q\}\_i 
+	{\textbackslash}frac\{{\textbackslash}partial 
+	E\}\linebreak\{{\textbackslash}partial 
+	q\_i\}+{\textbackslash}sum\_i{\textbackslash}ddot\{q\}\_i 
+	{\textbackslash}frac\{{\textbackslash}partial 
+	E\}\{{\textbackslash}partial {\textbackslash}dot\{q\}\_i\} 
+	{\textbackslash}notag {\textbackslash}{\textbackslash} \\
+	\&={\textbackslash}sum\_j {\textbackslash}dot\{q\}\_j 
+	{\textbackslash}sum\_k {\textbackslash}left( A\_\{jk\} q\_k +M\_\{jk\} 
+	{\textbackslash}ddot\{q\}\_k {\textbackslash}right) . 
+	{\textbackslash}label\{eq002\}\\
 	{\textbackslash}end\{align\}
 \end{quote}
 \TeX\ 파일에 위와 같이 입력하고 컴파일을 해보면 다음과 같은 식을 얻는다.
@@ -144,16 +185,31 @@ pdf 파일에는 다음과 같이 나타난다.
 \TeX\ 파일에 입력된 등호 앞의 \& 기호는 줄 맞춤 표시이다. 즉, 첫 번째 줄의 \&와 두 번째 줄의 \&가 같은 수직선상에 위치한다는 의미이다. 첫 번째 줄에서는 수식 번호를 넣고 싶지 않아서 {\textbackslash}notag라는 명령어를 사용하였다. equation 명령어에서 사용된 {\textbackslash}nonumber와 같은 기능을 한다. 줄을 넘길 때는 {\textbackslash}{\textbackslash}를 사용한다. 이번에는 줄이 너무 길어서 여러 줄에 나누어 표현하는 식의 예를 살펴보자. (P. H. Yoon의 2006 논문에서 참고하였음 \cite{Yoon06})
 \begin{quote}
 	{\textbackslash}begin\{align\}\\
-	{\textbackslash}delta P\_\{ij\}$\hat{\ }$a =\&{\textbackslash}frac\{i\}\{B\_0\} {\textbackslash}frac\{{\textbackslash}Omega\_a\}\{{\textbackslash}omega-\{ {\textbackslash}rm{\textbackslash}bf k\}{\textbackslash}cdot\{ {\textbackslash}rm{\textbackslash}bf v\}\_a \} {\textbackslash}left( m\_a n {\textbackslash}epsilon\_\{ikl\} v\_k$\hat{\ }$a B\_l {\textbackslash}delta v\_j$\hat{\ }$a +m\_a n {\textbackslash}epsilon\_\{jkl\} v\_k$\hat{\ }$a B\_l {\textbackslash}delta\_i$\hat{\ }$a {\textbackslash}right. {\textbackslash}notag {\textbackslash}{\textbackslash} \\
+	{\textbackslash}delta P\_\{ij\}$\hat{\ }$a 
+	=\&{\textbackslash}frac\{i\}\{B\_0\} 
+	{\textbackslash}frac\{{\textbackslash}Omega\_a\}\{{\textbackslash}omega-\{
+	 {\textbackslash}rm{\textbackslash}bf k\}{\textbackslash}cdot\{ 
+	{\textbackslash}rm\linebreak{\textbackslash}bf v\}\_a \} 
+	{\textbackslash}left( m\_a n {\textbackslash}epsilon\_\{ikl\} 
+	v\_k$\hat{\ }$a B\_l {\textbackslash}delta v\_j$\hat{\ }$a +m\_a n 
+	{\textbackslash}epsilon\_\{jkl\} v\_k$\hat{\ }$a B\_l 
+	{\textbackslash}delta\_i$\hat{\ }$a {\textbackslash}right. 
+	{\textbackslash}nonumber {\textbackslash}{\textbackslash} \\
 	\& {\textbackslash}left. + {\textbackslash}epsilon\_\{ikl\} {\textbackslash}delta B\_l P\_\{jk\}$\hat{\ }$a + {\textbackslash}epsilon\_\{jkl\} {\textbackslash}delta B\_l P\_\{ik\}$\hat{\ }$a + {\textbackslash}epsilon\_\{ikl\} B\_l {\textbackslash}delta P\_\{jk\}$\hat{\ }$a + {\textbackslash}epsilon\_\{jkl\} B\_l {\textbackslash}delta P\_\{ik\}$\hat{\ }$a {\textbackslash}right) . {\textbackslash}label\{eq003\} \\
 	{\textbackslash}end\{align\}
 \end{quote}
 위와 같이 작성한 후 컴파일하면 pdf 파일에 다음과 같은 식이 등장한다.
-\begin{align}
-\delta P_{ij}^a =&\frac{i}{B_0} \frac{\Omega_a}{\omega-{\rm\bf k}\cdot{\rm\bf v}_a} \left( m_a n \epsilon_{ikl} v_k^a B_l \delta v_j^a +m_a n \epsilon_{jkl} v_k^a B_l \delta v_i^a \right. \notag\\
-&\left. +\epsilon_{ikl} \delta B_l P_{jk}^a +\epsilon_{jkl} \delta B_l P_{ik}^a +\epsilon_{ikl} B_l \delta P_{jk}^a +\epsilon_{jkl} B_l \delta P_{ik}^a \right) . \label{eq003}
-\end{align}
+
 보는 바와 같이 괄호 내부가 너무 길어서 줄바꿈을 했더니 첫 줄에서 괄호가 열리고 다음 줄에서 괄호가 닫힌다. \TeX 에서는 괄호를 연 뒤, 닫지 않고 줄바꿈을 하면 에러가 발생한다. 따라서 첫 줄에서 `{\textbackslash}left('로 괄호를 연 뒤, `{\textbackslash}right.'으로 괄호를 닫았다. 이 표시는 실제로 pdf 파일에는 등장하지 않지만 에러 방지를 위해 넣어준 것이다. 두 번째 줄에서도 마찬가지로 `{\textbackslash}left.'으로 (pdf 파일에는 보이지 않는) 괄호를 연 뒤 `{\textbackslash}right)'으로 괄호를 닫아주었다.
+
+\begin{align}
+	\delta P_{ij}^a =&\frac{i}{B_0} \frac{\Omega_a}{\omega-{\rm\bf 
+	k}\cdot{\rm\bf v}_a} \left( m_a n \epsilon_{ikl} v_k^a B_l \delta v_j^a 
+	+m_a n \epsilon_{jkl} v_k^a B_l \delta v_i^a \right. \nonumber\\
+	&\left. +\epsilon_{ikl} \delta B_l P_{jk}^a +\epsilon_{jkl} \delta B_l 
+	P_{ik}^a +\epsilon_{ikl} B_l \delta P_{jk}^a +\epsilon_{jkl} B_l \delta 
+	P_{ik}^a \right) . \label{eq003}
+\end{align}
 
 align 명령어는 각 줄마다 수식 번호가 작성 가능하다. 그래서 식 (\ref{eq003})과 같이 하나의 식을 두 줄에 나누어 표현할 때 (첫 번째 줄에는 notag 명령어를 넣어 수식 번호를 제거하고) 두 번째 줄에 수식 번호가 등장하도록 하였다. 그런데 이처럼 하나의 식을 여러 줄에 걸쳐 표현할 때는 수식 번호의 상하 위치가 수식 전체의 중앙에 등장하는 편이 더 보기 좋다. 이 경우에는 equation 명령어 내부에 다시 split 명령어를 사용하면 된다. 다음 식 (\ref{eq004})는 이 방법을 사용한 것으로서, 자세한 사용법을 알고 싶으면 \TeX\ 파일에 어떤 식으로 작성되었는지 살펴보기 바란다.
 
@@ -241,6 +297,27 @@ Table \ref{table01}과 같은 표를 얻게 된다.
 	\end{center}
 \end{table}
 
+위와 같이 `\textbackslash rm' 을 사용하여 단위를 나타낼 수도 있지만,
+`\textbackslash SI' 와 `\textbackslash si' 명령어를 사용해도 편리하다. 
+간단한 사용법과 결과는 다음과 같다. mathmode(달러 안쪽) 에서도 사용이 가능하다.
+
+\begin{center}
+	\begin{quote}
+		\$ G=\textbackslash SI\{6.67e-11\}\{\textbackslash newton\textbackslash square\textbackslash meter\textbackslash per\textbackslash square\textbackslash kilogram\} \$
+	\end{quote}
+	
+	\begin{quote}
+		$ G=\SI{6.67e-11}{\newton\square\meter\per\square\kilogram} $
+	\end{quote}
+\end{center}
+
+원래는 `\textbackslash per'을 사용하면 그 뒤의 차원들은 음수 차원으로 나타내어지고 보통 우리가 말하는 `per'은 나타나지 않는데,
+위와 같이 사용하려면 다음 명령어를 `\textbackslash begin\{document\}' 이전에 삽입하면 된다.
+이 보고서 양식에서는 이미 cls 파일에 지정되어 있다. 
+\begin{center}
+	\textbackslash sisetup\{inter-unit-product =\$\textbackslash cdot\$\}
+\end{center}
+
 
 %-----------------------------------------------------
 % Conclusion
@@ -302,8 +379,33 @@ Theorem labeling이 이상하게 되던 문제:
 \begin{definition}
 	Lorem Ipsum
 \end{definition}
-해결된듯? Theorem 안써본지가 오래되어서... eveneharder님 한번 확인해주세요
 
+section 이 넘어가도 definition counter는 잘 유지된다. 정의 \ref{def_test}\을 참조바람.
+
+
+\section{Test Section}
+
+Title : LARGE, Bold face
+
+\subsection{Test Subsection}
+
+Title : Large, Bold face
+
+\begin{definition} \label{def_test}
+	Content.
+\end{definition}
+
+`정의' 명령어의 번호 매기기가 잘 수행된다. 정의 \ref{def_test}\과 같이. % 자동 조사 명령어
+
+\subsubsection{Test Subsubsection}
+
+Title : large, Bold face
+
+앞서 언급하였듯이 subsubsection, paragraph 와 같은 하위 절은 사용을 자제하는 것이 좋다.
+
+\paragraph{Test Paragraph}
+
+Title : 12pt, italic style. No numbering.
 
 
 

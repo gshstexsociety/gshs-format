@@ -1,7 +1,7 @@
 % -*- TeX:UTF-8 -*-
 
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{gshs-report-v1.1}%
+\ProvidesClass{gshs-report-v1.2}[2016/06/10 v.1.21]%
 %[2014/09/02 v0.1 Standard GSHS report document class, ko.TeX version] % initiated by 정민석(2014년도 경기과학고 수학과 전문교원)
 % [2015/11/22 v0.11 Standard GSHS report document class, ko.TeX version] % modified by 박승원(32nd, 14041, seungwonpark) 
 % 변경사항 : Figure를 Fig. 로 변경, References 를 '참고문헌'으로 변경, figure/table numbering 의 chapter 넘어갈때마다 문제생기는점 해결, SI 단위계 사용 가능하게 함
@@ -15,6 +15,11 @@
 %% 그림과 표의 번호가 chapter를 넘어가도 초기화되지 않도록 설정. sample report 파일에 \counterwithout{figure}{chapter}가 포함됨
 %\usepackage{chngcntr} % figure numbering across chapters continously
 
+%[2016/06/02 v1.2 Standard GSHS report document class] % modified by 서울(경기과학고 물리교사), 박승원(32nd, 14041, seungwonpark)
+% 변경사항(서울) : 표지의 폰트 및 vskip 간격 일부 수정, 지도교사/교수 이메일란 추가.
+% 변경사항(박승원) : reporttype 를 통해 중간/결과 를 선택 가능하게 함, section formatting 수정 (section 계층 번호부여를 arabic 대신 roman 으로 수정)
+
+
 % 영어 Font : Times New Roman
 \usepackage[T1]{fontenc}   % To use Times New Roman
 \usepackage[utf8]{inputenc}% To use Times New Roman
@@ -23,7 +28,8 @@
 
 %% SI Unit 을 사용하기 위한 설정. \SI{1}{\meter\per\sec}는 m/s 와 같이 나옴.
 \usepackage[per-mode=symbol]{siunitx}
-\sisetup{inter-unit-product =$\cdot$} % http://tex.stackexchange.com/questions/59032/how-to-format-si-units
+\sisetup{inter-unit-product = \cdot}
+%http://tex.stackexchange.com/questions/59032/how-to-format-si-units
 
 %% 옵션 설정을 위한 boolean 변수선언
 \newif\if@isDoctor
@@ -102,10 +108,17 @@
 
 \pagestyle{gshs}
 
-%$ 연구 타입
+%% 연구 타입
 \newcommand{\researchtype}[1]{
 	\newcommand{\@type}{#1}}
 \@onlypreamble{\researchtype}
+
+
+%% 보고서 타입 (중간보고서,결과보고서)
+\newcommand{\reporttype}[1]{%
+	\newcommand{\@reporttype}{#1}%
+}
+
 
 %%
 %% 문서 정보 변수 정의
@@ -150,12 +163,30 @@
 }
 \@onlypreamble{\advisor}
 
+% @command advisor 지도교사 이메일
+\newcommand{\advisorEmail}[1]{
+	\newcommand{\@advisorEmail}{#1}
+}
+\@onlypreamble{\advisorEmail}
+
 % @command professor 지도교수 이름
 
 \newcommand{\professor}[1]{
 	\newcommand{\@professor}{#1}
 }
 \@onlypreamble{\professor}
+
+% @command English Title
+\newcommand{\englishtitle}[1]{
+	\newcommand{\@englishtitle}{#1}
+}
+\@onlypreamble{\englishtitle}
+
+% @command advisor 지도교사 이메일
+\newcommand{\professorEmail}[1]{
+	\newcommand{\@professorEmail}{#1}
+}
+\@onlypreamble{\professorEmail}
 
 % @param year,month,day 연,월,일 순으로 입력
 \newcommand{\summitdate}[3]{
@@ -172,46 +203,55 @@
 \newcommand{\makecover}{%
 	\renewcommand{\baselinestretch}{1.3}%
 	\thispagestyle{empty} \noindent%
-	\@summitYear 학년도\\
-	{\sf 경기과학고등학교 \@type R\&E 결과보고서}\\
+	\@summitYear 학년도\newline
+	{\sf \textbf{경기과학고등학교 \@type R\&E \@reporttype 보고서}}
 	\vskip 3cm
 	\noindent\begin{minipage}[t]{\textwidth}
 		\begin{center}
 			\fontsize{21pt}{21pt}\selectfont  \@title \\[21pt]
 		\end{center}
-	\end{minipage}\\
-	\vskip 3cm
+	\end{minipage}
+	\vskip 3.6604cm %3cm + 12pt*1.3*1.2
 	\noindent\begin{minipage}[c]{\textwidth}
 		\begin{center}
 			\@summitYear. \@summitMonth. \@summitDate
 		\end{center}
-	\end{minipage}\\
-	\vskip 3cm
+	\end{minipage}
+	\vskip 3.6604cm %3cm + 12pt*1.3*1.2
 	\noindent\begin{minipage}[c]{\textwidth}
 		\begin{center}
 			\large 연구참여자 : \@firstAuthor(\@firstAuthorEmail)\\ 
-			\ifthenelse{\equal{\@secondAuthor}{}}{} {\hskip 7pc \@secondAuthor(\@secondAuthorEmail)\\ }%
-			\ifthenelse{\equal{\@thirdAuthor}{}}{}{\hskip 7pc \@thirdAuthor(\@thirdAuthorEmail)\\ }%
-			\ifthenelse{\equal{\@forthAuthor}{}}{}{\hskip 7pc \@forthAuthor(\@forthAuthorEmail)\\ }%
-			\ifthenelse{\equal{\@fifthAuthor}{}}{}{\hskip 7pc \@fifthAuthor(\@fifthAuthorEmail)\\ }%
-		\end{center}
-	\end{minipage}\\
-	\vskip 3pc
-	\noindent\begin{minipage}[c]{\textwidth}
-		\begin{center}
-			\large 지도교사: \@advisor
+			\ifthenelse{\equal{\@secondAuthor}{}}{} {\hskip 7pc 
+				\@secondAuthor(\@secondAuthorEmail)\\ }%
+			\ifthenelse{\equal{\@thirdAuthor}{}}{}{\hskip 7pc 
+				\@thirdAuthor(\@thirdAuthorEmail)\\ }%
+			\ifthenelse{\equal{\@forthAuthor}{}}{}{\hskip 7pc 
+				\@forthAuthor(\@forthAuthorEmail)\\ }%
+			\ifthenelse{\equal{\@fifthAuthor}{}}{}{\hskip 7pc 
+				\@fifthAuthor(\@fifthAuthorEmail)\\ }%
 		\end{center}
 	\end{minipage}
-	\vskip 1pc
+	\vskip 4.56pc %3pc + 12pt*1.3*1.2
 	\noindent\begin{minipage}[c]{\textwidth}
 		\begin{center}
-			\large \ifthenelse{\equal{\@type}{심화}}{지도교수: \@professor }{}
+			\large 지도교사: \@advisor(\@advisorEmail)
 		\end{center}
 	\end{minipage}
-	\vskip 6pc
+	\vskip 2pc
+	\noindent\begin{minipage}[c]{\textwidth}
+		\begin{center}
+			\large \ifthenelse{\equal{\@type}{심화}}{지도교수: 
+			\@professor(\@professorEmail)}{}
+		\end{center}
+	\end{minipage}
+	\vskip 5pc
 	\noindent \begin{minipage}[c]{\textwidth}
 		\begin{center}
-			\large 과학영재학교 \Large 경기과학고등학교
+			{\normalfont\fontsize{18}{18}\selectfont\bfseries 
+			과학영재학교}
+			~
+			{\normalfont\fontsize{24}{24}\selectfont\bfseries 
+			경기과학고등학교}
 		\end{center}
 	\end{minipage}
 	\newpage
@@ -255,11 +295,29 @@
 %\def\fnum@figure{\figurename\nobreakspace\thefigure}
 %\def\fnum@table{\tablename\nobreakspace\thetable}
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Chapter/section title format %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+
+%\titleformat{command}[shape]{format}{label}{sep}{before-code}{after-code}
+
+\titleformat{\section}[hang]
+{\LARGE\bfseries}{\Roman{section}.}{1em}{}{}
+\titleformat{\subsection}[hang]
+{\Large\bfseries}{\arabic{section}.\arabic{subsection}}{1em}{}{}
+\titleformat{\subsubsection}[hang]
+{\large}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}{}
+\titleformat{\paragraph}[hang]
+{\normalfont\fontsize{12}{12}\selectfont\it}{}{1em}{}{}
+
 %% section 명령어 수정 - section 넘어갈 때마다 clearpage.. 드디어 해결..!
 \let\stdsection\section
 \renewcommand\section{\newpage\stdsection}
-
-
 
 %%
 %% 목차에 나오는 형식 - report 클래스로부터 복사하여 일부 수정
