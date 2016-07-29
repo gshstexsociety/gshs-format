@@ -7,7 +7,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ProvidesClass{gshs_thesis}
+
+\usepackage{ifxetex} % 부득이하게 pdflatex을 사용해도 문제가 없도록 함
+
+\ifxetex
 \LoadClass[11pt]{article}
+\else
+\usepackage[nonfrench]{kotex}
+\LoadClass[pdftex, 11pt]{article}
+\fi 
 
 \usepackage{geometry}
 \usepackage{amssymb}
@@ -21,8 +29,13 @@
 \usepackage{cite}   % citation [1,2,3] --> [1-3]
 \usepackage{tocloft}
 \usepackage[toc,page]{appendix}
-%\usepackage[T1]{fontenc}   % To use Times New Roman
-%\usepackage[utf8]{inputenc}% To use Times New Roman
+
+\ifxetex
+\else
+\usepackage[T1]{fontenc}   % To use Times New Roman
+\usepackage[utf8]{inputenc}% To use Times New Roman
+\fi
+
 \usepackage{mathptmx}      % To use Times New Roman
 \usepackage{array}
 \usepackage{setspace}
@@ -391,6 +404,8 @@
 {\end{alwayssingle}}
 
 
+
+\ifxetex
 %한글 사용 옵션
 \RequirePackage{xetexko}
 \setmainfont[Ligatures=TeX]{Times New Roman}
@@ -398,4 +413,5 @@
 	ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
 \disablecjksymbolspacing
 \nonfrenchspacing
-
+\else
+\fi
