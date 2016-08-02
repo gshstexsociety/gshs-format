@@ -1,0 +1,49 @@
+\documentclass{gshs_imaginarylab}
+\worktitle{작품명} % 작품명
+\workauthor{작품저자1, 작품저자2, 작품저자3} % 작품 제작에 참여한 사람 명단
+\workdate{2016}{8}{13} % 날짜
+% 이미지는 images 폴더 내에 넣어 주십시오.
+% 기타 패키지는 여기에 넣으십시오.
+\usepackage{lipsum} % dummy text
+
+
+\begin{document}
+\makeworkcover
+
+\section{How does this work?}
+	\lipsum[1]
+	\insertfig{example-image-a}
+	~
+	\insertfig{example-image-a}{
+		할 말이 없네요.
+	}
+	
+	\lipsum[2]
+	
+\section{Laser Cutting}
+	\lipsum[3]
+	\insertfig{example-image-b}{
+		\begin{enumerate}
+			\item 레이저 커팅은
+			\item 이렇게 하면 된다.
+			\item 안전이 최우선
+		\end{enumerate}
+	}
+	
+\section{3D 프린팅하기}
+	\lipsum[4]
+	\subsection{3D 모델링}
+	\lipsum[5]
+
+
+
+% 참고자료 기재
+\titleformat{\section}{\Large\bfseries\sffamily}{}{0pt}{}
+\addcontentsline{toc}{section}{References}
+
+\begin{thebibliography}{00}
+	\bibitem{gshs}{\url{http://gs.hs.kr} (경기과학고등학교 홈페이지)}
+	\bibitem{gshstexsociety}{\url{http://gshslatexintro.github.io} (경기과학고 텍 사용자협회)}
+\end{thebibliography}
+
+\end{document}
