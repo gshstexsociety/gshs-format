@@ -83,10 +83,11 @@
 }
 \def\workdate#1#2#3{\gdef\@workdate{#1. #2. #3}}
 
-%꼬리말 설정
+%머리말, 꼬리말 설정
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
+\lhead{}
 \rhead{}
 \lfoot{\href{https://www.gs.hs.kr/researchschool/research-school.do}{\color{mygray} 경기과학고등학교 무한상상실 - 2016 무한상상캠프}}
 \rfoot{\color{mygray} 양식 제작 by \href{http://gshslatexintro.github.io}{경기과학고 텍 사용자협회}}
