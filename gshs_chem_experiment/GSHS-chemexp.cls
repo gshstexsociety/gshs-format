@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{GSHS-chemexp}[2016/02/07 v.0.92]
+\ProvidesClass{GSHS-chemexp}[2016/02/07 v.0.921]
 \LoadClass[a4paper,10pt]{article}
 %화실 보고서는 비교적 짧은 분량이므로 article을 사용.
 %한규일 선생님께서는 A4에 2면을 인쇄하셨으므로 A4 단면 옵션으로 지정.
@@ -14,9 +14,10 @@
 
 \usepackage[version=4]{mhchem}
 \usepackage{tikz}
-\mhchemoptions{arrows=pgf}
+%\mhchemoptions{arrows=pgf}
 %화실 보고서이므로, 화학식 관련 기능을 쓰기 위한 패키지입니다.
 %mhcemoptions는 화살표 모양을 바꾸기 위함입니다. 지워도 상관 없습니다.
+%현재 오류가 있어 옵션을 제거하였습니다.
 
 \usepackage[justification=centering,labelsep=period]{caption}
 %캡션을 두 줄 이상 쓸 때도 가운데로 위치하도록 하였습니다.
