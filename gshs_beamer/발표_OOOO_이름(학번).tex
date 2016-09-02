@@ -1,0 +1,143 @@
+\documentclass[11pt]{beamer}
+\hypersetup{pdfencoding=auto}
+
+\usetheme{Berkeley}
+
+\usepackage{xcolor}
+\usepackage{amssymb,amsmath,graphicx}
+\usepackage[hangul]{kotex}
+\usepackage{multimedia}
+\usepackage{setspace}
+\usepackage{multicol}
+%\usepackage{verbatim} %use 
+\usepackage{lipsum}
+\graphicspath{{images/}}
+%% Footnote Setting %%
+
+\let\oldfootnote\footnote
+\renewcommand\footnote[1][]{\oldfootnote[frame,#1]}
+
+\makeatletter % Makes maximum footnote counter of fnsymbol from 9 to 12.
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or \dagger\or \ddagger\or
+		\mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+		\or \ddagger\ddagger\or \mathsection\mathsection
+		\or \mathparagraph\mathparagraph \or \|\|\else\@ctrerr\fi}}
+\makeatother
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+%% Color Setting %%
+\definecolor{Grey}{rgb}{0.6,0.6,0.6}
+\definecolor{GSHSred}{RGB}{105,0,0}
+\definecolor{GSHSblue}{RGB}{0,0,105}
+\definecolor{GSHSRED}{RGB}{80,0,0}
+\definecolor{GSHSBLUE}{RGB}{0,0,80}
+\definecolor{gshsred}{RGB}{240,210,210}
+\definecolor{gshsblue}{RGB}{210,210,240}
+\setbeamercolor{title}{bg=white,fg=GSHSblue}
+\setbeamercolor{author}{fg=GSHSblue}
+\setbeamercolor{institute}{fg=GSHSblue}
+\setbeamercolor{date}{fg=GSHSblue}
+\setbeamercolor{logo}{bg=GSHSblue}
+\setbeamercolor{sidebar}{bg=GSHSblue}
+\setbeamercolor{frametitle}{bg=white,fg=GSHSblue}
+\setbeamercolor{section in sidebar}{use=sidebar,bg=white,fg=sidebar.bg}
+\setbeamercolor{subsection in sidebar}{parent=section in sidebar}
+\setbeamercolor{subsubsection in sidebar}{parent=subsection in sidebar}
+\setbeamercolor{item}{fg=GSHSblue}
+\setbeamercolor{block title}{bg=GSHSBLUE,fg=white}
+\setbeamercolor{block body}{bg=gshsblue,fg=black}
+
+%% Frametitle Setting %%
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{frametitle}
+{ \vspace*{-10mm}
+  \leavevmode
+  \hspace*{3pt}
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1ex,dp=1ex]{frametitle}
+    \hspace*{7pt}\underline{\makebox[0.6\paperwidth][l]{
+    \Large{\insertframetitle}}}
+  \end{beamercolorbox}
+}
+
+             
+%% Title Page Setting %%
+\setbeamerfont{title}{series=\bfseries}
+\setbeamertemplate{title page}{
+  %% Background Logo
+  \begin{picture}(0,0)%
+    \setlength{\unitlength}{1cm}% default
+    \protect\put(1.3,0.8){%
+    \begin{picture}(6,6)(4,10)%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %\includegraphics[width=0.4\paperwidth]{New_Profile_Picture.pdf}%
+      \includegraphics[width=0.7\paperwidth]{koistudy_icon.pdf}%
+    \end{picture}%
+    }%
+  \end{picture}%
+  \vfill
+  \vspace*{10mm}
+  \raggedleft
+  %% Title
+  \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+  \vskip 2mm
+  %% Subtitle
+  \ifx\insertsubtitle\@empty
+  \else\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle
+  \fi
+
+  \vskip 3mm
+  %% Horizontal line
+  \usebeamercolor[fg]{title}\hrule height 2pt\hfill
+  \vskip 10mm
+  %% Author
+  \usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor
+  \vskip 1cm
+  %% Institute
+  \usebeamercolor[fg]{institute}\usebeamerfont{institute}\insertinstitute
+  \vskip 1cm
+  %% Date
+  \usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate
+  \vfill
+}
+
+%% itemize bullet setting %%
+\setbeamertemplate{itemize items}[ball]
+
+%% block setting %%
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%% Title, Author, Institute, Date %%
+\title[O주차 - X, X]{O주차 - X, X}
+\subtitle[]{2016 이산구조}
+\author[]{gs1XXXX(XX기 XXX)}
+\institute[GSHS]{경기과학고등학교}
+\date[]{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% insert your own profile picture
+%\logo{\includegraphics[width=15mm]{stackoverflow.pdf}}
+%\logo{\includegraphics[width=8mm]{Profile_Picture.pdf}}
+
+%% Main %%
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+\setbeamertemplate{sidebar left}[sidebar theme]
+
+\setstretch{1.3} %줄간격
+
+
+\section{개요}
+\begin{frame}{개요다.}\footnotesize
+	ㅁㄴㅇㄹ
+\end{frame}
+\begin{frame}{asdf}
+	
+	\begin{block}{asdf}
+		Lorem Ipsum Dolor Sit Amet
+	\end{block}
+\end{frame}
+\end{document}
