@@ -1,0 +1,25 @@
+\documentclass{gshs_observatory}
+\usepackage{lipsum}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+%TODO : 망원경 종류에 따라 Telescope, CCD 정보 자동 입력
+\begin{document}
+	\makecover
+	\recordtitle{Title}
+	\englishname{English Name}
+	\koreanname{한글이름(학번)}
+	\starttime{Start Time}
+	\finishtime{Finish Time}
+	\ccdtemperature{CCD Temperature}
+	\imagesize{Image Size}
+	\exposurepreset{Exposure Preset}
+	\autodark{Auto Dark}
+	\filterwheel{Filter Wheel}
+	\exposureduration{Exposure Duration}
+	\section{관측 목적}
+	\lipsum[1-2]
+	\section{관측 순서}
+	\lipsum[3-4]
+	\section{결과 및 고찰}
+	\lipsum[5-6]
+\end{document}
