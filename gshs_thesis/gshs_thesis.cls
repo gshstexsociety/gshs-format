@@ -2,7 +2,7 @@
 %%%  LaTeX document class of the thesis of the Gyeonggi Science High School   %%%
 %%%  Last edition 2015.11.13 by Chinook Mok                                   %%%
 %%%  Continously being modified by gshslatexintro after 2016.02.02.           %%%
-%%%  Check webpage http://gshslatexintro.github.io                            %%%
+%%%  Check the latest version at : latex.gs.hs.kr                             %%%
 %%%  Also refer to https://www.facebook.com/gshstexsociety                    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
