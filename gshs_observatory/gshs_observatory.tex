@@ -2,20 +2,23 @@
 \usepackage{lipsum}
 \usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
-%TODO : 망원경 종류에 따라 Telescope, CCD 정보 자동 입력
+
+\recordtitle{} % title of observational record.
+\englishname{} % english name of observer(s)
+\koreanname{} % korean name of observer(s)
+\starttime{} % observation start time (KST)
+\finishtime{} % observation finish time (KST)
+\ccdtemperature{} % cooled temperature of CCD
+\imagesize{} % size of taken images
+\exposurepreset{} % exposure Preset
+\autodark{} % auto Dark : Yes/No
+\filterwheel{} % filter(B,V,R)
+\exposureduration{} % exposure duration
+\flatinfoevening{flatinfo_evening.csv} % evening flat info in csv file
+\flatinfodaybreak{flatinfo_daybreak.csv} % daybreak flat info in csv file
+
 \begin{document}
 	\makecover
-	\recordtitle{Title}
-	\englishname{English Name}
-	\koreanname{한글이름(학번)}
-	\starttime{Start Time}
-	\finishtime{Finish Time}
-	\ccdtemperature{CCD Temperature}
-	\imagesize{Image Size}
-	\exposurepreset{Exposure Preset}
-	\autodark{Auto Dark}
-	\filterwheel{Filter Wheel}
-	\exposureduration{Exposure Duration}
 	\section{관측 목적}
 	\lipsum[1-2]
 	\section{관측 순서}
