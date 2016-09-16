@@ -2,8 +2,9 @@
 % % % LaTeX document class for the letter-formatted Human Tech paper % % %
 % % % First edition 2015.10.30 by Chinook Mok % % % % % % % % % % % % % % %
 % % % Modified edition 2015.11.28 by Seungwon Park % % % % % % % % % % % % % % %
+% % % Modified by GSHS TeX Society(http://latex.gs.hs.kr) % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-\ProvidesClass{fullpaper_hutech_v1.02}
+\ProvidesClass{fullpaper_hutech}
 \LoadClass[pdftex, a4size, twoside, 10pt, twocolumn]{article}
 
 
@@ -21,6 +22,7 @@
 \usepackage{ctable} % To customize table
 \usepackage{cite}     % To display citations as [1-3] instead of [1,2,3]
 \usepackage{enumitem} % To remove the hanging indentation.
+\usepackage{color} % To color header and footer as gray
 
 %%% following packages are optional %%%
 \usepackage{amssymb}
@@ -51,18 +53,22 @@
 \pagestyle{fancy}
 %\rhead{}
 %\chead{}
-%\lhead{\ifthenelse{\value{page}=1}{\fontsize{12}{0}\selectfont $\bf{22}^{\bf nd}\textbf{ HumanTech Paper Award}$}{\fontsize{9}{0}\selectfont $22^{\rm nd}\textrm{ HumanTech Paper Award}$}}
+%\lhead{\ifthenelse{\value{page}=1}{\color{gray} \fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}{\color{gray} \fontsize{9}{0}\selectfont $23^{\rd nd}\textrm{ HumanTech Paper Award}$}}
 
-\fancyhead[RO,LE]{\fontsize{9}{0}\selectfont $22^{\rm nd}\textrm{ HumanTech Paper Award}$}
+\fancyhead[RO,LE]{\color{gray} \fontsize{9}{0}\selectfont $23^{\rm rd}\textrm{ HumanTech Paper Award}$}
 \fancyhead[LO,RE]{}
-\fancyfoot[RO,LE]{\thepage}
+\fancyfoot[LO]{\color{gray} \footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
+\fancyfoot[RO]{\color{gray} \thepage}
+\fancyfoot[LE]{\color{gray} \thepage}
+\fancyfoot[RE]{\color{gray} \footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
 \fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0pt}
 
 \fancypagestyle{firstpage}{
 \fancyhf{}
-\fancyhead[L]{\fontsize{12}{0}\selectfont $\bf{22}^{\bf nd}\textbf{ HumanTech Paper Award}$}
-\fancyfoot[R]{\thepage}
+\fancyhead[L]{\color{gray} \fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}
+\fancyfoot[L]{\color{gray} \footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
+\fancyfoot[R]{\color{gray} \thepage}
 }
 
 \makeatletter

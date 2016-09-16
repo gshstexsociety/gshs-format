@@ -20,6 +20,7 @@
 \usepackage{ctable} % To customize table
 \usepackage{cite}     % To display citations as [1-3] instead of [1,2,3]
 \usepackage{enumitem} % To remove the hanging indentation.
+\usepackage{color} % To color header and footer as gray
 
 %%% following packages are optional %%%
 \usepackage{amssymb}
@@ -50,18 +51,18 @@
 \pagestyle{fancy}
 %\rhead{}
 %\chead{}
-%\lhead{\ifthenelse{\value{page}=1}{\fontsize{12}{0}\selectfont $\bf{22}^{\bf nd}\textbf{ HumanTech Paper Award}$}{\fontsize{9}{0}\selectfont $22^{\rm nd}\textrm{ HumanTech Paper Award}$}}
+%\lhead{\ifthenelse{\value{page}=1}{\fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}{\fontsize{9}{0}\selectfont $23^{\rm rd}\textrm{ HumanTech Paper Award}$}}
 
-\fancyhead[RO,LE]{\fontsize{9}{0}\selectfont $22^{\rm nd}\textrm{ HumanTech Paper Award}$}
+\fancyhead[RO,LE]{\color{gray} \fontsize{9}{0}\selectfont $23^{\rm rd}\textrm{ HumanTech Paper Award}$}
 \fancyhead[LO,RE]{}
-\fancyfoot[RO,LE]{\thepage}
+\fancyfoot[RO,LE]{\color{gray} \thepage}
 \fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0pt}
 
 \fancypagestyle{firstpage}{
 \fancyhf{}
-\fancyhead[L]{\fontsize{12}{0}\selectfont $\bf{22}^{\bf nd}\textbf{ HumanTech Paper Award}$}
-\fancyfoot[R]{\thepage}
+\fancyhead[L]{\color{gray} \fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}
+\fancyfoot[R]{\color{gray} \thepage}
 }
 
 \makeatletter
