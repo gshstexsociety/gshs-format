@@ -1,0 +1,4 @@
+TargetName,Filter,Binning,ExposureTime,Time,AverageValue,AverageSNR
+cw-cep,BV,1*1,30-90,20:51 - 00:13,24k,5
+uv-psc,BVR,1*1,80-15,00:48 - 05:21,24k,5
+test1,BVR,1*1,10-90,00:00 - 00:00,0k,0

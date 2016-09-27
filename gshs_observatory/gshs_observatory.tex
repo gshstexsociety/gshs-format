@@ -1,21 +1,29 @@
 \documentclass{gshs_observatory}
 \usepackage{lipsum}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks, pdfencoding=auto]{hyperref}
 \usepackage{graphicx}
 
-\recordtitle{} % title of observational record.
-\englishname{} % english name of observer(s)
-\koreanname{} % korean name of observer(s)
-\starttime{} % observation start time (KST)
-\finishtime{} % observation finish time (KST)
-\ccdtemperature{} % cooled temperature of CCD
-\imagesize{} % size of taken images
-\exposurepreset{} % exposure Preset
-\autodark{} % auto Dark : Yes/No
-\filterwheel{} % filter(B,V,R)
-\exposureduration{} % exposure duration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Document Information %%%%%%%
+\recordtitle{Title} % title of observational record.
+\starttime{0000.00.00 00:00} % observation start time (KST)
+\finishtime{9999.12.31 23:59} % observation finish time (KST)
+\englishname{Hong Kil-Dong, Hong Kil-Dong} % english name of observer(s)
+\koreanname{홍길동, 홍길동} % korean name of observer(s)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Instrumental Information %%%%%
+\telescopename{RiLa-600 F/5 (Officina Stellare)} % product name of the telescope
+\ccdname{STX-16803 (SBIG)} % product name of the ccd chip
+\ccdtemperature{\SI{-20}{\degreeCelsius}} % cooled temperature of CCD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Observation Information %%%%%%
 \flatinfoevening{flatinfo_evening.csv} % evening flat info in csv file
 \flatinfodaybreak{flatinfo_daybreak.csv} % daybreak flat info in csv file
+\targetinfo{targetinfo.csv}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 	\makecover
