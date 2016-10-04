@@ -1,0 +1,284 @@
+%  The AAU Poster Theme.
+%  2013-05-08 v. 1.1.0
+%  Copyright 2013 by Jesper Kjær Nielsen <jkn@es.aau.dk>
+%
+%  This is free software: you can redistribute it and/or modify
+%  it under the terms of the GNU General Public License as published by
+%  the Free Software Foundation, either version 3 of the License, or
+%  (at your option) any later version.
+%
+%  This is distributed in the hope that it will be useful,
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
+%
+%  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+\documentclass[a0paper,portrait]{baposter}
+\usepackage[hangul]{kotex}
+\usepackage[english]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault} % for text
+\usepackage[helvet]{sfmath} % for math
+\usepackage[T1]{fontenc}
+
+\usepackage{caption}
+\captionsetup{
+  font=small,% set font size to footnotesize
+  labelfont=bf % bold label (e.g., Figure 3.2) font
+}
+% Make the standard latex tables look so much better
+\usepackage{array,booktabs}
+% For creating beautiful plots
+\usepackage{pgfplots}
+
+\usepackage{amsmath}
+% Adds new math symbols
+\usepackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colours
+% http://en.wikibooks.org/wiki/LaTeX/Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectcolormodel{RGB}
+% define the three aau colors : blue version
+%\definecolor{aaublue1}{RGB}{33,26,82}% dark blue
+%\definecolor{aaublue2}{RGB}{113,109,143} % light blue
+%\definecolor{aaublue3}{RGB}{194,193,204} % lighter blue
+
+
+%green 
+\definecolor{aaublue1}{RGB}{0,163,136}% dark green
+\definecolor{aaublue2}{RGB}{121,189,143} % light green
+\definecolor{aaublue3}{RGB}{190,235,159} % lighter green
+\definecolor{aaublue4}{RGB}{255,255,157} % yellow
+\definecolor{aaublue5}{RGB}{255,97,56}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lists
+% http://en.wikibooks.org/wiki/LaTeX/List_Structures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Easier configuration of lists
+\usepackage{enumitem}
+%configure itemize
+\setlist{%
+  topsep=0pt,% set space before and after list
+  noitemsep,% remove space between items
+  labelindent=\parindent,% set the label indentation to the paragraph indentation
+  leftmargin=*,% remove the left margin
+  font=\color{aaublue1}\normalfont, %set the colour of all bullets, numbers and descriptions to aaublue1
+}
+% use set<itemize,enumerate,description> if you have an older latex distribution
+\setitemize[1]{label={\raise1.25pt\hbox{$\blacktriangleright$}}}
+\setitemize[2]{label={\scriptsize\raise1.25pt\hbox{$\blacktriangleright$}}}
+\setitemize[3]{label={\raise1.25pt\hbox{$\star$}}}
+\setitemize[4]{label={-}}
+%\setenumerate[1]{label={\theenumi.}}
+%\setenumerate[2]{label={(\theenumii)}}
+%\setenumerate[3]{label={\theenumiii.}}
+%\setenumerate[4]{label={\theenumiv.}}
+%\setdescription{font=\color{aaublue1}\normalfont\bfseries}
+
+% use setlist[<itemize,enumerate,description>,<level>] if you have a newer latex distribution
+%\setlist[itemize,1]{label={\raise1.25pt\hbox{$\blacktriangleright$}}}
+%\setlist[itemize,2]{label={\scriptsize\raise1.25pt\hbox{$\blacktriangleright$}}}
+%\setlist[itemize,3]{label={\raise1.25pt\hbox{$\star$}}}
+%\setlist[itemize,4]{label={-}}
+%\setlist[enumerate,1]{label={\theenumi.}}
+%\setlist[enumerate,2]{label={(\theenumii)}}
+%\setlist[enumerate,3]{label={\theenumiii.}}
+%\setlist[enumerate,4]{label={\theenumiv.}}
+%\setlist[description]{font=\color{aaublue1}\normalfont\bfseries}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% change/remove some names
+\addto{\captionsenglish}{
+  %remove the title of the bibliograhpy
+  \renewcommand{\refname}{\vspace{-0.7em}}
+  %change Figure to Fig. in figure captions
+  \renewcommand{\figurename}{Fig.}
+}
+% create links
+\usepackage{url}
+%note that the hyperref package is currently incompatible with the baposter class
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\alert}[1]{{\color{aaublue1}#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document Start 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some changes that cannot be made in the preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set the background of the poster
+\background{
+  \begin{tikzpicture}[remember picture,overlay]%
+    %the poster background color
+    \fill[fill=aaublue3] (current page.north west) rectangle (current page.south east);
+    %the header
+    \fill [fill=aaublue1] (current page.north west) rectangle ([yshift=-\headerheight] current page.north east);
+  \end{tikzpicture}
+}
+% if you want to reduce the space before and after equations, use and adjust
+% the following lines
+%\addtolength{\abovedisplayskip}{-2mm}
+%\addtolength{\belowdisplayskip}{-2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General poster setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{poster}{
+  %general options for the poster
+  grid=false,
+  columns=3,
+%  colspacing=4.2mm,
+  headerheight=0.1\textheight,
+  background=user,
+%  bgColorOne=red!42, %is used when background != user and none
+%  bgColortwo=green!42, %is used when background is shaded
+  eyecatcher=true,
+  %posterbox options
+  headerborder=closed,
+  borderColor=aaublue1,
+  headershape=rectangle,
+  headershade=plain,
+  headerColorOne=aaublue1,
+%  headerColortwo=yellow!42, %is used when the header background is shaded
+  textborder=rectangle,
+  boxshade=plain,
+  boxColorOne=white,
+%  boxColorTwo=cyan!42,%is used when the text background is shaded
+  headerFontColor=white,
+  headerfont=\Large\sf\bf,
+  linewidth=1pt
+}
+%the Eye Catcher (the logo on the left)
+{
+  %this can be commented out or replaced by a company/department logo
+  \includegraphics[height=0.75\headerheight]{./logo/gshslogo_green.png}
+}
+%the poster title
+{\color{white}\bf
+  무한상상실 3D프린터 사용 안내
+}
+%the author(s)
+{\color{white}\small
+  \vspace{1em} Wool Seo\\[0.5em]
+  Dept.\ of Physics and Earth Science, Gyeonggi Science High School For The Gifted, South Korea\\
+  wool@wool.pe.kr
+}
+%the logo (the logo on the right)
+{
+  %this can be commented out or replaced by a company/department logo
+  \includegraphics[height=0.75\headerheight]{./logo/gshslogo_green.png}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the actual content of the poster begins here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{posterbox}[name=caution,column=0,row=0]{Caution}
+\begin{itemize}
+  \item \textbf{3D프린터는 경곽인 모두가 함께 사용하는 물품입니다. 소중히 사용합시다.}\
+  \item 프린터에 과도한 힘이나 충격을 주지 마십시오.
+  \item 프린터 매뉴얼을 숙지하고 사용합니다.
+  \item 프린터 내부의 빈 공간에는 다른 물건을 넣지 않고, 이물질이 들어가지 않도록 합니다.
+  \item \textbf{매뉴얼 및 프로그램 다운로드} \\ \url{https://goo.gl/1kx5N7}.
+  \item \color{aaublue5} \textbf{노즐과 베드는 아주 뜨거울 수 있습니다. 반드시 주의해야합니다.} 
+  \begin{center}
+  	\includegraphics[height=0.47\headerheight]{./images/caution01.png}
+  	\includegraphics[height=0.47\headerheight]{./images/caution02.png}
+  \end{center}
+	\item \color{aaublue5} \textbf{송죽 학사를 통해 장비사용신청 후 사용!}
+\end{itemize}
+\end{posterbox}
+
+\begin{posterbox}[name=robox,column=0,below=caution,above=bottom]{Robox}
+\begin{enumerate}
+  \item \small AutoMaker를 컴퓨터 버전에 맞게 설치합니다.
+  \item AutoMaker를 실행하고 USB케이블을 연결합니다.
+  \item 화면 상단에 \textbf{+}를 클릭해 새로운 베드를 만듭니다. \\
+  \includegraphics[height=0.08\textheight,width=0.7\textwidth]{./images/robox2.png}
+  \item 하단에 \textbf{모델추가}를 클릭해 출력할 STL파일을 추가합니다.
+  \item 화면의 모델을 클릭해 \textbf{Move, Scale, Rotate} 등을 조정합니다. \\
+  \includegraphics[height=0.08\textheight,width=0.7\textwidth]{./images/robox3.png}
+  \item 하단의 \textbf{설정하기}를 클릭합니다.
+  \item \textbf{레이어 높이}와 \textbf{Raft, 서포트, Brim, 채우기 밀도}를 설정합니다.\\
+  \footnotesize \textit{레이어 높이는 2번째, 채우기 밀도는 15\%정도를 추천} \\
+  \includegraphics[height=0.08\textheight,width=0.7\textwidth]{./images/robox4.png}
+  \item \small 데이터 전송이 끝나면 USB케이블을 뽑고, 출력이 정상적으로 시작되는지 확인합니다. \\
+  \includegraphics[height=0.08\textheight,width=0.7\textwidth]{./images/robox5.png}
+\end{enumerate}
+\textbf{ \\ * 주의 : 필라멘트 교체는 반드시 서울샘 허락을 받고 교체합니다.}
+\end{posterbox}
+
+
+\begin{posterbox}[name=printer,span=2,column=1,row=0]{3D Printers}
+\begin{center}
+	\begin{tabular}{c c c c}
+		\toprule
+		모델 & Robox & Cubicon & Edison\\
+		\midrule
+		& \includegraphics[height=0.57\headerheight,width=0.2\columnwidth]{./images/robox01.jpg} & \includegraphics[height=0.57\headerheight]{./images/cubicon01.png} & \includegraphics[height=0.57\headerheight]{./images/edison01.jpg} \\
+		프린터번호 & 1, 2(듀얼익스트루더), 3 & 4 & 5 \\
+		최대 크기(LxWxH) & 210x150x100mm & 150x150x150mm & 220x150x150mm \\
+		권장 크기(LxWxH) & 180x130x70mm & 140x140x140mm & 100x100x100mm \\
+		필라멘트 & ABS, HIPS & ABS, Flexible & PLA \\
+		주요특징 & \begin{tabular}[c]{@{}c@{}} 듀얼익스트루더로 \\ HIPS나 2-color 사용\end{tabular} & \begin{tabular}[c]{@{}c@{}}Flexible에 최적화\\ 안정적 \end{tabular} & 출력사이즈가 큼 \\
+		슬라이싱프로그램 & AutoMaker & CubiCreator & CreatorK 또는 Makerbot \\
+		프로그램웹사이트 & www.cel-robox.com & www.3dcubicon.com  &  makerbot.com/desktop \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+\textbf{현재 사용 가능한 필라멘트 : ABS, PLA, Flexible 필라멘트, 전도성 PLA, UV/저온에서 변색되는 PLA }
+\end{posterbox}
+
+\begin{posterbox}[name=Cubicon,column=1,below=printer,above=bottom]{Cubicon}
+\begin{enumerate}
+	\item \small CubiCreator를 컴퓨터 버전에 맞게 설치합니다.
+	\item 프린터 오른쪽에 있는  SD카드를 컴퓨터에 꽂습니다.
+	\item CubiCreator를 실행한 뒤, STL파일을 불러옵니다. \\
+	\footnotesize \textit{첫 설치 후에는 메뉴 -> 설정 -> 설정창에서 제품 모델을 \textbf{Style 3DP-210F}로 설정! 언어도 한글로 }
+	\item 왼쪽 모델변환 메뉴에서 \textbf{위치, 회전, 비율, 크기} 등을 조정합니다. \\
+	\includegraphics[height=0.08\textheight,width=0.7\textwidth]{./images/cubicon2.png}
+	\item 상단의 \textbf{출력하기}를 클릭합니다.
+	\item \textbf{재료}와 \textbf{지지대(support), 바닥보조물(raft 또는 브림)}를 설정합니다. \\
+	\includegraphics[height=0.13\textheight,width=0.9\textwidth]{./images/cubicon3.png} \\
+	\footnotesize \textit{빠른 설정에서 보통을 추천} 
+	\item \small 왼쪽 하단의 g-code 파일(*.hvs) 저장 버튼\includegraphics[height=0.01\textheight]{./images/cubicon4.png}을 눌러 SD카드에 저장합니다.
+	\item 저장이 끝나면, SD카드를 프린터기에 꽂고 다이얼로 해당 파일을 선택한 후, 출력을 시작한다. \\
+	\includegraphics[height=0.12\textheight,width=0.7\textwidth]{./images/cubicon5.png} \\
+\end{enumerate}
+\end{posterbox}
+
+
+
+\begin{posterbox}[name=edison,column=2,below=printer, above=bottom]{Edison Single}
+\begin{enumerate}
+	\item \small Makerbot을 컴퓨터 버전에 맞게 설치합니다.\\
+	\textit{Edison 자체 프로그램도 있지만 Makerbot 프로그램이 호환되고 출력물의 질이 더 좋음}
+	\item 프린터 오른쪽에 있는  SD카드를 컴퓨터에 꽂습니다.
+	\item Makerbot을 실행한뒤  \textbf{ADD FILE}을  클릭해 STL 파일을 불러옵니다. \\
+	\footnotesize \textit{첫 설치 후에는 메뉴 -> Devices -> Select Type of Device 에서 \textbf{Replicator(single)}로 설정! } \\
+	\includegraphics[height=0.08\textheight,width=0.7\textwidth]{./images/edison3.png}
+	\item 화면의 모델을 클릭해 \textbf{Position, Rotation, Dimensions} 등을 조정합니다. \\
+	\includegraphics[height=0.08\textheight,width=0.7\textwidth]{./images/edison4.png}
+	\item 상단의 \textbf{Settings}를 클릭해  \textbf{Quality}와 \textbf{Raft, Support, Infill(채우기 밀도)}를 설정한다. \textbf{익스트루더 온도는 215도씨로 한다.}\\
+	\footnotesize \textit{레이어 높이는 0.2mm, infill은 15\%정도를 추천} \\
+	\includegraphics[height=0.08\textheight,width=0.9\textwidth]{./images/edison6.png}
+	\item \textbf{Export print file}을 클릭해 SD카드에 출력 파일(*.X3G)을 저장한다.
+	\item 저장이 끝나면, SD카드를 프린터기(방향주의)에 꽂고 해당 파일을 선택한 후, 출력을 시작한다.
+\end{enumerate}
+\textbf{ \\ * 참고 robox나 cubicon의 베드 사이즈보다 큰 모델을 출력해야 할 때에는 서울샘과 상의할 것! 에디슨 이외에도 마네퀸(PLA전용) 프린터 사용 가능}
+\end{posterbox}
+
+
+\end{poster}
+\end{document}
