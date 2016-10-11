@@ -108,7 +108,7 @@ footskip=15mm%
 		bottom=15mm,%
 		headheight=3.175mm,%
 		headsep=10.7mm,%
-		footskip=15mm%
+		footskip=0mm%
 	}
 	\begin{center}
 		\begin{LARGE}
