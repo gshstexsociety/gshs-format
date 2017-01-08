@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{kotex}
+\usepackage{adjustbox}
+\begin{document}
+	\Large
+	\begin{tabular}{rcc}
+		심사위원장
+		 & 
+		박 대 감
+		& 
+		\trimbox{15pt 5pt 15pt 5pt}{
+			\begin{tikzpicture}
+			\draw (0,0) node {\includegraphics[scale=0.1]{example-image}};
+			\draw (0,0) node {(인)};
+			\end{tikzpicture}
+		}
+		 \\
+		&&\\
+		심사위원장 & 김 교 수 & (인) \\
+		%%\\
+		심사위원장 & 홍 판 서 & (인) \\
+	\end{tabular}
+\end{document}
