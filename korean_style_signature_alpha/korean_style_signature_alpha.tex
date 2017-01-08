@@ -1,3 +1,6 @@
+% (인) 표시 위에 서명/날인 그림을 넣는 방법.
+% 아직은 표/줄 안에서 간격을 어떻게 조정해야 할 지 몰라서 알파 버전입니다.
+% 표 외에 대안이 있을 수도 있습니다. 반드시 표를 사용해야 하는 것은 아니고, 이는 예시일 뿐입니다.
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -5,21 +8,21 @@
 \usepackage{adjustbox}
 \begin{document}
 	\Large
-	\begin{tabular}{rcc}
+	\begin{tabular}{rcc} % 우측/중앙/중앙 정렬
 		심사위원장
 		 & 
 		박 대 감
 		& 
-		\trimbox{15pt 5pt 15pt 5pt}{
+		\trimbox{15pt 5pt 15pt 5pt}{ % tikzpicture의 상하/좌우 간격을 조정
 			\begin{tikzpicture}
 			\draw (0,0) node {\includegraphics[scale=0.1]{example-image}};
-			\draw (0,0) node {(인)};
+			\draw (0,0) node {(인)}; % (인) 이 코드에서 뒤쪽에 있어야 그림 위에 올라갑니다.
 			\end{tikzpicture}
 		}
 		 \\
 		&&\\
-		심사위원장 & 김 교 수 & (인) \\
+		심사위원 & 김 교 수 & (인) \\
 		%%\\
-		심사위원장 & 홍 판 서 & (인) \\
+		심사위원 & 홍 판 서 & (인) \\
 	\end{tabular}
 \end{document}
