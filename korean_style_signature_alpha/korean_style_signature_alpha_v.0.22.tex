@@ -1,0 +1,97 @@
+% 2017/01/11 v.0.22
+% (인) 표시 위에 서명/날인 그림을 넣는 방법. 알파 버전.
+% 양식을 가져와서 편집하였음.
+% 서명의 종횡비가 클 경우 오른쪽 여백을 침범.
+% 크기를 줄이는 것도 고려하고 있음.
+\documentclass[a4paper]{article}
+\usepackage[showframe,top=35mm,bottom=30mm,left=30mm,right=30mm]{geometry}
+% 여백을 보여주기 위해 showframe 옵션 사용.
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{kotex}
+\usepackage{adjustbox}
+\usepackage{calc} %길이 계산을 위함.
+
+
+\newenvironment{myepigraph}
+{\par\hfill
+	\begin{tabular}{@{}r@{\hspace{20mm}}}%
+	}%
+	{%
+	\end{tabular}\par\medskip}
+
+\def\apprvsignone{parkdaegam.png}	%첫 번째 서명 파일
+\def\apprvsigntwo{ntiea.png}		%두 번째 서명 파일
+\def\apprvsignthree{hongpanseo.png}	%세 번째 서명 파일
+\def\apprvsign{(인)}
+
+\newlength{\apprvsignonewidth}
+\newlength{\apprvsigntwowidth}
+\newlength{\apprvsignthreewidth}
+\settowidth\apprvsignonewidth{\includegraphics[height=12mm]{\apprvsignone}}
+\settowidth\apprvsigntwowidth{\includegraphics[height=12mm]{\apprvsigntwo}}
+\settowidth\apprvsignthreewidth{\includegraphics[height=12mm]{\apprvsignthree}}
+\newlength{\apprvsignwidth}
+\settowidth\apprvsignwidth{\apprvsign}
+
+\begin{document}
+	
+	\vspace*{3em}
+	
+	\begin{myepigraph}
+		{\Large {몇년몇월며칠}}\\[11mm]
+		{\Large 
+		심사위원장\hspace{5mm}박 대 감\hspace{6mm}%
+		\trimbox{%
+			{3.4mm} 6mm %
+			{\apprvsignonewidth-\apprvsignwidth-2.67mm} 6mm}
+		{%
+			\begin{tikzpicture}
+			\draw (\apprvsignonewidth/2-\apprvsignwidth,0) 
+			node {%
+				\includegraphics[height=12mm]{\apprvsignone}};
+				\draw (0,0) node {\apprvsign};
+			\end{tikzpicture}}%
+		}\\[8mm]
+		{\Large 
+		심사위원\hspace{5mm}김 교 수\hspace{6mm}%
+		\trimbox{%
+			{3.4mm} 6mm %
+			{\apprvsigntwowidth-\apprvsignwidth-2.67mm} 6mm}
+		{%
+			\begin{tikzpicture}
+			\draw (\apprvsigntwowidth/2-\apprvsignwidth,0) 
+			node 
+			{%			
+				\includegraphics[height=12mm]{\apprvsigntwo}};
+				\draw (0,0) node {\apprvsign};
+			\end{tikzpicture}}%
+		}\\[8mm]
+		{\Large 
+		심사위원\hspace{5mm}홍 판 서\hspace{6mm}%
+		\trimbox{%
+			{3.4mm} 6mm %
+			{\apprvsignthreewidth-\apprvsignwidth-2.67mm} 6mm}
+		{%
+			\begin{tikzpicture}
+			\draw (\apprvsignthreewidth/2-\apprvsignwidth,0) 
+			node {%			
+				\includegraphics[height=12mm]{\apprvsignthree}};
+				\draw (0,0) node {\apprvsign};
+			\end{tikzpicture}}%
+		}
+	\end{myepigraph}
+	% 여기까지 수정한 양식.
+
+
+	\vspace{3em}
+
+	\begin{myepigraph}
+	{\Large {몇년몇월며칠}}\\[11mm]
+	{\Large 심사위원장\hspace{5mm}박 대 감\hspace{6mm}(인)}\\[8mm]
+	{\Large 심사위원\hspace{5mm}김 교 수\hspace{6mm}(인)}\\[8mm]
+	{\Large 심사위원\hspace{5mm}홍 판 서\hspace{6mm}(인)}
+	\end{myepigraph}
+	% 여기까지 원래 양식. 간격과 배치를 보기 위한 대조본으로 실제 코드의 
+	% 커맨드들을 글자로 치환함.
+\end{document}
