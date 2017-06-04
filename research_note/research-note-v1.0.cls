@@ -1,17 +1,10 @@
 % -*- TeX:UTF-8 -*-
-
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{research-note-v1.0}%
 %[2014/09/02 v0.1 Standard GSHS report document class, ko.TeX version] % initiated by 정민석(2014년도 경기과학고 수학과 전문교원)
-% [2015/11/22 v0.11 Standard GSHS report document class, ko.TeX version] % modified by 박승원(32nd, 14041, seungwonpark) 
-% 변경사항 : Figure를 Fig. 로 변경, References 를 '참고문헌'으로 변경, figure/table numbering 의 chapter 넘어갈때마다 문제생기는점 해결, SI 단위계 사용 가능하게 함
-%[2015/11/25 v0.12 Standard GSHS report document class, ko.TeX version] % modified by 이상헌(32nd, 14080, evenharder) 
 
 % 인코딩 관련 주의사항 : 이 클래스에서 기본적으로 kotex을 포함하고 있기에 따로 포함할 필요는 없으나, inputenc 등의 추가적인 class 사용이나 TeXstudio의 'Insert encoding as TeX comment'는 삼가시기 바랍니다.
 
-%[2016/06/02 v1.2 Standard GSHS report document class] % modified by 서울(경기과학고 물리교사), 박승원(32nd, 14041, seungwonpark)
-% 변경사항(서울) : 표지의 폰트 및 vskip 간격 일부 수정, 지도교사/교수 이메일란 추가.
-% 변경사항(박승원) : reporttype 를 통해 중간/결과 를 선택 가능하게 함, section formatting 수정 (section 계층 번호부여를 arabic 대신 roman 으로 수정)
 
 % 영어 Font : Times New Roman
 \usepackage[T1]{fontenc}   % To use Times New Roman
@@ -99,6 +92,11 @@
 %% 줄간격 설정
 %\renewcommand{\baselinestretch}{1.3}
 \linespread{1.6}
+
+\newcommand{\researchType}{2017년 창의연구 R\&E Research Note}   %수정하세요.
+\newcommand{\researchTitle}{MODIS 자료를 이용한 Aerosol Optical Depth 산출} %수정하세요.
+\newcommand{\studentName}{연구자 : 김병현 외} %수정하세요.
+\newcommand{\institution}{경기과학고등학교} %수정하세요.
 
 %% 본문이 영어로 되어있는지 한글로 되어있는지 설정
 \newcommand{\@korean}{korean}
@@ -380,13 +378,6 @@
 	\vskip\belowcaptionskip}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\researchType}{창의연구 R\&E Research Note. }
-\newcommand{\researchTitle}{Research Title}
-\newcommand{\studentName}{연구자 : 김병현 외}
-\newcommand{\institution}{경기과학고등학교}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Notes on use of hyperlinks:
 %% \url{http://www.wikibooks.org}
@@ -399,26 +390,21 @@
 \setlength\parskip{0.1in}
 \setlength\headheight{15pt}
 
+%%%%%%%%%%% NEW COMMANDS %%%%%%%%%%%%%%
+\newcommand{\schoollogo}{
+	\begin{wrapfigure}{l}{0.07\textwidth}
+		\vspace{-30pt}
+			\includegraphics[width=0.07\textwidth]{./img/logo.png}
+	\end{wrapfigure}
+}
+
 %%%%%%%%%%% HEADER / FOOTER %%%%%%%%%%%
-%\rhead{\workingDate}
-%\lhead{\textsc{\researchType}}
-\lhead{\textsc{\researchTitle}}
-%\lhead{\textsc{\userName}}
-\lfoot{\textsc{\institution}}
-%\lfoot{\textsc{\studentName}}
-\cfoot{\textit{창의연구 R\&E Research Note.}}
-%\rfoot{\textsc{\studentName}}
+\rhead{\textsc{\researchTitle}}
+\lhead{\textsc{\researchType}}
+%\lfoot{\textsc{\institution}}
+%\lfoot{\includegraphics[width=0.05\textwidth]{./img/logo.png} 경기과학고등학교}
+\lfoot{\schoollogo 경기과학고등학교}
+\cfoot{\textit{\studentName}}
 \rfoot{Page \thepage}
 
 
-%%%%%%%%%%% NEW COMMANDS %%%%%%%%%%%%%%
-\newcommand{\univlogo}{%
-	\noindent % University Logo
-	\begin{wrapfigure}{r}{0.1\textwidth}
-		\vspace{-38pt}
-		\begin{center}
-			\includegraphics[width=0.1\textwidth]{./img/logo.png}
-		\end{center}
-		\vspace{-100pt}
-	\end{wrapfigure}
-}
