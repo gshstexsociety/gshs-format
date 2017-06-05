@@ -1,16 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Research note - Entry
 %%% Template by Mikhail Klassen, April 2013
 %%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%경기과학고 졸업논문, 알앤이 보고서에서 쓰던 클래스와 적절히 합침.  by 박기현(2017. 6. 5)
 \documentclass{research-note-v1.0}
 
-% To add your univeristy logo to the upper right, simply
-% upload a file named "./img/logo.png" using the files menu above.
+% 경기과학고 로고를 다음과 같이 넣어두세요."./img/logo.png"  by 박기현(2017. 6. 5)
+
+\researchType{창의연구 R\&E  } % 기초 / 심화  /  창의연구 R\&E
+%\reporttype{중간} % 중간 / 결과
+
+\title{MODIS 자료를 이용한 한반도 주변의 에어로졸의 광학적 두께(AOD) 산출} % 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+\englishTitle{AOD Calculation around the Korean Peninsula using MODIS data}% 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+
+\author[1] {김재홍} % 제 1 저자명
+\email[1]{@e-mail.address} % 제 1 저자 이메일
+\author[2] {박준호} % 제 2 저자명
+\email[2]{@e-mail.address} % 제 2 저자 이메일
+\author[3] {윤산울} % 제 3 저자명
+\email[3]{iu@bogo.sipda} % 제 3 저자 이메일
+\author[4] {김병현} % 제 4 저자명
+\email[4]{iu@bogo.sipda} % 제 4 저자 이메일
+\advisor{박기현} % 지도교사명
+\advisorEmail{guitar79@naver.com} % 지도교사 이메일
+
+%\newcommand{\studentName}{연구자 : 김병현 외} %수정하세요.
+\newcommand{\institution}{경기과학고등학교} %수정하세요.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% researchtype이 '심화'일 경우에만 나타남 %%%%
+\professor{교수님} % 지도교수명
+\professorEmail{professor@e-mail.address} % 지도교수 이메일
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\summitdate{2017}{10}{20} % 제출일 (연, 월, 일)
+\newtheorem{definition}{정의}
+
+%\linespread{1.6}
 
 \begin{document}
-	\title{Research Diary}
-			
-	\section*{May, 31, 2016}
+%\makecover
+\include{sub/cover} % Abstract
+		
+\section*{May, 31, 2017}
+
+\begin{itemize}
+	\item{연구 장소 : 과학영재연구센터 627호}
+	\item{참여자 : {\@firstAuthor}, \@secondAuthor, \@thirdAuthor, \@fourthAuthor}
+\end{itemize}
+
+	\begin{table}[h]
+	%	\caption{Research Note.}
+		\label{table01}
+%		\centering
+		\begin{tabular}{|c|c|} 
+			\hline
+			연구 장소   &   과학영재연구센터 627호 \\ 
+			\hline
+			참여자   &   {\@firstAuthor}, \@secondAuthor, \@thirdAuthor, \@fourthAuthor  \\
+			\hline
+		\end{tabular}
+	\end{table}
+
 	\subsection*{연구 계획 수립}
 							연구 계획을 수립하기 위하여 만남.
 							연구 계획을 수립하기 위하여 만남.
@@ -35,11 +87,28 @@
 						연구 계획을 수립하기 위하여 만남.
 							연구 계획을 수립하기 위하여 만남.
 
-\section*{May, 31, 2016}
+	\subsection*{Collection Data}
+     Data는 다음과 같은 방법으로 order하여 다운로드 받는다.
 
-\subsection*{실험}
+	\begin{itemize}
+		\item{연구 주제의 전반적 관심을 조명.}
+		\item{연구 분야의 스페셜 이슈를 조명.}
+		\item{해당 이슈를 해결하기 위한 다양한 선행 연구들을 서술.}
+		\item{선행 연구들의 한계점을 기술.}
+		\item{한계를 극복하기 위한 본 연구의 목적을 밝힘.}
+		\item{논문의 구성을 서술 (optional).}
+	\end{itemize}
 
-실험 내용 작성
+
+\section*{June, 5, 2017}
+
+\subsection*{선행연구 고찰}
+
+MODIS 관련 연구
+\begin{itemize}
+	\item{Characteristics of distribution and seasonal variation of aerosol optical depth in eastern China with MODIS products. \cite{ahn2012development}
+	\item{Validation of MODIS aerosol optical depth retrieval over land. \cite{chu2002validation}
+\end{itemize}
 
 \subsection*{분석}
 
@@ -55,8 +124,6 @@
 
 
 \subsection*{다음 계획}
-
-
 
 
 \section*{May, 31, 2016}
@@ -80,6 +147,7 @@
 
 \subsection*{다음 계획}
 
-
+\bibliography{research-note}
+\bibliographystyle{plain}
 
 \end{document}
