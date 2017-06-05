@@ -93,14 +93,14 @@
 \fi
 
 %%%%% pagestyle 
-%\def\ps@gshs{\let\@mkboth\@gobbletwo
-%	\let\@oddhead\@empty
-%	\def\@oddfoot{\reset@font\hfil--\ \thepage\ --
-%		\hfil}%
-%	\let\@evenhead\@empty\let\@evenfoot\@oddfoot
-%}
+\def\ps@gshs{\let\@mkboth\@gobbletwo
+	\let\@oddhead\@empty
+	\def\@oddfoot{\reset@font\hfil--\ \thepage\ --
+		\hfil}%
+	\let\@evenhead\@empty\let\@evenfoot\@oddfoot
+}
 
-%\pagestyle{gshs}
+\pagestyle{gshs}
 
 %% 연구 타입
 \newcommand{\researchType}[1]{
