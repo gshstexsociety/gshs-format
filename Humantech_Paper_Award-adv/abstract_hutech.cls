@@ -50,9 +50,9 @@
 \pagestyle{fancy}
 %\rhead{}
 %\chead{}
-%\lhead{\ifthenelse{\value{page}=1}{\fontsize{12}{0}\selectfont $\bf{25}^{\bf th}\textbf{ HumanTech Paper Award}$}{\fontsize{9}{0}\selectfont $23^{\rm rd}\textrm{ HumanTech Paper Award}$}}
+%\lhead{\ifthenelse{\value{page}=1}{\fontsize{12}{0}\selectfont $\bf{26}^{\bf th}\textbf{ HumanTech Paper Award}$}{\fontsize{9}{0}\selectfont $23^{\rm rd}\textrm{ HumanTech Paper Award}$}}
 
-\fancyhead[RO,LE]{\color{gray} \fontsize{9}{0}\selectfont $25^{\rm th}\textrm{ HumanTech Paper Award}$}
+\fancyhead[RO,LE]{\color{gray} \fontsize{9}{0}\selectfont $26^{\rm th}\textrm{ HumanTech Paper Award}$}
 \fancyhead[LO,RE]{}
 \fancyfoot[RO,LE]{\color{gray} \thepage}
 \fancyfoot[C]{}
@@ -60,7 +60,7 @@
 
 \fancypagestyle{firstpage}{
 \fancyhf{}
-\fancyhead[L]{\color{gray} \fontsize{12}{0}\selectfont $\bf{25}^{\bf th}\textbf{ HumanTech Paper Award}$}
+\fancyhead[L]{\color{gray} \fontsize{12}{0}\selectfont $\bf{26}^{\bf th}\textbf{ HumanTech Paper Award}$}
 \fancyfoot[R]{\color{gray} \thepage}
 }
 
