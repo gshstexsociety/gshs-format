@@ -5,9 +5,8 @@
 % % % Modified by GSHS TeX Society(http://latex.gs.hs.kr) % % % % % % % %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \ProvidesClass{fullpaper_hutech}
-\LoadClass[twoside, 10pt, twocolumn]{article}
+\LoadClass[pdftex, a4size, twoside, 10pt, twocolumn]{article}
 
-\usepackage{ifxetex} % 부득이하게 pdflatex을 사용해도 문제가 없도록 함
 
 \usepackage[T1]{fontenc}   % To use Times New Roman
 \usepackage[utf8]{inputenc}% To use Times New Roman
@@ -54,22 +53,22 @@
 \pagestyle{fancy}
 %\rhead{}
 %\chead{}
-%\lhead{\ifthenelse{\value{page}=1}{\color{gray} \fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}{\color{gray} \fontsize{9}{0}\selectfont $23^{\rd nd}\textrm{ HumanTech Paper Award}$}}
+%\lhead{\ifthenelse{\value{page}=1}{\color{gray} \fontsize{12}{0}\selectfont $\bf{26}^{\bf th}\textbf{ HumanTech Paper Award}$}{\color{gray} \fontsize{9}{0}\selectfont $23^{\rd nd}\textrm{ HumanTech Paper Award}$}}
 
-\fancyhead[RO,LE]{\color{black!65} \fontsize{9}{0}\selectfont $25^\mathrm{th}\textrm{ HumanTech Paper Award}$}
+\fancyhead[RO,LE]{\color{gray} \fontsize{9}{0}\selectfont $26^{\rm th}\textrm{ HumanTech Paper Award}$}
 \fancyhead[LO,RE]{}
-\fancyfoot[LO]{\footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
-\fancyfoot[RO]{\thepage}
-\fancyfoot[LE]{\thepage}
-\fancyfoot[RE]{\footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
+\fancyfoot[LO]{\color{gray} \footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
+\fancyfoot[RO]{\color{gray} \thepage}
+\fancyfoot[LE]{\color{gray} \thepage}
+\fancyfoot[RE]{\color{gray} \footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
 \fancyfoot[C]{}
 \renewcommand{\headrulewidth}{0pt}
 
 \fancypagestyle{firstpage}{
 \fancyhf{}
-\fancyhead[L]{\color{black!65} \fontsize{12}{0}\selectfont $\mathbf{25}^\mathbf{th}\textbf{ HumanTech Paper Award}$}
-\fancyfoot[L]{\footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
-\fancyfoot[R]{\thepage}
+\fancyhead[L]{\color{gray} \fontsize{12}{0}\selectfont $\bf{26}^{\bf th}\textbf{ HumanTech Paper Award}$}
+\fancyfoot[L]{\color{gray} \footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
+\fancyfoot[R]{\color{gray} \thepage}
 }
 
 \makeatletter
@@ -129,6 +128,9 @@ singlelinecheck=off  % Left aligned
 \newcommand*\mycdot{{\mkern -1mu\cdot\mkern -1mu}}
 
 %%%% Reference Setting %%%%
+\bibliographystyle{fullpaper_hutech}
+
+%%%% Reference Setting %%%%
 \renewcommand\refname{REFERENCES}
 
 \makeatletter
@@ -151,13 +153,3 @@ singlelinecheck=off  % Left aligned
       \end{enumerate}}
 \makeatother
 
-\ifxetex
-%한글 사용 옵션
-\RequirePackage{xetexko}
-\setmainfont[Ligatures=TeX]{Times New Roman}
-\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
-	ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
-\disablecjksymbolspacing
-\nonfrenchspacing
-\else
-\fi

@@ -1,7 +1,13 @@
 % Humantech paper award tex file
 % Initiated by 목진욱(경기과학고등학교 물리과 전문교원)
-\documentclass{fullpaper_hutech}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% reference를 bibfile로 관리하도록 변경함.
+%%% 경기과학고 교사 박기현 (Kiehyun.Park@gmail.com) 2019.10.15 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{fullpaper_hutech}
+\graphicspath{{images/}}
 \begin{document}
 
 \title{Title}
@@ -20,7 +26,7 @@
 
 
 \section{INTRODUCTION}
-HumanTech Paper Award was established in 1994 with the purpose of encouraging Korean students to do research in science and technology. High school students and university students (Undergraduate \& Graduate) having Korean nationality and foreign student attending universities in Korea are eligible to submit papers to the HumanTech Paper Award. Paper should not be published any journal including online prior to full paper submission. HumanTech Paper Award has three stages of evaluation to select the awardees. The first stage will be done with an extended abstract, the second, with a full paper and the third, with an oral presentation. The submitted abstracts will be screened and the writers of the selected will be required to submit a full paper. Reviewers will be experts in each field. The objectives, scope, results, importance, and originality of the study should be described in the submitted abstracts.
+HumanTech Paper Award was established in 1994 with the purpose of encouraging Korean students to do research in science and technology. High school students and university students (Undergraduate \& Graduate) having Korean nationality and foreign student attending universities in Korea are eligible to submit papers to the HumanTech Paper Award. Paper should not be published any journal including online prior to full paper submission. HumanTech Paper Award has three stages of evaluation to select the awardees. The first stage will be done with an extended abstract, the second, with a full paper and the third, with an oral presentation. The submitted abstracts will be screened and the writers of the selected will be required to submit a full paper. Reviewers will be experts in each field. The objectives, scope, results, importance, and originality of the study should be described in the submitted abstracts \cite{braun2009optical}.
 
 \section{WRITING STYLE}
 Abstracts and Papers should be written in A4 sized paper(21cm$\times$29.7cm) with margins of 3cm on the top, 2.5cm on the bottom, 1.5cm on the left and right, 2cm on the header, and 1cm on the footer.
@@ -82,7 +88,7 @@ $N$, $D$&demagnetizing factor&$1$ $\rightarrow$ $1/(4\pi)$\\
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=\linewidth]{example-image-a}
+\includegraphics[width=6.23cm]{symbol_trophy_img}
 \end{center}
 \caption{{\bf Magnetization as a function of applied field.} Note that ``Fig.'' is abbreviated. There is a period after the figure number. It is good practice to explain the significance of the figure in the caption.}
 \label{Fig01}
@@ -92,7 +98,7 @@ $N$, $D$&demagnetizing factor&$1$ $\rightarrow$ $1/(4\pi)$\\
 
 \subsection{References}
 
-Number citations consecutively in square brackets \cite{True00}. The sentence punctuation follows the brackets \cite{Schluter00}. Multiple references \cite{Schluter00}, \cite{Plazzo11} are each numbered with separate brackets \cite{True00,Schluter00,Plazzo11}. When citing a section in a book, please give the relevant page numbers \cite{Schluter00}. In sentences, refer simply to the reference number, as in \cite{Plazzo11}. Do not use ``Ref. \cite{Plazzo11}'' or ``reference \cite{Plazzo11}'' except at the beginning of a sentence: ``Reference \cite{Plazzo11} shows ... .''
+Number citations consecutively in square brackets. The sentence punctuation follows the brackets. Multiple references are each numbered with separate brackets. When citing a section in a book, please give the relevant page numbers. In sentences, refer simply to the reference number, as in. Do not use 
 
 References should be written to the following formats:
 
@@ -132,11 +138,7 @@ If you wish, you may write in the first person singular or plural and use the ac
 
 Abstracts and Papers should be written according to the following order: ①Title ②Abstract ③Main text ④References.
 
-\begin{thebibliography}{99}
-\bibitem{True00} True, H. L. and Lindquist, S. L. A. A yeast prion provides a mechanism for genetic variation and phenotypic diversity. {\it Nature} {\bf 407}, 477--483 (2000)
-\bibitem{Schluter00} Schluter, D. {\it The Ecology of Adaptive Radiation} (Oxford Univ. Press, 2000)
-\bibitem{Plazzo11} Plazzo, A. P. et al. Bioinformation and mutational analysis of channelrhodopsin-2 cation conducting pathway. {\it J. Biol. Chem.} http://dx.doi.org/10.1074/jbc.M111.326207 (2011)
-\end{thebibliography}
+\bibliography{bibfile} % 참고문헌
 
 
 \end{document}

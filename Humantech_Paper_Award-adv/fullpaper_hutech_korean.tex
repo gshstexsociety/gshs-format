@@ -1,6 +1,14 @@
 % Humantech paper award tex file
 % Initiated by 목진욱(경기과학고등학교 물리과 전문교원)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% reference를 bibfile로 관리하도록 변경함.
+%%% 경기과학고 교사 박기현 (Kiehyun.Park@gmail.com) 2019.10.15 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass{fullpaper_hutech}
+\graphicspath{{images/}}
+
 \renewcommand\refname{참고문헌}
 \begin{document}
 \title{제목}
@@ -17,9 +25,8 @@
 ]
 \thispagestyle{firstpage}
 
-
 \section{서론}
-휴먼테크논문대상은 미래 과학한국을 이끌어갈 창의적이고 도전적인 젊은이들을 발굴하고 학교 내 연구 분위기 활성화와 기술을 중시하는 사회 분위기 조성을 위해 1994년에 제정되었다. 휴먼테크논문대상 지원자는 국내외 고교, 대학(원) 재학중인 한국인 및 국내 대학(원)에 재학중인 외국인 학생에 한한다. 논문은 논문접수 마감일 이전에 온라인을 포함하여 발표되지 않은 내용이어야 한다. 휴먼테크논문대상은 3단계로 평가가 진행된다. 1차는 초록심사, 2차는 논문심사, 3차는 발표심사가 진행된다. 각 분야의 전문가가 제출된 초록과 논문을 심사한다. 초록과 논문 작성은 목적, 범위, 결과, 중요성, 독창성에 대해 명확히 해야 한다. 
+휴먼테크논문대상은 미래 과학한국을 이끌어갈 창의적이고 도전적인 젊은이들을 발굴하고 학교 내 연구 분위기 활성화와 기술을 중시하는 사회 분위기 조성을 위해 1994년에 제정되었다. 휴먼테크논문대상 지원자는 국내외 고교, 대학(원) 재학중인 한국인 및 국내 대학(원)에 재학중인 외국인 학생에 한한다. 논문은 논문접수 마감일 이전에 온라인을 포함하여 발표되지 않은 내용이어야 한다. 휴먼테크논문대상은 3단계로 평가가 진행된다. 1차는 초록심사, 2차는 논문심사, 3차는 발표심사가 진행된다. 각 분야의 전문가가 제출된 초록과 논문을 심사한다. 초록과 논문 작성은 목적, 범위, 결과, 중요성, 독창성에 대해 명확히 해야 한다 \cite{braun2009optical}. 
 
 \section{작성 양식}
 초록 및 논문의 양식은 A4용지(21cm×29.7cm)를 사용하며, 용지 여백은 위 3cm, 아래 2.5cm, 왼쪽 1.5cm, 오른쪽 1.5cm, 머리글 2cm, 바닥글 1cm로 한다. 머리글과 바닥글의 경우, ``짝수 페이지와 홀수 페이지가 다르게'', ``첫 페이지가 다르게''로 지정한다.
@@ -81,14 +88,11 @@ $N$, $D$&demagnetizing factor&$1$ $\rightarrow$ $1/(4\pi)$\\
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=\columnwidth]{example-image-a}
+\includegraphics[width=6.23cm]{symbol_trophy_img}
 \end{center}
 \caption{{\bf Magnetization as a function of applied field.} Note that ``Fig.'' is abbreviated. There is a period after the figure number. It is good practice to explain the significance of the figure in the caption.}
 \label{Fig01}
 \end{figure}
-
-
-\bibliography{bibfile} % 참고문헌
 
 \subsection{참고문헌}
 
@@ -119,16 +123,12 @@ To make your equations more compact, you may use the solidus ( / ), the exp func
 
 문장이 닫힌 괄호로 끝나면 마침표는 괄호 밖에 위치한다 (이것처럼). (괄호 안에서 문장이 끝나면 괄호 안에 마침표가 위치한다.)
 
+
 \section{결론}
 
 초록 및 논문의 전체 구성은 다음과 같다.
 ①제목 ②Abstract ③본문 ④참고 문헌.
 
-\begin{thebibliography}{99}
-\bibitem{True00} True, H. L. and Lindquist, S. L. A. A yeast prion provides a mechanism for genetic variation and phenotypic diversity. {\it Nature} {\bf 407}, 477--483 (2000)
-\bibitem{Schluter00} Schluter, D. {\it The Ecology of Adaptive Radiation} (Oxford Univ. Press, 2000)
-\bibitem{Plazzo11} Plazzo, A. P. et al. Bioinformation and mutational analysis of channelrhodopsin-2 cation conducting pathway. {\it J. Biol. Chem.} http://dx.doi.org/10.1074/jbc.M111.326207 (2011)
-\end{thebibliography}
-
+\bibliography{bibfile} % 참고문헌
 
 \end{document}
