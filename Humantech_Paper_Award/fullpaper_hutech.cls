@@ -54,9 +54,9 @@
 \pagestyle{fancy}
 %\rhead{}
 %\chead{}
-%\lhead{\ifthenelse{\value{page}=1}{\color{gray} \fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}{\color{gray} \fontsize{9}{0}\selectfont $23^{\rd nd}\textrm{ HumanTech Paper Award}$}}
+%\lhead{\ifthenelse{\value{page}=1}{\color{gray} \fontsize{12}{0}\selectfont $\bf{26}^{\bf th}\textbf{ HumanTech Paper Award}$}{\color{gray} \fontsize{9}{0}\selectfont $26^{\rd th}\textrm{ HumanTech Paper Award}$}}
 
-\fancyhead[RO,LE]{\color{black!65} \fontsize{9}{0}\selectfont $25^\mathrm{th}\textrm{ HumanTech Paper Award}$}
+\fancyhead[RO,LE]{\color{black!65} \fontsize{9}{0}\selectfont $26^\mathrm{th}\textrm{ HumanTech Paper Award}$}
 \fancyhead[LO,RE]{}
 \fancyfoot[LO]{\footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
 \fancyfoot[RO]{\thepage}
@@ -67,7 +67,7 @@
 
 \fancypagestyle{firstpage}{
 \fancyhf{}
-\fancyhead[L]{\color{black!65} \fontsize{12}{0}\selectfont $\mathbf{25}^\mathbf{th}\textbf{ HumanTech Paper Award}$}
+\fancyhead[L]{\color{black!65} \fontsize{12}{0}\selectfont $\mathbf{26}^\mathbf{th}\textbf{ HumanTech Paper Award}$}
 \fancyfoot[L]{\footnotesize 본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것은 엄격히 금지됩니다.}
 \fancyfoot[R]{\thepage}
 }
