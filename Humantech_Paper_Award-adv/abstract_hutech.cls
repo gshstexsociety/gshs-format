@@ -95,8 +95,10 @@
 %%%%%% Section Title Setting %%%%%%%
 \titleformat*{\section}{\fontsize{11}{11}\selectfont\bfseries}
 \titleformat*{\subsection}{\fontsize{10}{10}\selectfont}
+\titleformat*{\subsubsection}{\fontsize{10}{10}\selectfont}
 \def\thesection{\arabic{section}.}
 \def\thesubsection{\arabic{section}.\arabic{subsection}.}
+\def\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
 \makeatletter
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\ }
 \makeatother
