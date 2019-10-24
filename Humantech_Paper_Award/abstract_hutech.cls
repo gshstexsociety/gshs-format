@@ -51,9 +51,9 @@
 \pagestyle{fancy}
 %\rhead{}
 %\chead{}
-%\lhead{\ifthenelse{\value{page}=1}{\fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}{\fontsize{9}{0}\selectfont $23^{\rm rd}\textrm{ HumanTech Paper Award}$}}
+%\lhead{\ifthenelse{\value{page}=1}{\fontsize{12}{0}\selectfont $\bf{26}^{\bf th}\textbf{ HumanTech Paper Award}$}{\fontsize{9}{0}\selectfont $26^{\rm th}\textrm{ HumanTech Paper Award}$}}
 
-\fancyhead[RO,LE]{\color{gray} \fontsize{9}{0}\selectfont $23^{\rm rd}\textrm{ HumanTech Paper Award}$}
+\fancyhead[RO,LE]{\color{gray} \fontsize{9}{0}\selectfont $26^{\rm th}\textrm{ HumanTech Paper Award}$}
 \fancyhead[LO,RE]{}
 \fancyfoot[RO,LE]{\color{gray} \thepage}
 \fancyfoot[C]{}
@@ -61,7 +61,7 @@
 
 \fancypagestyle{firstpage}{
 \fancyhf{}
-\fancyhead[L]{\color{gray} \fontsize{12}{0}\selectfont $\bf{23}^{\bf rd}\textbf{ HumanTech Paper Award}$}
+\fancyhead[L]{\color{gray} \fontsize{12}{0}\selectfont $\bf{26}^{\bf th}\textbf{ HumanTech Paper Award}$}
 \fancyfoot[R]{\color{gray} \thepage}
 }
 
@@ -96,8 +96,10 @@
 %%%%%% Section Title Setting %%%%%%%
 \titleformat*{\section}{\fontsize{11}{11}\selectfont\bfseries}
 \titleformat*{\subsection}{\fontsize{10}{10}\selectfont}
+\titleformat*{\subsubsection}{\fontsize{10}{10}\selectfont}
 \def\thesection{\arabic{section}.}
 \def\thesubsection{\arabic{section}.\arabic{subsection}.}
+\def\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 \makeatletter
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\ }
 \makeatother
