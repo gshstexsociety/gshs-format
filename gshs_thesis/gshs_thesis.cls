@@ -10,8 +10,17 @@
 %% 한글, 영어 날짜 양식을 하나로 통합
 
 \ProvidesClass{gshs_thesis}
-\LoadClass[pdftex, a4paper]{article}
 
+\usepackage{ifxetex} % 부득이하게 pdflatex을 사용해도 문제가 없도록 함
+
+\ifxetex
+\LoadClass[11pt]{article}
+\else
+\usepackage[nonfrench]{kotex}
+\LoadClass[pdftex, 11pt]{article}
+\fi
+
+\usepackage[tmargin=25mm,bmargin=30mm,lmargin=25mm,rmargin=25mm]{geometry}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -42,17 +51,17 @@
 
 \setlength{\hoffset}{0pt}
 \setlength{\voffset}{0pt}
-\setlength{\paperwidth}{597pt}
-\setlength{\paperheight}{845pt}
-\setlength{\oddsidemargin}{42pt}
-\setlength{\evensidemargin}{42pt}
+\setlength{\paperwidth}{195mm}
+\setlength{\paperheight}{255mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
 \setlength{\topmargin}{0pt}
 \setlength{\headheight}{0pt}
-\setlength{\headsep}{25pt}
-\setlength{\textheight}{569pt}
-\setlength{\textwidth}{384pt}
-\setlength{\marginparsep}{10pt}
-\setlength{\marginparwidth}{35pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{200mm}
+\setlength{\textwidth}{145mm}
+\setlength{\marginparsep}{0mm}
+\setlength{\marginparwidth}{0mm}
 \setlength{\footskip}{56pt}
 
 
@@ -392,3 +401,14 @@
 \vspace{0.5cm}
 }
 {\end{alwayssingle}}
+
+\ifxetex
+%한글 사용 옵션
+\RequirePackage{xetexko}
+\setmainfont[Ligatures=TeX]{Times New Roman}
+\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
+    ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
+\disablecjksymbolspacing
+\nonfrenchspacing
+\else
+\fi
