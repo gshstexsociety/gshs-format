@@ -14,15 +14,15 @@
 
 5. gshs_chem_experiment : 일반화학실험 보고서 양식
 
-6. gshs_imaginarylab : 설명 추가 바람
+6. gshs_imaginarylab : 무한상상실 작품제작설명서 양식
 
 7. gshs_math_seminar_report : 수학세미나I 보고서 양식
 
-8. gshs_observatory : 천체 관측 보고서 양식
+8. gshs_observatory : 경기과학고 천문대 관측일지 양식
 
 9. gshs_poster : 포스터 양식
 
-10. gshs_reading : 독서감상문 양식
+10. gshs_reading : 독서 수업 독서감상문 양식
 
 11. gshs_rne_report : 기초/심화 R&E 연구 보고서 양식
 
