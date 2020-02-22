@@ -9,7 +9,7 @@
 %%%  Also refer to https://www.facebook.com/gshstexsociety                    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[twoside,11pt]{gshs_thesis}
+\documentclass{gshs_thesis}
 % 이곳에 필요한 별도의 패키지들을 적어넣으시오.
 %\usepackage{...}
 \usepackage{verbatim} % for commment, verbatim environment
@@ -132,9 +132,11 @@
 %----------------------------------------------
 %     List of Figures/Tables (자동 작성됨)
 %----------------------------------------------
+\cleardoublepage
 \clearpage
 \listoffigures	% 그림 목록과 캡션을 출력한다. 만약 논문에 그림이 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
 
+\cleardoublepage
 \clearpage
 \listoftables  % 표 목록과 캡션을 출력한다. 만약 논문에 표가 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
 
@@ -142,6 +144,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
 \clearpage
 \renewcommand{\thepage}{\arabic{page}}
 \setcounter{page}{1}
