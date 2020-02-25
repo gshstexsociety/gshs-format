@@ -571,7 +571,7 @@ FUNCTION {format.pages}
 FUNCTION {format.vol.num.pages}
 { number empty$
     { volume empty$
-       'skip$
+       { "" }
        { "{\em " volume * "}" * }
 %	   { "\underline{" volume * "}" * }
       if$
