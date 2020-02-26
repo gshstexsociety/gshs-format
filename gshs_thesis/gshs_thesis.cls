@@ -46,6 +46,8 @@
 \apptocmd{\thebibliography}{\setlength{\itemsep}{0pt}}{}{}
 %\setstretch{1.5}
 
+\renewcommand{\thesection}{\Roman{section}}
+
 \renewcommand{\thefootnote}{\fnsymbol{footnote}} 
 % 주석 번호와 참고문헌 번호의 혼동을 막기 위해 arabic 대신 fnsymbol 사용(asterisk, dagger, double dagger, ...)
 
@@ -341,9 +343,9 @@
 \titleformat{\section}[hang]
 {\normalfont\fontsize{21}{21}\selectfont\bfseries}{\Roman{section}.}{1em}{}
 \titleformat{\subsection}[hang]
-{\normalfont\fontsize{16}{16}\selectfont\bfseries}{\arabic{section}.\arabic{subsection}}{1em}{}
+{\normalfont\fontsize{16}{16}\selectfont\bfseries}{\Roman{section}.\arabic{subsection}}{1em}{}
 \titleformat{\subsubsection}[hang]
-{\normalfont\fontsize{14}{14}\selectfont}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}
+{\normalfont\fontsize{14}{14}\selectfont}{\Roman{section}.\arabic{subsection}.\arabic{subsubsection}}{1em}{}
 \titleformat{\paragraph}[hang]
 {\normalfont\fontsize{12}{12}\selectfont\it}{}{1em}{}
 
