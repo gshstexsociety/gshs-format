@@ -26,13 +26,15 @@
 
 11. gshs_rne_report : 기초/심화 R&E 연구 보고서 양식
 
-12. gshs_thesis : 졸업논문 양식
+12. gshs_rne_report-adv : 기초/심화 R&E 연구 보고서 양식(TeX 숙련자용)
 
-13. gshs_thesis-adv : 졸업논문 양식(TeX 숙련자용)
+13. gshs_thesis : 졸업논문 양식
 
-14. korean_style_signature_alpha : 서명 양식
+14. gshs_thesis-adv : 졸업논문 양식(TeX 숙련자용)
 
-15. research_note : 연구 노트 양식
+15. korean_style_signature_alpha : 서명 양식
+
+16. research_note : 연구 노트 양식
 
 
 ## 주의할 점
