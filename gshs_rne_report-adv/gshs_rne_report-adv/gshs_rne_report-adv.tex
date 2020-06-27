@@ -1,0 +1,51 @@
+%%!TeX program = xelatex
+%% 부득이하게 pdflatex을 사용해야 할 경우 위의 magic comment를 제거하십시오.
+
+% Initiated by 정민석(2014년도 경기과학고 수학과전문교원)
+% Continously being modified by 경기과학고 TeX 사용자협회
+% Website : http://gshslatexintro.github.io 
+
+\include{sub/preamble} % usepackage 등의 명령어는 여기에.
+\usepackage{cite}
+\usepackage{textcomp}
+\usepackage{tocloft}
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforesubsubsecskip}{0pt}
+
+% 본문 시작
+\begin{document}
+
+	%표지만들기
+	%makecover 함수와 관련하여 "Underfull \hbox (badness 10000) in paragraph" 오류는 무시하십시오. (TeXstudio ver 2.9.4 오류 기준)
+	%\makecover
+	
+
+	%\baselineskip=2.2em         % line spacing in the paragraph
+	\include{sub/abstract} % Abstract
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%% Main Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\cleardoublepage
+	\clearpage
+	\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+	
+	%각 장을 아래와 같이 sub 폴더 안에 만들어서 넣으면 편리하다.
+	\include{sub/introduction} % 서론
+	\include{sub/theoritical_background} % 이론적 배경
+	\include{sub/method_of_the_study} % 연구 과정
+	\include{sub/result_and_discussion} % 결과 및 토의
+	\include{sub/conclusion} % 결론
+	% \include{sub/further_study} % 추후 연구
+	\include{sub/appendix} % 부록
+	
+	\bibliography{bibfile} % 참고문헌
+	% BibTeX 코드 쉽게 얻어오는 방법 %
+	% Google Scholar 에서 검색한 결과에서 `인용'을 클릭한다.
+	% BibTeX 코드를 얻고자 한다면, 하단의 `BibTeX' 을 클릭.
+	% 코드가 나온다. Ctrl+A, Ctrl+C로 복사, bibfile에 붙여넣기.
+
+
+\end{document}

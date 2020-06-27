@@ -1,0 +1,139 @@
+\section{Theoretical Background}
+
+\subsection{줄 바꿈}
+
+\LaTeX 에서 줄 바꿈을 하는 방법은 한컴이나 워드와는 다르다.
+줄 바꿈을 하기 위해서는 Enter 키를 2번 연속으로 누르거나, 
+Back slash 키를 두 번 연속 누르는 방법(\textbackslash \textbackslash)을 사용한다. 
+또한 여러 줄을 띄우고 싶다면, \textbackslash vskip 명령어를 사용한다. 
+예를 들어, \textbackslash vskip 2pc을 사용 시
+\vskip 2pc
+위와 같이 한 번에 두 줄을 띄운다. (pc 대신 cm나 mm 등도 사용 가능하다)
+
+
+그런데 \textbackslash \textbackslash 를 제외한 나머지 방법 사용 시 첫 단어에 들여쓰기가 되는 것을 볼 수 있다. 들여쓰기를 하지 않으려면 문단의 첫부분에 \textbackslash noindent 명령어를 사용한다.
+
+\subsection{그림 삽입}
+
+\LaTeX 에서 그림을 넣는 명령어는 아래와 같다.
+\begin{lstlisting}
+	\begin{figure}[t]
+		\begin{center}
+			\includegraphics[width=.3\textwidth]{figure.png}
+			\caption{Figure Caption}
+			\label{figlabel}
+		\end{center}
+	\end{figure}
+\end{lstlisting}
+그림을 넣기 위해서는 images 폴더에 그림이 있어야 한다.
+위 명령어에서 width는 그림의 너비, caption은 그림 밑에 표시될 설명, label은 그림을 언급할 때 사용하는 그림의 코드이다. 그림의 언급은 \textbackslash ref\{figlabel\}과 같은 방법으로 한다.
+
+\noindent center 옆의 [t]는 그림을 넣을 위치이다. h, t, b, p 총 네 가지의 설정이 가능하며 각각 here(여기), top(페이지 맨 위), bottom(페이지 맨 아래), page(새로운 페이지)를 의미한다.
+일반적으로 htbp를 사용하지만 논문과 같이 페이지 상단에 그림을 위치시켜야 하는 경우 [t]를 사용한다.
+
+\newpage
+
+\begin{figure}[t]
+	\begin{center}
+		\includegraphics[width=.3\textwidth]{figure.png}
+		\caption{Figure Caption}
+		\label{figlabel}
+	\end{center}
+\end{figure}
+
+\noindent 예시 코드 실행 시 위와 같이 페이지 상단에 그림 \ref{figlabel}이 나타난다.
+
+\subsection{표 삽입}
+
+\LaTeX 에서 직접 표를 만들 수 있으나 명령어가 길고 복잡하며, 표의 모습을 보면서 작업할 수 없기에 본인이 원하는 모양대로 만드는 것이 불편하다는 단점이 있다.
+그러므로 표의 경우 다른 조판 프로그램에서 제작한 후 이미지 형태로 저장해 \LaTeX 문서에 넣거나, 인터넷 사이트인 Tables Generator 등을 사용하는 것이 더 효율적이다. 다음은 Tables Generator를 사용해 만든 표이다.
+\begin{lstlisting}
+\begin{table}[htbp]
+	\centering
+	\caption{렌즈의 종류}
+	\label{lens}
+	\resizebox{.5\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\multicolumn{1}{|c|}{} & 광각렌즈 & 망원렌즈 \\ \hline
+			초점거리                   & 짧다   & 길다   \\ \hline
+			화각                     & 크다   & 작다   \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+\end{lstlisting}
+
+\begin{table}[htbp]
+	\centering
+	\caption{렌즈의 종류}
+	\label{lens}
+	\resizebox{.5\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\multicolumn{1}{|c|}{} & 광각렌즈 & 망원렌즈 \\ \hline
+			초점거리                   & 짧다   & 길다   \\ \hline
+			화각                     & 크다   & 작다   \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+
+\subsection{수식 삽입}
+
+문장 내부에서 수식을 사용하기 위해서는 \$ 수식 \$이나 \textbackslash( 수식 \textbackslash)와 같은 방법을 사용한다.
+예를 들어 '소비 전력 \$P=I\^{}2 R\$이다.'라는 코드를 작성 후 컴파일하면
+\begin{quote}
+'소비 전력 $P=I^2 R$이다.'
+\end{quote}
+\noindent 와 같이 수식이 나타난다. \\
+이때 수식과 문장의 높이를 맞추기 위해 분수나 시그마 등의 수학 기호의 크기가 조절된다. 수식의 가독성을 키우기 위해서는 수식 앞에 \textbackslash displaystyle을 붙이면 된다.
+\begin{itemize}
+	\item displaystyle을 사용하지 않은 경우 : $\sum_{i=1}^{n} = \frac{n(n+1)}{2}$
+	\item displaystyle을 사용한 경우 : \(\displaystyle \sum_{i=1}^{n} = \frac{n(n+1)}{2}\)
+\end{itemize}
+
+\vskip 2pc
+
+\noindent 수식이 문장 안에 있는 것이 아니라 한 줄을 통째로 차지하는 경우 \textbackslash[ 수식 \textbackslash]이나 명령어 \textbackslash equation을 사용한다. 차이점이라면 전자는 수식에 번호가 붙지 않고, 후자는 붙는다는 것이다. 각각을 사용한 명령어와 실행 모습은 다음과 같다.
+
+\begin{lstlisting}
+\[ K + U = \frac{1}{2} mv^2 - \frac{GMm}{r^2}\]
+\end{lstlisting}
+\[ K + U = \frac{1}{2} mv^2 - \frac{GMm}{r^2}\]
+
+\vskip 2pc
+
+\noindent \begin{lstlisting}
+\begin{equation}
+S = k_B \ln \Omega \label{equ1}
+\end{equation}
+\end{lstlisting}
+\begin{equation}
+	S = k_B \ln \Omega \label{equ1}
+\end{equation}
+
+\noindent \textbackslash equation을 사용해서 작성한 식을 언급하기 위해서는 \textbackslash ref\{equ1\}과 같이 ref 명령어를 사용한다. \\
+예시 : 통계역학적 엔트로피는 식 \ref{equ1}(\textbackslash ref\{equ1\})과 같이 표현된다.
+
+\vskip 2pc
+
+\noindent 수식이 길어서 한 줄에 표현할 수 없는 경우에는 align 명령어를 사용한다.
+\begin{lstlisting}
+\begin{align}
+F &= \frac{dp}{dt} \notag\\
+&= \frac{d}{dt}(mv) \notag \\
+&= \frac{dm}{dt}a + m\frac{dv}{dt} \notag \\
+&= ma \textrm{ (if mass is constant)} \label{equ2}
+\end{align}
+\end{lstlisting}
+위 명령어를 입력한 후 컴파일하면
+
+\begin{align}
+F &= \frac{dp}{dt} \notag\\
+&= \frac{d}{dt}(mv) \notag \\
+&= \frac{dm}{dt}a + m\frac{dv}{dt} \notag \\
+&= ma \textrm{ (if mass is constant)} \label{equ2}
+\end{align}
+
+\noindent 위와 같이 여러 줄로 이루어진 수식 \ref{equ2}가 나온다. \\
+등호 앞에 있는 \& 기호는 \&를 기준으로 줄을 맞추라는 의미이며 \\
+중간 과정의 수식에는 번호를 붙이지 않게 하기 위해 마지막 줄을 제외한 각 줄의 끝에 \textbackslash notag를 붙인다.\\

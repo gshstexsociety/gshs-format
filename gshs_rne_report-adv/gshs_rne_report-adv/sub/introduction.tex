@@ -1,0 +1,31 @@
+\section{서론}
+
+\subsection{BibTeX}
+
+BibTeX을 사용하면 참고문헌을 쉽게 정리하거나 관리할 수 있다. 다음은 Google 학술검색 사이트에서 찾은 논문에서 BibTeX 코드를 찾는 방법이다.
+
+\begin{enumerate}
+	\item Google 학술검색에서 원하는 논문을 찾는다.
+	\item 인용 버튼을 누르면 MLA, APA 등 다양한 인용 스타일이 나온다. 여기서 창 하단의 BibTeX을 클릭한다.
+	\item BibTeX을 클릭해서 나온 코드 전문을 복사하여 보고서에 있는 폴더의 bibfile.bib 파일에 붙여넣기 한다.
+\end{enumerate}
+
+다음은 예시로 찾은 논문의 BibTeX 코드이다.
+\begin{lstlisting}
+	@article{ward2001landslide,
+	title={Landslide tsunami},
+	author={Ward, Steven N},
+	journal={Journal of Geophysical Research: Solid Earth},
+	volume={106},
+	number={B6},
+	pages={11201--11215},
+	year={2001},
+	publisher={Wiley Online Library}
+	}
+\end{lstlisting}
+
+BibTeX에 넣은 논문을 인용하기 위해서는 cite 명령어를 사용한다. 위 코드에서 @article 오른쪽에 있는 문구가 ward2001landslide이므로 이 논문을 인용하기 위해서 명령어
+\begin{lstlisting}
+	\cite{ward2001landslide}
+\end{lstlisting}
+를 사용한다. 이 명령어 실행 시 명령어를 작성한 자리에 \cite{ward2001landslide}과 같이 논문을 인용했다는 표시가 뜬다. 인용한 논문의 목록은 문서의 References에 표시된다.

@@ -1,0 +1,93 @@
+\documentclass{gshs_report}
+% 아래의 함수를 사용하면 이미지 파일들을 같은 디렉토리 내에 images 라는 이름을 가진 폴더를 생성한 후, 그 폴더 안에 넣어 사용할 수 있습니다.
+% 사용하고자 한다면 주석을 푸십시오.
+\graphicspath{{images/}}
+% 이곳에 필요한 별도의 패키지들을 적어넣으시오.
+%\usepackage{...}
+\usepackage{verbatim} % for commment, verbatim environment
+\usepackage{spverbatim} % automatic linebreak verbatim environment
+%\usepacakge{indentfirst}
+\usepackage{tikz}
+%\tikzset{
+%	image label/.style={
+%		every node/.style={
+			%fill=black,
+			%text=white,
+%			font=\sffamily\scriptsize,
+%			anchor=south west,
+%			xshift=0,
+%			yshift=0,
+%			at={(0,0)}
+%		}
+%	}
+%}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{gensymb}
+\usepackage{wrapfig}
+%\usepackage{subcaption}
+%\usepackage{floatrow}
+%\usepackage{pict2e}
+%\usepackage[backend=biber,style=authoryear]{biblatex}
+%\usepackage{biblatex}
+\usepackage{pgfplots}
+\pgfplotsset{
+	compat=newest,
+	label style={font=\sffamily\scriptsize},
+	ticklabel style={font=\sffamily\scriptsize},
+	legend style={font=\sffamily\tiny},
+	major tick length=0.1cm,
+	minor tick length=0.05cm,
+	every x tick/.style={black},
+}
+
+\usetikzlibrary{shapes}
+\usetikzlibrary{plotmarks}
+\usepackage{listings}
+\usepackage{hologo}
+\usepackage{makecell}
+\usepackage{color}
+\lstset{
+	basicstyle=\small\ttfamily,
+	columns=flexible,
+	breaklines=true
+}
+
+\citation
+\bibdata
+
+%: ----------------------------------------------------------------------
+%:               보고서 정보를 입력하시오
+% ----------------------------------------------------------------------
+% 아래와 같은 command를 만들면 길이가 긴 용어를 간편하게 사용할 수 있습니다. 단, 이미 지정된 함수명들은 새로운 함수명으로 사용할 수 없습니다.
+% 연, 월, 일은 보고서 제출 날짜에 맞게 수정하십시오.
+
+\newcommand{\gshs}{Gyeonggi Science High School for the Gifted }
+
+\researchtype{기초/심화} % 기초 / 심화
+\reporttype{중간/결과} % 중간 / 결과
+
+\title{국문 제목} % 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+\englishtitle{English Title}% 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+
+\author[1] {Author} % 제 1 저자명
+\email[1]{(author@email.address)} % 제 1 저자 이메일
+\author[2] {} % 제 2 저자명
+\email[2]{} % 제 2 저자 이메일
+\advisor{Teacher} % 지도교사명
+\advisorEmail{(teacher@email.address)} % 지도교사 이메일
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% researchtype이 '심화'일 경우에만 나타남 %%%%
+\professor{Professor} % 지도교수명
+\professorEmail{(professor@email.address)} % 지도교수 이메일
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\summitdate{2020}{01}{01} % 제출일 (연, 월, 일)
+\newtheorem{definition}{정의}
