@@ -1,0 +1,455 @@
+% Initiated by 정민석(2014년도 경기과학고 수학과전문교원)
+% Continously being modified by 경기과학고 TeX 사용자협회
+% Website : http://gshslatexintro.github.io 
+\documentclass{gshs-report-v1.2}
+% 추가로 필요한 패키지가 있다면 주석을 풀고 적어넣으십시오,
+%\usepackage{...}
+
+\researchtype{기초} % 기초 / 심화
+\reporttype{중간} % 중간 / 결과
+
+\title{보고서 제목} % 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+\englishtitle{English title}% 제목 개행 시 \linebreak 사용. \\나 \newline 은 안됨.
+
+\author[1] {홍길동} % 제 1 저자명
+\email[1]{hong@e-mail.address} % 제 1 저자 이메일
+\author[2] {전우치} % 제 2 저자명
+\email[2]{cheon@e-mail.address} % 제 2 저자 이메일
+\author[3] {아이유} % 제 3 저자명
+\email[3]{iu@bogo.sipda} % 제 3 저자 이메일
+\advisor{홍판서} % 지도교사명
+\advisorEmail{teacher@e-mail.address} % 지도교사 이메일
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% researchtype이 '심화'일 경우에만 나타남 %%%%
+\professor{교수님} % 지도교수명
+\professorEmail{professor@e-mail.address} % 지도교수 이메일
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\summitdate{2016}{02}{07} % 제출일 (연, 월, 일)
+\newtheorem{definition}{정의}
+
+
+% 아래의 함수를 사용하면 이미지 파일들을 같은 디렉토리 내에 images 라는 이름을 가진 폴더를 생성한 후, 그 폴더 안에 넣어 사용할 수 있습니다.
+% 사용하고자 한다면 주석을 푸십시오.
+%\graphicspath{{images/}}
+
+% 아래와 같은 command를 만들면 길이가 긴 용어를 간편하게 사용할 수 있습니다. 단, 이미 지정된 함수명들은 새로운 함수명으로 사용할 수 없습니다.
+\newcommand{\gshs}{Gyeonggi Science High School }
+
+% 본문 시작
+\begin{document}
+
+%표지만들기
+%makecover 함수와 관련하여 "Underfull \hbox (badness 10000) in paragraph" 오류는 무시하십시오. (TeXstudio ver 2.9.4 오류 기준)
+\makecover
+
+%초록(영문)
+
+%\begin{abstract}
+%\noindent{
+%	Put your abstract here. Once upon a time, \gshs said : `The first, and the best.'
+%}
+%\end{abstract}
+
+%초록(한글)
+\begin{abstractkor}
+\noindent{
+	 초록(요약문)은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
+}
+\end{abstractkor}
+
+
+\section{Introduction}
+
+아래의 글은 경기과학고 물리 전문교원이신 목진욱 박사님께서 작성하신 글이다. 
+원래는 졸업논문 작성 가이드이기 때문에 R\&E 보고서 가이드처럼 사용하기에는 벅찰 수 있지만 첨부한다.
+이 글과 더불어 경기과학고 \TeX 사용자협회\footnote{구글 검색 : `경기과학고 TeX 사용자협회'. 전체 파일 목록 - An-Introduction-to-LaTeX - An Introduction to LaTeX-ver2.0\_beamer - Day1,2 와 같이 2개가 있다.} 의 입문서 ver2.0(beamer)를 함께 읽어보면 좋을 것이다.
+
+\vskip 3pc
+
+서론은 연구를 진행하게 된 배경을 기술하는 곳으로 보통 다음과 같은 순서로 쓰는 편이다.
+\begin{itemize}
+	\item{연구 주제의 전반적 관심을 조명.}
+	\item{연구 분야의 스페셜 이슈를 조명.}
+	\item{해당 이슈를 해결하기 위한 다양한 선행 연구들을 서술.}
+	\item{선행 연구들의 한계점을 기술.}
+	\item{한계를 극복하기 위한 본 연구의 목적을 밝힘.}
+	\item{논문의 구성을 서술 (optional).}
+\end{itemize}
+서론은 과거부터 현재까지 해당 분야의 연구 진행을 기술하기 때문에 선행 연구 논문들을 레퍼런스로 도입하는 경우가 빈번하게 나타난다. \LaTeX 에서 참고문헌을 표기하는 방법을 알아보자. 먼저 이 문서의 후반부에 위치한 레퍼런스 부분을 찾아간다. 이 문서를 컴파일했을 때 생성된 PDF 파일에는 {\bf References}라고 나와 있지만 여기서는 {\textbackslash}begin\{thebibliography\}\{99\}로 시작에서 {\textbackslash}end\{thebibliography\}로 종료되는 그 사이에 참고문헌을 작성하면 된다. 여기서 숫자 99는 참고문헌이 100개 넘는 논문을 작성하는 것이 아니라면 그대로 놔둔다. 참고문헌 작성 예시는 다음과 같다.
+\begin{quote}
+	{\textbackslash}bibitem\{Mok06\}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Global two-fluid stability of bifurcated current sheets'', J. Goephys. Res., \{{\textbackslash}bf 111\}, A03203 (2006).
+\end{quote}
+{\textbackslash}bibitem 다음의 \{ \} 안에는 자신이 그 논문을 기억하기 쉬운 규칙을 정하여 작성하면 된다. 보통 논문 주저자의 last name과 논문 출판 년도를 사용하여 표기한다. 그리고 저자들, 논문 제목, 저널 이름, 권, 호, 페이지, 출판년도 순으로 입력한다. 저자는 3인 이하일 경우에는 모두 적도록 하고 4인 이상일 때는 주저자만 작성하고 그 외는 et al.이란 표기로 대체한다. 논문 제목은 큰 따옴표로 묶어준다. \LaTeX 에서 시작하는 따옴표는 키보드에서 숫자 1 왼쪽 버튼, 마치는 따옴표는 키보드 엔터키 왼쪽 버튼을 사용함에 유의하라. 저널 이름은 경우에 따라 약어를 사용할 수 있다. 약어를 사용할 때는 정식으로 정해진 약어임을 확인한 후 사용한다. Volume(권)은 굵은 글자 처리한다. 위의 예시처럼 {\textbackslash}bf를 사용하면 된다. Number(호)는 경우에 따라 없는 저널도 있다. 위의 예시에는 `호'를 넣지 않았다. 만약 `호'를 넣고자 할 때는 둥근 괄호로 묶어준다. 마지막으로 페이지와 출판년도를 작성한다. 출판년도는 둥근 괄호로 묶어준다.
+
+이제 서론에서 해당 논문을 인용할 준비 작업은 끝났다. 서론에서 필요한 부분에 이 논문을 인용 표기할 경우 {\textbackslash}cite 라고 입력한 후 \{ \} 안에 해당 논문을 표시하면 된다. 표시하는 방법은 바로 레퍼런스에서 {\textbackslash}bibitem 이후 \{ \} 안에 적었던 것을 넣어주면 된다. 논문 인용 표시가 문장 마지막에 등장할 때는 마침표의 위치는 인용 표시 다음이다. 아래 문장은 논문 인용 표시의 예로 C. Mok의 2010년 논문에서 인용하였다 \cite{Mok10}.
+\begin{quote}
+	Various plasma instabilities have been proposed as playing important 
+	roles during the substorm onset process. These include the tearing 
+	{\textbackslash}cite\{Schindler74, Sitnov97, Zelenyi08\}, ballooning 
+	{\textbackslash}cite\{Cheng98, Bhattacharjee98, Dobias04, Zhu03, 
+	Saito08, Friedrich01\}, lower hybrid drift 
+	{\textbackslash}cite\{Shinohara98, Yoon02, Mok06\}, \linebreak
+	Kelvin--Helmholtz {\textbackslash}cite\{Rostoker84, Dobias06\}, and the 
+	ion Weibel {\textbackslash}cite\{Yoon93, Sadovskii01\} instabilities.
+\end{quote}
+위와 같이 입력한 후 컴파일하면 pdf 파일에는 다음과 같이 나타날 것이다.
+\begin{quote}
+	Various plasma instabilities have been proposed as playing important roles during the substorm onset process. These include the tearing \cite{Schindler74, Sitnov97, Zelenyi08}, ballooning \cite{Cheng98, Bhattacharjee98, Dobias04, Zhu03, Saito08, Friedrich01}, lower hybrid drift \cite{Shinohara98, Yoon02, Mok06}, Kelvin--Helmholtz \cite{Rostoker84, Dovias06}, and the ion Weibel \cite{Yoon93, Sadovskii01} instabilities.
+\end{quote}
+이 때 참고문헌이 번호 순서대로 나오도록 한다. 또한 세 개 이상의 문헌이 연속된 번호로 이어진 경우 자동으로 첫 번호와 마지막 번호가 hyphen으로 연결된 형태로 등장함을 확인할 수 있다.
+
+
+참고문헌은 다음의 조건들을 만족해야 한다.
+\begin{itemize}
+	\item{저자가 명시되어야 한다.}
+	\item{검증이 된 내용이어야 한다.}
+	\item{이미 출판되어 수정이 불가능해야 한다.}
+\end{itemize}
+전문 논문 저널에 수록된 논문들은 위 조건들을 만족하므로 되도록 논문을 참고문헌으로 삼도록 한다. 웹사이트는 위 조건들을 만족하지 못하므로 참고문헌으로 부적절하다. 또한 누구라도 책을 출판할 수 있으므로 전문 서적을 참고문헌으로 사용하는 경우에는 널리 받아들여지고 인정받는 서적만 사용해야 한다. 사실 전공 서적의 저자는 여러 연구 논문들을 참고로 하여 책을 집필하기 때문에 전공서적에도 참고 문헌(논문)이 명시되어 있다. 이 경우 전공 서적 대신에 책에서 지시하는 논문을 참고문헌으로 삼도록 한다.
+
+
+
+%-----------------------------------------------------
+% Next Section (e.g. Experiment, Linear theory, etc...) 
+%-----------------------------------------------------
+\section{Equations, Figures, and Tables}
+연구 본문은 하위 절(subsection, subsubsection, ...)등이 등장하는 경우가 있다. 이 때는 {\textbackslash}subsection\{section name\}, {\textbackslash}subsubsection\{subsubsection name\}을 사용하여 하위 절을 구성하면 된다. 여기서는 수식 작성법, 그림 넣는 법, 표 만드는 법에 대해 살펴본다.
+
+\subsection{Equations}
+
+먼저 문장 속에서 수식을 사용하는 경우에는 \$ (수식) \$과 같이 처리하면 된다. 다음과 같이 작성한 후 컴파일을 하면
+\begin{quote}
+	운동 에너지는 \$(1/2)mv$\wedge$2\$으로 표현된다. 여기서 \$m\$은 물체의 질량, \$v\$ 는 물체의 속력이다.
+\end{quote}
+pdf 파일에는 다음과 같이 나타난다.
+\begin{quote}
+	운동 에너지는 $(1/2)mv^2$으로 표현된다. 여기서 $m$은 물체의 질량, $v$는 물체의 속력이다.
+\end{quote}
+위의 예시에서 보듯이 문장 속에서 수식을 사용할 때는 한 줄로 입력한다. 즉 분수 형태의 수식은 슬래쉬`/'로 대체하여 표현한다. 줄 간격을 일정하게 유지하기 위함이다.
+
+다음은 수식이 문장 밖으로 나와 한 줄을 통째로 차지하는 경우이다. 수식을 작성하는 명령어는 다양하지만, 여기서는 equation, align에 대해서만 다룬다. 먼저 equation의 사용법을 예를 통해 확인해보자. 만약 다음과 같이 입력을 하고
+\begin{quote}
+	{\textbackslash}begin\{equation\}\\
+	{\textbackslash}int\_V 
+	{\textbackslash}nabla{\textbackslash}cdot\{{\textbackslash}rm{\textbackslash}bf
+	 F\}dV={\textbackslash}oint\_S \{{\textbackslash}rm{\textbackslash}bf 
+	F\}{\textbackslash}cdot d\{{\textbackslash}rm{\textbackslash}bf A\}. 
+	\newline{\textbackslash}label\{eq001\} \\
+	{\textbackslash}end\{equation\}
+\end{quote}
+컴파일을 하면 다음과 같은 식이 pdf파일에 나타나는 것을 확인할 수 있다.
+\begin{equation}
+\int_V \nabla\cdot{\rm\bf F} dV = \oint_S {\rm\bf F}\cdot d{\rm\bf A}. \label{eq001}
+\end{equation}
+문장 속에서 수식의 번호(라벨)을 호출하는 경우가 종종 있다. 이 때는 {\textbackslash}ref\{eq001\}을 사용하면 된다. 여기서 eq001은 수식에서 label 명령어 다음에 작성된 문구이다. 수식마다 각기 다른 라벨을 작성해야 하며 논문 저자가 기억하기 편한 것을 사용하면 된다. 서로 다른 수식에 중복된 라벨을 사용하면, 나중에 작성된 라벨의 수식 번호만 호출됨에 유의하라. 사용 예는 다음과 같다.
+\begin{quote}
+	(작성 예) Divergence 이론은 임의의 벡터 필드 \${\textbackslash}rm{\textbackslash}bf F\$가 임의의 폐곡면 외부를 향하는 플럭스의 총량은 \${\textbackslash}nabla{\textbackslash}cdot\{{\textbackslash}rm{\textbackslash}bf F\}\$ 를 폐곡면 내부 부피에 대하여 적분한 것과 같다는 것으로 이를 식으로 표현하면 식 ({\textbackslash}ref\{eq001\}) 과 같다.
+\end{quote}
+\begin{quote}
+	(컴파일 결과) Divergence 이론은 임의의 벡터 필드 $\rm\bf F$가 임의의 폐곡면 외부를 향하는 플럭스의 총량은 $\nabla\cdot{\rm\bf F}$를 폐곡면 내부 부피에 대하여 적분한 것과 같다는 것으로 이를 식으로 표현하면 식 (\ref{eq001})과 같다.
+\end{quote}
+그런데 수식에 번호를 붙일 필요가 없는 경우도 있다. 이 경우에는 수식이 끝나고 equation 명령어를 닫기 전 {\textbackslash}nonumber라고 입력하면 된다.
+\begin{quote}
+	{\textbackslash}begin\{equation\}\\
+	{\textbackslash}pi=3.14159265358979... {\textbackslash}nonumber \\
+	{\textbackslash}end\{equation\}
+\end{quote}
+\begin{equation}
+\pi=3.14159265358979... \nonumber
+\end{equation}
+지금까지 equation 명령어에 대해 살펴보았는데, equation은 한 줄로 표현 가능한 수식에 사용된다. 그런데 수식 중에는 한 줄로 표현하기 너무 길어서 줄바꿈을 해야 할 필요가 있는 경우, 또는 여러 줄에 걸쳐서 계산 과정을 보여줄 필요가 있는 경우가 있다. 이 때 사용되는 대표적인 명령어가 align이다.
+\begin{quote}
+	{\textbackslash}begin\{align\} \\
+	{\textbackslash}frac\{dE\}\{dt\} 
+	\&={\textbackslash}frac\{{\textbackslash}partial 
+	E\}\{{\textbackslash}partial t\} +{\textbackslash}sum\_i 
+	{\textbackslash}dot\{q\}\_i 
+	{\textbackslash}frac\{{\textbackslash}partial 
+	E\}\linebreak\{{\textbackslash}partial 
+	q\_i\}+{\textbackslash}sum\_i{\textbackslash}ddot\{q\}\_i 
+	{\textbackslash}frac\{{\textbackslash}partial 
+	E\}\{{\textbackslash}partial {\textbackslash}dot\{q\}\_i\} 
+	{\textbackslash}notag {\textbackslash}{\textbackslash} \\
+	\&={\textbackslash}sum\_j {\textbackslash}dot\{q\}\_j 
+	{\textbackslash}sum\_k {\textbackslash}left( A\_\{jk\} q\_k +M\_\{jk\} 
+	{\textbackslash}ddot\{q\}\_k {\textbackslash}right) . 
+	{\textbackslash}label\{eq002\}\\
+	{\textbackslash}end\{align\}
+\end{quote}
+\TeX\ 파일에 위와 같이 입력하고 컴파일을 해보면 다음과 같은 식을 얻는다.
+\begin{align}
+\frac{dE}{dt} &=\frac{\partial E}{\partial t} +\sum_i \dot{q}_i \frac{\partial E}{\partial q_i} +\sum_i \ddot{q}_i \frac{\partial E}{\partial\dot{q}_i} \notag\\
+&=\sum_j \dot{q}_j \sum_k \left( A_{jk} q_k +M_{jk} \ddot{q}_k \right). \label{eq002}
+\end{align}
+\TeX\ 파일에 입력된 등호 앞의 \& 기호는 줄 맞춤 표시이다. 즉, 첫 번째 줄의 \&와 두 번째 줄의 \&가 같은 수직선상에 위치한다는 의미이다. 첫 번째 줄에서는 수식 번호를 넣고 싶지 않아서 {\textbackslash}notag라는 명령어를 사용하였다. equation 명령어에서 사용된 {\textbackslash}nonumber와 같은 기능을 한다. 줄을 넘길 때는 {\textbackslash}{\textbackslash}를 사용한다. 이번에는 줄이 너무 길어서 여러 줄에 나누어 표현하는 식의 예를 살펴보자. (P. H. Yoon의 2006 논문에서 참고하였음 \cite{Yoon06})
+\begin{quote}
+	{\textbackslash}begin\{align\}\\
+	{\textbackslash}delta P\_\{ij\}$\hat{\ }$a 
+	=\&{\textbackslash}frac\{i\}\{B\_0\} 
+	{\textbackslash}frac\{{\textbackslash}Omega\_a\}\{{\textbackslash}omega-\{
+	 {\textbackslash}rm{\textbackslash}bf k\}{\textbackslash}cdot\{ 
+	{\textbackslash}rm\linebreak{\textbackslash}bf v\}\_a \} 
+	{\textbackslash}left( m\_a n {\textbackslash}epsilon\_\{ikl\} 
+	v\_k$\hat{\ }$a B\_l {\textbackslash}delta v\_j$\hat{\ }$a +m\_a n 
+	{\textbackslash}epsilon\_\{jkl\} v\_k$\hat{\ }$a B\_l 
+	{\textbackslash}delta\_i$\hat{\ }$a {\textbackslash}right. 
+	{\textbackslash}nonumber {\textbackslash}{\textbackslash} \\
+	\& {\textbackslash}left. + {\textbackslash}epsilon\_\{ikl\} {\textbackslash}delta B\_l P\_\{jk\}$\hat{\ }$a + {\textbackslash}epsilon\_\{jkl\} {\textbackslash}delta B\_l P\_\{ik\}$\hat{\ }$a + {\textbackslash}epsilon\_\{ikl\} B\_l {\textbackslash}delta P\_\{jk\}$\hat{\ }$a + {\textbackslash}epsilon\_\{jkl\} B\_l {\textbackslash}delta P\_\{ik\}$\hat{\ }$a {\textbackslash}right) . {\textbackslash}label\{eq003\} \\
+	{\textbackslash}end\{align\}
+\end{quote}
+위와 같이 작성한 후 컴파일하면 pdf 파일에 다음과 같은 식이 등장한다.
+
+보는 바와 같이 괄호 내부가 너무 길어서 줄바꿈을 했더니 첫 줄에서 괄호가 열리고 다음 줄에서 괄호가 닫힌다. \TeX 에서는 괄호를 연 뒤, 닫지 않고 줄바꿈을 하면 에러가 발생한다. 따라서 첫 줄에서 `{\textbackslash}left('로 괄호를 연 뒤, `{\textbackslash}right.'으로 괄호를 닫았다. 이 표시는 실제로 pdf 파일에는 등장하지 않지만 에러 방지를 위해 넣어준 것이다. 두 번째 줄에서도 마찬가지로 `{\textbackslash}left.'으로 (pdf 파일에는 보이지 않는) 괄호를 연 뒤 `{\textbackslash}right)'으로 괄호를 닫아주었다.
+
+\begin{align}
+	\delta P_{ij}^a =&\frac{i}{B_0} \frac{\Omega_a}{\omega-{\rm\bf 
+	k}\cdot{\rm\bf v}_a} \left( m_a n \epsilon_{ikl} v_k^a B_l \delta v_j^a 
+	+m_a n \epsilon_{jkl} v_k^a B_l \delta v_i^a \right. \nonumber\\
+	&\left. +\epsilon_{ikl} \delta B_l P_{jk}^a +\epsilon_{jkl} \delta B_l 
+	P_{ik}^a +\epsilon_{ikl} B_l \delta P_{jk}^a +\epsilon_{jkl} B_l \delta 
+	P_{ik}^a \right) . \label{eq003}
+\end{align}
+
+align 명령어는 각 줄마다 수식 번호가 작성 가능하다. 그래서 식 (\ref{eq003})과 같이 하나의 식을 두 줄에 나누어 표현할 때 (첫 번째 줄에는 notag 명령어를 넣어 수식 번호를 제거하고) 두 번째 줄에 수식 번호가 등장하도록 하였다. 그런데 이처럼 하나의 식을 여러 줄에 걸쳐 표현할 때는 수식 번호의 상하 위치가 수식 전체의 중앙에 등장하는 편이 더 보기 좋다. 이 경우에는 equation 명령어 내부에 다시 split 명령어를 사용하면 된다. 다음 식 (\ref{eq004})는 이 방법을 사용한 것으로서, 자세한 사용법을 알고 싶으면 \TeX\ 파일에 어떤 식으로 작성되었는지 살펴보기 바란다.
+
+\begin{equation}
+\begin{split}
+\mathcal{D}_{m'm}^{(1/2)} (\alpha,\beta,\gamma)=&\left\langle j=\frac{1}{2},m'\right|\exp\left(\frac{-i\,J_z \alpha}{\hbar}\right)\\
+&\times\exp\left(\frac{-i\,J_y \beta}{\hbar}\right)\exp\left(\frac{-i\,J_z \gamma}{\hbar}\right)\left| j=\frac{1}{2},m\right\rangle.
+\end{split}
+\label{eq004}
+\end{equation}
+
+\TeX 에서 입력되는 수식은 기호와 명령어의 명칭 및 사용법을 알아야 작성할 수 있다. 사용법이 잘 정리된 문서들을 인터넷에서 쉽게 구할 수 있으므로 스스로 해결할 수 있을 것으로 생각된다.
+
+
+\subsection{Figures}
+논문에 들어가는 그림은 크게 사진과 그래프로 나눌 수 있다. 먼저 사진파일(확장자 jpg, png)을 넣는 방법은 다음과 같다.
+\begin{quote}
+	{\textbackslash}begin\{figure\}[t]\\
+	{\textbackslash}begin\{center\}\\
+	{\textbackslash}includegraphics[width=6cm]\{Figure File\}\\
+	{\textbackslash}caption\{This is caption\}\\
+	{\textbackslash}label\{Figure label\}\\
+	{\textbackslash}end\{center\}\\
+	{\textbackslash}end\{figure\}
+\end{quote}
+{\textbackslash}begin\{figure\} 옆의 [t]라는 옵션은 그림을 페이지의 맨 위에 넣는다는 것이다. 옵션의 종류는 t, b, h, p가 있다. 각각의 의미는, t (그림을 페이지 맨 위에 위치), b (그림을 페이지 맨 아래에 위치), h (그림을 본문에 작성한 위치에 넣기. 단 충분한 공간이 없는 경우에는 다음 페이지에 들어감), p (한 페이지에 그림만 등장함). 논문에 등장하는 그림들은 되도록 페이지 위에 위치할 수 있도록 하자. 즉 [t] 옵션을 설정한다. 단, section title이 맨 위에 위치하는 경우에는 [b] 옵션을 사용하여 그림을 페이지 바닥에 위치시킨다.
+
+includegraphics다음의 [ ] 안에는 크기를 지정할 수 있는 옵션을 넣어주고 \{ \} 안에는 파일이름(확장자 포함)을 넣어준다. 이때 그림 파일은 \LaTeX\ 파일과 같은 폴더에 들어 있어야 한다. 다음의 caption에는 그림 설명을 넣어준다. 마지막으로 label에는 수식에서와 마찬가지로 이 그림의 라벨을 지정하여 본문 속에서 ref 명령어를 사용하여 그림을 언급하기 편하도록 한다.
+
+이번에는 그래프를 넣는 방법을 알아보자. 그래프는 사진과 약간 차이가 있는데 그것은---엑셀 등 그래프 작성 툴에서 그래프를 그린 후 그래프를 그림파일로 저장할 때, 확장자 pdf, eps 등 postscript 벡터 이미지로 저장을 해야 한다는 것이다. 그 외에는 사진 이미지 삽입과 동일하다. 그림 \ref{Fig01}은 엑셀에서 작성한 그래프를 pdf로 저장한 것과 png로 저장한 것을 비교하기 위한 예이다. 위쪽 그림은 png 확장자, 아래 그림은 pdf 확장자의 파일을 삽입한 것이다. 컴파일 후 생성된 논문 pdf파일을 확대한 상태로 그래프를 살펴보면 그 차이를 알 수 있다.
+
+
+\begin{figure}[t]
+	\begin{center}
+		%\includegraphics[width=7.2cm]{Figure01.png}\\
+		%\includegraphics[width=9cm]{Figure01.pdf}
+		\caption{A linearly damped beat wave.} \label{Fig01}
+	\end{center}
+\end{figure}
+
+논문에 그림을 넣을 때 주의사항은 다음과 같다.
+\begin{itemize}
+	\item{논문에 반드시 필요한 그림인가.}
+	\item{남들이 이해하는데 있어서 가장 알맞은 형태로 표현되었는가.}
+	\item{캡션과 본문에서의 설명은 충분한가.}
+\end{itemize}
+많은 학생들이 연구 과정에서 만들어진 사진들과 그래프들을 선별 과정 없이, 있는대로 다 넣으려는 경향을 보였다. 실험에서 사용한 장치들 사진이나 실험실 사진들을 넣는 경우도 있고, 연구 결과에서 텍스트 없이 그래프들만 나열시킨 경우도 있다. 따라서 십여장 남짓한 본문에서 텍스트가 차지하는 줄 수와 그림이 차지하는 줄 수를 비교하면, 그림의 점유 비율이 월등히 높은 논문들이 많았다. 원칙이 있는 건 아니지만, 글과 그림의 페이지 점유 정도를 비교할 때 글이 차지하는 비중을 높게 하도록 한다. 본인이 작성한 논문에서 그림의 양이 너무 많다면 그림의 양을 줄이고 글의 양을 늘려보자.
+
+먼저 실험 장치 사진을 넣는 경우를 보자. 논문에서 실험 장치 사진을 넣는 것은 i) 장치 개발 자체가 연구 목적인 경우나 ii) 연구실에서 독자적으로 개발한 장치로 연구를 수행하기에 독자들이 연구 장치에도 호기심을 가질 것으로 판단되는 경우에만 필요한 것으로 굳이 필요한 상황이 아니라면 넣지 않도록 한다. 다만 연구 대상이 되는 물체의 상태 변화를 이해하기 쉽도록 그림으로 나타내는 과정에서 장치의 모식도가 함께 그려지는 경우는 종종 있다.
+
+실험 결과를 충분한 텍스트 없이 그림만 나열하는 경우도 있다. 이 때는 그림들이 반드시 모두 들어가야 하는지 생각해본다. 각각의 그림들에 대해서 그림이 차지하는 공간 이상으로 글로 설명해야 할 내용이 있는지 생각해본다. 만약 여러 그림 중 하나만 대표가 선정되어 설명하게 된다면 나머지 그림들은 논문에서 불필요한 그림들이다. 그러나 모든 그림들을 종합하여 볼 필요가 있으며, 종합된 내용을 글로 설명해야 한다면 그림의 표현 방식이 잘못된 것이다. 이 때는 독자들에게 내용 전달에 있어서 효과적인 그림의 표현 방식이 어떤 것일지 고민을 해야 한다.
+
+\subsection{Tables}
+
+\LaTeX 에서 표를 넣는 방법은 i)엑셀 등 외부 프로그램에서 작성된 표를 pdf 그림파일로 변환하여 그림처럼 includegraphics 명령어로 넣는 방법 (물론 이 경우 {\textbackslash}begin\{figure\} 대신 {\textbackslash}begin\{table\}를 사용해야 함), ii)\LaTeX 에서 표를 직접 제작하는 방법의 두 가지가 있다. \LaTeX 에서는 명령어에 의해 표의 구획과 정렬, 선의 종류를 표현하므로 초보자에게는 다소 어려운 작업이 될 수 있다. 아마도 \LaTeX 를 사용함에 있어서 가장 불편한 점은 표 제작 작업일 것이다. 다행히 인터넷에 `latex', `table' 등의 조합으로 검색하면 마우스로 제작한 표를 \LaTeX 로 변환해주는 웹사이트들을 찾을 수 있다.
+
+다음은 간단한 표의 예이다. 다음과 같이 입력을 하고 컴파일을 하면,
+\begin{quote}
+	{\textbackslash}begin\{table\}[t]\\
+	{\textbackslash}caption\{Physical parameters.\}\\
+	{\textbackslash}label\{table01\}\\
+	{\textbackslash}begin\{center\}\\
+	{\textbackslash}begin\{tabular\}\{c $|$ c $|$ c\}\\
+	{\textbackslash}hline\\
+	\& symbol \& value {\textbackslash}{\textbackslash} {\textbackslash}hline \\
+	Earth's mass \& \$M\_E\$ \& \$6.0{\textbackslash}times 10$\hat{\ }$\{24\} \{{\textbackslash}rm kg\}\$ {\textbackslash}{\textbackslash}\\
+	Earth's radius \& \$R\_E\$ \& \$6.4{\textbackslash}times 10$\hat{\ }$6 \{{\textbackslash}rm m\}\$ {\textbackslash}{\textbackslash}\\
+	Gravitational constant \& \$G\$ \& \$6.67{\textbackslash}times 10$\hat{\ }$\{-11\} \{{\textbackslash}rm N m$\hat{\ }$2 /kg$\hat{\ }$2\}\$ {\textbackslash}{\textbackslash} \\
+	{\textbackslash}hline\\
+	{\textbackslash}end\{tabular\}\\
+	{\textbackslash}end\{center\}\\
+	{\textbackslash}end\{table\}
+\end{quote}
+Table \ref{table01}과 같은 표를 얻게 된다.
+\begin{table}[t]
+	\caption{Physical parameters.} \label{table01}
+	\begin{center}
+		\begin{tabular}{c|c|c}
+			\hline
+			& symbol & value \\ \hline
+			Earth's mass & $M_E$ & $6.0\times 10^{24} {\rm kg}$ \\
+			Earth's radius & $R_E$ & $6.4\times 10^6 {\rm m}$ \\
+			Gravitational constant & $G$ & $6.67\times 10^{-11} {\rm N m^2 /kg^2}$ \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+위와 같이 `\textbackslash rm' 을 사용하여 단위를 나타낼 수도 있지만,
+`\textbackslash SI' 와 `\textbackslash si' 명령어를 사용해도 편리하다. 
+간단한 사용법과 결과는 다음과 같다. mathmode(달러 안쪽) 에서도 사용이 가능하다.
+
+\begin{center}
+	\begin{quote}
+		\$ G=\textbackslash SI\{6.67e-11\}\{\textbackslash newton\textbackslash square\textbackslash meter\textbackslash per\textbackslash square\textbackslash kilogram\} \$
+	\end{quote}
+	
+	\begin{quote}
+		$ G=\SI{6.67e-11}{\newton\square\meter\per\square\kilogram} $
+	\end{quote}
+\end{center}
+
+원래는 `\textbackslash per'을 사용하면 그 뒤의 차원들은 음수 차원으로 나타내어지고 보통 우리가 말하는 `per'은 나타나지 않는데,
+위와 같이 사용하려면 다음 명령어를 `\textbackslash begin\{document\}' 이전에 삽입하면 된다.
+이 보고서 양식에서는 이미 cls 파일에 지정되어 있다. 
+\begin{center}
+	\textbackslash sisetup\{inter-unit-product =\$\textbackslash cdot\$\}
+\end{center}
+
+
+%-----------------------------------------------------
+% Conclusion
+%-----------------------------------------------------
+
+\section{결론}
+글이라는 것은 개인의 개성이 담겨 있기 때문에 모든 사람들이 동일한 방식으로 표현하는 것은 아니다. 그러나 고대로부터 개인의 연구 내용을 글로써 타인에게 전달할 때, 효율적인 방법이라고 공감대를 형성하며 다듬어져 온 것이 지금의 논문 형태이다. 그러므로 처음 논문을 작성하는 학생들은 이 문서에서 지시하는 논문 작성 방식을 따르는 것을 권한다. 하지만 여기서는 다양한 논문들에 대해 일일이 사례를 들어 올바른 논문 작성법을 설명하기에는 한계가 있기에 간략하게만 소개를 했다. 여기서 설명되지 않은 부분들은 다른 사람들의 논문을 참고하자. 이미 서론을 작성하면서 많은 선행 연구 논문들을 읽어 봤을 것이다. 그 논문들에서는 데이터를 어떤 방식으로 표현하는지, 서론은 어떤 흐름으로 구성하는지 등을 살펴보자. 논문을 잘 쓰는 비결의 첫 번째는 논문을 많이 읽어 보는 것이다.
+
+
+
+
+\section{여담}
+(당신이 v1.1 이상의 gshs-report.cls 를 사용하고 있다면 이 글을 읽을 필요는 없다.)
+
+보통 우리가 tex으로 보고서를 사용할 때에는 (경기과학고 텍사용자 협회 내에서는) section-subsection-subsubsection 체제를 사용하며, 책(book 클래스 사용)을 집필하는 것이 아니라면 chapter 를 쓸 일이 없다. 이것은 보통 우리가 report 클래스를 사용하기 때문일 것이다. 그에 반해, v0.12 이전의 gshs-report.cls 에서는 표 \ref{correlation}와 같이 한 칸씩 앞당겨 사용하도록 설정되어 있어 여러 문제점들을 불러왔다.
+
+\begin{table}[h]
+	\caption{보통의 tex 문서 명령어와 gshs-report.cls을 사용하는 문서의 명령어 대응관계.}
+	\label{correlation}
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			보통의 tex 문서에서의 명령어 & gshs-report.cls 문서에서의 명령어 \\
+			\hline
+			\textbackslash section & \textbackslash chapter \\
+			\hline
+			\textbackslash subsection & \textbackslash section \\
+			\hline
+			\textbackslash subsubsection & \textbackslash subsection \\
+			\hline
+			\textbackslash paragraph & \textbackslash subsubsection \\
+			\hline
+			\textbackslash subparagraph & \textbackslash paragraph \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{이러한 설정이 갖는 문제점들}
+이로부터 발생하는 문제점들은 다음과 같다.
+\begin{itemize}
+\item 처음 \LaTeX 을 사용하는 사람의 경우 혼동을 유발함
+\item chapter가 새로 넘어갈 때마다 그림/표의 numbering이 초기화됨 \\
+이것은 \verb+\+usepackage\{chngcntr\}, \verb+\+counterwithout\{figure\}\{chapter\} 을 통해 임시로 해결되었었다.
+\item Theorem numbering이 이상하게 됨.(1.0.1,  1.0.2, ...) \\
+https://github.com/gshslatexintro/gshslatexintro/issues/7 참조.
+\item 보고서 tex 파일을 다른 곳에 사용해야 할 경우 호환성이 떨어진다. (ex. 휴먼테크논문대회 양식, 우수R\&E 공동발표회 양식) 즉, chapter를 section으로, section을 subsection으로, subsection을 subsubsection으로 각각 바꾸어 주어야 한다. 물론 이는 Ctrl+H를 통해 쉽게 할 수 있지만... 번거로우니까.
+\end{itemize}
+
+\subsection{왜 이런 설정을 하셨을까?}
+가능한 이유들은 다음과 같다.
+\begin{itemize}
+	\item 아마도 만드신 선생님께서 새로운 장(보통의 section)을 시작할 때마다 페이지 넘김을 하기 위해서 자동으로 페이지 넘김이 되는 chapter를 section에 대응시키고, 순차적으로 한칸씩 앞당겨 대응시킨 것 같다. 
+	\item 기존의 report 클래스가 chapter-section-subsection-subsubsection 체제를 사용하기 때문
+\end{itemize}
+
+\subsection{v1.1 이후로는 제대로 된다.}
+Theorem labeling이 이상하게 되던 문제:
+\begin{definition}
+	Lorem Ipsum
+\end{definition}
+
+section 이 넘어가도 definition counter는 잘 유지된다. 정의 \ref{def_test}\을 참조바람.
+
+
+\section{Test Section}
+
+Title : LARGE, Bold face
+
+\subsection{Test Subsection}
+
+Title : Large, Bold face
+
+\begin{definition} \label{def_test}
+	Content.
+\end{definition}
+
+`정의' 명령어의 번호 매기기가 잘 수행된다. 정의 \ref{def_test}\과 같이. % 자동 조사 명령어
+
+\subsubsection{Test Subsubsection}
+
+Title : large, Bold face
+
+앞서 언급하였듯이 subsubsection, paragraph 와 같은 하위 절은 사용을 자제하는 것이 좋다.
+
+\paragraph{Test Paragraph}
+
+Title : 12pt, italic style. No numbering.
+
+
+
+%%
+%% 영어 보고서 참고문헌 시작
+%% Refences
+%%
+\begin{thebibliography}{99}
+
+\bibitem{Mok10}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Obliquely propagating electromagnetic drift ion cyclotron instability'', J. Geophys. Res., {\bf 115}, A04218 (2010).
+\bibitem{Schindler74} K. Schindler, ``A theory of the substorm mechanism'', J. Geophys. Res., {\bf 79}, 2803 (1974).
+\bibitem{Sitnov97} M. I. Stinov, H. V. Malova, and A. T. Y. Lui, ``Quasi-neutral sheet tearing instability induced by electron preferential acceleration from stochasticity'', J. Geophys. Res., {\bf 102}, 163 (1997).
+\bibitem{Zelenyi08} L. Zelenyi, A. Artemiev, H. Malova, and V. Popov, ``Marginal stability of thin current sheets in the Earth's magnetotail'', J. Atmos. Sol. Terr. Phys., {\bf 70}, 325 (2008).
+\bibitem{Cheng98} C. Z. Cheng and A. T. Y. Lui, ``Kinetic ballooning instability for substorm onset and current disruption observed by AMPTE/CCE'', Geophys. Res. Lett., {\bf 25}, 4091 (1998).
+\bibitem{Bhattacharjee98} A. Bhattacharjee, Z. W. Ma, and X. Wang, ``Dynamics of thin current sheets and their disruption by ballooning instabilities: A mechanism for magnetospheric substorms'', Phys. Plasmas, {\bf 5}, 2001 (1998).
+\bibitem{Dobias04} P. Dobias, I. O. Voronkov, and J. C. Samson, ``On linear plasma instabilities during the substorm expansive phase onset'', Phys. Plasmas, {\bf 11}, 2046 (2004).
+\bibitem{Zhu03} P. Zhu, A. Bhattacharjee, and Z. W. Ma, ``Hall magnetohydrodynamic ballooning instability in the magnetotail'', Phys. Plasmas, {\bf 10}, 249 (2003).
+\bibitem{Saito08} M. H. Saito, {\it et. al.}, ``Ballooning mode waves prior to substorm-associated dipolarizations: Geotail observations'', Geophys. Res. Lett., {\bf 35}, L07103 (2008).
+\bibitem{Friedrich01} E. Friedrich, J. C. Samson, and I. Voronkov, ``Ground-based observations and plasma instabilities in auroral substroms'', Phys. Plasmas, {\bf 8}, 1104 (2001).
+\bibitem{Shinohara98} I. Shinohara, {\it et. al.}, ``Low-frequency electromagnetic turbulence observed near the substorm onset site'', J. Geophys. Res., {\bf 103}, 20,365 (1998).
+\bibitem{Yoon02} P. H. Yoon, A. T. Y. Lui, and M. I. Sitnov, ``Generalized lower-hybrid drift instabilities in current-sheet equilibrium'', Phys. Plasmas, {\bf 9}, 1526 (2002).
+\bibitem{Mok06}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Global two-fluid stability of bifurcated current sheets'', J. Geophys. Res., {\bf 111}, A03203 (2006).
+\bibitem{Rostoker84} G. Rostoker and J. C. Samson, ``Can substorm expansive phase effects and low frequency Pc magnetic pulsations be attributed to the same source mechanism?'', Geophys. Res. Lett., {\bf 11}, 271 (1984).
+\bibitem{Dovias06} P. Dovias, J. A. Wanliss, and J. C. Samson, ``Nonlinear stability of the near-Earth plasma sheet during substorms: 9 February 1995 event'', Can. J. Phys., {\bf 84}, 1029 (2006).
+\bibitem{Yoon93} P. H. Yoon and A. T. Y. Lui, ``Nonlinear analysis of generalized cross-field current instability'', Phys. Fluids B, {\bf 5}, 836 (1993).
+\bibitem{Sadovskii01} A. M. Sadovskii and A. A. Galeev, ``Quasilinear theory of the ion Weibel instability in the Earth's magnetospheric tail'', Plasma Phys. Rep., {\bf 27}, 490 (2001).
+\bibitem{Yoon06} P. H. Yoon and A. T. Y. Lui, ``Quasi-linear theory of anomalous resistivity'', J. Geophys. Res., {\bf 111}, A02203 (2006).
+
+\bibitem{SW} asdf(2)
+\end{thebibliography}
+
+%%
+%% 한글참고문헌 시작
+%% Refences
+%%
+%\begin{thebibliographykor}{99}
+%
+%\bibitem{Iijima91} 김익수, 원색 한국 어류도감, 아카데미, 1993, pp.33-65
+%
+%\bibitem{Dresselhaus96} IAL L. Pepper, Pollution Science, Academic Press, 1996, pp.145-188
+%
+%\bibitem{Saito98}이은웅, 김일중,``2상 8극형 HB형 리니어 펄스모터의 자속 분포와 정특성 해석'', 대한전기학회 논문지, 제42권 9호, pp.9-18, 1993.
+%
+%\bibitem{Makarova01} G. Taylor et al., ``Adaptive regulation of nonlinear systems with unmodeled dynamics'', IEEE Trans. Automat. Contr., Vol. 34, pp. 997-998, 1994.
+%
+%\end{thebibliographykor}
+\end{document}
