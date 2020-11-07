@@ -12,31 +12,33 @@
 
 4. gshs_beamer : 경기과학고등학교 Beamer(LaTeX 프레젠테이션용 클래스) 양식
 
-5. gshs_chem_experiment : 일반화학실험 보고서 양식
+5. gshs_beamer_ver2 : 경기과학고등학교 Beamer 양식2
 
-6. gshs_imaginarylab : 무한상상실 작품제작설명서 양식
+6. gshs_chem_experiment : 일반화학실험 보고서 양식
 
-7. gshs_math_seminar_report : 수학세미나I 보고서 양식
+7. gshs_imaginarylab : 무한상상실 작품제작설명서 양식
 
-8. gshs_observatory : 경기과학고 천문대 관측일지 양식
+8. gshs_math_seminar_report : 수학세미나I 보고서 양식
 
-9. gshs_poster : 포스터 양식
+9. gshs_observatory : 경기과학고 천문대 관측일지 양식
 
-10. gshs_reading : 독서 수업 독서감상문 양식
+10. gshs_poster : 포스터 양식
 
-11. gshs_rne_report : 기초/심화 R&E 연구 보고서 양식
+11. gshs_reading : 독서 수업 독서감상문 양식
 
-12. gshs_rne_report-adv : 기초/심화 R&E 연구 보고서 양식(TeX 숙련자용)
+12. gshs_rne_report : 기초/심화 R&E 연구 보고서 양식
 
-13. gshs_thesis : 졸업논문 양식
+13. gshs_rne_report-adv : 기초/심화 R&E 연구 보고서 양식(TeX 숙련자용)
 
-14. gshs_thesis-adv : 졸업논문 양식(TeX 숙련자용)
+14. gshs_thesis : 졸업논문 양식
 
-15. junlam_report : 과학전람회 양식
+15. gshs_thesis-adv : 졸업논문 양식(TeX 숙련자용)
 
-15. korean_style_signature_alpha : 서명 양식
+16. junlam_report : 과학전람회 양식
 
-16. research_note : 연구 노트 양식
+17. korean_style_signature_alpha : 서명 양식
+
+18. research_note : 연구 노트 양식
 
 
 ## 주의할 점
