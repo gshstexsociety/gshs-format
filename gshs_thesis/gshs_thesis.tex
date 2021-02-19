@@ -167,10 +167,9 @@
 \end{itemize}
 서론은 과거부터 현재까지 해당 분야의 연구 진행을 기술하기 때문에 선행 연구 논문들을 레퍼런스로 도입하는 경우가 빈번하게 나타난다. \LaTeX에서 참고문헌을 표기하는 방법을 알아보자. 먼저 이 문서의 후반부에 위치한 레퍼런스 부분을 찾아간다. 이 문서를 컴파일했을 때 생성된 PDF 파일에는 {\bf References}라고 나와 있지만 여기서는 {\textbackslash}begin\{thebibliography\}\{99\}로 시작에서 {\textbackslash}end\{thebibliography\}로 종료되는 그 사이에 참고문헌을 작성하면 된다. 여기서 숫자 99는 참고문헌이 100개 넘는 논문을 작성하는 것이 아니라면 그대로 놔둔다. 참고문헌 작성 예시는 다음과 같다.
 \begin{lstlisting}
-\bibitem{Mok06}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, ``Global twofluid stability of bifurcated current sheets'', J. Goephys. Res., {\bf 111}, A03203
-(2006).
+\bibitem{Mok06}C. Mok, C.-M. Ryu, P. H. Yoon, and A. T. Y. Lui, (2006), ``Global twofluid stability of bifurcated current sheets'', J. Goephys. Res., {\bf 111}, A03203.
 \end{lstlisting}
-{\textbackslash}bibitem 다음의 \{ \} 안에는 자신이 그 논문을 기억하기 쉬운 규칙을 정하여 작성하면 된다. 보통 논문 주저자의 last name과 논문 출판 년도를 사용하여 표기한다. 그리고 저자들, 논문 제목, 저널 이름, 권, 호, 페이지, 출판년도 순으로 입력한다. 저자는 3인 이하일 경우에는 모두 적도록 하고 4인 이상일 때는 주저자만 작성하고 그 외는 et al.이란 표기로 대체한다. 논문 제목은 큰 따옴표로 묶어준다. \LaTeX에서 시작하는 따옴표는 키보드에서 숫자 1 왼쪽 버튼, 마치는 따옴표는 키보드 엔터키 왼쪽 버튼을 사용함에 유의하라. 저널 이름은 경우에 따라 약어를 사용할 수 있다. 약어를 사용할 때는 정식으로 정해진 약어임을 확인한 후 사용한다. Volume(권)은 굵은 글자 처리한다. 위의 예시처럼 {\textbackslash}bf를 사용하면 된다. Number(호)는 경우에 따라 없는 저널도 있다. 위의 예시에는 `호'를 넣지 않았다. 만약 `호'를 넣고자 할 때는 둥근 괄호로 묶어준다. 마지막으로 페이지와 출판년도를 작성한다. 출판년도는 둥근 괄호로 묶어준다.
+{\textbackslash}bibitem 다음의 \{ \} 안 참고문헌의 입력은 표준 APA 양식을 따른다. Author, Co-authors, (Publication Year), Article title, Journal title, Volume(Issue), pp.-pp. 순으로 작성한다. 저자는 family name, personal name 순으로 입력하며 family name 다음에 쉼표를 찍는다. 저널명은 이탤릭체로 표기하며 관용적으로 약어로 표기 가능하다. 단 약어는 저널에서 공식으로 인정된 표준 약어를 사용한다. 약어 뒤에는 마침표를 넣는다. 권 (volume)은 기울임체로 숫자만 입력한다. 호 (issue)와 출판년도는 괄호 안에 입력한다.
 
 이제 서론에서 해당 논문을 인용할 준비 작업은 끝났다. 서론에서 필요한 부분에 이 논문을 인용 표기할 경우 {\textbackslash}cite 라고 입력한 후 \{ \} 안에 해당 논문을 표시하면 된다. 표시하는 방법은 바로 레퍼런스에서 {\textbackslash}bibitem 이후 \{ \} 안에 적었던 것을 넣어주면 된다. 논문 인용 표시가 문장 마지막에 등장할 때는 마침표의 위치는 인용 표시 다음이다. 아래 문장은 논문 인용 표시의 예로 C. Mok의 2010년 논문에서 인용하였다 \cite{Mok10}.
 \begin{lstlisting}
@@ -471,6 +470,8 @@ Title : 12pt, italic style. No numbering.
 
 %-----------------------------------------------------
 %   References 
+%   현재 연도가 가장 뒤에 오도록 되어 있지만, 현행 양식은 APA입니다. (저자와 제목 사이 연도)
+%   한글 양식을 확인하기 바랍니다.
 %-----------------------------------------------------
 \clearpage
 \begin{thebibliography}{99}\begin{onehalfspace}
