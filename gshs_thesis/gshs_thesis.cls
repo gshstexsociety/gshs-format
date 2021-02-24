@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%  LaTeX document class of the thesis of the Gyeonggi Science High School   %%%
-%%%  Last edition 2015.11.13 by Chinook Mok                                   %%%
+%%%  Last edition 2021.2.23 by Junu Kwon                                      %%%
 %%%  Continously being modified by gshslatexintro after 2016.02.02.           %%%
 %%%  Check the latest version at : latex.gs.hs.kr                             %%%
 %%%  Also refer to https://www.facebook.com/gshstexsociety                    %%%
@@ -8,6 +8,8 @@
 
 %% 2016.02.25 변경사항(by 14088 이주찬)
 %% 한글, 영어 날짜 양식을 하나로 통합
+%% 2020.2.23  변경사항(by 19007 권준우)
+%% Summary 제거
 
 \ProvidesClass{gshs_thesis}
 
@@ -366,17 +368,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%  Summary format %%%
 %%%%%%%%%%%%%%%%%%%%%%%
-\newenvironment{summary}
-{\begin{alwayssingle}
-\begin{center}
-\vspace*{1.5cm}
-{\huge \bfseries Summary}
-\par\vspace{10mm}
-{\LARGE\bfseries\@engtitle}
-\end{center}
-\par\vspace{5mm}
-}
-{\end{alwayssingle}}
+%\newenvironment{summary}
+%{\begin{alwayssingle}
+%\begin{center}
+%\vspace*{1.5cm}
+%{\huge \bfseries Summary}
+%\par\vspace{10mm}
+%{\LARGE\bfseries\@engtitle}
+%\end{center}
+%\par\vspace{5mm}
+%}
+%{\end{alwayssingle}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Acknowledgement format %%%
