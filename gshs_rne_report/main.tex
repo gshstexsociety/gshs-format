@@ -1,1 +1,193 @@
+\documentclass[10pt]{gshs-report-v2.0}
+% 추가로 필요한 패키지가 있다면 이곳에 적어 넣으시오.
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{cite}
+\usepackage{bm}
+\usepackage{makecell}
 
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%알앤이 정보%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+%사업 시행 년도
+\researchYear{2021}
+
+%연구 종류: 기초 또는 심화
+\researchtype{심화} 
+
+%보고서 종류: 중간 또는 최종
+\reporttype{최종} 
+
+
+% 제목 및 영문 제목: 개행 시에는 \linebreak만 사용 가능하다.
+\title{제 목 명 \linebreak 두 줄로 하고 싶으면 이렇게} 
+\englishtitle{Topic Name : 영문 제목}
+
+% 제출 년월일
+\summitdate{2021}{00}{00}
+
+%연구 참여자 (저자 1, 2, 3)
+\author[1]{OOO}
+\email[1]{abc0004@naver.com}
+\author[2]{OOO}
+\email[2]{abc0004@naver.com}
+\author[3]{OOO}
+\email[3]{abc0004@naver.com}
+
+%연구 책임자: 없는 경우 그대로 내버려 둘 것, 있는 경우 채울 것
+\professor{}
+\professorEmail{abc0004@naver.com}
+
+%지도교사
+\advisor{OOO}
+\advisorEmail{abc0004@naver.com}
+
+
+
+
+\graphicspath{{figures/}}
+\renewcommand{\contentsname}{차례}
+\renewcommand{\listfigurename}{그림 목차}
+\renewcommand{\figurename}{그림}
+\renewcommand{\tablename}{표}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%문서 시작%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%제목 페이지%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\makecover
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%요약문(국문) 페이지%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent{
+\huge 제목을 입력하세요
+}\\
+\vspace{10pt}
+\noindent{
+\Large 영문 제목을 입력하세요
+}
+
+\begin{abstractkor}
+\noindent{
+모든 사물에 센서가 부착되어 이들이 유무선 네트워크를 통해 서로 상호작용하게 되는 유비쿼터스 시대가 다가왔다. 이를 원활히 하기위한 무선 네트워크 서비스 환경이 구축되기 위해서는 장치간의 효율적인 직접통신이 필수적으로 요구된다. 그러나 기기간의 직접통신에서 장치간의 신뢰관계문제는 아직 미해결 상태로 남아있다. 따라서 본 논문에서는 이러한 사물 간의 직접통신에서 기기간의 신뢰적 인증과 접근제어를 제공할 구체적 방안을 제시하였다. 이 뿐만이 아니라 회사에서의 문서 접근권한에 따라 접근을 제한하는 서비스와 학교에서의 학생의 출결 관리와 외부인의 접근을 막는 서비스를 제안하여 앞서 제시한 접근 제어와 상호 인증 방안의 활용 가능성을 탐구하였다. (샘플) [국문 400자 또는 영문 800자 미만]
+}
+\end{abstractkor}
+%요약문 관련 팁: 요약문은 가장 마지막에 작성한다. 연구한 내용, 즉 본론부터 요약한다. 서론 요약은 하지 않는다. 대개 첫 문장은 연구 주제 (+방법을 핵심적으로 나타낼 수 있는 문구: 실험적으로, 이론적으로, 시뮬레이션을 통해)를 쓴다. 다음으로 연구 방법을 요약한다. 선행 연구들과 구별되는 특징을 중심으로 쓴다. 뚜렷한 특징이 없다면 연구방법은 안써도 상관없다. 다음으로 연구 결과를 쓴다. 연구 결과는 추론을 담지 않고, 객관적으로 서술한다. 마지막으로 결론을 쓴다. 이 연구를 통해 주장하고자 하는 바를 간략히 쓴다. 요약문 전체에서 연구 결과와 결론이 차지하는 비율이 절반이 넘도록 한다. 읽는 이가 요약문으로부터 얻으려는 정보는 연구 결과와 결론이기 때문이다. 연구 결과만 레포트하는 논문인 경우, 결론을 쓰지 않는 경우도 있다.
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%목차, 표 목차, 그림 목차%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\pagebreak
+\listoffigures
+\listoftables
+\pagebreak
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%본문 시작%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{서론}
+
+\subsection{연구 동기}
+인용을 할 때에는 이런 식으로. \cite{danhaeng2003} 그리고, 문서 마지막의 bibliography에 출처를 소정의 양식에 맞추어 쓰면 된다. \cite{nonmoon2021, hagwi2010, websearch2020}
+
+\TeX에서 수식, 그림, 표를 넣는 방법과 관련해 아래에 몇 가지 팁을 적어두긴 하였으나, 매우 부족하므로 각자 공부하시거나, 경기과학고 텍 사용자 협회의 입문서 \\ (https://github.com/gshslatexintro - An-Introduction-to-\LaTeX - workshop\_20190604 - workshop\_0604.pdf)등을 참고하시기를 권장합니다. 보고서 및 논문 작성에 관해 깊이 있는 글을 읽어보고 싶다면, 송죽학사의 졸업논문 양식에 적힌 글(송죽학사 - 과학연구 - 졸업논문 - 졸업논문 안내 - 첨부 파일 hwp 또는 tex)을 참고하시면 됩니다.
+
+그림을 넣을 때는 이런 식으로.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.25\textwidth]{gshs.jpg} %그림의 기본 경로는 49행의 명령어로 인해 figures 폴더 내부로 자동 지정되어 있다.
+\caption{우리 학교의 로고}
+\label{fig:logo}
+\end{figure}
+
+구체적으로 차례는 다음과 같은 방식으로 만들면 된다. (예시)
+
+\subsection{연구 목적}
+
+\subsection{이론적 배경}
+
+
+\section{연구 과정 및 방법}
+\subsection{기타}
+\subsubsection{장력}
+현에 걸린 장력의 크기를 $\tau$라 하자.
+
+%문장 내에 수식을 쓸 때에는 달러 표시 (Shift + 숫자키 4번)으로 만들면 됩니다.
+
+\subsubsection{현의 재질}
+현의 질량을 $m$, 전체 길이를 $l$이라 하면, 현의 선밀도 $\mu$는 식 \ref{eq:linear_density}\과 같다.
+\begin{equation}
+    \mu = \frac{m}{l}
+    \label{eq:linear_density}
+\end{equation}
+
+\subsubsection{진동수}
+제 $n$차 조화 진동모드의 진동수 $f$는 식 \ref{eq:frequency}\와 같다.
+\begin{equation}
+    f = \frac{nv}{2l} = \frac{n}{2l}\sqrt{\frac{\tau}{\mu}}
+    = \frac{n}{2}\sqrt{\frac{\tau}{m l}}
+    \label{eq:frequency}
+\end{equation}
+따라서 나사를 조여 현의 장력을 높이거나, 지판을 짚어 현의 길이를 줄이면 진동수가 큰 높은 음의 소리가 난다.
+
+\subsection{실험 과정}
+\subsubsection{구조 만들기 실험}
+\subsubsection{성능 확인 실험}
+
+\subsection{제조 공정}
+
+\section{결과 및 토의}
+
+\section{결론}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%지원 현황%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+    \textbf{
+이 보고서는 \researchyearwrite학년도 경기과학고등학교 자율연구의 지원을 받아 제작되었습니다.
+}
+    }%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%참고 문헌%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{99}
+\bibitem{danhaeng2003} [단행본의 경우] 저자명 출판년도(괄호 속에 표시) ``책명'', 출판사, 인용페이지. ex) 김익수 (1993) ``원색 한국 어류도감'', 아카데미, pp.33-65. 
+\bibitem{nonmoon2021} [논문의 경우] 저자명 출판년도(괄호 속에 표시) ``논문제목'', 논문지명, 권호, 페이지. ex) 이은웅, 김일중 (1993) ``2상 8극형 HB형 리니어 펄스모터의 자속 분포와 정특성 해석'', 대한전기학회 논문지, 제42권 9호, pp.9-18. / ex2) G. Taylor et al. (1994) ``Adaptive regulation of nonlinear systems with unmodeled dynamics'', IEEE Trans, Automat. Contr., Vol. 34. pp.997-998.
+\bibitem{hagwi2010} [학위논문의 경우] 저자명 출판년도(괄호 속에 표시) ``논문제목''(영문의 경우 첫 단어의 한 문자만 대문자로 표기), 학위논문 종류, 학위수여 대학교. ex) 김남일 (2003) ``HB형 리니어 펄스모터의 자속 분포와 정특성 해석'', 이학박사 학위 청구논문, 서울대학교. 
+\bibitem{websearch2020} [웹 자료의 경우] 저자명 발행년도(괄호 속에 표시), ``웹 자료(사이트)의 제목'', 검색 날짜 및 검색 지역, Web site: 웹 사이트 주소. ex) Degelman, D., \& Harris, M. L. (2000) “APA style essentials”, Retrieved May 18 2020 from Vanguard University, Web site: http://www.vanguard.edu/psychology/index.cfm doc\_id=796\&nbsp %웹 주소의 경우, TeX에서 언더바, 앰퍼샌드 등의 기호를 입력할 때 컴파일 에러가 날 수 있으므로 TeX 문법에 맞게 적절히 바꾸어주어야 한다.
+
+
+\end{thebibliography}
+
+\end{document}
