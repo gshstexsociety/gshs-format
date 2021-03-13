@@ -26,7 +26,7 @@
 
 11. gshs_reading : 독서 수업 독서감상문 양식
 
-12. gshs_rne_report : 기초/심화 R&E 연구 보고서 양식
+12. gshs_rne_report : 기초/심화 R&E 연구 보고서 양식(TeX 초보자용, 2020년 양식 적용)
 
 13. gshs_rne_report-adv : 기초/심화 R&E 연구 보고서 양식(TeX 숙련자용)
 
