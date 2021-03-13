@@ -1,0 +1,25 @@
+Website : http://gshslatexintro.github.io
+
+.cls 파일과 .tex 파일의 기여도 관련 내용의 비중이 높아 따로 txt 파일에 분리하여 적습니다. 적는 양식은 다음과 같습니다.
+
+[수정일자 버전] 기여자(신상 정보)
+수정 내역
+
+[2014/09/02 v0.1] Initiated by 정민석(2014년도 경기과학고 수학과 전문교원)
+
+[2015/11/22 v0.11] Modified by 박승원(32nd, 14041, seungwonpark) 
+Figure를 Fig. 로 변경, References 를 '참고문헌'으로 변경, figure/table numbering 의 chapter 넘어갈 때마다 문제 생기는점 해결, SI 단위계 사용 가능하게 함.
+
+[2015/11/25 v0.12] Modified by 이상헌(32nd, 14080, evenharder)
+심화 R&E 보고서에 지도교수의 이름을 표지에 추가해주는 \professor 구문 추가 및 fifthe 관련 오타 수정.
+
+[2016/02/07 v0.13] Modified by 박승원(32nd, 14041, seungwonpark)
+그림과 표의 번호가 chapter를 넘어가도 초기화되지 않도록 설정. sample report 파일에 \counterwithout{figure}{chapter}가 포함됨.
+\usepackage{chngcntr}: figure numbering across chapters continously
+
+[2016/06/02 v1.2] Modified by 서울(경기과학고 물리과 교사), 박승원(32nd, 14041, seungwonpark)
+서울: 표지의 폰트 및 vskip 간격 일부 수정, 지도교사/교수 이메일란 추가.
+박승원: reporttype 를 통해 중간/결과 를 선택 가능하게 함, section formatting 수정 (section 계층 번호부여를 arabic 대신 roman 으로 수정)
+
+[2021/03/13 ver 2.0] Modified by 37th
+2020학년도 보고서 양식에 맞추어 작업 (사업 시행 년도, 영문 제목란, 연구 참여자 입력란, 초록 -> 요약 변경, 요약문 페이지 상단 제목 및 영문 제목란, 졸업논문 양식 관련 내용 생략 및 참고 주소 기록, 2020년도 보고서 기준 참고문헌 표기 양식 수록)
