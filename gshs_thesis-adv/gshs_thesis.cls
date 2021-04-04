@@ -409,11 +409,25 @@
 
 \ifxetex
 %한글 사용 옵션
+%\RequirePackage{xetexko}
+%\setmainfont[Ligatures=TeX]{Times New Roman}
+%\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
+%	ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
+
 \RequirePackage{xetexko}
-\setmainfont[Ligatures=TeX]{Times New Roman}
-\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
-	ItalicFont=*,ItalicFeatures=FakeSlant]{Batang}
+	\setmainfont[Ligatures=TeX]{Times New Roman}
+	\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
+	ItalicFont=*,ItalicFeatures=FakeSlant]{NanumMyeongjo}
+
+%\setmainfont[Ligatures=TeX]{NanumMyeongjo}
+%\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
+%ItalicFont=*,ItalicFeatures=FakeSlant]{NanumMyeongjo}
+
+%\setmainfont[Ligatures=TeX]{times}
+%\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
+%ItalicFont=*,ItalicFeatures=FakeSlant]{batang}
+
 \disablecjksymbolspacing
 \nonfrenchspacing
 \else
-\fi
+\fi     
