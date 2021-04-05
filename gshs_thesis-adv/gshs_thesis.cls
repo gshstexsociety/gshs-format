@@ -371,9 +371,9 @@
 {\begin{alwayssingle}
 \begin{center}
 \vspace*{1.5cm}
-{\huge \bfseries Summary}
+{\huge \bfseries 요약}
 \par\vspace{10mm}
-{\LARGE\bfseries\@engtitle}
+{\LARGE\bfseries\@title}
 \end{center}
 \par\vspace{5mm}
 }
