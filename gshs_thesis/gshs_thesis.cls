@@ -368,17 +368,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%  Summary format %%%
 %%%%%%%%%%%%%%%%%%%%%%%
-%\newenvironment{summary}
-%{\begin{alwayssingle}
-%\begin{center}
-%\vspace*{1.5cm}
-%{\huge \bfseries Summary}
-%\par\vspace{10mm}
-%{\LARGE\bfseries\@engtitle}
-%\end{center}
-%\par\vspace{5mm}
-%}
-%{\end{alwayssingle}}
+\newenvironment{summary}
+{\begin{alwayssingle}
+\begin{center}
+\vspace*{1.5cm}
+{\huge \bfseries 요약}
+\par\vspace{10mm}
+{\LARGE\bfseries\@title}
+\end{center}
+\par\vspace{5mm}
+}
+{\end{alwayssingle}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Acknowledgement format %%%
