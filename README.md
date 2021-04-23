@@ -34,7 +34,7 @@
 
 15. gshs_thesis-adv : 졸업논문 양식(TeX 숙련자용)
 
-16. junlam_report : 과학전람회 양식
+16. junlam_report-adv : 과학전람회 양식
 
 17. korean_style_signature_alpha : 서명 양식
 
