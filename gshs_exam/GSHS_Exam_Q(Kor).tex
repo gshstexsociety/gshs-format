@@ -1,0 +1,98 @@
+\documentclass[]{gshs_exam_Q}
+
+\usetikzlibrary{patterns,decorations.pathmorphing,arrows.meta,calc}
+\usepackage{bm}
+
+\usepackage{tikz-3dplot}
+
+
+\makeatletter
+\myyear{2018}\let\MyYear\@myyear %학년도
+\semester{1}\let\Semester\@semester %학기
+\exams{1차 지필평가}\let\Exams\@exams %1차,2차 지필평가
+\subject{수학I}\let\Subject\@subject %과목명
+\credits{4} %학점
+\pfscore{100} %만점
+\examtime{80분} %시험시간
+\examinerI{고일석} %출제1
+\examinerII{박상훈} %출제2
+\examinerIII{윤정원}%출제3
+\examinerIV{고창언}%출제4
+\makeatother
+
+%% 한글줄간격 %%
+\renewcommand{\baselinestretch}{1.3}
+
+\begin{document}
+
+\maketitle
+
+%%% page 1 %%%
+\begin{multicols*}{2}
+\noindent\fbox{\parbox{0.98\columnwidth}{\vspace*{-0.6em}
+\begin{enumerate}[leftmargin=5.5mm,label=※]
+\item 문항에 따라 배점이 다르므로 각 물음의 끝에 표시된 배점을 참고하시오.\\[-2.2em]
+\item 서술형 ( 80 )점 포함, 논술형 ( 20 )점 포함
+\end{enumerate}\vspace{-0.6em}}}\vspace{1em}
+
+\begin{questions}
+\extrawidth{8.1em}
+%%% Problem 1 %%%
+\addpoints
+\question $x$에 관한 이차식 $x^2 +ax+bc$와 $x^2 +bx+ac$의 최대공약수가 $x$에 관한 일차식일 때, 다음 물음에 답하시오. (단, $abc\ne 0$이다.)\droptotalpoints
+\vspace{1em}
+\begin{parts}
+\part[4] \ssh\ $x$에 관한 이차식 $x^2 +ax+bc$와 $x^2 +bx+ac$의 최소공배수를 구하고, 그 과정을 서술하시오.\droppoints
+\vspace{25em}
+\part[4] \ssh\ $\dfrac{(a^3 +b^3 +c^3 )(ab+bc+ca)}{a^3 bc+ab^3 c+abc^3}$의 값을 구하고, 그 과정을 서술하시오.\droppoints
+\end{parts}
+
+\vspace*{\fill}
+\columnbreak
+
+\vspace*{-0.8em}
+
+%%% problem 2 %%%
+\question[7] \ssh\ 다항식 $f(x)$를 $(x^2 +1)^2$, $(x^2 +2)^2$으로 나누었을 때의 나머지가 각각 $x^3 -2x^2 +3x+1$, $-x^3 -4x^2 -2$이다. 다항식 $f(x)$를 $(x^2 +1)(x^2 +2)$로 나누었을 때의 나머지를 구하고, 그 과정을 서술하시오.\droppoints
+
+\vspace{30em}
+
+%%% Problem 3 %%%
+\question[8] \nsh\ $x$, $y$에 관한 다항식 $x^7 -y^7 -(x-y)^7$을 $3$차 이하의 정수 계수 다항식으로 인수분해하고, 그 과정을 서술하시오.\par\droppoints
+
+\end{questions}
+\end{multicols*}
+
+
+%%% page 2 %%%
+
+\begin{multicols*}{2}
+\begin{questions}\extrawidth{8.1em}\setcounter{question}{3} %이전 페이지 마지막 문항 번호 입력
+
+%%% Problem 4 %%%
+\question[6] \ssh\ 방정식 $x^6 -2x^5 +x^4 -7x^3 +x^2 -2x+1=0$의 서로 다른 네 허근을 $\alpha_i$ ($i=1,\,2,\,3,\,4$)라고 하자. $(1+2\alpha_1 )(1+2\alpha_2 )(1+2\alpha_3 )(1+2\alpha_4 )$의 값을 구하고, 그 과정을 서술하시오.\droppoints
+
+\vspace{34em}
+
+%%% Problem 5 %%%
+\question[6] \ssh\ 방정식 $2x^2 -y^2 +xy-6x+3y-2=0$을 만족시키는 양의 정수 $x$, $y$의 순서쌍 $(x,\,y)$를 모두 구하고, 그 과정을 서술하시오.\droppoints
+
+\vspace*{\fill}
+\columnbreak
+
+%%% Problem 6 %%%
+\addpoints
+\question 양수 $x$, $y$, $z$에 대하여 다음 물음에 답하시오.\droptotalpoints
+\begin{parts}
+\part[6] \ssh\ $x^2 +y^2 +z^2 =1$을 만족시킬 때, $\dfrac{1}{x}+\dfrac{1}{y}+\dfrac{1}{z}$의 최솟값을 구하고, 그 과정을 서술하시오.\droppoints
+
+\vspace{35em}
+
+\part[8] \ssh\ $x^2 +y^2 +z^2 =6$, $xyz=2$을 만족시킬 때, $z$의 최댓값을 구하고, 그 과정을 서술하시오.\droppoints
+\end{parts}
+
+\end{questions}
+\end{multicols*}
+
+
+\end{document}
