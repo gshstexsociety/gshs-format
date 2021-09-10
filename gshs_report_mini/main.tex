@@ -1,78 +1,238 @@
-\chapter*{Maybe the title here again}   
+\chapter*{This is the title of the paper one more time.}
+\graphicspath{{./chap1/images/}}   
 %\section{Introduction}
 
-A country's anthem is a very important song. Lets learn about them.
-
-\section{United States of America}
-O say, can you see
-
-By the dawn's early light
-
-What so proudly we hailed
-
-At the twilight's last gleaming?
-
-Whose broad stripes and bright stars
-
-Through the perilous fight
-
-O'er the ramparts we watched,
-
-Were so gallantly, yeah, streaming?
-
-And the rockets' red glare
-
-The bombs bursting in air
-
-Gave proof through the night
-
-That our flag was still there
-
-O say, does that star-spangled banner yet wave
-
-O'er the land of the free and the home of the brave
+The Riemann zeta function or Euler–Riemann zeta function, ζ(s), is a mathematical function of a complex variable s, and can be expressed as:
+\[
+    \zeta(s) = \sum_{n=1}^\infty n^{-s} = \frac{1}{1^s} + \frac{1}{2^s} + \frac{1}{3^s} + \cdots, \textrm{If Re(s) > 1}
+\]
+And the value of the zeta function at $s = 2$ is a famous problem in mathematical analysis with relevance to number theory, first posed by Pietro Mengoli in 1650. Examining$\zeta(2)$, also knows as the Basel problem asks for the precise summation of the reciprocals of the squares of the natural numbers.
+\[
+    \sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots
+\]
+The problem was first solved by Leonhard Euler in 1734 and the value is well known:  $\frac{\pi^2}{6}$
+~\\
 
 
-\section{Union of the Soviet Socialist Republic}
-Союз нерушимый республик свободных
 
-Сплотила навеки Великая Русь.
 
-Да здравствует созданный волей народов
 
-Единый, могучий Советский Союз!
+Before we start the journey, we need to note some alternative forms of the problem, for ease of proving. The identity we need to prove is
+\begin{align}
+    \zeta(2) = \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6} \tag{1}\label{eq:1}
+\end{align}~\\
+Since it is clear that
+\[
+    \frac{3}{4}\zeta(2) = \sum_{n=1}^\infty \frac{1}{n^2} -  \sum_{n=1}^\infty \frac{1}{(2n)^2}= \sum_{n=0}^\infty \frac{1}{(2n+1)^2} 
+\]~\\
+\eqref{eq:1} is equivalent with
+\begin{align}
+    \sum_{n=0}^\infty \frac{1}{(2n+1)^2} = \frac{\pi^2}{8} \tag{2}\label{eq:2}
+\end{align}~\\
 
-Славься, Отечество наше свободное,
 
-Дружбы, народов надежный оплот!
+So, let's start the journey.\\
+~\\
+%%----------------
+\section{Euler's proof for the Basel problem}
+Before we start, let's check out Euler's proof in 1735. Using the Taylor expansion,
+\[
+    \frac{\sin x}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!}+\cdots
+\]
+Let the roots of the equation $1 - \frac{x^3}{3!} + \frac{x^5}{5!}+\cdots=0$ be $\alpha_1, \alpha_2, \alpha_3, \cdots$.\\
+then $\alpha_1^2, \alpha_2^2, \alpha_3^2, \cdots$ are the roots of $1 - \frac{x}{3!} + \frac{x^2}{5!}+\cdots=0$.~\\
 
-Знамя советское, знамя народное
+Letting
+\[
+    p(x)=1 - \frac{x^2}{3!} + \frac{x^4}{5!}+\cdots
+\]
+$p(x)$ can be also expressed as
+\[
+    p(x)=(x-\alpha_1^2)(x-\alpha_2^2)(x-\alpha_3^2)\cdots
+\]~\\
+And comparing the coefficient of $x$ in both expressions,
+\[
+    \frac{1}{6}=\frac{1}{\alpha_1^2}+\frac{1}{\alpha_2^2}+\frac{1}{\alpha_3^2}+\cdots
+\]~\\
 
-Пусть от победы, к победе ведет!
-
+Meanwhile, the roots of $\frac{\sin x}{x} = 0$ is $n\pi (n \in \mathbb{N})$ so all $n^2\pi^2$s are the root of $p(x)=0$. Substituting it,
+\[
+    \sum_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}
+\]
+~\\
 \begin{remark}
-    Remember, no Russian.
+    Actually, the proof has severe errors handling the concept of infinity, which needs to be proven. However, the idea was genuine and the value was correct.
 \end{remark}
 
-\section{The Great Britain}
-I vow to thee, my country, all earthly things above
+%%----------------
+%%----------------
+\newpage
+%%----------------
+\section{Proof using the Taylor series of $\arcsin x $~}
+The Taylor series of the inverse sine function where $|x| \leq 1$ is
+\[
+    \arcsin x = \sum_{n=0}^\infty \frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n} \frac{x^{2n+1}}{2n+1}
+\]
+Let $x = \sin t$ so that
+\begin{align}
+    t = \sum_{n=0}^\infty \frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n} \frac{\sin^{2n+1}t}{2n+1}\tag{3}\label{eq:3}
+\end{align}
+stands for $|t| \leq \frac{\pi}{2}$.~\\\\
 
-Entire and whole and perfect, the service of my love
+Before moving forward, we must prove that \eqref{eq:3} is uniformly convergent.~\\
 
-The love that asks no question, the love that stands the test
+Let $a_n = \frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}$ then
+\[
+    \frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n} < \frac{2\cdot4\cdot6\cdots(2n)}{3\cdot5\cdot7\cdots(2n+1)}
+\]
+\[
+    {a_n}^2 < \frac{1}{2n+1}
+\]
+Therefore,
+\[
+    a_n < \sqrt{\frac{1}{2n+1}}
+\]
+~\\
 
-That lays upon the altar, the dearest and the best
+Using the Weierstrass M-test, $\forall n \in \mathbb{N}$,
+\[
+     |f_n| = |\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n} \frac{\sin^{2n+1}x}{2n+1}| \leq \frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n} \frac{1}{2n+1} = M_n
+\]
+and the series $\sum_{n=0}^\infty M_n$ converges by the direct comparison test and the p-series test because
+\[M_n = a_n\frac{1}{2n+1} < \frac{1}{\sqrt{(2n+1)^3}}\]~\\
 
-The love that never falters, the love that pays the price
 
-The love that makes undaunted the final sacrifice
+So, the terms in the RHS of \eqref{eq:3} are uniformly convergent. We can now integrate each terms independently. ~\\\\
+
+
+Finally, using the Wallis formula
+\[
+    \int_{0}^\frac{\pi}{2} \sin^{2n+1}t dt =  \frac{2\cdot4\cdot6\cdots2n}{1\cdot3\cdot5\cdots(2n+1)}
+\]
+for integrating \eqref{eq:3} from $0$ to $\frac{\pi}{2}$ gives us
+\[
+     \frac{\pi^2}{8} = \int_{0}^\frac{\pi}{2} t dt = \sum_{n=0}^\infty \frac{1}{(2n+1)^2}
+\]
+which is equivalent to \eqref{eq:1}, the identity we want to prove.~\\
+
 
 \begin{remark}
-    Actually it's not the official anthem.
+Without proving that the function is uniformly convergent, we cannot integrate each terms inside the right-hand-side of \eqref{eq:3} independently.
+\end{remark}
+~\\\\
+%-------------------------
+\section{Proof using the Fourier series of $f(x)=x(1-x)$~}
+Take $f(x)=x(1-x)$. Since $f$ is continuous at $[0,1]$ and $f(0)=f(1)$, the Fourier series of $f$ converges to f pointwise.
+
+
+
+This gives us
+\[
+    x(1-x)=\frac{1}{6}-\sum_{n=1}^{\infty}\frac{\cos 2\pi nx}{\pi^2n^2}
+\]
+and putting $x=0$ we get \eqref{eq:1}.
+
+Alternatively putting $x=\frac{1}{2}$ gives us
+\[
+    \frac{\pi^2}{12}=-\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}
+\]
+which is also equivalent to \eqref{eq:1}.
+
+\newpage
+\section{Proof using the Fourier series of $f(x)=x$~}
+Lets start with the Fourier expansion of $f(x) = x$ which is:
+\[
+    a_n =  \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(nx)dx = 0
+\]
+\[
+    b_n =  \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)dx = (-1)^{n+1}\frac{2}{n}
+\]
+~\\
+\begin{remark}
+    We should prove that the function is uniformly continuous while following the Fourier expansion procedure. However, I will skip it since it's similar to the one we will prove later at the third proof.
+\end{remark}
+~\\
+
+
+Using the Parseval's equality
+\[
+    \frac{1}{\pi}\int_{-\pi}^{\pi}f(x)^2dx = \frac{1}{2}a_{0}^2+\sum_{n=1}^{\infty}(a_n^2+b_n^2)
+\]
+\[
+    \frac{1}{\pi}\int_{-\pi}^{\pi}x^2~dx=\sum_{k=1}^\infty\frac{4}{n^2}
+\]~\\
+
+
+Using 
+\[
+    \frac{1}{\pi}\int_{-\pi}^{\pi}x^2~dx = \frac{2\pi^2}{3}
+\]
+We can prove the identity.
+\[
+    \sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}
+\]~\\
+\begin{remark}
+    This was the proof which was suggested by the teacher at class. The concept of Fourier expansion is somehow complicated. However, after understanding it, the proof is very easy to follow. Also, we can get the infinite sum $\sum_{n=1}^\infty\frac{1}{n^4}$ using the expansion of $f(x)=x^2$, via the same procedure.
 \end{remark}
 
-\section*{In conclusion}
-This section has no number!!
+\newpage
+\section{Proof using the Taylor series of $\arctan x$~}
+The Taylor series of the inverse tangent function is
+\[
+    \arctan x = \sum_{n=1}^\infty(-1)^n\frac{x^{2n+1}}{2n+1}
+\]
+Substituting $x = 1$, we can get the Gregory's formula
+\[
+    \frac{\pi}{4}=\sum_{n=1}^\infty\frac{(-1)^n}{2n+1} = \frac{1}{1} - \frac{1}{3} + \frac{1}{5} - \cdots
+\]
+~\\
+
+Rewriting the formula as $\lim_{N\rightarrow\infty}a_N=\frac{\pi}{2}$ where
+\[
+    a_N = \sum_{n=-N}^{N}\frac{(-1)^n}{2n+1}
+\]
+Let
+\[
+    b_N = \sum_{n=-N}^{N}\frac{1}{(2n+1)^2}
+\]
+So, $\lim_{N\rightarrow\infty}b_N=\frac{\pi^2}{4}$ is consist with \eqref{eq:2}, which is the identity we want to prove. So, we shall show that $\lim_{N\rightarrow\infty}(a_N^2-b_N)=0$~\\
+
+If $n \neq m$ then
+\[
+    \frac{1}{(2n+1)(2m+1)}=\frac{1}{2(m-n)}(\frac{1}{2n+1} - \frac{1}{2m+1})
+\]
+and so
+
+\begin{equation}
+\begin{split}
+a_N^2-b_N~
+={}& ~{\sum_{n=-N}^{N}\sum_{m=-N}^{N}}^\prime \frac{(-1)^{m+n}}{2(m-n)}(\frac{1}{2n+1} - \frac{1}{2m+1})\\
+={}& ~{\sum_{n=-N}^{N}\sum_{m=-N}^{N}}^\prime \frac{(-1)^{m+n}}{(2n+1)(m-n)}\\
+={}& ~\sum_{n=-N}^{N}\frac{(-1)^{n} c_{n,N}}{(2n+1)} \nonumber
+\end{split}
+\end{equation}
+where the prime on the summations means that the terms with zero denominators, where $n=m$ are omitted, and
+\[
+    c_{n,N}={\sum_{m=-N}^{N}}^\prime \frac{(-1)^{m}}{(m-n)}
+\]
+
+It is obvious that $c_{-n,N}=-c_{n,N}$ and $c_{0,N}=0$. For $n > 0$,
+\[
+    c_{n,N}=(-1)^{n+1}\sum_{j=N-n+1}^{N+n}\frac{(-1)^j}{j}
+\]
+which means that $|c_{n,N}| \leq \frac{1}{N-n+1}$ since the magnitude of an converging altering sum is smaller than that of the first term. Hence
+\begin{equation}
+\begin{split}
+|a_N^2-b_N| ~\leq{}& ~\sum_{n=1}^N(\frac{1}{(2n-1)(N-n+1)} + \frac{1}{(2n+1)(N-n+1)})\\
+={}& ~\sum_{n=1}^N\frac{1}{2N+1}(\frac{2}{(2n-1)} + \frac{1}{(N-n+1)})\\
+{}& ~+ \sum_{n=1}^N\frac{1}{2N+3}(\frac{2}{(2n+1)} + \frac{1}{(N-n+1)})\\
+\leq{}& ~\frac{1}{2N+1}(2+4\log(2N+1)+2+2log(N+1)) \nonumber
+\end{split}
+\end{equation}
+and so $\lim_{N\rightarrow\infty}(a_N^2-b_N)=0$ as required.~\\\\
+
+\section*{Ending the journey}
+We could prove the Basel problem using various methods using the Fourier series of $x$ or the Taylor series of $\arcsin x$ and $\arctan x$. Although it seems enough, there are plenty more proofs for the Basel problem outside the world. I'm afraid that the journey ends here, but however I could realize that the knowledge of math diverges to infinity.~\\
 
 
 \vspace{4.5cm}
