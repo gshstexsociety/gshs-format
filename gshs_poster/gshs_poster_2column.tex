@@ -2,17 +2,12 @@
 %  2013-05-08 v. 1.1.0
 %  Copyright 2013 by Jesper Kjær Nielsen <jkn@es.aau.dk>
 %
-%  This is free software: you can redistribute it and/or modify
-%  it under the terms of the GNU General Public License as published by
-%  the Free Software Foundation, either version 3 of the License, or
-%  (at your option) any later version.
-%
-%  This is distributed in the hope that it will be useful,
-%  but WITHOUT ANY WARRANTY; without even the implied warranty of
-%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%  GNU General Public License for more details.
-%
 %  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+
+
+% 경기과학고등학교 정보교사 채상미 선생님께서 2021년 포스터 양식에 맞게 수정함.
+
+
 \documentclass[a0paper,portrait]{baposter}
 \usepackage{kotex}
 \usepackage[english]{babel}
@@ -41,19 +36,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \selectcolormodel{RGB}
 % define the three aau colors : blue version
-%\definecolor{aaublue1}{RGB}{33,26,82}% dark blue
-%\definecolor{aaublue2}{RGB}{113,109,143} % light blue
-%\definecolor{aaublue3}{RGB}{194,193,204} % lighter blue
-
-
-%green 
-\definecolor{aaublue1}{RGB}{0,163,136}% dark green
-\definecolor{aaublue2}{RGB}{121,189,143} % light green
-\definecolor{aaublue3}{RGB}{190,235,159} % lighter green
-\definecolor{aaublue4}{RGB}{255,255,157} % yellow
-\definecolor{aaublue5}{RGB}{255,97,56}
-
-
+\definecolor{aaublue1}{RGB}{0,176,244}% dark blue
+\definecolor{aaublue2}{RGB}{113,109,143} % light blue
+\definecolor{aaublue3}{RGB}{194,193,204} % lighter blue
+\definecolor{aauwhite}{RGB}{255,255,255}
+\definecolor{aaublack}{RGB}{0,0,0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Lists
@@ -67,7 +54,7 @@
   noitemsep,% remove space between items
   labelindent=\parindent,% set the label indentation to the paragraph indentation
   leftmargin=*,% remove the left margin
-  font=\color{aaublue1}\normalfont, %set the colour of all bullets, numbers and descriptions to aaublue1
+  font=\color{aaublack}\normalfont, %set the colour of all bullets, numbers and descriptions to aaublue1
 }
 % use set<itemize,enumerate,description> if you have an older latex distribution
 \setitemize[1]{label={\raise1.25pt\hbox{$\blacktriangleright$}}}
@@ -121,9 +108,10 @@
 \background{
   \begin{tikzpicture}[remember picture,overlay]%
     %the poster background color
-    \fill[fill=aaublue3] (current page.north west) rectangle (current page.south east);
+    \fill[fill=aauwhite] (current page.north west) rectangle (current page.south east);
     %the header
-    \fill [fill=aaublue1] (current page.north west) rectangle ([yshift=-\headerheight] current page.north east);
+    \fill [fill=aauwhite] (current page.north west) rectangle ([yshift=-\headerheight] current page.north east);
+
   \end{tikzpicture}
 }
 % if you want to reduce the space before and after equations, use and adjust
@@ -162,46 +150,55 @@
 %the Eye Catcher (the logo on the left)
 {
   %this can be commented out or replaced by a company/department logo
-  \includegraphics[height=0.75\headerheight]{./logo/gshslogo_green.png}
+  \includegraphics[height=0.65\headerheight]{./logo/gshslogo_21.jpeg}
+
+  \includegraphics[height=0.25\headerheight]{./logo/qrcode.png}
+
+ 
+  \includegraphics[height=0.25\headerheight]{./logo/qrcode.png}
+
 }
 %the poster title
-{\color{white}\bf
-  The GSHS Poster Theme
+{\color{black}\LARGE
+ 제목이 길어질다면 조절이 필요함. 그외 잘 조절하면서 작업하길 바랍니다. 
 }
 %the author(s)
-{\color{white}\small
-  \vspace{1em} Wool Seo\\[0.5em]
-  Dept.\ of Physics and Earth Science, Gyeonggi Science High School For The Gifted, South Korea\\
-  wool@wool.pe.kr
-}
-%the logo (the logo on the right)
-{
-  %this can be commented out or replaced by a company/department logo
-  \includegraphics[height=0.75\headerheight]{./logo/gshslogo_green.png}
+{\color{black}\small
+  \vspace{0.2em} 
+  \begin{flushright}
+  \normalsize{
+  \textbf{
+  사   업   명 : 2021년 경기과학고등학교 기초 R\&E\\[0.2em]
+  연   구   자 : 홍길동(1학년), 이순신(1학년), 장영실(1학년)\\[0.2em]
+  지 도 교 사 : 채상미 }}
+  \end{flushright}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % the actual content of the poster begins here
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{posterbox}[name=intro,column=0,row=0]{Introduction}
-\begin{itemize}
-  \item Posters are often used at conferences for presenting exciting new research results.
-  \item So far no official AAU poster theme is available to the researchers and students at Aalborg University (AAU).
-  \item The present theme changes this.
-  \item The theme is a particular configuration of the \alert{baposter} poster template \cite{baposter} which you can find here \url{http://www.brian-amberg.de/uni/poster/} and must have installed in order to use the AAU poster theme.
-\end{itemize}
+\begin{posterbox}[name=intro,span=2, column=0,row=0, ]{ABSTRACT}
+
+  Posters are often used at conferences for presenting exciting new research results.
+  So far no official AAU poster theme is available to the researchers and students at Aalborg University (AAU).
+ The present theme changes this.
+  The theme is a particular configuration of the \alert{baposter} poster template \cite{baposter} which you can find here \url{http://www.brian-amberg.de/uni/poster/} and must have installed in order to use the AAU poster theme.
+
 \end{posterbox}
 
-\begin{posterbox}[name=usage,column=0,below=intro]{Usage}
+\begin{posterbox}[name=usage,column=0,below=intro]{INTRODUCTION}
 \begin{itemize}
   \item To use the AAU poster theme, place the {\tt aauposter.tex} file in your preferred folder and modify the file to your needs.
+  \item You can read more about how you can modify the theme in the documentation for the baposter template which you can find here \url{http://www.brian-amberg.de/uni/poster/}.
+  \item \footnotesize 한글 지원도 잘 됩니다. 폰트가 마음에 안들어요.
+   \item To use the AAU poster theme, place the {\tt aauposter.tex} file in your preferred folder and modify the file to your needs.
   \item You can read more about how you can modify the theme in the documentation for the baposter template which you can find here \url{http://www.brian-amberg.de/uni/poster/}.
   \item \footnotesize 한글 지원도 잘 됩니다. 폰트가 마음에 안들어요.
 \end{itemize}
 \end{posterbox}
 
-\begin{posterbox}[name=lists,column=0,below=usage]{Lists}
+\begin{posterbox}[name=lists,column=0,below=usage]{THEORETICAL BACKGROUND}
 Itemize
 \begin{itemize}
   \item item 1
@@ -254,49 +251,75 @@ Description
   \item[desc 2] item 2
 \end{description}
 \end{posterbox}
-
-\begin{posterbox}[name=equation,column=0,below=lists,above=bottom]{Equations}
-Here is an example of an equation
-\begin{equation}
-  f_X(x|\mu,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{\frac{1}{2\sigma^2}(x-\mu)^2\right\}
-\end{equation}
-\end{posterbox}
-
-\begin{posterbox}[name=install,column=1,row=0]{Installation}
-You can either make a local or a global installation of the baposter poster template \cite{baposter}.
+\begin{posterbox}[name=install,column=0,below=lists]{MAIN CONTENTS}
+You can either make a local or a global installation of the baposter poster template\cite{baposter}.
+You can either make a local or a global installation of the baposter poster template\cite{baposter}.
 \begin{description}
   \item[Local:] Place the {\tt baposter.cls} file in the same folder as the poster file {\tt aauposter.tex}
   \item[Global:] Place the {\tt baposter.cls} file in your local latex-directory tree. This is by default {\tt <somewhere>/textmf/tex/latex/baposter} where {\tt <somewhere>} is
-  \begin{description}
+ 
+\end{description}
+ \begin{description}
     \item[GNU/Linux:] {\tt/home/<username>}
     \item[Windows XP:] {\tt c:\textbackslash Document and Settings\textbackslash<username>}
     \item[Windows Vista+:] {\tt c:\textbackslash Users\textbackslash<username>}
     \item[Mac OSX] {\tt/home/<username>/Library}
   \end{description}
+\end{posterbox}
+
+\begin{posterbox}[name=equation,column=1,below=intro]{MAIN CONTENTS}
+
   On GNU/Linux and Windows, you have to update the filename database after placing {\tt baposter.cls} in the correct folder. This is done by
   \begin{description}
     \item[GNU/Linux:] {\tt \$ texhash \textasciitilde /texmf}
     \item[Windows with MiKTeX] Open the MiKTeX Settings dialog and click 'Refresh FNDB'.
     \item[Windows with TeX Live] Open the TeX Live Manager dialog and select 'Update filename database' under 'Actions'.
   \end{description}
-\end{description}
+Here is an example of an equation
+\begin{equation}
+  f_X(x|\mu,\sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{\frac{1}{2\sigma^2}(x-\mu)^2\right\}
+\end{equation}
 \end{posterbox}
 
 
-\begin{posterbox}[name=problems,column=1,below=install]{Known Problems}
-  \begin{itemize}
-    \item The math matrix environment {\tt \textbackslash begin\{matrix\} ... \textbackslash end\{matrix\}} causes an error. I do not know why. Use the array environment until the problem is resolved.
-  \end{itemize}
+\begin{posterbox}[name=figures,column=1,below=equation]{FIGURES \& TABLES}
+You cannot use floats in the baposter template. However, you can use figure captions by using {\tt \textbackslash captionof} instead of {\tt \textbackslash caption}. This is demonstrated in Fig.~\ref{fig:figlabel}. Moreover, you can also use {\tt \textbackslash label} and {\tt \textbackslash ref} to make references to your figures and/or tables.
+\begin{center}
+  \includegraphics[height=0.75\headerheight]{./logo/gshslogo.png}
+  \captionof{figure}{Here is a figure caption}
+  \label{fig:figlabel}
+\end{center}
+
+{\tt
+f1 = figure(1);\\
+set(f1,'Color','none');
+}\par
+You can also use {\tt pgfplots} \cite{pgfplots} for plotting your Matlab data. This is not that hard and the resulting plots are much nicer than Matlab plots, so I will strongly recommend that you have a look at {\tt pgfplots} right here \url{http://sourceforge.net/projects/pgfplots/}.
+\begin{center}
+  \begin{tabular}{c c c}
+    \toprule
+    header 1 & header 2 & header 3\\
+    \midrule
+    data (1,1) & data (1,2) & data (1,3)\\
+    data (2,1) & data (2,2) & data (2,3)\\
+    data (3,1) & data (3,2) & data (3,3)\\
+    \bottomrule
+  \end{tabular}
+  \captionof{table}{A very simple table with booktabs}
+  \label{tab:tablabel}
+\end{center}
 \end{posterbox}
 
-\begin{posterbox}[name=feedback,column=1,below=problems]{Feedback}
+
+\begin{posterbox}[name=feedback,column=1,below=figures]{CONCLUSION}
   \begin{itemize}
     \item The AAU poster theme v. 1.1.0 has been tested with baposter v. 2.0, and it can be downloaded from my AAU website \cite{jknaau} or my personal website \cite{jknsqrt-1}.
     \item If you find a bug in the AAU theme (and not in the baposter template), please do not hesitate to contact me. There is a FAQ at the baposter website \cite{baposter}, if you should have any problems with it.
+    \item The AAU poster theme v. 1.1.0 has been tested with baposter v. 2.0, and it can be downloaded from my AAU website \cite{jknaau} or my personal website \cite{jknsqrt-1}.
   \end{itemize}
 \end{posterbox}
 
-\begin{posterbox}[name=refs,column=1,below=feedback,above=bottom]{References}
+\begin{posterbox}[name=refs,span=2,column=0,below=install,above=bottom]{REFERENCES}
 % In the last box, you will usually have a list of references
 % The bibliography automatically adds the title "References", but
 % this have been removed in the preamble
@@ -311,7 +334,6 @@ You can either make a local or a global installation of the baposter poster temp
 \bibitem{jknaau} Jesper Kjær Nielsen: \emph{Official AAU Beamer Theme, Poster Theme, and Report Template}, \url{http://kom.aau.dk/~jkn/latex/latex.php}
 \bibitem{jknsqrt-1} Jesper Kjær Nielsen: \emph{Official AAU Beamer Theme, Poster Theme, and Report Template}, \url{http://sqrt-1.dk/latex/latex.php}
 \end{thebibliography}
-
 
 % ...... or
 %  \bibliographystyle{IEEEbib}
