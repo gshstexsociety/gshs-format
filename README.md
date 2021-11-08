@@ -35,7 +35,7 @@
 * gshs_beamer_ver2 : 경기과학고등학교 Beamer 양식2
 
 * gshs_chem_experiment : 일반화학실험 보고서 양식
-* 
+
 * gshs_exam : 경기과학고등학교 시험지 양식
 
 * gshs_imaginarylab : 무한상상실 작품제작설명서 양식
