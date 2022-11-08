@@ -112,7 +112,7 @@
 	{\noindent\tabularx{\textwidth}{@{\hspace{3pt}}X@{\hspace{3pt}}}%
 	\raggedright%
 	\frenchspacing%
-	\fontspec[AutoFakeBold=3]{BatangChe.ttf}\selectfont%
+	\batangche%
 	\bfseries\rule{0pt}{11pt}(Abstract)}%
 	{\\\endtabularx\smallskip\\}
 
