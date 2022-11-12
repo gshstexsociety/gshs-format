@@ -31,10 +31,10 @@
 \RequirePackage{indentfirst}
 
 %% Fonts setting - Korean: BatangChe, English: Times New Roman %%
-\setmainhangulfont{BatangChe}[Path=./fonts/, Extension=.ttf, AutoFakeBold=3]
-\newfontfamily{\batangche}{BatangChe}[Path=./fonts/, Extension=.ttf, AutoFakeBold=3]
-\setmainfont{Times New Roman}[Path=./fonts/, Extension=.ttf, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-Bold Italic]
-\newfontfamily{\tnr}{Times New Roman}[Path=./fonts/, Extension=.ttf, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-Bold Italic]
+\setmainhangulfont{BatangChe}[Extension = .ttf,AutoFakeBold=3]
+\newfontfamily{\batangche}{BatangChe}[Extension = .ttf,AutoFakeBold=3]
+\setmainfont{Times New Roman}[Extension=.ttf, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-Bold Italic]
+\newfontfamily{\tnr}{Times New Roman}[Extension=.ttf, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-Bold Italic]
 \xetexkofontregime{latin}[alphs=latin, puncts=prevfont, colons=prevfont, hyphens=prevfont, parens=latin, cjksymbols=hangul]
 
 %% Section Title Setting %%
