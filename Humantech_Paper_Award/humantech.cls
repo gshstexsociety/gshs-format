@@ -31,11 +31,12 @@
 \RequirePackage{indentfirst}
 
 %% Fonts setting - Korean: BatangChe, English: Times New Roman %%
-\setmainhangulfont{BatangChe}[Extension = .ttf,AutoFakeBold=3]
-\newfontfamily{\batangche}{BatangChe}[Extension = .ttf,AutoFakeBold=3]
-\setmainfont{Times New Roman}[Extension=.ttf, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-Bold Italic]
-\newfontfamily{\tnr}{Times New Roman}[Extension=.ttf, BoldFont=*-Bold, ItalicFont=*-Italic, BoldItalicFont=*-Bold Italic]
+\setmainhangulfont{BatangChe}[AutoFakeBold=3]
+\newfontfamily{\batangche}{BatangChe}[AutoFakeBold=3]
+\setmainfont{Times New Roman}[Ligatures=TeX]
 \xetexkofontregime{latin}[alphs=latin, puncts=prevfont, colons=prevfont, hyphens=prevfont, parens=latin, cjksymbols=hangul]
+\disablecjksymbolspacing
+\nonfrenchspacing
 
 %% Section Title Setting %%
 \RequirePackage{titlesec}
@@ -122,6 +123,6 @@
 \AtEndDocument{\end{multicols*}}
 
 \RequirePackage{cite}
-\AtBeginEnvironment{thebibliography}{\renewcommand{\url}[1]{\href{#1}{#1}}}
+\renewcommand{\url}[1]{\href{#1}{#1}}
 
 \renewcommand\refname{참고문헌} % 
