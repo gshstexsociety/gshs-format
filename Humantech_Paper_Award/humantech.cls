@@ -5,7 +5,7 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{humantech}[The Humantech Paper Award LaTeX Class, made by Lee Junseok (2022)]
-\LoadClass[10pt, twoside]{article}
+\LoadClass[10pt, twoside, twocolumn]{article}
 \RequirePackage[a4paper, left=1.5cm, right=1.5cm, top=3cm, bottom=2.5cm]{geometry}
 
 \def\turn#1{\gdef\@turn{#1}}
@@ -34,6 +34,11 @@
 \setmainhangulfont{BatangChe}[AutoFakeBold=3]
 \newfontfamily{\batangche}{BatangChe}[AutoFakeBold=3]
 \setmainfont{Times New Roman}[Ligatures=TeX]
+\XeTeXcharclass "2018=\XeTeXcharclassAO % ‘ LEFT SINGLE QUOTATION MARK
+\XeTeXcharclass "201C=\XeTeXcharclassAO % “ LEFT DOUBLE QUOTATION MARK
+\XeTeXcharclass "2019=\XeTeXcharclassAC % ’ RIGHT SINGLE QUOTATION MARK
+\XeTeXcharclass "201D=\XeTeXcharclassAC % ” RIGHT DOUBLE QUOTATION MARK
+% 따옴표로 ‘와 ’, “와 ”를 사용하는 경우가 있어 임시로 클래스 변경.
 \xetexkofontregime{latin}[alphs=latin, puncts=prevfont, colons=prevfont, hyphens=prevfont, parens=latin, cjksymbols=hangul]
 \disablecjksymbolspacing
 \nonfrenchspacing
@@ -48,7 +53,8 @@
 \RequirePackage{graphicx}
 \graphicspath{ {./images/} }
 
-\RequirePackage{float}			% For floating figure inside multicol environment
+%\RequirePackage{float}			% For floating figure inside multicol
+% article의 twocolumn 옵션을 사용함에 따라 floating figure로 설정하지 않아도 됨.
 \RequirePackage{caption}		% Customizing caption
 \captionsetup{
 	justification=raggedright,
@@ -58,8 +64,10 @@
 	textfont=bf
 }
 \renewcommand{\figurename}{Fig}
-\floatplacement{figure}{H}
-\floatplacement{table}{H}
+\def\fps@figure{htbp}
+\def\fps@table{htbp}
+%\floatplacement{figure}{H}
+%\floatplacement{table}{H}
 
 %% Page and Margin Settings %%
 \setlength{\columnsep}{2em}
@@ -113,16 +121,40 @@
 	{\noindent\tabularx{\textwidth}{@{\hspace{3pt}}X@{\hspace{3pt}}}%
 	\raggedright%
 	\frenchspacing%
-	\batangche%
+	\setmainhangulfont{BatangChe}[AutoFakeBold=3]%
+	% ascii opening
+	\XeTeXcharclass "28=\XeTeXcharclassAM % ( LEFT PARENTHESIS
+	\XeTeXcharclass "3C=\XeTeXcharclassAM % < LESS-THAN SIGN
+	\XeTeXcharclass "5B=\XeTeXcharclassAM % [ LEFT SQUARE BRACKET
+	\XeTeXcharclass "60=\XeTeXcharclassAM % ` GRAVE ACCENT
+	\XeTeXcharclass "7B=\XeTeXcharclassAM % { LEFT CURLY BRACKET
+	\XeTeXcharclass "AB=\XeTeXcharclassAM % « LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+	% ascii closing
+	\XeTeXcharclass "29=\XeTeXcharclassAM % ) RIGHT PARENTHESIS
+	\XeTeXcharclass "3E=\XeTeXcharclassAM % > GREATER-THAN SIGN
+	\XeTeXcharclass "5D=\XeTeXcharclassAM % ] RIGHT SQUARE BRACKET
+	\XeTeXcharclass "7D=\XeTeXcharclassAM % } RIGHT CURLY BRACKET
+	\XeTeXcharclass "BB=\XeTeXcharclassAM % » RIGHT-POINTING DOUBLE ANGLE
+	% 임시로 따옴표를 제외한 나머지 parens의 클래스를 변경하여 따옴표 글꼴만 latin으로 설정.
+	\xetexkofontregime{hangul}[alphs=hangul, puncts=hangul, colons=hangul, hyphens=hangul, parens=latin, cjksymbols=hangul]%
 	\bfseries\rule{0pt}{11pt}(Abstract)}%
-	{\\\endtabularx\smallskip\\}
-
-
-\RequirePackage{etoolbox}
-\AfterEndEnvironment{abstract}{\begin{multicols*}{2}}
-\AtEndDocument{\end{multicols*}}
+	{\\\endtabularx\smallskip %
+	% ascii opening
+	\XeTeXcharclass "28=\XeTeXcharclassAO % ( LEFT PARENTHESIS
+	\XeTeXcharclass "3C=\XeTeXcharclassAO % < LESS-THAN SIGN
+	\XeTeXcharclass "5B=\XeTeXcharclassAO % [ LEFT SQUARE BRACKET
+	\XeTeXcharclass "60=\XeTeXcharclassAO % ` GRAVE ACCENT
+	\XeTeXcharclass "7B=\XeTeXcharclassAO % { LEFT CURLY BRACKET
+	\XeTeXcharclass "AB=\XeTeXcharclassAO % « LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+	% ascii closing
+	\XeTeXcharclass "29=\XeTeXcharclassAC % ) RIGHT PARENTHESIS
+	\XeTeXcharclass "3E=\XeTeXcharclassAC % > GREATER-THAN SIGN
+	\XeTeXcharclass "5D=\XeTeXcharclassAC % ] RIGHT SQUARE BRACKET
+	\XeTeXcharclass "7D=\XeTeXcharclassAC % } RIGHT CURLY BRACKET
+	\XeTeXcharclass "BB=\XeTeXcharclassAC % » RIGHT-POINTING DOUBLE ANGLE 
+	\\}
 
 \RequirePackage{cite}
 \renewcommand{\url}[1]{\href{#1}{#1}}
 
-\renewcommand\refname{참고문헌} % 
+\renewcommand\refname{참고문헌}
