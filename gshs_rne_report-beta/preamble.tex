@@ -1,0 +1,58 @@
+\usepackage{graphicx}
+\graphicspath{{./figures/}} % Figure는 figures 폴더에 저장
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{sub/ref.bib}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage{tikzscale}
+%\tikzset{>=stealth}
+\tikzset{>=latex}
+\usetikzlibrary{positioning,fadings,backgrounds,angles,quotes,patterns,calc,fit}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{booktabs}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % Vertical & horizontal centering cell.
+\usepackage{stackengine}
+\usepackage{siunitx}
+\sisetup{per-mode=symbol,inter-unit-product = \ensuremath{\cdot}}
+\def\(#1\){\addstackgap{$\displaystyle#1$}}
+\usepackage{listings}
+\lstset{
+	basicstyle=\linespread{1}\small\ttfamily,
+	columns=flexible,
+	breaklines=true
+}
+\usepackage{pdftexcmds}
+\usepackage{indentfirst}
+%\usepackage[indent]{parskip}
+%\setmainfont{Times New Roman}
+\renewcommand{\author}[1]{
+	\setsepchar{;/,/@}
+	\readlist*\authoremails{#1}
+}
+\def\emailaddress{\authoremails[1,2,2]}
+\usepackage{pdftexcmds}
+\newif\ifsameemail
+\sameemailtrue
+\newcommand{\sameemailcheck}{%
+	\foreachitem\x\in\authoremails{%
+		\ifnum\strcmp{\authoremails[1,2,2]}{\authoremails[{\xcnt},2,2]}=0
+		\else
+		\sameemailfalse
+		\fi
+	}
+}
+
+
+\let\sup\textsuperscript
+\let\b\textbf
+\let\i\textit
+\let\t\texttt
+\let\bf\mathbf
