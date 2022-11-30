@@ -1,23 +1,24 @@
 \documentclass{gshs-RnE-report}
-\input{preamble}
+\input{preamble}	
 \input{info}
 \begin{document}
-	\makecover
-	\pagestyle{empty}
-	\tableofcontents
-	\newpage
-	\listoffigures\newpage
-	%\listoftables\newpage
-	\pagestyle{plain}
-	\setcounter{page}{1}
-	\maketitle
-	\input{sub/0abstract}
-	\newpage
-	\maketitle
-	\input{sub/1introduction}
-	\input{sub/2previous_study}
-	\input{sub/3methodology}
-	\input{sub/4experiment}
-	\input{sub/5conclusion}
-	\printbibliography[title={참고 문헌}]
+    \makecover
+    \nocite{*}
+    \pagestyle{empty}
+    \tableofcontents
+    \newpage
+    \listoffigures\newpage
+    %\listoftables\newpage
+    \pagestyle{plain}
+    \setcounter{page}{1}
+    \maketitle
+    \input{sub/0abstract}
+    \newpage
+    \maketitle
+    \input{sub/1introduction}
+    \input{sub/2previous_study}
+    \input{sub/3pos-tagging}
+    \input{sub/4experiment}
+    \input{sub/5conclusion}
+    \printbibliography
 \end{document}
