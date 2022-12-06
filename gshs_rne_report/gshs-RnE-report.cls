@@ -242,3 +242,101 @@
   \end{center}
   \quotation\bfseries}
  {\endquotation}
+
+%%%%%%%%%%%%
+% BibLaTeX %
+%%%%%%%%%%%%
+\RequirePackage[backend=biber,citestyle=numeric-comp,bibstyle=apa,apamaxprtauth=3,sorting=none]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+
+\AtEveryBibitem{%
+  \clearfield{number}%
+}
+
+
+\newbibmacro*{name:apa:family-given-nocomma}[5]{%
+  \togglefalse{apablx@wantcomma}%
+  \ifuseprefix
+    {\usebibmacro{name:delim}{#4#1}%
+     \usebibmacro{name:hook}{#4#1}%
+     \ifdefvoid{#4}{}{%
+       \mkbibnameprefix{#4}\isdot%
+       \ifprefchar{}{\bibnamedelimc}}%
+     \mkbibnamefamily{#1}\isdot%
+     \ifdefvoid{#2}{}{\toggletrue{apablx@wantcomma}%
+                      \revsdnamepunct\bibnamedelimd\mkbibnamegiven{#3}\isdot%
+                      \ifthenelse{\value{uniquename}>1}
+                        {\bibnamedelimd\mkbibbrackets{#2}}
+                        {}}%
+     \ifdefvoid{#5}{}{\toggletrue{apablx@wantcomma}%
+                      \addcomma\bibnamedelimd\mkbibnamesuffix{#5}\isdot}}
+    {\usebibmacro{name:delim}{#1}%
+     \usebibmacro{name:hook}{#1}%
+     \mkbibnamefamily{#1}\isdot
+     \ifboolexpe{%
+       test {\ifdefvoid{#2}}
+       and
+       test {\ifdefvoid{#4}}}
+       {}
+       {\revsdnamepunct}%
+     \ifdefvoid{#2}{}{\toggletrue{apablx@wantcomma}%
+                      \bibnamedelimd\mkbibnamegiven{#3}%
+                      \ifthenelse{\value{uniquename}>1}
+                        {\bibnamedelimd\mkbibbrackets{#2}}
+                        {}}%
+     \ifdefvoid{#4}{}{%
+       \toggletrue{apablx@wantcomma}%
+       \bibnamedelimc\mkbibnameprefix{#4}%
+       \ifprefchar{}{\bibnamedelimc}}%
+     \ifdefvoid{#5}{}{\toggletrue{apablx@wantcomma}%
+                      \addcomma\bibnamedelimd\mkbibnamesuffix{#5}\isdot}}%
+  \let\bibstring\bibcplstring
+  \usebibmacro{role}{\addspace}{\mkbibparens}%
+  \hasitemannotation[\currentname][username]
+    {\addspace\mkbibbrackets{\getitemannotation[\currentname][username]}}
+    {}}
+
+\DeclareNameFormat{apaauthor}{%
+	\ifthenelse{\value{listtotal}>3}
+		{\ifthenelse{\value{listcount}>1}
+			{}
+			{\usebibmacro{name:apa:family-given-nocomma}
+					{\namepartfamily}%
+					{\namepartgiven}%
+					{\namepartgiveni}%
+					{\namepartprefix}%
+					{\namepartsuffix}%
+					\space\mkbibemph{\biblcstring{andothers}}\space}}
+		{\ifthenelse{\value{listcount}>2\AND\value{listcount}<\value{listtotal}}
+      {}
+      {\usebibmacro{name:apa:family-given}%
+         {\namepartfamily}%
+         {\namepartgiven}%
+         {\namepartgiveni}%
+         {\namepartprefix}%
+         {\namepartsuffix}}}
+}
+
+\DeclareFieldFormat[article,inbook,incollection,periodical,misc,thesis,unpublished,techreport,book,legislation,legadminmaterial,jurisdiction,inproceedings,legal]{title}{\mkbibquote{#1}\addcomma}
+
+\DeclareFieldFormat[article,inbook,incollection,periodical,misc,thesis,unpublished,techreport,book,legislation,legadminmaterial,jurisdiction,inproceedings,legal]{volume}{#1,}
+
+\DeclareFieldFormat[article,inbook,incollection,periodical,misc,thesis,unpublished,techreport,book,legislation,legadminmaterial,jurisdiction,inproceedings,legal]{pages}{pp.\,#1}
+
+\DeclareFieldFormat{bibentrysetcount}{\mkbibparens{\mknumalph{#1}}}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\DeclareFieldFormat{shorthandwidth}{\mkbibbrackets{#1}}
+\defbibenvironment{bibliography}
+{\list
+	{\printtext[labelnumberwidth]{%
+			\printfield{labelprefix}%
+			\printfield{labelnumber}}}
+	{\setlength{\labelwidth}{\labelnumberwidth}%
+		\setlength{\leftmargin}{\labelwidth}%
+		\setlength{\labelsep}{\biblabelsep}%
+		\addtolength{\leftmargin}{\labelsep}%
+		\setlength{\itemsep}{\bibitemsep}%
+		\setlength{\parsep}{\bibparsep}}%
+	\renewcommand*{\makelabel}[1]{\hss##1}}
+{\endlist}
+{\item}
