@@ -228,6 +228,8 @@
       \renewcommand{\abstractname}{요\hskip 2pc 약}
       \renewcommand{\contentsname}{목차}
       \renewcommand{\refname}{참고문헌}
+      \renewcommand{\listfigurename}{그림 차례}
+      \renewcommand{\listtablename}{표 차례}
     }{%
       \renewcommand{\abstractname}{Abstract}
       \renewcommand{\contentsname}{Contents}
@@ -319,7 +321,7 @@
 
 \DeclareFieldFormat[article,inbook,incollection,periodical,misc,thesis,unpublished,techreport,book,legislation,legadminmaterial,jurisdiction,inproceedings,legal]{title}{\mkbibquote{#1}\addcomma}
 
-\DeclareFieldFormat[article,inbook,incollection,periodical,misc,thesis,unpublished,techreport,book,legislation,legadminmaterial,jurisdiction,inproceedings,legal]{volume}{#1,}
+\DeclareFieldFormat[article,inbook,incollection,periodical,misc,thesis,unpublished,techreport,book,legislation,legadminmaterial,jurisdiction,inproceedings,legal]{volume}{\ifinteger{#1}{Vol.\space}{}#1\addcomma}
 
 \DeclareFieldFormat[article,inbook,incollection,periodical,misc,thesis,unpublished,techreport,book,legislation,legadminmaterial,jurisdiction,inproceedings,legal]{pages}{pp.\,#1}
 
