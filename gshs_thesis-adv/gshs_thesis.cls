@@ -418,6 +418,7 @@
 	\setmainfont[Ligatures=TeX]{Times New Roman}
 	\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
 	ItalicFont=*,ItalicFeatures=FakeSlant]{NanumMyeongjo}
+	\setmainhanjafont[BoldFont=*,BoldFeatures=FakeBold]{Noto Serif CJK TC}
 
 %\setmainfont[Ligatures=TeX]{NanumMyeongjo}
 %\setmainhangulfont[BoldFont=*,BoldFeatures=FakeBold,%
