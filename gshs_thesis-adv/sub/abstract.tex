@@ -37,6 +37,17 @@
 %   Table of Contents (자동 작성됨)
 %----------------------------------------------
 \cleardoublepage
+\ifx\useenglish\undefined
+\addcontentsline{toc}{section}{목차}
+\renewcommand\figurename{그림}
+\renewcommand\tablename{표}
+\renewcommand\contentsname{목 차}
+\renewcommand\listfigurename{그림 목차}
+\renewcommand\listtablename{표 목차}
+\renewcommand\refname{참고 문헌}
+\else
+\addcontentsline{toc}{section}{Contents}
+\fi
 \addcontentsline{toc}{section}{Contents}
 \setcounter{secnumdepth}{3} % organisational level that receives a numbers
 \setcounter{tocdepth}{3}    % print table of contents for level 3
