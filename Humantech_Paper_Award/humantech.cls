@@ -8,6 +8,15 @@
 \LoadClass[10pt, twoside, twocolumn]{article}
 \RequirePackage[a4paper, left=1.5cm, right=1.5cm, top=3cm, bottom=2.5cm]{geometry}
 
+\newif\if@kor
+\@kortrue
+
+% Define options for language settings
+\DeclareOption{eng}{\@korfalse}
+\DeclareOption{kor}{\@kortrue}
+
+\ProcessOptions\relax
+
 \def\turn#1{\gdef\@turn{#1}}
 
 \usepackage{amsmath}			% Use \text command in math mode
@@ -16,9 +25,9 @@
 \usepackage[dvipsnames]{xcolor}	% To color text gray
 \RequirePackage{fontspec}		% To use BatangChe and Times New Roman Font
 \RequirePackage{kotex}			% To use Korean 
-\XeTeXlinebreakpenalty=10000	% Disable line breaking
-\hyphenpenalty=10000			% Disable hyphenization
-\exhyphenpenalty=10000			% Disable hyphenization
+%\XeTeXlinebreakpenalty=10000	% Disable line breaking
+%\hyphenpenalty=10000			% Disable hyphenization
+%\exhyphenpenalty=10000			% Disable hyphenization
 
 %\RequirePackage{csquotes}
 %\MakeOuterQuote{"}				% Define active quotes
@@ -31,17 +40,15 @@
 \RequirePackage{indentfirst}
 
 %% Fonts setting - Korean: BatangChe, English: Times New Roman %%
-\setmainhangulfont{BatangChe}[AutoFakeBold=3]
-\newfontfamily{\batangche}{BatangChe}[AutoFakeBold=3]
+\newhangulfontfamily{\batangche}{BatangChe}[AutoFakeBold=3]
 \setmainfont{Times New Roman}[Ligatures=TeX]
-\XeTeXcharclass "2018=\XeTeXcharclassAO % ‘ LEFT SINGLE QUOTATION MARK
-\XeTeXcharclass "201C=\XeTeXcharclassAO % “ LEFT DOUBLE QUOTATION MARK
-\XeTeXcharclass "2019=\XeTeXcharclassAC % ’ RIGHT SINGLE QUOTATION MARK
-\XeTeXcharclass "201D=\XeTeXcharclassAC % ” RIGHT DOUBLE QUOTATION MARK
-% 따옴표로 ‘와 ’, “와 ”를 사용하는 경우가 있어 임시로 클래스 변경.
+\if@kor
+\setmainhangulfont{BatangChe}[AutoFakeBold=3]
 \xetexkofontregime{latin}[alphs=latin, puncts=prevfont, colons=prevfont, hyphens=prevfont, parens=latin, cjksymbols=hangul]
 \disablecjksymbolspacing
 \nonfrenchspacing
+\else
+\fi
 
 %% Section Title Setting %%
 \RequirePackage{titlesec}
@@ -89,7 +96,7 @@
 	\fancyhf{}
 	\fancyhead[L]{\fontsize{12}{12}\selectfont\textbf{\color{gray} \@turn$^\text{th}$ Humantech Paper Award}}
 	\fancyfoot[R]{\fontsize{8}{8}\selectfont\color{gray}\thepage}
-	\fancyfoot[L]{\fontsize{8}{8}\selectfont\color{gray}
+	\fancyfoot[L]{\batangche\fontsize{8}{8}\selectfont\color{gray}
 		\begin{tabular}[t]{l}
 			본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것을 엄격히 금지합니다.\\
 			본 논문의 모든 저작권은 저자에게 있습니다.
@@ -102,7 +109,7 @@
 \fancyhf{}
 \fancyhead[LE,RO]{\fontsize{9}{9}\selectfont\color{gray} \@turn$^\text{th}$ Humantech Paper Award}
 \fancyfoot[LE,RO]{\fontsize{8}{8}\selectfont\color{gray}\thepage}
-\fancyfoot[RE,LO]{\fontsize{8}{8}\selectfont\color{gray}
+\fancyfoot[RE,LO]{\batangche\fontsize{8}{8}\selectfont\color{gray}
 	\begin{tabular}[t]{l}
 		본 논문에 포함된 정보의 전부 또는 일부를 무단으로 제3자에게 공개, 배포, 복사 또는 사용하는 것을 엄격히 금지합니다.\\
 		본 논문의 모든 저작권은 저자에게 있습니다.
@@ -120,38 +127,15 @@
 \renewenvironment{abstract}%
 	{\noindent\tabularx{\textwidth}{@{\hspace{3pt}}X@{\hspace{3pt}}}%
 	\raggedright%
+	\if@kor
 	\frenchspacing%
 	\setmainhangulfont{BatangChe}[AutoFakeBold=3]%
-	% ascii opening
-	\XeTeXcharclass "28=\XeTeXcharclassAM % ( LEFT PARENTHESIS
-	\XeTeXcharclass "3C=\XeTeXcharclassAM % < LESS-THAN SIGN
-	\XeTeXcharclass "5B=\XeTeXcharclassAM % [ LEFT SQUARE BRACKET
-	\XeTeXcharclass "60=\XeTeXcharclassAM % ` GRAVE ACCENT
-	\XeTeXcharclass "7B=\XeTeXcharclassAM % { LEFT CURLY BRACKET
-	\XeTeXcharclass "AB=\XeTeXcharclassAM % « LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
-	% ascii closing
-	\XeTeXcharclass "29=\XeTeXcharclassAM % ) RIGHT PARENTHESIS
-	\XeTeXcharclass "3E=\XeTeXcharclassAM % > GREATER-THAN SIGN
-	\XeTeXcharclass "5D=\XeTeXcharclassAM % ] RIGHT SQUARE BRACKET
-	\XeTeXcharclass "7D=\XeTeXcharclassAM % } RIGHT CURLY BRACKET
-	\XeTeXcharclass "BB=\XeTeXcharclassAM % » RIGHT-POINTING DOUBLE ANGLE
-	% 임시로 따옴표를 제외한 나머지 parens의 클래스를 변경하여 따옴표 글꼴만 latin으로 설정.
 	\xetexkofontregime{hangul}[alphs=hangul, puncts=hangul, colons=hangul, hyphens=hangul, parens=latin, cjksymbols=hangul]%
+	\else
+	\setmainfont{Times New Roman}[Ligatures=TeX]
+	\fi
 	\bfseries\rule{0pt}{11pt}(Abstract)}%
 	{\\\endtabularx\smallskip %
-	% ascii opening
-	\XeTeXcharclass "28=\XeTeXcharclassAO % ( LEFT PARENTHESIS
-	\XeTeXcharclass "3C=\XeTeXcharclassAO % < LESS-THAN SIGN
-	\XeTeXcharclass "5B=\XeTeXcharclassAO % [ LEFT SQUARE BRACKET
-	\XeTeXcharclass "60=\XeTeXcharclassAO % ` GRAVE ACCENT
-	\XeTeXcharclass "7B=\XeTeXcharclassAO % { LEFT CURLY BRACKET
-	\XeTeXcharclass "AB=\XeTeXcharclassAO % « LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
-	% ascii closing
-	\XeTeXcharclass "29=\XeTeXcharclassAC % ) RIGHT PARENTHESIS
-	\XeTeXcharclass "3E=\XeTeXcharclassAC % > GREATER-THAN SIGN
-	\XeTeXcharclass "5D=\XeTeXcharclassAC % ] RIGHT SQUARE BRACKET
-	\XeTeXcharclass "7D=\XeTeXcharclassAC % } RIGHT CURLY BRACKET
-	\XeTeXcharclass "BB=\XeTeXcharclassAC % » RIGHT-POINTING DOUBLE ANGLE 
 	\\}
 
 \RequirePackage{cite}
