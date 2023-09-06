@@ -9,11 +9,14 @@
 \RequirePackage[a4paper, left=1.5cm, right=1.5cm, top=3cm, bottom=2.5cm]{geometry}
 
 \newif\if@kor
+\newif\if@overleaf
+\@overleaffalse
 \@kortrue
 
 % Define options for language settings
 \DeclareOption{eng}{\@korfalse}
 \DeclareOption{kor}{\@kortrue}
+\DeclareOption{overleaf}{\@overleaftrue}
 
 \ProcessOptions\relax
 
@@ -40,10 +43,18 @@
 \RequirePackage{indentfirst}
 
 %% Fonts setting - Korean: BatangChe, English: Times New Roman %%
+\if@overleaf
+\newhangulfontfamily{\batangche}{BatangChe}[AutoFakeBold=3, Path=./fonts/]
+\else
 \newhangulfontfamily{\batangche}{BatangChe}[AutoFakeBold=3]
+\fi
 \setmainfont{Times New Roman}[Ligatures=TeX]
 \if@kor
+\if@overleaf
+\setmainhangulfont{BatangChe}[AutoFakeBold=3, Path=./fonts/]
+\else
 \setmainhangulfont{BatangChe}[AutoFakeBold=3]
+\fi
 \xetexkofontregime{latin}[alphs=latin, puncts=prevfont, colons=prevfont, hyphens=prevfont, parens=latin, cjksymbols=hangul]
 \disablecjksymbolspacing
 \nonfrenchspacing
