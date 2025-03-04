@@ -1,0 +1,23 @@
+% !TeX TS-program = xelatex
+% !TeX encoding = UTF-8
+% !BIB TS-program = biber
+\documentclass[overleaf]{gshs_global_frontier_report}
+\input{preamble}
+\input{info}
+\begin{document}
+	\makecover
+	\tableofcontents
+	\newpage
+	\listoffigures\newpage
+	%\listoftables\newpage
+	\pagestyle{plain}
+	\setcounter{page}{1}
+	\maketitle
+	\input{sub/1introduction}
+        \input{sub/2theoretical_background}
+	\input{sub/3previous_study}
+        \input{sub/4experiment}
+        \input{sub/5result}
+        \input{sub/6conclusion}
+	\printbibliography
+\end{document}
