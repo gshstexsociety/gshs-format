@@ -1,0 +1,19 @@
+\section{Introduction}
+본 문서는 2023학년도 졸업 논문 연구의 양식을 기준으로 제작된 것이다. 오류가 발생한 경우 연락해 주기 바란다. 아래는 간단한 문서를 작성하는 방법을 예시로 작성해 놓은 것으로 문서를 작성할 때 참고할 수 있다.
+
+가장 먼저, 참고 문헌을 입력하기 위해서는 sub 폴더 안에 ref.bib 파일에 BibTeX 형식으로 입력해야 한다. 대부분의 해외 저널에서는 BibTeX 형식으로 내보내는 옵션을 가지고 있으므로 그것을 이용하면 편하다. 만약 BibTeX 형식으로 직접 작성해야 하는 경우에는 다음과 같이 형식을 지켜서 입력해야 한다.
+
+\begin{verbatim}
+@article{Taylor1989
+  title = {Adaptive regulation of nonlinear systems with unmodeled dynamics},
+  author = {Taylor, D.G. and Kokotovic, P.V. and Marino, R.},
+  year = 1989,
+  journal = {IEEE Transactions on Automatic Control},
+  volume = 34,
+  pages = {405--412}
+}
+\end{verbatim}
+
+article 대신, book, inproceedings, misc와 같이 다른 타입의 출판물을 인용할 수 있다. 저자는 `이름, 성' 또는 `성 이름' 순서로 입력하고 and 로 연결한다. 위 예시에서 Taylor1989는 레이블이며, 해당 문헌을 참조하기 위해서는 \cite{Taylor1989}\와 같이 입력할 수 있다.
+
+문장 마지막에 참고 문헌을 입력할 때는 마지막 단어 뒤에 띄어 번호를 입력하고 마침표를 찍는다 \cite{aksin}. 이렇게 여러 개를 입력할 수도 있다 \cite{bertram, Intel1988, Knuth1984, Amaro-Seoane2012}.

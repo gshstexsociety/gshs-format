@@ -1,0 +1,86 @@
+\section{수식, 그림, 표}
+
+\subsection{수식}
+
+전기장 $\mathbf{E}$와 자기장 $\mathbf{B}$의 상호작용을 설명하는 맥스웰 방정식은 다음과 같이 쓸 수 있다.
+% 등호를 기준으로 식을 정렬하기 위해 align을 사용하였다.
+\begin{align}
+    \nabla \cdot \mathbf{E} &= \frac{\rho}{\epsilon_0}\\
+    \nabla \cdot \mathbf{B} &= 0\\
+    \nabla \times \mathbf{E} &= -\partial_t \mathbf{B}\\
+    \nabla \times \mathbf{B} &= \mu_0 (\mathbf{J} + \epsilon_0 \partial_t \mathbf{E})
+\end{align}
+여기서 $\epsilon_0$는 진공의 유전율을 나타낸다.
+
+% 문단을 바꿀 때는 이렇게 한 줄을 비우고 그 아래에 작성한다.
+수식을 입력할 때는 기본적으로 equation을 사용할 수 있다. 이 경우, 수식 내에서 줄바꿈은 할 수 없다.
+\begin{equation}
+i\hbar \frac{\partial}{\partial t} \Psi(x,t) = \left[ -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x,t) \right] \Psi(x,t) \label{eq:schrodinger}
+\end{equation}
+% 수식 안에서 label을 입력하고, 문단에서 \cref(문장 맨 처음에 올 때는 Cref) 명령어를 통해 해당 레이블을 참조할 수 있다. 참조를 한 경우 뒤에 `\이, \은, \와, \을'과 같이 조사 앞에 역슬래시(\)를 붙이면 숫자에 따라 자동으로 `이/가, 은/는, 와/과, 을/를'으로 바뀐다.
+\Cref{eq:schrodinger}\을 통해 우리는 알 수 있는 것이 없다.
+
+이차방정식의 근의 공식은 다음과 같다.
+\begin{equation}
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+
+% 수식이 지나치게 길어지면 (물론, 수식은 한 줄 안에 들어올 정도로 작성하는 것이 좋다.) multline을 통해 수식 중간에 줄바꿈을 할 수 있다.
+회전하는 블랙홀은 다음과 같이 Kerr 메트릭을 이용하여 표현할 수 있다.
+\begin{multline}
+    ds^2 = -\left( 1 - \frac{r_\text{s} r}{\Sigma} \right) c^2 \, dt^2 + \frac{\Sigma}{\Delta} dr^2 + \Sigma \, d\theta^2 + \left( r^2+ a^2 + \frac{r_\text{s} r a^2}{\Sigma} \sin^2 \theta \right) \sin^2 \theta \, d\phi^2\\ - \frac{2r_\text{s} ra \sin^2 \theta}{\Sigma} c \, dt \, d\phi
+\end{multline}
+
+% 단위를 가진 수치를 입력할 때에는 siunitx의 명령어 \qty{수치}{단위} 또는 \unit{단위}를 사용하는 것이 바람직하다.
+진공에서의 빛의 속력 $c = \SI{299792458}{m/s}$와 중력 가속도 $g = \SI{9.8}{m/s^2}$을 대입하면 식의 값을 얻을 수 있다.
+
+\subsection{그림}
+
+본 실험의 결과는 \cref{fig:ex-img-a}\와 같이 나타났다.
+\begin{figure}
+    \centering
+    \includegraphics[width=.4\textwidth]{example-image-a}
+    \caption{예시 그림 A} % 모든 이미지에는 caption을 입력한다.
+    \label{fig:ex-img-a} % label은 항상 caption 뒤에 입력한다.
+\end{figure}
+
+\Cref{fig:ex-img-a}\을 보면, 실험 결과를 확인할 수 있다.
+
+두 개 이상의 이미지를 한 줄에 넣기 위해서는 subfigure를 사용할 수 있다. 이 경우, figure 안에 subfigure를 입력하고, 각 subfigure의 너비를 입력해야 한다. 너비는 textwidth를 기준으로 설정하는 것이 좋고, 한 줄에 넣기 위해서는 합이 textwidth보다 작아야 한다.
+\begin{figure}
+    \centering
+    \begin{subfigure}{.55\textwidth}
+        \centering
+        \includegraphics[height=10em]{GSHS}
+        \caption{이것은 오리가 아니다.}
+        \label{fig:ex-img-duck}
+    \end{subfigure}
+    \begin{subfigure}{.44\textwidth}
+        \centering
+        \includegraphics[height=10em]{example-image}
+        \caption{예시 그림}
+        \label{fig:ex-img}
+    \end{subfigure}
+    \caption{subfigure를 활용한 그림 삽입}
+    \label{fig:subfig}
+\end{figure}
+
+첫 번째 실험의 결과는 \cref{fig:ex-img-duck}\와 같이 나왔고, 두 번째 실험의 결과는 \cref{fig:ex-img}\와 같이 나왔다. 이를 통해 실험 결과의 차이를 명확하게 비교할 수 있다.
+
+\subsection{표}
+
+\Cref{tab:physics-var}에서는 물리 변수의 기호와 값을 표시하고 있다.
+% 표를 입력할 때에는 caption이 표의 위에 위치하도록 한다.
+\begin{table}
+    \centering
+    \caption{물리 변수 기호 및 값}
+    \label{tab:physics-var}
+    \begin{tabular}{c | c | c}
+        \hline
+         & 기호 & 값 \\ \hline
+        지구의 질량 & $M_E$ & \SI{6.0e24}{kg} \\ \hline
+        지구의 반지름 & $R_E$ & \SI{6.4e6}{m} \\ \hline
+        중력 상수 & $G$ & \SI{6.67e-11}{N.m^2/kg^2} \\ \hline
+    \end{tabular}
+\end{table}
+

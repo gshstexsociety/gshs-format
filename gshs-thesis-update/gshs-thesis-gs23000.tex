@@ -1,0 +1,21 @@
+% !TeX TS-program = xelatex
+\documentclass[overleaf]{gshs-thesis}
+
+\input{preamble.tex}
+\input{info.tex}
+
+\begin{document}
+\makecover
+\pagenumbering{roman}
+\input{sub/0abstract}
+\input{sub/0contents}
+\pagenumbering{arabic}
+\baselineskip=2.2em
+% \nocite{*}
+\input{sub/1introduction}
+\input{sub/2body}
+\clearpage
+\printbibliography
+\input{sub/acknowledgments}
+\input{sub/researchactivities}
+\end{document}

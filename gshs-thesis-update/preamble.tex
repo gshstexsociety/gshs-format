@@ -1,0 +1,42 @@
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[backend=biber,citestyle=numeric-comp,bibstyle=apa,apamaxprtauth=3,sorting=none]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{%
+      \printfield{labelprefix}%
+      \printfield{labelnumber}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}
+      \baselineskip=1.8em}
+  {\endlist}
+  {\item}
+
+\addbibresource{sub/ref.bib}
+
+\usepackage{enumitem}
+\setitemize{noitemsep}
+\setenumerate{noitemsep}
+
+\usepackage{cleveref}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{siunitx}
+\sisetup{%
+    inter-unit-product=\ensuremath{{}\cdot{}}
+}
