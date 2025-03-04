@@ -14,6 +14,8 @@
 
 * gshs_poster-old : 포스터 양식(2021년 양식 적용)
 
+* gshs-thesis-update : 졸업논문 양식(2025년 양식 적용)
+
 * gshs_thesis : 졸업논문 양식
 
 ## 주요 양식
@@ -61,6 +63,10 @@
 * gshs_thesis : 졸업논문 양식
 
 * gshs_thesis-adv : 졸업논문 양식(TeX 숙련자용)
+
+* gshs-thesis-update : 졸업논문 양식(2025년 양식 적용)
+
+* gshs_global_frontier_report : 글로벌프론티어 보고서 양식(2024년 양식 적용)
 
 * junlam_report-adv : 과학전람회 양식
 
